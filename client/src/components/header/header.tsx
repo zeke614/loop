@@ -43,56 +43,54 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between p-4 border-b border-b-[#0000001f]">
-        <button
-          onClick={toggleMenu}
-          className="text-[1.625rem] cursor-pointer md:hidden"
-        >
-          <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
-        </button>
+    <header className="bg-white text-black shadow-sm sticky top-0 z-50 max-w-7xl md:mx-auto flex items-center justify-between p-4 border-b border-b-[#0000001f]">
+      <button
+        onClick={toggleMenu}
+        className="text-[1.625rem] flex items-center justify-center cursor-pointer md:hidden"
+      >
+        <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
+      </button>
 
-        <Link to="/" className="text-2xl ml-8 font-semibold">
-          loop
-        </Link>
+      <Link to="/" className="text-2xl ml-10 font-semibold">
+        loop
+      </Link>
 
-        <div className="flex items-center space-x-4">
-          <nav className="hidden md:flex items-center space-x-4">
-            {navLinks.map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`${
-                  location.pathname === path ? "font-semibold" : "font-medium"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-
-          {!user ? (
+      <div className="flex items-center space-x-4">
+        <nav className="hidden md:flex items-center space-x-4">
+          {navLinks.map(({ path, label }) => (
             <Link
-              to="/login"
-              className="flex items-center space-x-1 px-3 py-1 rounded-full hover:bg-gray-100"
+              key={path}
+              to={path}
+              className={`${
+                location.pathname === path ? "font-semibold" : "font-medium"
+              }`}
             >
-              <i className="bx bx-user"></i>
-              <span>Sign In</span>
+              {label}
             </Link>
-          ) : (
-            <button
-              onClick={toggleProfile}
-              aria-label={profileOpen ? "Close profile" : "Open profile"}
-              className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
-            >
-              <i
-                className={
-                  profileOpen ? "bx bx-x text-2xl" : "bx bxs-user text-2xl"
-                }
-              ></i>
-            </button>
-          )}
-        </div>
+          ))}
+        </nav>
+
+        {!user ? (
+          <Link
+            to="/login"
+            className="flex items-center space-x-1 rounded-full hover:bg-gray-100"
+          >
+            <i className="bx bx-user"></i>
+            <span>Sign In</span>
+          </Link>
+        ) : (
+          <button
+            onClick={toggleProfile}
+            aria-label={profileOpen ? "Close profile" : "Open profile"}
+            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
+          >
+            <i
+              className={
+                profileOpen ? "bx bx-x text-2xl" : "bx bxs-user text-2xl"
+              }
+            ></i>
+          </button>
+        )}
       </div>
 
       <Sidebar menuOpen={menuOpen} closeMenu={() => setMenuOpen(false)} />
