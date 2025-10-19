@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="text-center">
-      <div className="px-4 mt-10 fixed bottom-0 w-full text-sm text-[#6e7780] pb-3">
+      <div className="px-4 mt-8 text-sm text-[#6e7780] pb-3">
         <p className="space-x-1 text-center">
           <span>&copy;</span>
           <span>{new Date().getFullYear()}</span>

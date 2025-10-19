@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import navLinks from "../../constants/data";
-import Footer from "../footer";
 
 interface SidebarProps {
   menuOpen: boolean;
@@ -50,7 +49,14 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           })}
         </div>
 
-        <Footer />
+        <div className="px-4 mt-10 fixed bottom-0 w-full text-sm text-[#6e7780] pb-3">
+          <p className="space-x-1 text-center">
+            <span>&copy;</span>
+            <span>{new Date().getFullYear()}</span>
+            <span className="font-bold text-black"> loop</span>
+            <span> All rights reserved.</span>
+          </p>
+        </div>
       </nav>
     </>
   );
