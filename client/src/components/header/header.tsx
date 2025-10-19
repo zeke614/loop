@@ -44,15 +44,15 @@ export default function Header() {
 
   return (
     <header className="bg-white text-black shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-2 border-b border-b-[#0000001f]">
+      <div className="max-w-7xl mx-auto flex items-center justify-between p-4 border-b border-b-[#0000001f]">
         <button
           onClick={toggleMenu}
-          className="text-2xl cursor-pointer md:hidden"
+          className="text-[1.625rem] cursor-pointer md:hidden"
         >
           <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
         </button>
 
-        <Link to="/" className="text-2xl font-semibold">
+        <Link to="/" className="text-2xl ml-8 font-semibold">
           loop
         </Link>
 
@@ -77,7 +77,7 @@ export default function Header() {
               className="flex items-center space-x-1 px-3 py-1 rounded-full hover:bg-gray-100"
             >
               <i className="bx bx-user"></i>
-              <span className="text-sm">Sign In</span>
+              <span>Sign In</span>
             </Link>
           ) : (
             <button
