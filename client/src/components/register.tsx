@@ -48,7 +48,8 @@ export default function Register() {
           Create your account
         </h1>
         <p className="text-center text-[#6e7780] mb-10 text-sm md:text-base">
-          Join Loop and get news that matters to you.
+          Join Loop — dive into stories that spark <br /> curiosity and
+          conversation.{" "}
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3">

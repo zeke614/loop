@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import navLinks from "../../constants/data";
+import Footer from "../footer";
 
 interface SidebarProps {
   menuOpen: boolean;
@@ -25,11 +26,11 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       >
         <div className="flex justify-end">
           <button onClick={closeMenu} className="px-4 pt-3 cursor-pointer">
-            <i className="bx bx-x text-xl"></i>
+            <i className="bx bx-x text-2xl"></i>
           </button>
         </div>
 
-        <div className="flex flex-col px-4 py-2 space-y-3.5 text-base">
+        <div className="flex flex-col px-4 py-2.5 mt-2 space-y-4 text-base">
           {navLinks.map(({ path, label }) => {
             const isActive = location.pathname === path;
             return (
@@ -49,14 +50,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           })}
         </div>
 
-        <div className="px-4 mt-10 fixed bottom-0 w-full text-sm text-[#6e7780] pb-3">
-          <p className="space-x-1 text-center">
-            <span>&copy;</span>
-            <span>{new Date().getFullYear()}</span>
-            <span className="font-bold text-black"> loop</span>
-            <span> All rights reserved.</span>
-          </p>
-        </div>
+        <Footer />
       </nav>
     </>
   );
