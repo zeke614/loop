@@ -43,7 +43,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black ">
+    <header className="bg-white text-black">
       <div className="sticky top-0 z-50 max-w-7xl md:mx-auto flex items-center justify-between px-4 py-3 border-b border-b-[#0000001f]">
         <button
           onClick={toggleMenu}
@@ -52,7 +52,7 @@ export default function Header() {
           <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
         </button>
 
-        <Link to="/" className="text-[1.688rem] pl-[1.875rem] font-semibold">
+        <Link to="/" className="text-[1.563rem] pl-9 font-semibold">
           loop
         </Link>
 
@@ -74,7 +74,7 @@ export default function Header() {
           {!user ? (
             <Link
               to="/login"
-              className="flex items-center space-x-1 rounded-full hover:bg-gray-100"
+              className="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-gray-100"
             >
               <i className="bx bx-user"></i>
               <span>Sign In</span>

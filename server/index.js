@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://loop-gh.vercel.app",
+      "https://loopgh.vercel.app",
       "http://localhost:5173"       //local testing
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],

@@ -148,7 +148,7 @@ export default function Login() {
 
         <p className="text-center text-[#6e7780] mt-6 text-sm">
           New here?
-          <Link to="/register" className="text-[#239276] ml-1 font-medium">
+          <Link to="/register" className="text-[#04aa6d] ml-1 font-medium">
             Sign Up
           </Link>
         </p>
