@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
-  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -13,19 +16,22 @@ export default function Register() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setMessage("Signing up...");
+    setLoading(true);
+    setErrorMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post(`${API_BASE_URL}/api/auth/register`, {
         username: form.username,
         email: form.email,
         password: form.password,
       });
 
-      setMessage(res.data.message || "Registration successful!");
       setForm({ username: "", email: "", password: "" });
+      navigate("/");
     } catch (err: any) {
-      setMessage(err.response?.data?.message || "Something went wrong");
+      setErrorMessage(err.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -133,26 +139,29 @@ export default function Register() {
             ></i>
           </div>
 
-          {/* <label className="flex items-center space-x-2 ml-2 mt-2 text-sm md:text-base">
-            <input type="checkbox" className="accent-[#239276]" required />
-            <span className="text-[#6e7780]">
-              I agree to all Terms & Privacy Policy
-            </span>
-          </label> */}
-
           <button
             type="submit"
+            disabled={loading}
             className="
               w-full bg-[#202124] text-white rounded-full py-3 mt-10 font-medium
-              hover:bg-[#000000] transition cursor-pointer
+              hover:bg-[#000000] transition cursor-pointer disabled:opacity-70
             "
           >
-            Sign Up
+            {loading ? (
+              <span className="flex items-center justify-center space-x-2">
+                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                <span>Signing up...</span>
+              </span>
+            ) : (
+              "Sign Up"
+            )}
           </button>
         </form>
 
-        {message && (
-          <p className="text-center text-sm mt-4 text-[#6e7780]">{message}</p>
+        {errorMessage && (
+          <p className="text-center text-sm mt-4 text-red-500">
+            {errorMessage}
+          </p>
         )}
 
         <p className="text-center text-[#6e7780] mt-6 text-sm md:text-base">

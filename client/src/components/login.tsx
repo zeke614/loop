@@ -7,6 +7,7 @@ export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -17,10 +18,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form
-      );
+      const res = await axios.post(`${API_BASE_URL}/api/auth/login`, form);
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -108,7 +106,7 @@ export default function Login() {
             disabled={loading}
             className="
               w-full bg-[#202124] text-white rounded-full py-3 mt-6 
-              font-medium hover:bg-[#000000] transition flex items-center justify-center
+              font-medium hover:bg-[#000000] transition flex items-center cursor-pointer justify-center
             "
           >
             {loading ? (
