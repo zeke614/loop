@@ -52,7 +52,12 @@ export default function Header() {
           <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
         </button>
 
-        <Link to="/" className="text-[1.563rem] pl-10 md:p-0 font-semibold">
+        <Link
+          to="/"
+          className={`text-[1.563rem] font-semibold ${
+            user ? "pl-7" : "pl-10"
+          } md:p-0`}
+        >
           loop
         </Link>
 

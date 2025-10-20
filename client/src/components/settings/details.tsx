@@ -21,9 +21,9 @@ export default function PersonalDetails() {
       <div className="p-4 flex items-center">
         <button
           onClick={() => navigate("/settings")}
-          className="text-gray-600 hover:text-black flex items-center gap-1"
+          className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
         >
-          <i className="bx bx-chevron-left text-2xl"></i>
+          <i className="bx  bx-arrow-in-left-square-half"></i>{" "}
           <span className="font-medium">Settings</span>
         </button>
       </div>

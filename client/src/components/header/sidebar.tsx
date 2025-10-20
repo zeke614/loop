@@ -29,7 +29,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           </button>
         </div>
 
-        <div className="flex flex-col px-4 py-2.5 mt-2 space-y-4">
+        <div className="flex flex-col px-4 mt-5">
           {navLinks.map(({ path, label }) => {
             const isActive = location.pathname === path;
             return (
@@ -37,7 +37,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                 key={path}
                 to={path}
                 onClick={closeMenu}
-                className={`block transition-transform duration-200 ${
+                className={`block transition-transform duration-200 text-xl py-3 ${
                   isActive
                     ? "border-l-[3px] border-black pl-2 font-extrabold"
                     : "pl-3 font-semibold"
@@ -49,7 +49,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           })}
         </div>
 
-        <div className="px-4 mt-10 fixed bottom-0 w-full text-sm text-[#6e7780] pb-3">
+        <div className="px-4 mt-10 fixed bottom-0 w-full text-[#6e7780] pb-3">
           <p className="space-x-1 text-center">
             <span>&copy;</span>
             <span>{new Date().getFullYear()}</span>
