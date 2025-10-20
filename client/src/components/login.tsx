@@ -40,7 +40,7 @@ export default function Login() {
     <div
       className="
         flex flex-col justify-center items-center 
-        min-h-screen my-5 px-6 sm:px-10 md:px-16 lg:px-20
+        min-h-screen mb-3.5 mt-8 px-6 sm:px-10 md:px-16 lg:px-20
         bg-white
       "
     >

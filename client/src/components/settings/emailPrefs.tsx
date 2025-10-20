@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function EmailPrefs() {
   return (
-    <div className="mt-6 max-w-3xl mx-8 md:mx-auto flex flex-col justify-center space-y-5">
+    <div className="pt-20 max-w-3xl mx-8 md:mx-auto flex flex-col justify-center space-y-5">
       <div className="flex items-center gap-1 p-4">
         <Link
           to="/settings"
-          className="text-gray-600 hover:text-black flex items-center gap-1"
+          className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
         >
-          <i className="bx bx-chevron-left text-2xl"></i>
+          <i className="bx  bx-arrow-in-left-square-half"></i>{" "}
           <span className="font-medium">Settings</span>
         </Link>
       </div>

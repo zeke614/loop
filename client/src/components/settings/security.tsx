@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function Security() {
   return (
-    <div className="p-4 max-w-3xl md:mx-auto flex flex-col justify-center space-y-4">
+    <div className="px-4 pt-20 max-w-3xl md:mx-auto flex flex-col justify-center space-y-4">
       <div className="flex items-center gap-1 p-4">
         <Link
           to="/settings"
-          className="text-gray-600 hover:text-black flex items-center gap-1"
+          className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
         >
-          <i className="bx bx-chevron-left text-2xl"></i>
+          <i className="bx  bx-arrow-in-left-square-half"></i>{" "}
           <span className="font-medium">Settings</span>
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function PersonalDetails() {
   const [user, setUser] = useState<any>(null);
@@ -17,15 +17,15 @@ export default function PersonalDetails() {
   if (!user) return null;
 
   return (
-    <div className="max-w-2xl mx-8 md:mx-auto bg-white mt-6">
-      <div className="p-4 flex items-center">
-        <button
-          onClick={() => navigate("/settings")}
+    <div className="max-w-2xl mx-8 md:mx-auto bg-white pt-20">
+      <div className="px-4 pt-4 flex items-center">
+        <Link
+          to="/settings"
           className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
         >
           <i className="bx  bx-arrow-in-left-square-half"></i>{" "}
           <span className="font-medium">Settings</span>
-        </button>
+        </Link>
       </div>
 
       <div className="p-6 space-y-8">

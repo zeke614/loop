@@ -47,7 +47,7 @@ export default function Header() {
       {" "}
       <div
         className="max-w-7xl mx-auto flex items-center justify-between 
-               px-4 py-3 border-b border-b-[#0000001f]"
+               px-4 py-2.5 border-b border-b-[#0000001f]"
       >
         <button
           onClick={toggleMenu}
