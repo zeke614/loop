@@ -32,6 +32,10 @@ export default function Login() {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = `${API_BASE_URL}/api/auth/google`;
+  };
+
   return (
     <div
       className="
@@ -44,13 +48,13 @@ export default function Login() {
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Sign in
         </h1>
-        <p className="text-center text-[#6e7780] mb-10 text-sm md:text-base">
+        <p className="text-center text-[#6e7780] mb-10 md:text-base">
           Stay informed. Stay in the 'loop'.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-sm font-medium text-gray-700">Email *</label>
+            <label className="font-medium text-gray-700">Email *</label>
             <input
               type="email"
               name="email"
@@ -59,7 +63,7 @@ export default function Login() {
               required
               placeholder="Email"
               className="
-                w-full px-4 py-3 rounded-full border border-gray-300 
+                w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 
                 focus:outline-none focus:border-[#6e7780] placeholder-gray-400
                 transition
               "
@@ -67,9 +71,7 @@ export default function Login() {
           </div>
 
           <div className="relative">
-            <label className="text-sm font-medium text-gray-700">
-              Password *
-            </label>
+            <label className="font-medium text-gray-700">Password *</label>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -78,7 +80,7 @@ export default function Login() {
               required
               placeholder="Password"
               className="
-                w-full px-4 py-3 rounded-full border border-gray-300 
+                w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 
                 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10
                 transition
               "
@@ -91,7 +93,7 @@ export default function Login() {
             ></i>
           </div>
 
-          <div className="flex items-center justify-between text-sm mt-3 mx-1">
+          <div className="flex items-center justify-between mt-3 mx-1">
             <label className="flex items-center space-x-2">
               <input type="checkbox" className="accent-[#04aa6d]" />
               <span className="text-gray-600">Remember me</span>
@@ -122,12 +124,15 @@ export default function Login() {
 
         <div className="flex items-center justify-center my-6 mx-10">
           <div className="flex-grow border-t border-gray-300"></div>
-          <span className="mx-3 text-gray-500 text-sm">Or login with</span>
+          <span className="mx-3 text-gray-500">Or login with</span>
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3">
-          <button className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition">
+          <button
+            onClick={handleGoogleLogin}
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition"
+          >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
               alt="Google"
@@ -146,7 +151,7 @@ export default function Login() {
           </button>
         </div>
 
-        <p className="text-center text-[#6e7780] mt-6 text-sm">
+        <p className="text-center text-[#6e7780] mt-6">
           New here?
           <Link to="/register" className="text-[#04aa6d] ml-1 font-medium">
             Sign Up

@@ -29,7 +29,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           </button>
         </div>
 
-        <div className="flex flex-col px-4 py-2.5 mt-2 space-y-4 text-base">
+        <div className="flex flex-col px-4 py-2.5 mt-2 space-y-4">
           {navLinks.map(({ path, label }) => {
             const isActive = location.pathname === path;
             return (

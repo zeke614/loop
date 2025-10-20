@@ -47,7 +47,7 @@ export default function Register() {
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Create your account
         </h1>
-        <p className="text-center text-[#6e7780] mb-10 text-sm md:text-base">
+        <p className="text-center text-[#6e7780] mb-10 md:text-base">
           Join Loop — dive into stories that spark <br /> curiosity and
           conversation.{" "}
         </p>
@@ -74,15 +74,13 @@ export default function Register() {
 
         <div className="flex items-center justify-center my-6 mx-10">
           <div className="flex-grow border-t border-gray-300"></div>
-          <span className="mx-3 text-gray-500 text-sm">Or</span>
+          <span className="mx-3 text-gray-500">Or</span>
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-sm font-medium text-gray-700">
-              Username *
-            </label>
+            <label className="font-medium text-gray-700">Username *</label>
             <input
               type="text"
               name="username"
@@ -99,7 +97,7 @@ export default function Register() {
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-700">Email *</label>
+            <label className="font-medium text-gray-700">Email *</label>
             <input
               type="email"
               name="email"
@@ -116,9 +114,7 @@ export default function Register() {
           </div>
 
           <div className="relative">
-            <label className="text-sm font-medium text-gray-700">
-              Password *
-            </label>
+            <label className="font-medium text-gray-700">Password *</label>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -165,7 +161,7 @@ export default function Register() {
           </p>
         )}
 
-        <p className="text-center text-[#6e7780] mt-6 text-sm md:text-base">
+        <p className="text-center text-[#6e7780] mt-6 md:text-base">
           Already have an account?
           <Link to="/login" className="text-[#04aa6d] ml-1 font-medium">
             Sign In

@@ -52,7 +52,7 @@ export default function Header() {
           <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
         </button>
 
-        <Link to="/" className="text-[1.563rem] pl-9 font-semibold">
+        <Link to="/" className="text-[1.563rem] pl-10 md:p-0 font-semibold">
           loop
         </Link>
 
@@ -72,10 +72,7 @@ export default function Header() {
           </nav>
 
           {!user ? (
-            <Link
-              to="/login"
-              className="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-gray-100"
-            >
+            <Link to="/login" className="flex items-center space-x-1">
               <i className="bx bx-user"></i>
               <span>Sign In</span>
             </Link>

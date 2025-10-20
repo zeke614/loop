@@ -34,7 +34,7 @@ export default function AccountPanel({
             onClick={() => setProfileOpen(false)}
             className="flex items-center gap-2 px-3 py-1 rounded-md hover:bg-white/5 transition"
           >
-            <i className="bx bx-bookmark"></i>
+            <i className="bx bx-book-bookmark"></i>
             <span>Saved</span>
           </Link>
 
@@ -51,12 +51,12 @@ export default function AccountPanel({
             onClick={handleSignOut}
             className="w-full text-left flex items-center gap-2 px-3 py-1 rounded-md hover:bg-white/5 transition cursor-pointer text-red-400"
           >
-            <i className="bx bx-arrow-out-left-square-half"></i>
+            <i className="bx  bx-arrow-out-right-square-half"></i>{" "}
             <span>Sign Out</span>
           </button>
         </div>
 
-        <p className="py-3 text-xs w-full text-center fixed bottom-0 text-[#6e7780]">
+        <p className="py-3 text-sm w-full text-center fixed bottom-0 text-[#6e7780]">
           Signed in as <span className="font-medium">{user?.email}</span>
         </p>
       </div>

@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
+/* @import url('https://fonts.cdnfonts.com/css/satoshi'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-lato: "Lato", sans-serif; 
+  --font-outfit: "Outfit", sans-serif; 
 }
 
 body {
-  @apply font-lato;
+  @apply font-outfit;
 }
 
