@@ -26,13 +26,13 @@ export default function AccountPanel({
             <i className="bx bx-x text-2xl"></i>
           </button>
         </div>
-        <h3 className="text-xl font-semibold ml-4 py-1.5">Your Account</h3>
+        <h3 className="text-xl font-semibold ml-3.5 py-1.5">Your Account</h3>
 
-        <div className="px-4 flex-1 text-lg overflow-auto">
+        <div className="px-5 flex-1 text-[1.063rem] overflow-auto">
           <Link
             to="/saved"
             onClick={() => setProfileOpen(false)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-white/5 transition"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-white/5 transition"
           >
             <i className="bx bx-book-bookmark"></i>
             <span>Saved</span>
@@ -41,7 +41,7 @@ export default function AccountPanel({
           <Link
             to="/settings"
             onClick={() => setProfileOpen(false)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-white/5 transition"
+            className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-white/5 transition"
           >
             <i className="bx bx-cog"></i>
             <span>Settings</span>
@@ -49,7 +49,7 @@ export default function AccountPanel({
 
           <button
             onClick={handleSignOut}
-            className="w-full text-left flex items-center gap-2 px-3 py-1.5 rounded-md hover:bg-white/5 transition cursor-pointer text-red-400"
+            className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md hover:bg-white/5 transition cursor-pointer text-red-400"
           >
             <i className="bx  bx-arrow-out-right-square-half"></i>{" "}
             <span>Sign Out</span>

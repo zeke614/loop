@@ -43,8 +43,12 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black">
-      <div className="sticky top-0 z-50 max-w-7xl md:mx-auto flex items-center justify-between px-4 py-3 border-b border-b-[#0000001f]">
+    <header className="bg-white text-black fixed top-0 left-0 w-full z-50">
+      {" "}
+      <div
+        className="max-w-7xl mx-auto flex items-center justify-between 
+               px-4 py-3 border-b border-b-[#0000001f]"
+      >
         <button
           onClick={toggleMenu}
           className="text-[1.625rem] flex items-center justify-center cursor-pointer md:hidden"
@@ -55,7 +59,7 @@ export default function Header() {
         <Link
           to="/"
           className={`text-[1.563rem] font-semibold ${
-            user ? "pl-7" : "pl-10"
+            user ? "pl-5" : "pl-10"
           } md:p-0`}
         >
           loop
@@ -96,7 +100,6 @@ export default function Header() {
           )}
         </div>
       </div>
-
       <Sidebar menuOpen={menuOpen} closeMenu={() => setMenuOpen(false)} />
       <AccountPanel
         user={user}

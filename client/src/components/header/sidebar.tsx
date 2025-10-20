@@ -19,7 +19,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       )}
 
       <nav
-        className={`fixed top-0 left-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-[70%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -37,7 +37,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                 key={path}
                 to={path}
                 onClick={closeMenu}
-                className={`block transition-transform duration-200 text-xl py-3 ${
+                className={`block transition-transform duration-200 text-xl py-2.5 ${
                   isActive
                     ? "border-l-[3px] border-black pl-2 font-extrabold"
                     : "pl-3 font-semibold"

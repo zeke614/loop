@@ -40,7 +40,7 @@ export default function Login() {
     <div
       className="
         flex flex-col justify-center items-center 
-        min-h-screen px-6 sm:px-10 md:px-16 lg:px-20
+        min-h-screen my-5 px-6 sm:px-10 md:px-16 lg:px-20
         bg-white
       "
     >
@@ -48,7 +48,7 @@ export default function Login() {
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Sign in
         </h1>
-        <p className="text-center text-[#6e7780] mb-10 md:text-base">
+        <p className="text-center text-[#6e7780] mb-10">
           Stay informed. Stay in the 'loop'.
         </p>
 
