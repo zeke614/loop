@@ -19,17 +19,17 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       )}
 
       <nav
-        className={`fixed top-0 left-0 h-full w-[70%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-[83%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex justify-end">
-          <button onClick={closeMenu} className="px-4 pt-3 cursor-pointer">
+          <button onClick={closeMenu} className="pr-2 pt-2 cursor-pointer">
             <i className="bx bx-x text-2xl"></i>
           </button>
         </div>
 
-        <div className="flex flex-col px-4 mt-5">
+        <div className="flex flex-col mt-4">
           {navLinks.map(({ path, label }) => {
             const isActive = location.pathname === path;
             return (
@@ -39,8 +39,8 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                 onClick={closeMenu}
                 className={`block transition-transform duration-200 text-xl py-2.5 ${
                   isActive
-                    ? "border-l-[3px] border-black pl-2 font-extrabold"
-                    : "pl-3 font-semibold"
+                    ? "border-l-[0.188rem] border-black pl-3.5 font-bold"
+                    : "pl-4 font-medium"
                 }`}
               >
                 {label}
@@ -49,7 +49,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           })}
         </div>
 
-        <div className="px-4 mt-10 fixed bottom-0 w-full text-[#6e7780] pb-3">
+        <div className="px-3 mt-10 fixed bottom-0 w-full text-[#6e7780] pb-3">
           <p className="space-x-1 text-center">
             <span>&copy;</span>
             <span>{new Date().getFullYear()}</span>

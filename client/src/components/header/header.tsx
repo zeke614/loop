@@ -43,11 +43,11 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black fixed top-0 left-0 w-full z-50">
+    <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
       {" "}
       <div
         className="max-w-7xl mx-auto flex items-center justify-between 
-               px-4 py-2.5 border-b border-b-[#0000001f]"
+               px-4 py-2 border-b border-b-[#928f8f1f]"
       >
         <button
           onClick={toggleMenu}
@@ -59,7 +59,7 @@ export default function Header() {
         <Link
           to="/"
           className={`text-[1.563rem] font-semibold ${
-            user ? "pl-5" : "pl-10"
+            user ? "pl-4" : "pl-10"
           } md:p-0`}
         >
           loop

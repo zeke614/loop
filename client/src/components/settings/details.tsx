@@ -18,7 +18,7 @@ export default function PersonalDetails() {
 
   return (
     <div className="max-w-2xl mx-8 md:mx-auto bg-white pt-20">
-      <div className="px-4 pt-4 flex items-center">
+      <div className="pl-1.5 pt-4 flex items-center">
         <Link
           to="/settings"
           className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
@@ -75,7 +75,7 @@ export default function PersonalDetails() {
           </button>
         </div>
 
-        <div className="pt-6">
+        <div className="pt-6 pb-10">
           <p className="font-semibold text-lg text-gray-900">
             Delete your account
           </p>

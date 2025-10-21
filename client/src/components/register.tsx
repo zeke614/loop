@@ -39,7 +39,7 @@ export default function Register() {
     <div
       className="
         flex flex-col justify-center items-center
-        min-h-screen px-6 sm:px-10 md:px-16 lg:px-20
+        min-h-screen px-6 my-20 sm:px-10 md:px-16 lg:px-20
         bg-white
       "
     >
