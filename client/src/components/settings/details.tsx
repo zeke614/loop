@@ -16,15 +16,8 @@ export default function PersonalDetails() {
     }
   }, [navigate]);
 
+  // toggles popup visibility
   const togglePopUp = () => setPopUp((prev) => !prev);
-
-  const handleDeleteAccount = () => {
-    console.log("Account deleted");
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    setPopUp(false);
-    navigate("/");
-  };
 
   if (!user) return null;
 
@@ -35,7 +28,7 @@ export default function PersonalDetails() {
           to="/settings"
           className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
         >
-          <i className="bx  bx-arrow-in-left-square-half"></i>{" "}
+          <i className="bx bx-arrow-in-left-square-half"></i>
           <span className="font-medium">Settings</span>
         </Link>
       </div>
@@ -51,8 +44,8 @@ export default function PersonalDetails() {
             </p>
           </div>
           <button className="text-black font-medium text-2xl">
-            <i className="bx  bx-edit-alt"></i>
-          </button>{" "}
+            <i className="bx bx-edit-alt"></i>
+          </button>
         </div>
 
         <div className="flex justify-between items-center border-b border-gray-200 pb-2">
@@ -63,7 +56,7 @@ export default function PersonalDetails() {
             </p>
           </div>
           <button className="text-black font-medium text-2xl">
-            <i className="bx  bx-edit-alt"></i>
+            <i className="bx bx-edit-alt"></i>
           </button>
         </div>
 
@@ -75,7 +68,7 @@ export default function PersonalDetails() {
             </p>
           </div>
           <button className="text-black font-medium text-2xl">
-            <i className="bx  bx-edit-alt"></i>
+            <i className="bx bx-edit-alt"></i>
           </button>
         </div>
 
@@ -87,7 +80,7 @@ export default function PersonalDetails() {
             </p>
           </div>
           <button className="text-black font-medium text-2xl">
-            <i className="bx  bx-edit-alt"></i>
+            <i className="bx bx-edit-alt"></i>
           </button>
         </div>
 
@@ -107,7 +100,9 @@ export default function PersonalDetails() {
       {popUp && (
         <DeleteAccountPopup
           togglePopUp={togglePopUp}
-          handleDeleteAccount={handleDeleteAccount}
+          handleDeleteAccount={() =>
+            console.log("Delete button pressed (UI only)")
+          }
         />
       )}
     </div>

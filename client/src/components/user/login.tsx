@@ -1,53 +1,26 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get("token");
-
-    if (token) {
-      localStorage.setItem("token", token);
-      window.dispatchEvent(new Event("userStateChange"));
-
-      window.history.replaceState({}, document.title, window.location.pathname);
-
-      navigate("/");
-    }
-  }, [navigate]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
-    try {
-      const res = await axios.post(`${API_BASE_URL}/api/auth/login`, form);
-
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
-
-      window.dispatchEvent(new Event("userStateChange"));
-
-      navigate("/");
-    } catch (err: any) {
-      alert(err.response?.data?.message || "Invalid credentials");
+    setTimeout(() => {
+      console.log("Pretend login:", form);
       setLoading(false);
-    }
+    }, 1200);
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = `${API_BASE_URL}/api/auth/google`;
+    console.log("Google login clicked");
   };
 
   return (
@@ -102,7 +75,7 @@ export default function Login() {
             <i
               className={`bx ${
                 showPassword ? "bx-eye-slash" : "bx-eye"
-              } absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 text-xl cursor-pointer`}
+              } absolute right-4 top-[68%] -translate-y-1/2 text-xl cursor-pointer`}
               onClick={() => setShowPassword(!showPassword)}
             ></i>
           </div>
@@ -119,11 +92,15 @@ export default function Login() {
 
           <button
             type="submit"
-            disabled={loading}
-            className="
-              w-full bg-[#202124] text-white rounded-full py-3 mt-6 
-              font-medium hover:bg-[#000000] transition flex items-center cursor-pointer justify-center
-            "
+            disabled={!form.email || !form.password || loading}
+            className={`
+              w-full rounded-full py-3 mt-6 font-medium transition flex items-center justify-center
+              ${
+                !form.email || !form.password || loading
+                  ? "bg-[#d4d6dc] text-gray-500 cursor-not-allowed"
+                  : "bg-[#202124] text-white hover:bg-[#000000] cursor-pointer"
+              }
+            `}
           >
             {loading ? (
               <span className="flex items-center space-x-2">
@@ -145,7 +122,7 @@ export default function Login() {
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition"
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -155,7 +132,7 @@ export default function Login() {
             <span>Google</span>
           </button>
 
-          <button className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition">
+          <button className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer">
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg"
               alt="Apple"

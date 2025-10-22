@@ -1,38 +1,22 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const navigate = useNavigate();
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setErrorMessage("");
-
-    try {
-      await axios.post(`${API_BASE_URL}/api/auth/register`, {
-        username: form.username,
-        email: form.email,
-        password: form.password,
-      });
-
-      setForm({ username: "", email: "", password: "" });
-      navigate("/");
-    } catch (err: any) {
-      setErrorMessage(err.response?.data?.message || "Something went wrong");
-    } finally {
+    setTimeout(() => {
       setLoading(false);
-    }
+      alert("This is just the UI. Registration is not functional yet.");
+    }, 1000);
   };
 
   return (
@@ -49,11 +33,14 @@ export default function Register() {
         </h1>
         <p className="text-center text-[#6e7780] mb-10 md:text-base">
           Join Loop — dive into stories that spark <br /> curiosity and
-          conversation.{" "}
+          conversation.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3">
-          <button className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition">
+          <button
+            disabled
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full bg-gray-50 text-gray-500 cursor-pointer"
+          >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
               alt="Google"
@@ -62,7 +49,10 @@ export default function Register() {
             <span>Log in with Google</span>
           </button>
 
-          <button className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition">
+          <button
+            disabled
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full bg-gray-50 text-gray-500 cursor-pointer"
+          >
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg"
               alt="Apple"
@@ -131,18 +121,24 @@ export default function Register() {
             <i
               className={`bx ${
                 showPassword ? "bx-eye-slash" : "bx-eye"
-              } absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 text-xl cursor-pointer`}
+              } absolute right-4 top-[68%] -translate-y-1/2 text-xl cursor-pointer`}
               onClick={() => setShowPassword(!showPassword)}
             ></i>
           </div>
 
           <button
             type="submit"
-            disabled={loading}
-            className="
-              w-full bg-[#202124] text-white rounded-full py-3 mt-10 font-medium
-              hover:bg-[#000000] transition cursor-pointer disabled:opacity-70
-            "
+            disabled={
+              !form.username || !form.email || !form.password || loading
+            }
+            className={`
+              w-full rounded-full py-3 mt-10 font-medium transition
+              ${
+                !form.username || !form.email || !form.password || loading
+                  ? "bg-[#d4d6dc] text-gray-500 cursor-not-allowed"
+                  : "bg-[#202124] text-white hover:bg-[#000000] cursor-pointer"
+              }
+            `}
           >
             {loading ? (
               <span className="flex items-center justify-center space-x-2">
@@ -155,14 +151,8 @@ export default function Register() {
           </button>
         </form>
 
-        {errorMessage && (
-          <p className="text-center text-sm mt-4 text-red-500">
-            {errorMessage}
-          </p>
-        )}
-
         <p className="text-center text-[#6e7780] mt-6 md:text-base">
-          Already have an account?
+          Have an account?
           <Link to="/login" className="text-[#04aa6d] ml-1 font-medium">
             Sign In
           </Link>
