@@ -13,7 +13,7 @@ export default function Security() {
         </Link>
       </div>
       <h1 className="text-xl pl-6 font-semibold">Security and Privacy</h1>
-      <p className="text-center text-[#6e7780] font-semibold mt-8">
+      <p className="text-center text-[#6e7780] mt-8">
         You haven't set any security preferences yet.
       </p>
     </div>

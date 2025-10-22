@@ -10,7 +10,7 @@ export default function Logout() {
       localStorage.removeItem("user");
       window.dispatchEvent(new Event("userStateChange"));
       navigate("/");
-    }, 2500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [navigate]);

@@ -1,11 +1,8 @@
-import mongoose from "mongoose";
-
 const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
     },
     email: {
@@ -16,10 +13,15 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      required: function () {
+        return !this.googleId; // only required if not using Google
+      },
+    },
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true, // allows null/undefined values for non-Google users
     },
   },
   { timestamps: true }
 );
-
-export default mongoose.model("User", userSchema);

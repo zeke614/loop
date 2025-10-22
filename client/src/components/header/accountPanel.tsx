@@ -22,7 +22,10 @@ export default function AccountPanel({
         aria-hidden={!profileOpen}
       >
         <div className="flex justify-end pt-2 pr-2">
-          <button onClick={() => setProfileOpen(false)}>
+          <button
+            onClick={() => setProfileOpen(false)}
+            className="cursor-pointer"
+          >
             <i className="bx bx-x text-2xl"></i>
           </button>
         </div>

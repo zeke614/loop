@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import DeleteAccountPopup from "../user/delete";
 
 export default function PersonalDetails() {
   const [user, setUser] = useState<any>(null);
   const navigate = useNavigate();
+  const [popUp, setPopUp] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -13,6 +15,16 @@ export default function PersonalDetails() {
       navigate("/login");
     }
   }, [navigate]);
+
+  const togglePopUp = () => setPopUp((prev) => !prev);
+
+  const handleDeleteAccount = () => {
+    console.log("Account deleted");
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setPopUp(false);
+    navigate("/");
+  };
 
   if (!user) return null;
 
@@ -33,8 +45,8 @@ export default function PersonalDetails() {
 
         <div className="flex justify-between items-center border-b border-gray-200 pb-2">
           <div>
-            <p className="text-gray-600">Email</p>
-            <p className="font-semibold text-gray-900 truncate w-60 sm:w-80">
+            <p>Email</p>
+            <p className="font-medium text-lg text-[#6e7780] truncate w-60 sm:w-80">
               {user.email || "—"}
             </p>
           </div>
@@ -45,19 +57,9 @@ export default function PersonalDetails() {
 
         <div className="flex justify-between items-center border-b border-gray-200 pb-2">
           <div>
-            <p className="text-gray-600">Password</p>
-            <p className="font-semibold text-gray-900">● ● ● ● ● ●</p>
-          </div>
-          <button className="text-black font-medium text-2xl">
-            <i className="bx  bx-edit-alt"></i>
-          </button>
-        </div>
-
-        <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-          <div>
-            <p className="text-gray-600">Display name</p>
-            <p className="font-medium text-gray-900">
-              {user.displayName || "—"}
+            <p>Password</p>
+            <p className="font-medium text-lg text-[#6e7780]">
+              ● ● ● ● ● ● ● ●
             </p>
           </div>
           <button className="text-black font-medium text-2xl">
@@ -67,8 +69,22 @@ export default function PersonalDetails() {
 
         <div className="flex justify-between items-center border-b border-gray-200 pb-2">
           <div>
-            <p className="text-gray-600">Country of residence</p>
-            <p className="font-medium text-gray-900">{user.country || "—"}</p>
+            <p>Display name</p>
+            <p className="font-medium text-lg text-[#6e7780]">
+              {user.displayName || "None added"}
+            </p>
+          </div>
+          <button className="text-black font-medium text-2xl">
+            <i className="bx  bx-edit-alt"></i>
+          </button>
+        </div>
+
+        <div className="flex justify-between items-center border-b border-gray-200 pb-2">
+          <div>
+            <p>Country of residence</p>
+            <p className="font-medium text-lg text-[#6e7780]">
+              {user.country || "—"}
+            </p>
           </div>
           <button className="text-black font-medium text-2xl">
             <i className="bx  bx-edit-alt"></i>
@@ -76,14 +92,22 @@ export default function PersonalDetails() {
         </div>
 
         <div className="pt-6 pb-10">
-          <p className="font-semibold text-lg text-gray-900">
-            Delete your account
-          </p>
-          <button className="font-semibold underline underline-offset-2 text-red-500 mt-1">
-            I want to delete my account
+          <p className="font-semibold text-lg text-gray-900">Delete account</p>
+          <button
+            onClick={togglePopUp}
+            className="font-semibold underline underline-offset-2 text-red-500 mt-1 cursor-pointer"
+          >
+            Delete my account
           </button>
         </div>
       </div>
+
+      {popUp && (
+        <DeleteAccountPopup
+          togglePopUp={togglePopUp}
+          handleDeleteAccount={handleDeleteAccount}
+        />
+      )}
     </div>
   );
 }

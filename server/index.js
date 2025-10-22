@@ -5,6 +5,7 @@ import cors from "cors";
 import session from "express-session";
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import jwt from "jsonwebtoken";
 import authRoutes from "./routes/authRoutes.js";
 import User from "./models/user.js";
 
@@ -65,8 +66,6 @@ passport.deserializeUser(async (id, done) => {
   done(null, user);
 });
 
-app.use("/api/auth", authRoutes);
-
 app.get("/api/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
 app.get(
@@ -76,9 +75,18 @@ app.get(
     session: false,
   }),
   (req, res) => {
-    res.redirect("https://loopgh.vercel.app"); 
+    const token = jwt.sign(
+      { id: req.user._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    const redirectUrl = `https://loopgh.vercel.app?token=${token}`;
+    res.redirect(redirectUrl);
   }
 );
+
+app.use("/api/auth", authRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)

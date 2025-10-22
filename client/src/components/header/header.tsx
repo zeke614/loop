@@ -89,7 +89,7 @@ export default function Header() {
             <button
               onClick={toggleProfile}
               aria-label={profileOpen ? "Close profile" : "Open profile"}
-              className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
+              className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-gray-100"
             >
               <i
                 className={
