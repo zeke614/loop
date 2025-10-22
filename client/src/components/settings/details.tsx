@@ -92,12 +92,14 @@ export default function PersonalDetails() {
         </div>
 
         <div className="pt-6 pb-10">
-          <p className="font-semibold text-lg text-gray-900">Delete account</p>
+          <p className="font-semibold text-lg text-gray-900">
+            Delete your account
+          </p>
           <button
             onClick={togglePopUp}
             className="font-semibold underline underline-offset-2 text-red-500 mt-1 cursor-pointer"
           >
-            Delete my account
+            Remove your profile and information
           </button>
         </div>
       </div>
