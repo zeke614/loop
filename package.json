@@ -2,10 +2,10 @@
   "name": "loop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && node index.js",
+    "server": "cd server && node server.js",
     "client": "cd client && npm run dev"
   },
   "keywords": [],

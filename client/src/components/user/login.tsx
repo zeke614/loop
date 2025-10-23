@@ -9,7 +9,6 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
-  // ✅ use env variable with localhost fallback
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,10 +21,8 @@ export default function Login() {
     setLoading(true);
 
     try {
-      // 🔥 send login request to backend
       const response = await axios.post(`${API_URL}/api/users/login`, form);
 
-      // ✅ store token and redirect
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
     } catch (error: any) {
@@ -38,7 +35,6 @@ export default function Login() {
   };
 
   const handleGoogleLogin = () => {
-    // Google OAuth flow will go here later
     console.log("Google login clicked");
   };
 
