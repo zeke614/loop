@@ -1,25 +1,44 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+
+  // ✅ use env variable with localhost fallback
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage("");
     setLoading(true);
-    setTimeout(() => {
-      console.log("Pretend login:", form);
+
+    try {
+      // 🔥 send login request to backend
+      const response = await axios.post(`${API_URL}/api/users/login`, form);
+
+      // ✅ store token and redirect
+      localStorage.setItem("token", response.data.token);
+      navigate("/dashboard");
+    } catch (error: any) {
+      setErrorMessage(
+        error.response?.data?.message || "Sign-in failed. Please try again."
+      );
+    } finally {
       setLoading(false);
-    }, 1200);
+    }
   };
 
   const handleGoogleLogin = () => {
+    // Google OAuth flow will go here later
     console.log("Google login clicked");
   };
 
@@ -40,6 +59,12 @@ export default function Login() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {errorMessage && (
+            <p className="text-center text-red-500 font-medium">
+              {errorMessage}
+            </p>
+          )}
+
           <div>
             <label className="font-medium text-gray-700">Email *</label>
             <input

@@ -1,22 +1,46 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const API_URL: string = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setErrorMessage("");
+
+    try {
+      const res = await axios.post(`${API_URL}/api/users/register`, form, {
+        headers: { "Content-Type": "application/json" },
+      });
+
+      localStorage.setItem("token", res.data.token);
+      navigate("/");
+    } catch (error: unknown) {
+      console.error("Registration error:", error);
+
+      if (axios.isAxiosError(error)) {
+        setErrorMessage(
+          error.response?.data?.message ||
+            "Registration failed. Please try again."
+        );
+      } else {
+        setErrorMessage("An unexpected error occurred. Please try again.");
+      }
+    } finally {
       setLoading(false);
-      alert("This is just the UI. Registration is not functional yet.");
-    }, 1000);
+    }
   };
 
   return (
@@ -67,6 +91,12 @@ export default function Register() {
           <span className="mx-3 text-gray-500">Or</span>
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
+
+        {errorMessage && (
+          <p className="text-center text-red-500 mb-4 text-sm">
+            {errorMessage}
+          </p>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
