@@ -21,14 +21,37 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${API_URL}/api/users/login`, form);
+      console.log("Attempting login to:", `${API_URL}/api/users/login`);
 
-      localStorage.setItem("token", response.data.token);
-      navigate("/dashboard");
+      const response = await axios.post(`${API_URL}/api/users/login`, form, {
+        headers: { "Content-Type": "application/json" },
+        timeout: 10000,
+      });
+
+      console.log("Login response:", response.data);
+
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        navigate("/dashboard");
+      } else {
+        throw new Error("No token received");
+      }
     } catch (error: any) {
-      setErrorMessage(
-        error.response?.data?.message || "Sign-in failed. Please try again."
-      );
+      console.error("Login error details:", error);
+
+      if (error.code === "ECONNABORTED") {
+        setErrorMessage("Request timeout - server is not responding");
+      } else if (error.response) {
+        setErrorMessage(
+          error.response?.data?.message || "Sign-in failed. Please try again."
+        );
+      } else if (error.request) {
+        setErrorMessage(
+          "Cannot connect to server. Please check your connection."
+        );
+      } else {
+        setErrorMessage("An unexpected error occurred.");
+      }
     } finally {
       setLoading(false);
     }

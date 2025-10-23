@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL: string = import.meta.env.VITE_API_URL || "http://localhost:5000";
-
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -21,19 +21,38 @@ export default function Register() {
     setErrorMessage("");
 
     try {
+      console.log(
+        "Attempting registration to:",
+        `${API_URL}/api/users/register`
+      );
+      console.log("Registration data:", form);
+
       const res = await axios.post(`${API_URL}/api/users/register`, form, {
         headers: { "Content-Type": "application/json" },
+        timeout: 10000,
       });
 
-      localStorage.setItem("token", res.data.token);
-      navigate("/");
-    } catch (error: unknown) {
-      console.error("Registration error:", error);
+      console.log("Registration response:", res.data);
 
-      if (axios.isAxiosError(error)) {
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+        navigate("/");
+      } else {
+        throw new Error("No token received after registration");
+      }
+    } catch (error: any) {
+      console.error("Registration error details:", error);
+
+      if (error.code === "ECONNABORTED") {
+        setErrorMessage("Request timeout - server is not responding");
+      } else if (error.response) {
         setErrorMessage(
           error.response?.data?.message ||
             "Registration failed. Please try again."
+        );
+      } else if (error.request) {
+        setErrorMessage(
+          "Cannot connect to server. Please check if the backend is running."
         );
       } else {
         setErrorMessage("An unexpected error occurred. Please try again.");
