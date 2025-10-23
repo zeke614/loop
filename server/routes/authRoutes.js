@@ -15,15 +15,28 @@ router.get("/google", passport.authenticate("google", { scope: ["profile", "emai
 router.get("/google/callback", 
   passport.authenticate("google", { session: false, failureRedirect: "/login" }),
   (req, res) => {
-    // Generate JWT token
-    const token = jwt.sign(
-      { id: req.user._id, email: req.user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" }
-    );
-    
-    // Redirect to frontend with token
-    res.redirect(`${process.env.FRONTEND_URL}/oauth-success?token=${token}&user=${encodeURIComponent(JSON.stringify({ id: req.user._id, username: req.user.username, email: req.user.email }))}`);
+    try {
+      // Generate JWT token
+      const token = jwt.sign(
+        { id: req.user._id, email: req.user.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+      );
+      
+      const userData = {
+        id: req.user._id,
+        username: req.user.username,
+        email: req.user.email
+      };
+      
+      // Redirect to frontend with token
+      const frontendURL = process.env.FRONTEND_URL || 'http://localhost:3000';
+      res.redirect(`${frontendURL}/oauth-success?token=${token}&user=${encodeURIComponent(JSON.stringify(userData))}`);
+    } catch (error) {
+      console.error('OAuth callback error:', error);
+      const frontendURL = process.env.FRONTEND_URL || 'http://localhost:3000';
+      res.redirect(`${frontendURL}/login?error=oauth_failed`);
+    }
   }
 );
 
@@ -33,15 +46,28 @@ router.get("/github", passport.authenticate("github", { scope: ["user:email"] })
 router.get("/github/callback",
   passport.authenticate("github", { session: false, failureRedirect: "/login" }),
   (req, res) => {
-    // Generate JWT token
-    const token = jwt.sign(
-      { id: req.user._id, email: req.user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" }
-    );
-    
-    // Redirect to frontend with token
-    res.redirect(`${process.env.FRONTEND_URL}/oauth-success?token=${token}&user=${encodeURIComponent(JSON.stringify({ id: req.user._id, username: req.user.username, email: req.user.email }))}`);
+    try {
+      // Generate JWT token
+      const token = jwt.sign(
+        { id: req.user._id, email: req.user.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+      );
+      
+      const userData = {
+        id: req.user._id,
+        username: req.user.username,
+        email: req.user.email
+      };
+      
+      // Redirect to frontend with token
+      const frontendURL = process.env.FRONTEND_URL || 'http://localhost:3000';
+      res.redirect(`${frontendURL}/oauth-success?token=${token}&user=${encodeURIComponent(JSON.stringify(userData))}`);
+    } catch (error) {
+      console.error('OAuth callback error:', error);
+      const frontendURL = process.env.FRONTEND_URL || 'http://localhost:3000';
+      res.redirect(`${frontendURL}/login?error=oauth_failed`);
+    }
   }
 );
 
