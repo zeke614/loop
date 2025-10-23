@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../contexts/authContext";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,6 +9,7 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -29,16 +31,15 @@ export default function Register() {
 
       const res = await axios.post(`${API_URL}/api/users/register`, form, {
         headers: { "Content-Type": "application/json" },
-        timeout: 10000,
       });
 
       console.log("Registration response:", res.data);
 
-      if (res.data.token) {
-        localStorage.setItem("token", res.data.token);
+      if (res.data.token && res.data.user) {
+        login(res.data.user, res.data.token);
         navigate("/");
       } else {
-        throw new Error("No token received after registration");
+        throw new Error("No token or user data received after registration");
       }
     } catch (error: any) {
       console.error("Registration error details:", error);
@@ -62,6 +63,14 @@ export default function Register() {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = `${API_URL}/api/users/google`;
+  };
+
+  const handleGitHubLogin = () => {
+    window.location.href = `${API_URL}/api/users/github`;
+  };
+
   return (
     <div
       className="
@@ -81,27 +90,27 @@ export default function Register() {
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3">
           <button
-            disabled
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full bg-gray-50 text-gray-500 cursor-pointer"
+            onClick={handleGoogleLogin}
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
               alt="Google"
               className="w-5 h-5"
             />
-            <span>Log in with Google</span>
+            <span>Sign up with Google</span>
           </button>
 
           <button
-            disabled
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full bg-gray-50 text-gray-500 cursor-pointer"
+            onClick={handleGitHubLogin}
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg"
-              alt="Apple"
+              src="https://www.svgrepo.com/show/512317/github-142.svg"
+              alt="GitHub"
               className="w-5 h-5"
             />
-            <span>Log in with Apple</span>
+            <span>Sign up with GitHub</span>
           </button>
         </div>
 

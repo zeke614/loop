@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../contexts/authContext";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,6 +9,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -25,16 +27,15 @@ export default function Login() {
 
       const response = await axios.post(`${API_URL}/api/users/login`, form, {
         headers: { "Content-Type": "application/json" },
-        timeout: 10000,
       });
 
       console.log("Login response:", response.data);
 
-      if (response.data.token) {
-        localStorage.setItem("token", response.data.token);
-        navigate("/dashboard");
+      if (response.data.token && response.data.user) {
+        login(response.data.user, response.data.token);
+        navigate("/");
       } else {
-        throw new Error("No token received");
+        throw new Error("No token or user data received");
       }
     } catch (error: any) {
       console.error("Login error details:", error);
@@ -58,7 +59,11 @@ export default function Login() {
   };
 
   const handleGoogleLogin = () => {
-    console.log("Google login clicked");
+    window.location.href = `${API_URL}/api/users/google`;
+  };
+
+  const handleGitHubLogin = () => {
+    window.location.href = `${API_URL}/api/users/github`;
   };
 
   return (
@@ -176,13 +181,16 @@ export default function Login() {
             <span>Google</span>
           </button>
 
-          <button className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer">
+          <button
+            onClick={handleGitHubLogin}
+            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+          >
             <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg"
-              alt="Apple"
+              src="https://www.svgrepo.com/show/512317/github-142.svg"
+              alt="GitHub"
               className="w-5 h-5"
             />
-            <span>Apple</span>
+            <span>GitHub</span>
           </button>
         </div>
 

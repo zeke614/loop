@@ -1,50 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import navLinks from "../../constants/data";
 import Sidebar from "../header/sidebar";
 import AccountPanel from "../header/accountPanel";
+import { useAuth } from "../../contexts/authContext";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const { user, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    setUser(storedUser ? JSON.parse(storedUser) : null);
-
-    const handleUserChange = () => {
-      const updatedUser = localStorage.getItem("user");
-      setUser(updatedUser ? JSON.parse(updatedUser) : null);
-      if (!updatedUser) setProfileOpen(false);
-    };
-
-    window.addEventListener("userStateChange", handleUserChange);
-    window.addEventListener("storage", handleUserChange);
-
-    return () => {
-      window.removeEventListener("userStateChange", handleUserChange);
-      window.removeEventListener("storage", handleUserChange);
-    };
-  }, []);
 
   const toggleMenu = () => setMenuOpen((s) => !s);
   const toggleProfile = () => setProfileOpen((s) => !s);
 
   const handleSignOut = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    setUser(null);
+    logout();
     setProfileOpen(false);
-    window.dispatchEvent(new Event("userStateChange"));
     navigate("/logout");
   };
 
   return (
     <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
-      {" "}
       <div
         className="max-w-7xl mx-auto flex items-center justify-between 
                px-4 py-2 border-b border-b-[#928f8f1f]"
