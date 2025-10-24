@@ -14,12 +14,12 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       {menuOpen && (
         <div
           onClick={closeMenu}
-          className="fixed inset-0 bg-black/30 z-40 md:hidden"
+          className="fixed inset-0 bg-black/30 backdrop-blur-xs z-40 md:hidden"
         ></div>
       )}
 
       <nav
-        className={`fixed top-0 left-0 h-full w-[83%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-[69%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -49,8 +49,8 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           })}
         </div>
 
-        <div className="px-3 mt-10 fixed bottom-0 w-full text-[#6e7780] pb-3">
-          <p className="space-x-1 text-center">
+        <div className="px-3 mt-10 fixed text-sm bottom-0 w-full text-[#6e7780] pb-2">
+          <p className="space-x-1">
             <span>&copy;</span>
             <span>{new Date().getFullYear()}</span>
             <span className="font-bold text-black"> loop</span>

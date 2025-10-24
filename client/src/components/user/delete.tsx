@@ -44,13 +44,13 @@ export default function DeleteAccountPopup({
           <div className="flex justify-center gap-4">
             <button
               onClick={handleDeleteAccount}
-              className="bg-red-500 text-white px-4 py-1.5 rounded-xl font-medium hover:bg-red-600 transition cursor-pointer"
+              className="bg-red-500 text-white px-4 py-1.5 rounded-lg font-medium hover:bg-red-600 transition cursor-pointer"
             >
               Yes, delete
             </button>
             <button
               onClick={togglePopUp}
-              className="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-xl font-medium hover:bg-gray-300 transition cursor-pointer"
+              className="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-lg font-medium hover:bg-gray-300 transition cursor-pointer"
             >
               Cancel
             </button>

@@ -36,7 +36,7 @@ export default function Header() {
 
         <Link
           to="/"
-          className={`text-[1.563rem] font-semibold ${
+          className={`text-[1.688rem] font-bold ${
             user ? "pl-4" : "pl-10"
           } md:p-0`}
         >

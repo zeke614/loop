@@ -1,9 +1,10 @@
 const navLinks = [
   { path: "/", label: "Home" },
-  { path: "/entertainment", label: "Entertainment" },
   { path: "/life", label: "Life" },
-  { path: "/science", label: "Science" },
   { path: "/earth", label: "Earth" },
+  { path: "/finance", label: "Finance" },
+  { path: "/entertainment", label: "Entertainment" },
+  { path: "/science", label: "Science / Tech" },
   { path: "/sports", label: "Sports" },
 ];
 

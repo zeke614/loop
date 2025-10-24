@@ -46,8 +46,7 @@ export default function AccountPanel({
             onClick={() => setProfileOpen(false)}
             className="flex items-center gap-2 px-2 py-2 rounded-md hover:bg-white/5 transition"
           >
-            <i className="bx bx-book-bookmark"></i>
-            <span>Saved</span>
+            <i className="bx  bx-bookmarks"></i> <span>Saved</span>
           </Link>
 
           <button
@@ -67,7 +66,7 @@ export default function AccountPanel({
       {profileOpen && (
         <div
           onClick={() => setProfileOpen(false)}
-          className="fixed inset-0 z-40 bg-black/40"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs"
         ></div>
       )}
     </>

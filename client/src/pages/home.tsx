@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
+import ArticleCard from "../components/articleCard";
 
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,10 +38,22 @@ export default function Home() {
     }
   }, [searchParams, setSearchParams, login]);
   return (
-    <div className="py-10">
+    <div className="py-10 mb-20">
       <h1 className="text-center text-2xl mt-12 font-medium">
-        {user ? `Welcome, ${user.username}` : "Welcome"}
-      </h1>{" "}
+        {user ? (
+          <>
+            <span>Welcome, </span>
+            <span className="font-semibold">{user.username}</span>
+          </>
+        ) : (
+          "Welcome"
+        )}
+      </h1>
+
+      <p className="text-center text-[#767676] text-lg mb-14">
+        Your next great discovery starts below.
+      </p>
+      <ArticleCard />
     </div>
   );
 }

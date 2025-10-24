@@ -70,12 +70,16 @@ export default function Login() {
     <div
       className="
         flex flex-col justify-center items-center 
-        min-h-screen my-10 px-6 sm:px-10 md:px-16 lg:px-20
+         mb-12 mt-4 px-6 sm:px-10 md:px-16 lg:px-20
         bg-white
       "
     >
+      <Link to="/" className="text-[1.688rem] font-bold mb-12">
+        loop
+      </Link>
+
       <div className="w-full max-w-md">
-        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
+        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-1.5">
           Sign in
         </h1>
         <p className="text-center text-[#6e7780] mb-10">
@@ -97,7 +101,7 @@ export default function Login() {
               value={form.email}
               onChange={handleChange}
               required
-              placeholder="Email"
+              placeholder="please.be.valid@i.beg.you.com"
               className="
                 w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 
                 focus:outline-none focus:border-[#6e7780] placeholder-gray-400
@@ -114,7 +118,7 @@ export default function Login() {
               value={form.password}
               onChange={handleChange}
               required
-              placeholder="Password"
+              placeholder="something you'll forget in 5 minutes"
               className="
                 w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 
                 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10
@@ -194,7 +198,7 @@ export default function Login() {
           </button>
         </div>
 
-        <p className="text-center text-[#6e7780] mt-6">
+        <p className="text-center text-[#6e7780] mt-10">
           New here?
           <Link to="/register" className="text-[#04aa6d] ml-1 font-medium">
             Sign Up

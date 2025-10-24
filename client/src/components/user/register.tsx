@@ -75,10 +75,13 @@ export default function Register() {
     <div
       className="
         flex flex-col justify-center items-center
-        min-h-screen px-6 my-20 sm:px-10 md:px-16 lg:px-20
+        px-6 mb-12 mt-4 sm:px-10 md:px-16 lg:px-20
         bg-white
       "
     >
+      <Link to="/" className="text-[1.688rem] font-bold mb-12">
+        loop
+      </Link>
       <div className="w-full max-w-md">
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Create your account
@@ -134,7 +137,7 @@ export default function Register() {
               name="username"
               value={form.username}
               onChange={handleChange}
-              placeholder="Username"
+              placeholder="your fanfiction pseudonym"
               required
               className="
                 w-full px-4 py-3 mt-2 rounded-full border border-gray-300
@@ -151,7 +154,7 @@ export default function Register() {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Email"
+              placeholder="please.be.valid@i.beg.you.com"
               required
               className="
                 w-full px-4 py-3 mt-2 rounded-full border border-gray-300
@@ -168,7 +171,7 @@ export default function Register() {
               name="password"
               value={form.password}
               onChange={handleChange}
-              placeholder="Password"
+              placeholder="something you'll forget in 5 minutes"
               required
               className="
                 w-full px-4 py-3 mt-2 rounded-full border border-gray-300
@@ -209,7 +212,7 @@ export default function Register() {
           </button>
         </form>
 
-        <p className="text-center text-[#6e7780] mt-6 md:text-base">
+        <p className="text-center text-[#6e7780] mt-10 md:text-base">
           Have an account?
           <Link to="/login" className="text-[#04aa6d] ml-1 font-medium">
             Sign In

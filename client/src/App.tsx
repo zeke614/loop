@@ -13,7 +13,6 @@ import Entertainment from "./pages/entertainment.tsx";
 import Life from "./pages/life";
 import Science from "./pages/science";
 import Earth from "./pages/earth";
-// import OAuthSuccess from "./pages/oauth-success.tsx";
 import Sports from "./pages/sports";
 
 function App() {
@@ -21,8 +20,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
         <Route path="settings" element={<Settings />} />
         <Route path="settings/details" element={<PersonalDetails />} />
         <Route path="settings/emailPrefs" element={<EmailPrefs />} />
@@ -35,6 +32,8 @@ function App() {
         <Route path="sports" element={<Sports />} />
       </Route>
 
+      <Route path="register" element={<Register />} />
+      <Route path="login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
     </Routes>
   );
