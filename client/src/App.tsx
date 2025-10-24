@@ -13,7 +13,7 @@ import Entertainment from "./pages/entertainment.tsx";
 import Life from "./pages/life";
 import Science from "./pages/science";
 import Earth from "./pages/earth";
-import OAuthSuccess from "./pages/OAuthSuccess.tsx";
+// import OAuthSuccess from "./pages/oauth-success.tsx";
 import Sports from "./pages/sports";
 
 function App() {
@@ -33,7 +33,6 @@ function App() {
         <Route path="science" element={<Science />} />
         <Route path="earth" element={<Earth />} />
         <Route path="sports" element={<Sports />} />
-        <Route path="OAuthSuccess" element={<OAuthSuccess />} />
       </Route>
 
       <Route path="/logout" element={<Logout />} />

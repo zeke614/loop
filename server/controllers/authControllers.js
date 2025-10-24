@@ -6,21 +6,17 @@ export const registerUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    // Validation
     if (!username || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "Email already registered" });
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create new user
     const newUser = new User({ 
       username, 
       email, 
@@ -29,7 +25,6 @@ export const registerUser = async (req, res) => {
     });
     await newUser.save();
 
-    // Create token for the new user
     const token = jwt.sign(
       { id: newUser._id, email: newUser.email },
       process.env.JWT_SECRET,
@@ -64,7 +59,6 @@ export const loginUser = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    // Check if user is an OAuth user (shouldn't use password login)
     if (user.authProvider !== 'local') {
       return res.status(400).json({ 
         message: `This account uses ${user.authProvider} authentication. Please sign in with ${user.authProvider}.` 
@@ -77,7 +71,6 @@ export const loginUser = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    // Create token
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET,

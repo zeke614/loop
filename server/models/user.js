@@ -40,10 +40,9 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Better indexing strategy
 userSchema.index({ email: 1 }, { 
   unique: true, 
-  sparse: true // This allows multiple null values
+  sparse: true 
 });
 
 userSchema.index({ googleId: 1 }, { sparse: true });

@@ -1,22 +1,57 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import DeleteAccountPopup from "../user/delete";
+import { getCountryName } from "../../constants/data";
 
 export default function PersonalDetails() {
   const [user, setUser] = useState<any>(null);
+  const [, setLoading] = useState(true);
   const navigate = useNavigate();
   const [popUp, setPopUp] = useState(false);
+  const ipInfoToken = import.meta.env.VITE_IPINFO_TOKEN;
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const userData = JSON.parse(storedUser);
+      setUser(userData);
+
+      if (!userData.country) {
+        fetchUserCountry(userData);
+      } else {
+        setLoading(false);
+      }
     } else {
       navigate("/login");
     }
   }, [navigate]);
 
-  // toggles popup visibility
+  const fetchUserCountry = async (userData: any) => {
+    try {
+      const response = await fetch(
+        `https://ipinfo.io/json?token=${ipInfoToken}`
+      );
+      const ipData = await response.json();
+
+      if (ipData.country) {
+        const countryName = getCountryName(ipData.country);
+
+        const updatedUser = {
+          ...userData,
+          country: countryName,
+        };
+
+        setUser(updatedUser);
+
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+      }
+    } catch (error) {
+      console.error("Failed to fetch country data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const togglePopUp = () => setPopUp((prev) => !prev);
 
   if (!user) return null;
@@ -64,11 +99,15 @@ export default function PersonalDetails() {
           <div>
             <p>Display name</p>
             <p className="font-medium text-lg text-[#6e7780]">
-              {user.displayName || "None added"}
+              {user.username || "None added"}
             </p>
           </div>
-          <button className="text-black font-medium text-2xl">
-            <i className="bx bx-edit-alt"></i>
+          <button className="text-black font-medium text-lg">
+            {user.username ? (
+              <i className="bx bx-edit-alt text-2xl"></i>
+            ) : (
+              "Add"
+            )}
           </button>
         </div>
 
@@ -76,7 +115,7 @@ export default function PersonalDetails() {
           <div>
             <p>Country of residence</p>
             <p className="font-medium text-lg text-[#6e7780]">
-              {user.country || "—"}
+              {user.country || "Fetching..."}
             </p>
           </div>
           <button className="text-black font-medium text-2xl">
