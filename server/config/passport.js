@@ -1,3 +1,34 @@
+import passport from 'passport';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import { Strategy as GitHubStrategy } from 'passport-github2';
+import User from '../models/user.js';
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (error) {
+    done(error, null);
+  }
+});
+
+async function generateUniqueUsername(baseUsername) {
+  let username = baseUsername.replace(/\s+/g, '').toLowerCase();
+  let uniqueUsername = username;
+  let counter = 1;
+
+  while (await User.findOne({ username: uniqueUsername })) {
+    uniqueUsername = `${username}${counter}`;
+    counter++;
+  }
+
+  return uniqueUsername;
+}
+
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -80,3 +111,5 @@ passport.use(new GitHubStrategy({
     return done(error, null);
   }
 }));
+
+export default passport;
