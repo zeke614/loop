@@ -1,39 +1,8 @@
-import passport from 'passport';
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-import { Strategy as GitHubStrategy } from 'passport-github2';
-import User from '../models/user.js';
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findById(id);
-    done(null, user);
-  } catch (error) {
-    done(error, null);
-  }
-});
-
-async function generateUniqueUsername(baseUsername) {
-  let username = baseUsername.replace(/\s+/g, '').toLowerCase();
-  let uniqueUsername = username;
-  let counter = 1;
-
-  while (await User.findOne({ username: uniqueUsername })) {
-    uniqueUsername = `${username}${counter}`;
-    counter++;
-  }
-
-  return uniqueUsername;
-}
-
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: process.env.GOOGLE_REDIRECT_URI,
-}, async (profile, done) => {
+}, async (accessToken, refreshToken, profile, done) => {
   try {
     console.log('Google OAuth profile received for:', profile.emails?.[0]?.value);
 
@@ -74,7 +43,7 @@ passport.use(new GitHubStrategy({
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
   callbackURL: process.env.GITHUB_REDIRECT_URI,
   scope: ['user:email'],
-}, async (profile, done) => {
+}, async (accessToken, refreshToken, profile, done) => {
   try {
     const email = profile.emails && profile.emails[0] ? profile.emails[0].value : `${profile.username}@github.com`;
     
@@ -111,5 +80,3 @@ passport.use(new GitHubStrategy({
     return done(error, null);
   }
 }));
-
-export default passport;
