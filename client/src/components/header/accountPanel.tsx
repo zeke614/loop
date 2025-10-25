@@ -16,7 +16,7 @@ export default function AccountPanel({
   return (
     <>
       <div
-        className={`fixed top-0 right-0 h-full w-4/6  bg-white max-w-sm z-50 transform transition-transform duration-300 ease-in-out pointer-events-auto ${
+        className={`fixed top-0 right-0 h-full w-[63%]  bg-white max-w-sm z-50 transform transition-transform duration-300 ease-in-out pointer-events-auto ${
           profileOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!profileOpen}
@@ -29,7 +29,7 @@ export default function AccountPanel({
             <i className="bx bx-x text-2xl"></i>
           </button>
         </div>
-        <h3 className="text-xl font-medium ml-3 py-1.5">Your Account</h3>
+        <h3 className="text-xl font-medium ml-3 py-1.5">My Account</h3>
 
         <div className="pl-3 flex-1 text-[1.063rem] overflow-auto">
           <Link
@@ -37,8 +37,7 @@ export default function AccountPanel({
             onClick={() => setProfileOpen(false)}
             className="flex items-center gap-2 px-2 py-2 rounded-md hover:bg-white/5 transition"
           >
-            <i className="bx bx-cog"></i>
-            <span>Settings</span>
+            <i className="bx  bx-slider"></i> <span>Settings</span>
           </Link>
 
           <Link

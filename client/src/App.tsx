@@ -14,6 +14,8 @@ import Life from "./pages/life";
 import Science from "./pages/science";
 import Earth from "./pages/earth";
 import Sports from "./pages/sports";
+import Finance from "./pages/finance";
+import Info from "./pages/info.tsx";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
         <Route path="science" element={<Science />} />
         <Route path="earth" element={<Earth />} />
         <Route path="sports" element={<Sports />} />
+        <Route path="finance" element={<Finance />} />
+        <Route path="info" element={<Info />} />
       </Route>
 
       <Route path="register" element={<Register />} />

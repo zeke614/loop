@@ -25,7 +25,7 @@ export default function Header() {
     <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
       <div
         className="max-w-7xl mx-auto flex items-center justify-between 
-               px-4 py-2 border-b border-b-[#928f8f1f]"
+               px-4 py-1.5 border-b border-b-[#928f8f1f]"
       >
         <button
           onClick={toggleMenu}

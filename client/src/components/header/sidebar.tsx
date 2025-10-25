@@ -19,7 +19,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       )}
 
       <nav
-        className={`fixed top-0 left-0 h-full w-[69%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-[63%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -29,33 +29,51 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           </button>
         </div>
 
-        <div className="flex flex-col mt-4">
-          {navLinks.map(({ path, label }) => {
-            const isActive = location.pathname === path;
-            return (
-              <Link
-                key={path}
-                to={path}
-                onClick={closeMenu}
-                className={`block transition-transform duration-200 text-xl py-2.5 ${
-                  isActive
-                    ? "border-l-[0.188rem] border-black pl-3.5 font-bold"
-                    : "pl-4 font-medium"
-                }`}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </div>
+        <div className="flex flex-col justify-between h-full pb-12">
+          <div className="flex flex-col mt-3">
+            {navLinks.map(({ path, label }) => {
+              const isActive = location.pathname === path;
+              return (
+                <Link
+                  key={path}
+                  to={path}
+                  onClick={closeMenu}
+                  className={`block transition-transform duration-200 text-xl py-2.5 ${
+                    isActive
+                      ? "border-l-[0.188rem] border-black pl-3.5 font-bold"
+                      : "pl-4 font-medium"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+          </div>
 
-        <div className="px-3 mt-10 fixed text-sm bottom-0 w-full text-[#6e7780] pb-2">
-          <p className="space-x-1">
-            <span>&copy;</span>
-            <span>{new Date().getFullYear()}</span>
-            <span className="font-bold text-black"> loop</span>
-            <span> All rights reserved.</span>
-          </p>
+          <div>
+            <Link
+              to="/info"
+              onClick={closeMenu}
+              className="flex items-center justify-between mb-3 px-4"
+            >
+              <div className="flex items-center text-xl gap-2.5 font-medium">
+                <i className="bx bx-info-circle"></i>
+                <span>More</span>
+              </div>
+              <div className="flex items-center text-2xl">
+                <i className="bx  bx-chevron-right"></i>
+              </div>
+            </Link>
+
+            <div className="pl-3.5 text-sm text-[#6e7780]">
+              <p className="space-x-1">
+                <span>&copy;</span>
+                <span>{new Date().getFullYear()}</span>
+                <span className="font-bold text-black"> loop</span>
+                <span> All rights reserved.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </nav>
     </>

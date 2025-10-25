@@ -57,8 +57,8 @@ export default function PersonalDetails() {
   if (!user) return null;
 
   return (
-    <div className="max-w-2xl mx-8 md:mx-auto bg-white pt-20">
-      <div className="pl-1.5 pt-4 flex items-center">
+    <div className="max-w-2xl mx-6 md:mx-auto bg-white pt-20">
+      <div className="pt-4 flex items-center">
         <Link
           to="/settings"
           className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
@@ -68,7 +68,7 @@ export default function PersonalDetails() {
         </Link>
       </div>
 
-      <div className="p-6 space-y-8">
+      <div className="px-4 py-6 space-y-8">
         <h3 className="text-xl font-semibold">Personal details</h3>
 
         <div className="flex justify-between items-center border-b border-gray-200 pb-2">
