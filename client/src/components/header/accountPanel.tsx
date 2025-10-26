@@ -18,7 +18,7 @@ export default function AccountPanel({
       <div
         className={`fixed bg-white z-50 transform transition-transform duration-300 ease-in-out pointer-events-auto
         
-          bottom-0 left-0 w-full rounded-t-2xl shadow-2xl
+          bottom-0 left-0 w-full rounded-t-2xl
           
           md:top-0 md:right-0 md:h-full md:w-[63%] md:max-w-sm
           md:bottom-auto md:left-auto md:rounded-none md:shadow-lg
@@ -31,7 +31,7 @@ export default function AccountPanel({
         `}
         aria-hidden={!profileOpen}
       >
-        <div className="w-full flex justify-center pt-2 pb-2 md:hidden">
+        <div className="w-full flex justify-center pt-2 md:hidden">
           <div className="w-10 h-1 bg-gray-300 rounded-full"></div>
         </div>
 
@@ -44,7 +44,7 @@ export default function AccountPanel({
           </button>
         </div>
 
-        <div className="flex justify-between items-center pt-2 pr-4 pl-5 md:hidden">
+        <div className="flex justify-between items-center pl-5 md:hidden">
           <h3 className="text-xl font-medium md:hidden">My Account</h3>
         </div>
 
@@ -52,7 +52,7 @@ export default function AccountPanel({
           My Account
         </h3>
 
-        <div className="px-3 pt-2 pb-3 flex-1 text-lg overflow-auto">
+        <div className="px-3 py-2 flex-1 text-lg overflow-auto">
           <Link
             to="/settings"
             onClick={() => setProfileOpen(false)}
@@ -80,7 +80,7 @@ export default function AccountPanel({
 
         <div className="md:hidden border border-gray-100 mx-6"></div>
 
-        <p className="py-4 md:bottom-0 text-xs w-full md:fixed text-center text-[#6e7780]">
+        <p className="py-3 md:bottom-0 text-xs w-full md:fixed text-center text-[#6e7780]">
           Signed in as <span className="font-medium">{user?.email}</span>
         </p>
       </div>

@@ -29,6 +29,23 @@ async function generateUniqueUsername(baseUsername) {
   return uniqueUsername;
 }
 
+function extractFirstName(profile) {
+  if (profile.provider === 'google' && profile.displayName) {
+    const firstName = profile.displayName.split(' ')[0];
+    return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+  }
+  
+  if (profile.provider === 'github') {
+    if (profile.displayName) {
+      const firstName = profile.displayName.split(' ')[0];
+      return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+    }
+    return profile.username.charAt(0).toUpperCase() + profile.username.slice(1).toLowerCase();
+  }
+  
+  return profile.displayName || profile.username;
+}
+
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -36,6 +53,7 @@ passport.use(new GoogleStrategy({
 }, async (accessToken, refreshToken, profile, done) => {
   try {
     console.log('Google OAuth profile received for:', profile.emails?.[0]?.value);
+    console.log('Google displayName:', profile.displayName);
 
     let user = await User.findOne({ googleId: profile.id });
     
@@ -54,14 +72,15 @@ passport.use(new GoogleStrategy({
       return done(null, user);
     }
 
+    const firstName = extractFirstName(profile);
     user = new User({
       googleId: profile.id,
-      username: await generateUniqueUsername(profile.displayName),
+      username: await generateUniqueUsername(firstName),
       email: profile.emails[0].value,
     });
     
     await user.save();
-    console.log('New Google user created:', user.email);
+    console.log('New Google user created:', user.email, 'with username:', user.username);
     return done(null, user);
   } catch (error) {
     console.error('Google strategy error:', error);
@@ -79,6 +98,8 @@ passport.use(new GitHubStrategy({
     const email = profile.emails && profile.emails[0] ? profile.emails[0].value : `${profile.username}@github.com`;
     
     console.log('GitHub OAuth profile received for:', email);
+    console.log('GitHub displayName:', profile.displayName);
+    console.log('GitHub username:', profile.username);
 
     let user = await User.findOne({ githubId: profile.id });
     
@@ -97,14 +118,15 @@ passport.use(new GitHubStrategy({
       return done(null, user);
     }
 
+    const firstName = extractFirstName(profile);
     user = new User({
       githubId: profile.id,
-      username: await generateUniqueUsername(profile.username),
+      username: await generateUniqueUsername(firstName),
       email: email,
     });
     
     await user.save();
-    console.log('New GitHub user created:', user.email);
+    console.log('New GitHub user created:', user.email, 'with username:', user.username);
     return done(null, user);
   } catch (error) {
     console.error('GitHub strategy error:', error);
