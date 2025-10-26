@@ -3,6 +3,28 @@ import { useSearchParams } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
 import ArticleCard from "../components/articleCard";
 
+const getFirstName = (user: any) => {
+  if (!user) return "";
+
+  if (user.username) {
+    return user.username;
+  }
+
+  if (user.email) {
+    // Extract the part before @ from email
+    const emailPrefix = user.email.split("@")[0];
+
+    const firstName = emailPrefix
+      .replace(/[0-9._-]/g, " ") // Replace numbers and separators with spaces
+      .split(" ")[0]
+      .replace(/\b\w/g, (char: string) => char.toUpperCase());
+
+    return firstName || user.email.split("@")[0];
+  }
+
+  return "";
+};
+
 export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { user, login } = useAuth();
@@ -37,13 +59,16 @@ export default function Home() {
       }
     }
   }, [searchParams, setSearchParams, login]);
+
+  const displayName = getFirstName(user);
+
   return (
     <div className="py-10 mb-20">
       <h1 className="text-center text-2xl mt-12 font-medium">
         {user ? (
           <>
-            <span>Welcome, </span>
-            <span className="font-semibold">{user.username}</span>
+            <span>Hello, </span>
+            <span className="font-semibold">{displayName}</span>
           </>
         ) : (
           "Welcome"

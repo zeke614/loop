@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../contexts/authContext";
+import logo from "../../assets/imgs/logo.png";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -79,9 +80,10 @@ export default function Register() {
         bg-white
       "
     >
-      <Link to="/" className="text-[1.688rem] font-bold mb-12">
-        loop
+      <Link to="/" className="text-[1.688rem] font-bold mb-4">
+        <img src={logo} alt="loop logo" className="h-20 w-auto" />{" "}
       </Link>
+
       <div className="w-full max-w-md">
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Create your account
