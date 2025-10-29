@@ -3,7 +3,7 @@ import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export default function Security() {
   return (
-    <div className="px-6 pt-20 max-w-3xl md:mx-auto flex flex-col justify-center space-y-4">
+    <div className="px-8 pt-20 max-w-3xl md:mx-auto flex flex-col justify-center space-y-4">
       <div className="flex items-center pt-4">
         <Link
           to="/settings"

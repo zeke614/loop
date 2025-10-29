@@ -58,7 +58,7 @@ export default function PersonalDetails() {
   if (!user) return null;
 
   return (
-    <div className="max-w-2xl px-6 md:mx-auto bg-white pt-20">
+    <div className="max-w-2xl px-8 md:mx-auto bg-white pt-20">
       <div className="pt-4 flex items-center">
         <Link
           to="/settings"
@@ -123,7 +123,7 @@ export default function PersonalDetails() {
             onClick={togglePopUp}
             className="font-semibold underline underline-offset-2 text-red-500 mt-1 cursor-pointer"
           >
-            Remove your profile and information
+            Delete Account
           </button>
         </div>
       </div>
@@ -131,9 +131,7 @@ export default function PersonalDetails() {
       {popUp && (
         <DeleteAccountPopup
           togglePopUp={togglePopUp}
-          handleDeleteAccount={() =>
-            console.log("Delete button pressed (UI only)")
-          }
+          handleDeleteAccount={() => null}
         />
       )}
     </div>

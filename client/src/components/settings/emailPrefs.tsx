@@ -3,7 +3,7 @@ import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export default function EmailPrefs() {
   return (
-    <div className="pt-20 max-w-3xl px-6 md:mx-auto flex flex-col justify-center space-y-5">
+    <div className="pt-20 max-w-3xl px-8 md:mx-auto flex flex-col justify-center space-y-5">
       <div className="flex items-center pt-4">
         <Link
           to="/settings"

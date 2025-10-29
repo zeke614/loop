@@ -20,17 +20,18 @@ export default function DeleteAccountPopup({
       >
         <motion.div
           className="bg-white py-5 px-6 rounded-2xl shadow-lg max-w-sm w-[77%] text-center"
-          initial={{ opacity: 0, scale: 0.8, y: 40 }}
+          initial={{
+            opacity: 0,
+            y: -100,
+          }}
           animate={{
             opacity: 1,
-            scale: 1,
-            y: 0,
-            transition: { type: "spring", stiffness: 300, damping: 20 },
+            y: -80,
+            transition: { type: "spring", stiffness: 300, damping: 12 },
           }}
           exit={{
             opacity: 0,
-            scale: 0.9,
-            y: 20,
+            y: -100,
             transition: { duration: 0.2 },
           }}
         >

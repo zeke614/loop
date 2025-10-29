@@ -62,7 +62,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
               className="flex items-center justify-between mb-3.5 px-4"
             >
               <div className="flex items-center text-xl gap-2.5 font-medium">
-                <InformationCircleIcon className="size-5" />
+                <InformationCircleIcon className="size-5.5" />
                 <span>More</span>
               </div>
               <div className="flex items-center justify-between">
@@ -70,7 +70,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
               </div>
             </Link>
 
-            <div className="pl-3.5 text-sm text-[#6e7780]">
+            <div className="pl-3.5 text-sm text-[#889397]">
               <p className="space-x-1">
                 <span>&copy;</span>
                 <span>{new Date().getFullYear()}</span>
