@@ -6,6 +6,10 @@ import ArticleCard from "../components/articleCard";
 const getFirstName = (user: any) => {
   if (!user) return "";
 
+  if (user.firstName) {
+    return user.firstName;
+  }
+
   if (user.username) {
     return user.username;
   }
@@ -15,7 +19,7 @@ const getFirstName = (user: any) => {
     const emailPrefix = user.email.split("@")[0];
 
     const firstName = emailPrefix
-      .replace(/[0-9._-]/g, " ") // Replace numbers and separators with spaces
+      .replace(/[0-9._-]/g, " ")
       .split(" ")[0]
       .replace(/\b\w/g, (char: string) => char.toUpperCase());
 

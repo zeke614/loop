@@ -11,3 +11,6 @@ body {
   @apply font-outfit;
 }
 
+main {
+  @apply md:max-w-6xl md:mx-auto
+}

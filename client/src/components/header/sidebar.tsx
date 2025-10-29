@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import navLinks from "../../constants/data";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface SidebarProps {
   menuOpen: boolean;
@@ -25,7 +27,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       >
         <div className="flex justify-end">
           <button onClick={closeMenu} className="pr-2 pt-2 cursor-pointer">
-            <i className="bx bx-x text-2xl"></i>
+            <XMarkIcon className="size-6" />
           </button>
         </div>
 
@@ -60,8 +62,8 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                 <i className="bx bx-info-circle"></i>
                 <span>More</span>
               </div>
-              <div className="flex items-center text-2xl">
-                <i className="bx  bx-chevron-right"></i>
+              <div className="flex items-center justify-between">
+                <ChevronRightIcon className="size-5" />{" "}
               </div>
             </Link>
 

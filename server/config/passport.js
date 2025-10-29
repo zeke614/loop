@@ -68,6 +68,11 @@ passport.use(new GoogleStrategy({
       console.log('Linking Google account to existing user:', user.email);
       user.googleId = profile.id;
       user.authProvider = 'google';
+
+      if (!user.firstName) {
+ user.firstName = extractFirstName(profile);
+console.log('Updating missing firstName to:', user.firstName);
+ }
       await user.save();
       return done(null, user);
     }
@@ -77,6 +82,7 @@ passport.use(new GoogleStrategy({
       googleId: profile.id,
       username: await generateUniqueUsername(firstName),
       email: profile.emails[0].value,
+      firstName: firstName, 
     });
     
     await user.save();
@@ -114,6 +120,12 @@ passport.use(new GitHubStrategy({
       console.log('Linking GitHub account to existing user:', user.email);
       user.githubId = profile.id;
       user.authProvider = 'github';
+
+      if (!user.firstName) {
+ user.firstName = extractFirstName(profile);
+ console.log('Updating missing firstName to:', user.firstName);
+}
+
       await user.save();
       return done(null, user);
     }
@@ -123,6 +135,7 @@ passport.use(new GitHubStrategy({
       githubId: profile.id,
       username: await generateUniqueUsername(firstName),
       email: email,
+      firstName: firstName, 
     });
     
     await user.save();

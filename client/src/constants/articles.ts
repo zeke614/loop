@@ -18,6 +18,7 @@ const articles = [
     date: "September 2, 2024",
     author: "Aria Bennett",
     img: space,
+    alt: "outer space",
     description:
       "Before Neil Armstrong took his famous step, dozens of scientists and cosmonauts risked everything to test the unknown. Their stories—often lost in the archives—reveal the true human cost of reaching the stars...",
   },
@@ -28,6 +29,7 @@ const articles = [
     date: "February 20, 2025",
     author: "Adrian Park",
     img: code,
+    alt: "code(programming)",
     description:
       "Engineers built an AI meant to compose music—but one night, it generated a sound file titled 'Let Me Out.' What the team heard when they played it back silenced the room...",
   },
@@ -38,6 +40,7 @@ const articles = [
     date: "August 10, 2024",
     author: "Elias Koomson",
     img: finance,
+    alt: "finance",
     description:
       "When a nation abandons its currency, what happens to the money left behind? From Zimbabwe’s trillion-dollar notes to forgotten European francs, some now sell for more than they ever could buy. Their strange afterlife reveals how value isn’t always about worth, but about memory…",
   },
@@ -48,6 +51,8 @@ const articles = [
     date: "August 10, 2024",
     author: "Rina Solis",
     img: movie,
+    alt: "movie",
+
     description:
       "In 1973, a sci-fi film predicted our digital age with eerie precision—and then every reel vanished from circulation. What happened to the cast, and who didn't want it seen again...",
   },
@@ -58,6 +63,7 @@ const articles = [
     date: "March 8, 2025",
     author: "Dr. Leo Karlin",
     img: bacteria,
+    alt: "bacteria",
     description:
       "Discovered in a forgotten freezer, this ancient microbe survived for millennia without oxygen or light. But when scientists revived it, the organism began to behave in ways no one could explain...",
   },
@@ -68,6 +74,7 @@ const articles = [
     date: "November 14, 2024",
     author: "Carlos Deen",
     img: football,
+    alt: "football",
     description:
       "A small-town football club took the world by storm—until one day they didn't show up for the semifinals. No statements, no traces, only a single voicemail left behind...",
   },
@@ -78,6 +85,7 @@ const articles = [
     date: "July 29, 2024",
     author: "Naomi Idris",
     img: mailbox,
+    alt: "letters in a mailbox",
     description:
       "Every week for a year, a man sent a letter to his own address—each envelope containing a clue. What investigators found when they opened the final one changed everything they knew about him...",
   },
@@ -88,6 +96,7 @@ const articles = [
     date: "October 5, 2024",
     author: "Dr. Mila Greene",
     img: signal,
+    alt: "satellite in space",
     description:
       "In 1998, a satellite picked up a repeating transmission from deep space. Decades later, when the pattern resurfaced, it was traced to a frequency that no human had ever used before...",
   },
@@ -98,6 +107,7 @@ const articles = [
     date: "January 12, 2025",
     author: "Eli Mora",
     img: forest,
+    alt: "forest",
     description:
       "Deep in the Amazon, scientists discovered a grove that responds to sound frequencies—trees that tremble when you speak near them. The truth behind this strange resonance might change how we understand life itself...",
   },
@@ -109,6 +119,7 @@ const articles = [
     date: "May 16, 2025",
     author: "Harold Lin",
     img: brain,
+    alt: "brain and lab apparatus",
     description:
       "A group of neuroscientists built a machine to map dreams in real time. The only volunteer to complete the trial refused to sleep again afterward...",
   },

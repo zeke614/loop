@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import DeleteAccountPopup from "../user/delete";
 import { getCountryName } from "../../constants/data";
+import { ArrowLeftIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 
 export default function PersonalDetails() {
   const [user, setUser] = useState<any>(null);
@@ -57,18 +58,18 @@ export default function PersonalDetails() {
   if (!user) return null;
 
   return (
-    <div className="max-w-2xl mx-6 md:mx-auto bg-white pt-20">
+    <div className="max-w-2xl px-6 md:mx-auto bg-white pt-20">
       <div className="pt-4 flex items-center">
         <Link
           to="/settings"
-          className="text-gray-600 hover:text-black flex items-center gap-[0.188rem]"
+          className="text-gray-600 hover:text-black flex items-center gap-1"
         >
-          <i className="bx bx-arrow-in-left-square-half"></i>
+          <ArrowLeftIcon className="size-5" />
           <span className="font-medium">Settings</span>
         </Link>
       </div>
 
-      <div className="px-4 py-6 space-y-8">
+      <div className="py-6 space-y-8">
         <h3 className="text-xl font-semibold">Personal details</h3>
 
         <div className="flex justify-between items-center border-b border-gray-200 pb-2">
@@ -78,8 +79,8 @@ export default function PersonalDetails() {
               {user.email || "—"}
             </p>
           </div>
-          <button className="text-black font-medium text-2xl">
-            <i className="bx bx-edit-alt"></i>
+          <button className="cursor-pointer">
+            <PencilSquareIcon className="size-5" />
           </button>
         </div>
 
@@ -90,8 +91,8 @@ export default function PersonalDetails() {
               ● ● ● ● ● ● ● ●
             </p>
           </div>
-          <button className="text-black font-medium text-2xl">
-            <i className="bx bx-edit-alt"></i>
+          <button className="cursor-pointer">
+            <PencilSquareIcon className="size-5" />
           </button>
         </div>
 
@@ -102,25 +103,16 @@ export default function PersonalDetails() {
               {user.username || "None added"}
             </p>
           </div>
-          <button className="text-black font-medium text-lg">
-            {user.username ? (
-              <i className="bx bx-edit-alt text-2xl"></i>
-            ) : (
-              "Add"
-            )}
+          <button className="text-lg cursor-pointer">
+            {user.username ? <PencilSquareIcon className="size-5" /> : "Add"}
           </button>
         </div>
 
-        <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-          <div>
-            <p>Country of residence</p>
-            <p className="font-medium text-lg text-[#6e7780]">
-              {user.country || "Fetching..."}
-            </p>
-          </div>
-          <button className="text-black font-medium text-2xl">
-            <i className="bx bx-edit-alt"></i>
-          </button>
+        <div>
+          <p>Country of residence</p>
+          <p className="font-medium text-lg text-[#6e7780]">
+            {user.country || "Fetching..."}
+          </p>
         </div>
 
         <div className="pt-6 pb-10">

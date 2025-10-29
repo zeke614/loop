@@ -16,6 +16,7 @@ router.get("/google/callback",
     try {
       console.log('Google OAuth callback reached');
       console.log('User:', req.user?.email);
+      console.log("Reached GOOGLE callback");
 
       const token = jwt.sign(
         { id: req.user._id, email: req.user.email },
@@ -26,7 +27,8 @@ router.get("/google/callback",
       const userData = {
         id: req.user._id,
         username: req.user.username,
-        email: req.user.email
+        email: req.user.email,
+        firstName: req.user.firstName
       };
       
       const frontendURL = process.env.FRONTEND_URL || 'http://localhost:5173';
@@ -51,6 +53,7 @@ router.get("/github/callback",
     try {
       console.log('GitHub OAuth callback reached');
       console.log('User:', req.user?.email);
+      console.log("Reached GITHUB callback");
 
       const token = jwt.sign(
         { id: req.user._id, email: req.user.email },
@@ -61,7 +64,8 @@ router.get("/github/callback",
       const userData = {
         id: req.user._id,
         username: req.user.username,
-        email: req.user.email
+        email: req.user.email,
+        firstName: req.user.firstName
       };
       
       const frontendURL = process.env.FRONTEND_URL || 'http://localhost:5173';

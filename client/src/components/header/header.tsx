@@ -4,7 +4,10 @@ import navLinks from "../../constants/data";
 import Sidebar from "../header/sidebar";
 import AccountPanel from "../header/accountPanel";
 import { useAuth } from "../../contexts/authContext";
-import logo from "../../assets/imgs/logo.png";
+import logo from "../../assets/imgs/loopLogo.png";
+import { UserIcon as UserSolid } from "@heroicons/react/24/solid";
+import { UserIcon as UserOutline } from "@heroicons/react/24/outline";
+// import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,14 +28,15 @@ export default function Header() {
   return (
     <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
       <div
-        className="max-w-7xl mx-auto flex items-center justify-between 
-               px-4 border-b border-b-[#928f8f1f]"
+        className="max-w-6xl mx-auto flex items-center justify-between 
+               px-3.5 border-b border-b-[#928f8f1f] md:h-16"
       >
         <button
           onClick={toggleMenu}
-          className="text-2xl flex items-center justify-center cursor-pointer md:hidden"
+          aria-label="close button"
+          className="flex items-center justify-center cursor-pointer md:hidden"
         >
-          <i className={menuOpen ? "bx bx-x" : "bx bx-menu-left"}></i>
+          <i className="bx bx-menu-left text-2xl"></i>
         </button>
 
         <Link
@@ -41,7 +45,7 @@ export default function Header() {
             user ? "pl-4" : "pl-10"
           } md:p-0`}
         >
-          <img src={logo} alt="loop logo" className="h-12.5 w-auto" />{" "}
+          <img src={logo} alt="loop logo" className="h-12 w-auto text-black" />{" "}
         </Link>
 
         <div className="flex items-center space-x-10">
@@ -60,21 +64,20 @@ export default function Header() {
           </nav>
 
           {!user ? (
-            <Link to="/login" className="flex items-center space-x-1">
-              <i className="bx bx-user"></i>
-              <span>Sign In</span>
+            <Link
+              to="/login"
+              className="flex items-center justify-center space-x-1"
+            >
+              <UserOutline className="size-[1.063rem]" />
+              <span className="text-[1.063rem]">Sign In</span>
             </Link>
           ) : (
             <button
               onClick={toggleProfile}
-              aria-label={profileOpen ? "Close profile" : "Open profile"}
+              aria-label="Open profile"
               className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-gray-100"
             >
-              <i
-                className={
-                  profileOpen ? "bx bx-x text-2xl" : "bx bxs-user text-2xl"
-                }
-              ></i>
+              <UserSolid className="size-6" />
             </button>
           )}
         </div>

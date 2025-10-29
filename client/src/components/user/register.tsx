@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../contexts/authContext";
 import logo from "../../assets/imgs/logo.png";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -181,12 +182,17 @@ export default function Register() {
                 transition
               "
             />
-            <i
-              className={`bx ${
-                showPassword ? "bx-eye-slash" : "bx-eye"
-              } absolute right-4 top-[68%] -translate-y-1/2 text-xl cursor-pointer`}
-              onClick={() => setShowPassword(!showPassword)}
-            ></i>
+            {showPassword ? (
+              <EyeSlashIcon
+                className="size-4 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            ) : (
+              <EyeIcon
+                className="size-4 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            )}
           </div>
 
           <button

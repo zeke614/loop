@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import articles from "../constants/articles";
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import { BookmarkIcon } from "@heroicons/react/24/outline";
+import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 
 export default function ArticleCard() {
   return (
-    <div className="grid grid-cols-1 mx-3 gap-12 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-6 md:gap-y-14 px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 max-w-6xl mx-auto gap-12 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-6 md:gap-y-14 px-4 sm:px-6 lg:px-8">
       {articles.map((article) => (
         <div
           key={article.id}
@@ -12,7 +15,7 @@ export default function ArticleCard() {
           <div className="relative overflow-hidden">
             <img
               src={article.img}
-              alt={article.title}
+              alt={article.alt}
               className="w-full h-48 sm:h-56 md:h-52 lg:h-48 xl:h-56 object-cover transition-transform duration-500 hover:scale-105"
             />
             <div className="absolute animate-bounce [animation-duration:2s] top-3 left-3 bg-[#04aa6d] text-white text-xs px-3 py-1.5 rounded-full tracking-wider uppercase font-medium shadow-sm">
@@ -47,12 +50,12 @@ export default function ArticleCard() {
                   className="inline-flex items-center text-[#04aa6d] font-semibold hover:text-[#038c5a] transition-colors duration-200 group"
                 >
                   Read Me
-                  <i className="bx bx-chevrons-right ml-1 group-hover:translate-x-1 transition-transform duration-200"></i>
+                  <ChevronDoubleRightIcon className="size-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-200" />{" "}
                 </Link>
               </div>
-              <div className="space-x-4">
-                <i className="bx  bx-bookmark"></i>
-                <i className="bx  bx-share"></i>
+              <div className="space-x-4 flex flex-row">
+                <BookmarkIcon className="size-5 cursor-pointer" />{" "}
+                <ArrowUpOnSquareIcon className="size-5 cursor-pointer" />{" "}
               </div>
             </div>
           </div>

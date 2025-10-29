@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 interface DeleteAccountPopupProps {
   togglePopUp: () => void;
@@ -33,7 +34,7 @@ export default function DeleteAccountPopup({
             transition: { duration: 0.2 },
           }}
         >
-          <i className="bx bx-trash text-2xl text-red-500 mb-4"></i>
+          <ExclamationTriangleIcon className="size-6 text-red-500 mb-4 mx-auto" />
           <h3 className="text-lg font-semibold text-gray-900 mb-10">
             Are you sure?
           </h3>
