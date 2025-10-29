@@ -15,7 +15,6 @@ const getFirstName = (user: any) => {
   }
 
   if (user.email) {
-    // Extract the part before @ from email
     const emailPrefix = user.email.split("@")[0];
 
     const firstName = emailPrefix
@@ -68,7 +67,7 @@ export default function Home() {
 
   return (
     <div className="py-10 mb-20">
-      <h1 className="text-center text-2xl mt-12 font-medium">
+      <h1 className="text-center text-2xl mt-10 font-medium">
         {user ? (
           <>
             <span>Hello, </span>

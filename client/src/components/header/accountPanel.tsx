@@ -45,7 +45,7 @@ export default function AccountPanel({
       >
         <div className="flex flex-col items-center">
           <div className="flex justify-between items-center w-full px-3.5 pt-3.5 md:hidden">
-            <h3 className="text-[1.032rem] font-medium">My Account</h3>
+            <h3 className="text-[1.063rem] font-medium">My Account</h3>
           </div>
 
           <div className="hidden md:flex items-center gap-3 px-3.5 py-2.5 rounded-t-xl bg-gray-50 w-full border-b border-gray-100">
@@ -60,7 +60,7 @@ export default function AccountPanel({
           <Link
             to="/saved"
             onClick={() => setProfileOpen(false)}
-            className="flex items-center gap-3 px-3.5 py-2.5 md:py-2 rounded-md hover:bg-gray-100 transition"
+            className="flex items-center gap-3 px-3.5 py-2 md:py-2 rounded-md hover:bg-gray-100 transition"
           >
             <BookmarkIcon className="size-5" /> <span>Saved</span>
           </Link>
@@ -68,14 +68,14 @@ export default function AccountPanel({
           <Link
             to="/settings"
             onClick={() => setProfileOpen(false)}
-            className="flex items-center gap-3 px-3.5 py-2.5 md:py-2 rounded-md hover:bg-gray-100 transition"
+            className="flex items-center gap-3 px-3.5 py-2 md:py-2 rounded-md hover:bg-gray-100 transition"
           >
             <Cog6ToothIcon className="size-5" /> <span>Settings</span>
           </Link>
 
           <button
             onClick={handleSignOut}
-            className="w-full text-left flex items-center gap-3 px-3.5 py-2.5 md:py-2 rounded-md hover:bg-gray-100 transition cursor-pointer text-red-600"
+            className="w-full text-left flex items-center gap-3 px-3.5 py-2 md:py-2 rounded-md hover:bg-gray-100 transition cursor-pointer text-red-600"
           >
             <ArrowRightStartOnRectangleIcon className="size-5" />
             <span className="font-medium">Sign Out</span>
@@ -85,7 +85,7 @@ export default function AccountPanel({
         <div className="border border-gray-100 mx-4 md:hidden"></div>
 
         <div className="md:hidden">
-          <p className="text-sm text-center text-[#6e7780] py-2">
+          <p className="text-sm text-center text-[#6e7780] py-1.5">
             Signed in as <span className="font-medium">{user?.email}</span>
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function AccountPanel({
         <div
           onClick={() => setProfileOpen(false)}
           className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-xs
-            md:bg-transparent /* Remove background on desktop when dropdown is open */
+            md:bg-transparent
           `}
         ></div>
       )}

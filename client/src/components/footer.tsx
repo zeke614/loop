@@ -5,7 +5,7 @@ export default function Footer() {
         <p className="space-x-1 text-center">
           <span>&copy;</span>
           <span>{new Date().getFullYear()}</span>
-          <span className="font-bold text-lg text-black"> loop</span>
+          <span className="font-bold text-[1.063rem] text-black"> loop</span>
           <span> All rights reserved.</span>
         </p>
       </div>

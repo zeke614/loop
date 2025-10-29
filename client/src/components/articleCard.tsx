@@ -6,7 +6,7 @@ import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 
 export default function ArticleCard() {
   return (
-    <div className="grid grid-cols-1 max-w-6xl mx-auto gap-12 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-6 md:gap-y-14 px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 max-w-6xl mx-auto gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-6 md:gap-y-14 px-5.5 lg:px-8">
       {articles.map((article) => (
         <div
           key={article.id}
@@ -23,7 +23,7 @@ export default function ArticleCard() {
             </div>
           </div>
 
-          <div className="flex-1 p-5 sm:p-6 flex flex-col">
+          <div className="flex-1 py-5 px-4 flex flex-col">
             <Link
               to={`/articles/${article.id}`}
               className="text-[1.37rem] font-bold leading-tight text-gray-900 hover:text-[#04aa6d] transition-colors duration-200 line-clamp-2 mb-3"

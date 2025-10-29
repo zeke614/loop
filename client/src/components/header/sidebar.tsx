@@ -1,7 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import navLinks from "../../constants/data";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronRightIcon,
+  XMarkIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/24/outline";
 
 interface SidebarProps {
   menuOpen: boolean;
@@ -31,7 +34,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
           </button>
         </div>
 
-        <div className="flex flex-col justify-between h-full pb-12">
+        <div className="flex flex-col justify-between h-full pb-10">
           <div className="flex flex-col mt-3">
             {navLinks.map(({ path, label }) => {
               const isActive = location.pathname === path;
@@ -56,10 +59,10 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             <Link
               to="/info"
               onClick={closeMenu}
-              className="flex items-center justify-between mb-3 px-4"
+              className="flex items-center justify-between mb-3.5 px-4"
             >
               <div className="flex items-center text-xl gap-2.5 font-medium">
-                <i className="bx bx-info-circle"></i>
+                <InformationCircleIcon className="size-5" />
                 <span>More</span>
               </div>
               <div className="flex items-center justify-between">
