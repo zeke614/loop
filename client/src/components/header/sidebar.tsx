@@ -24,7 +24,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       )}
 
       <nav
-        className={`fixed top-0 left-0 h-full w-[63%] bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-8/12 bg-white z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

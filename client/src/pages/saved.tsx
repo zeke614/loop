@@ -1,7 +1,7 @@
 export default function Saved() {
   return (
     <>
-      <div className="px-4 max-w-lg mx-auto flex flex-col items-center justify-center min-h-screen space-y-4">
+      <div className="px-4.5 max-w-lg mx-auto flex flex-col items-center justify-center min-h-screen space-y-4">
         <h1 className="text-xl font-medium">Saved Articles</h1>
 
         <p className="text-center mt-6">

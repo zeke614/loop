@@ -25,7 +25,7 @@ export default function AccountPanel({
         className={`fixed bg-white z-50 transform transition-transform duration-300 ease-in-out pointer-events-auto shadow-xl
         
           /* --- MOBILE (Default: Bottom Drawer) --- */
-          bottom-0 left-0 w-full rounded-t-xl
+          bottom-0 left-0 w-full rounded-t-3xl
           
           /* Show/Hide for Mobile: Slide Up/Down */
           ${profileOpen ? "translate-y-0" : "translate-y-full"}
@@ -44,11 +44,11 @@ export default function AccountPanel({
         aria-hidden={!profileOpen}
       >
         <div className="flex flex-col items-center">
-          <div className="flex justify-between items-center w-full px-3.5 pt-3.5 md:hidden">
+          <div className="flex justify-between items-center w-full px-4 pt-3.5 md:hidden">
             <h3 className="text-[1.063rem] font-medium">My Account</h3>
           </div>
 
-          <div className="hidden md:flex items-center gap-3 px-3.5 py-2.5 rounded-t-xl bg-gray-50 w-full border-b border-gray-100">
+          <div className="hidden md:flex items-center gap-3 px-3.5 py-2.5 bg-gray-50 w-full rounded-lg border-b border-gray-100">
             <UserIcon className="size-5 text-gray-700" />
             <span className="text-gray-900 font-medium text-[1.032rem]">
               My Account

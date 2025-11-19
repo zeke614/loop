@@ -1,11 +1,11 @@
 const navLinks = [
-  { path: "/", label: "Home" },
-  { path: "/life", label: "Life" },
-  { path: "/earth", label: "Earth" },
-  { path: "/finance", label: "Finance" },
-  { path: "/entertainment", label: "Entertainment" },
-  { path: "/science", label: "Science / Tech" },
-  { path: "/sports", label: "Sports" },
+  { path: "/", label: "Front Page" },
+  { path: "/science", label: "Genius & Folly" },
+  { path: "/life", label: "Human Currents" },
+  { path: "/earth", label: "The Living Planet" },
+  { path: "/finance", label: "Money & Madness" },
+  { path: "/entertainment", label: "Arena of Fame" },
+  { path: "/sports", label: "Time Capsule" },
 ];
 
 export default navLinks;

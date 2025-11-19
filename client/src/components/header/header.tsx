@@ -6,8 +6,10 @@ import AccountPanel from "../header/accountPanel";
 import { useAuth } from "../../contexts/authContext";
 import logo from "../../assets/imgs/loopLogo.png";
 import { UserIcon as UserSolid } from "@heroicons/react/24/solid";
-import { UserIcon as UserOutline } from "@heroicons/react/24/outline";
-// import { XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  UserIcon as UserOutline,
+  Bars3Icon,
+} from "@heroicons/react/24/outline";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,15 +30,16 @@ export default function Header() {
   return (
     <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
       <div
-        className="max-w-6xl mx-auto flex items-center justify-between 
+        className="max-w-7xl mx-auto flex items-center justify-between 
                px-3.5 border-b border-b-[#928f8f1f] md:h-16"
       >
         <button
           onClick={toggleMenu}
-          aria-label="close button"
+          aria-label="menu button"
           className="flex items-center justify-center cursor-pointer md:hidden"
         >
-          <i className="bx bx-menu-left text-2xl"></i>
+          {/* <i className="bx bx-menu-left text-2xl"></i> */}
+          <Bars3Icon className="size-6" />
         </button>
 
         <Link
@@ -75,7 +78,7 @@ export default function Header() {
             <button
               onClick={toggleProfile}
               aria-label="Open profile"
-              className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-gray-100"
+              className="flex items-center justify-center md:w-10 md:h-10 cursor-pointer md:rounded-full md:hover:bg-gray-100"
             >
               <UserSolid className="size-6" />
             </button>

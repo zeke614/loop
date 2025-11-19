@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useAuth } from "../contexts/authContext";
-import ArticleCard from "../components/articleCard";
+import { useAuth } from "../../contexts/authContext";
+import FrontPageArticlesCard from "../../components/articleCard";
 
 const getFirstName = (user: any) => {
   if (!user) return "";
@@ -78,10 +78,11 @@ export default function Home() {
         )}
       </h1>
 
-      <p className="text-center text-[#767676] text-lg mb-14">
+      <p className="text-center text-[#767676] text-lg">
         Your next great discovery starts below.
       </p>
-      <ArticleCard />
+
+      <FrontPageArticlesCard />
     </div>
   );
 }

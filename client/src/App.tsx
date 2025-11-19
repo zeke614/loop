@@ -8,14 +8,16 @@ import PersonalDetails from "./components/settings/details.tsx";
 import EmailPrefs from "./components/settings/emailPrefs.tsx";
 import Security from "./components/settings/security.tsx";
 import Saved from "./pages/saved.tsx";
-import Home from "./pages/home";
+import Home from "./pages/frontpage/home.tsx";
+import Landfill from "./pages/frontpage/landfill.tsx";
 import Entertainment from "./pages/entertainment.tsx";
 import Life from "./pages/life";
 import Science from "./pages/science";
 import Earth from "./pages/earth";
-import Sports from "./pages/sports";
 import Finance from "./pages/finance";
+import Legacy from "./pages/legacy.tsx";
 import Info from "./pages/info.tsx";
+import ArticlePage from "./components/articlePage";
 
 function App() {
   return (
@@ -31,9 +33,10 @@ function App() {
         <Route path="life" element={<Life />} />
         <Route path="science" element={<Science />} />
         <Route path="earth" element={<Earth />} />
-        <Route path="sports" element={<Sports />} />
+        <Route path="sports" element={<Legacy />} />
         <Route path="finance" element={<Finance />} />
         <Route path="info" element={<Info />} />
+        <Route path="articles/:articleId" element={<ArticlePage />} />
       </Route>
 
       <Route path="register" element={<Register />} />

@@ -9,8 +9,9 @@ import {
   ArrowUpOnSquareIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Earth() {
-  const theLivingPlanetArticles = articles["The Living Planet"] || [];
+export default function Legacy() {
+  const timeCapsuleArticles = articles["Time Capsule"] || [];
+
   const [popUp, setPopUp] = useState(false);
 
   const handleBookmarkClick = () => {
@@ -29,11 +30,11 @@ export default function Earth() {
   return (
     <div className="py-10">
       <h1 className="text-center text-[1.375rem] mt-9 font-medium">
-        The Living Planet{" "}
+        Time Capsule
       </h1>
 
       <div className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative">
-        {theLivingPlanetArticles.map((article) => (
+        {timeCapsuleArticles.map((article) => (
           <div
             key={article.id}
             className="flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100"
