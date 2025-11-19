@@ -9,7 +9,6 @@ import EmailPrefs from "./components/settings/emailPrefs.tsx";
 import Security from "./components/settings/security.tsx";
 import Saved from "./pages/saved.tsx";
 import Home from "./pages/frontpage/home.tsx";
-import Landfill from "./pages/frontpage/landfill.tsx";
 import Entertainment from "./pages/entertainment.tsx";
 import Life from "./pages/life";
 import Science from "./pages/science";
