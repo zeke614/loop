@@ -17,6 +17,7 @@ import Finance from "./pages/finance";
 import Legacy from "./pages/legacy.tsx";
 import Info from "./pages/info.tsx";
 import ArticlePage from "./components/articlePage";
+import PrivacyPolicy from "./components/privacy.tsx";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="finance" element={<Finance />} />
         <Route path="info" element={<Info />} />
         <Route path="articles/:articleId" element={<ArticlePage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Route>
 
       <Route path="register" element={<Register />} />

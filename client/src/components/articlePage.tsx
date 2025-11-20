@@ -1,4 +1,3 @@
-// src/components/ArticlePage.tsx
 import { useParams } from "react-router-dom";
 import { getArticleComponent } from "../constants/articleRoutes";
 

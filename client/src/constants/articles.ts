@@ -19,15 +19,15 @@ import typewriter from "../assets/imgs/typewriter.jpg";
 const articles = {
   "Front Page": [
     {
-      id: "landfill-to-loop",
-      category: "The Living Planet",
-      title: "From Landfill to Loop: Cities That Turned Waste into Power",
-      date: "November 7, 2025",
-      author: "Daniel Opoku",
-      img: recyclingPlant,
-      alt: "Waste-to-energy facility",
+      id: "frontpage-003",
+      category: "Genius & Folly",
+      title: "Six Scientific Failures That Led to Major Breakthroughs",
+      date: "September 3, 2025",
+      author: "Olu Jacobs",
+      img: lab,
+      alt: "Laboratory experiment scene",
       description:
-        "A number of cities have transformed waste management into energy, building circular systems that cut emissions and create jobs. This article profiles notable projects, the technologies they use, and the political and social choices that made them scalable...",
+        "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
     },
     {
       id: "frontpage-002",
@@ -41,15 +41,15 @@ const articles = {
         "Ruins capture imagination because they embody past ambition and present mystery. This photo-essay and analysis surveys six architectural wonders that are partly lost to time, exploring their original functions, causes of decline and cultural afterlives...",
     },
     {
-      id: "frontpage-003",
-      category: "Genius & Folly",
-      title: "Six Scientific Failures That Led to Major Breakthroughs",
-      date: "September 3, 2025",
-      author: "Olu Jacobs",
-      img: lab,
-      alt: "Laboratory experiment scene",
+      id: "landfill-to-loop",
+      category: "The Living Planet",
+      title: "From Landfill to Loop: Cities That Turned Waste into Power",
+      date: "November 7, 2025",
+      author: "Daniel Opoku",
+      img: recyclingPlant,
+      alt: "Waste-to-energy facility",
       description:
-        "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
+        "A number of cities have transformed waste management into energy, building circular systems that cut emissions and create jobs. This article profiles notable projects, the technologies they use, and the political and social choices that made them scalable...",
     },
     {
       id: "frontpage-004",

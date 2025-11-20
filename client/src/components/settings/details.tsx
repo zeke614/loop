@@ -58,73 +58,93 @@ export default function PersonalDetails() {
   if (!user) return null;
 
   return (
-    <div className="max-w-2xl px-8 md:mx-auto bg-white pt-20">
-      <div className="pt-4 flex items-center">
-        <Link
-          to="/settings"
-          className="text-gray-600 hover:text-black flex items-center gap-1"
-        >
-          <ArrowLeftIcon className="size-5" />
-          <span className="font-medium">Settings</span>
-        </Link>
-      </div>
-
-      <div className="py-6 space-y-8">
-        <h3 className="text-xl font-semibold">Personal details</h3>
-
-        <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-          <div>
-            <p>Email</p>
-            <p className="font-medium text-lg text-[#6e7780] truncate w-60 sm:w-80">
-              {user.email || "—"}
-            </p>
-          </div>
-          <button className="cursor-pointer">
-            <PencilSquareIcon className="size-5" />
-          </button>
-        </div>
-
-        <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-          <div>
-            <p>Password</p>
-            <p className="font-medium text-lg text-[#6e7780]">
-              ● ● ● ● ● ● ● ●
-            </p>
-          </div>
-          <button className="cursor-pointer">
-            <PencilSquareIcon className="size-5" />
-          </button>
-        </div>
-
-        <div className="flex justify-between items-center border-b border-gray-200 pb-2">
-          <div>
-            <p>Display name</p>
-            <p className="font-medium text-lg text-[#6e7780]">
-              {user.username || "None added"}
-            </p>
-          </div>
-          <button className="text-lg cursor-pointer">
-            {user.username ? <PencilSquareIcon className="size-5" /> : "Add"}
-          </button>
-        </div>
-
-        <div>
-          <p>Country of residence</p>
-          <p className="font-medium text-lg text-[#6e7780]">
-            {user.country || "Fetching..."}
-          </p>
-        </div>
-
-        <div className="pt-6 pb-10">
-          <p className="font-semibold text-lg text-gray-900">
-            Delete your account
-          </p>
-          <button
-            onClick={togglePopUp}
-            className="font-semibold underline underline-offset-2 text-red-500 mt-1 cursor-pointer"
+    <div className="min-h-screen py-25 md:pt-40 px-5 md:px-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-14">
+          <Link
+            to="/settings"
+            className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors mb-4"
           >
-            Delete Account
-          </button>
+            <ArrowLeftIcon className="size-4 mr-2" />
+            Back to Settings
+          </Link>
+          <h1 className="text-2xl font-bold text-gray-900">Personal Details</h1>
+          <p className="mt-2 text-gray-500">
+            Manage your profile information and account preferences.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="group flex items-center justify-between p-5 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-500 mb-1">
+                Email Address
+              </p>
+              <p className="text-base font-semibold text-gray-900">
+                {user.email || "—"}
+              </p>
+            </div>
+            <button className="p-2 text-gray-400 hover:text-[#0ab39c] hover:bg-[#0ab39c]/10 rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <PencilSquareIcon className="size-5" />
+            </button>
+          </div>
+
+          <div className="group flex items-center justify-between p-5 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-500 mb-1">Password</p>
+              <p className="text-base font-semibold text-gray-900 tracking-widest">
+                ●●●●●●●●
+              </p>
+            </div>
+            <button className="p-2 text-gray-400 hover:text-[#0ab39c] hover:bg-[#0ab39c]/10 rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <PencilSquareIcon className="size-5" />
+            </button>
+          </div>
+
+          <div className="group flex items-center justify-between p-5 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-500 mb-1">
+                Display Name
+              </p>
+              <p className="text-base font-semibold text-gray-900">
+                {user.username || "None added"}
+              </p>
+            </div>
+            <button className="p-2 text-gray-400 hover:text-[#0ab39c] hover:bg-[#0ab39c]/10 rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <PencilSquareIcon className="size-5" />
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between p-5">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-500 mb-1">
+                Country of Residence
+              </p>
+              <p className="text-base font-semibold text-gray-900">
+                {user.country || "Fetching..."}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Danger Zone
+          </h3>
+          <div className="bg-white rounded-2xl border border-red-100 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm gap-6">
+            <div>
+              <p className="font-medium text-gray-900">Delete Account</p>
+              <p className="text-sm text-gray-500 mt-1">
+                Permanently remove your profile and all data.
+              </p>
+            </div>
+            <button
+              onClick={togglePopUp}
+              className="px-4 py-2 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap"
+            >
+              Delete Account
+            </button>
+          </div>
         </div>
       </div>
 

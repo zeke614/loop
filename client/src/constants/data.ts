@@ -5,7 +5,7 @@ const navLinks = [
   { path: "/earth", label: "The Living Planet" },
   { path: "/finance", label: "Money & Madness" },
   { path: "/entertainment", label: "Arena of Fame" },
-  { path: "/sports", label: "Time Capsule" },
+  { path: "/legacy", label: "Time Capsule" },
 ];
 
 export default navLinks;

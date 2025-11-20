@@ -22,7 +22,7 @@ export default function Life() {
     if (popUp) {
       const timer = setTimeout(() => {
         setPopUp(false);
-      }, 4000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [popUp]);
