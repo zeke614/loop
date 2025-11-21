@@ -319,12 +319,19 @@ export default function Breakthrough() {
       <AnimatedSection>
         <div className="text-[#767676] text-start">
           <motion.p className="leading-6.5 px-3" variants={textVariants}>
-            Failure is often a hidden ingredient of discovery; some experiments
+            {/* Failure is often a hidden ingredient of discovery; some experiments
             that 'failed' paved the way for paradigm shifts. Through archival
             research and interviews, this article follows six cases where
             apparent setbacks revealed new routes to understanding the world—and
             in doing so, saved lives, transformed medicine, and reshaped modern
-            civilization.
+            civilization. */}
+            Science is often portrayed as a straight staircase to truth, but
+            many of its greatest leaps started with a misstep. Failed
+            experiments, stray bacteria, overheated equipment—these tiny
+            disasters reshaped medicine, physics, technology and even daily
+            life. This feature explores six moments where mistakes didn’t just
+            guide innovation; they became the spark that rewrote what humanity
+            thought possible.
           </motion.p>
         </div>
       </AnimatedSection>

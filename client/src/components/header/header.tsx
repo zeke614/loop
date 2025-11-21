@@ -45,7 +45,7 @@ export default function Header() {
         <Link
           to="/"
           className={`text-[1.688rem] font-bold ${
-            user ? "pl-1" : "pl-11.5"
+            user ? "pl-0" : "pl-11.5"
           } md:p-0`}
         >
           <img src={logo} alt="loop logo" className="h-12 w-auto text-black" />{" "}

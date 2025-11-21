@@ -43,7 +43,7 @@ const articles = {
       img: recyclingPlant,
       alt: "Waste-to-energy facility",
       description:
-        "A number of cities have transformed waste management into energy, building circular systems that cut emissions and create jobs. This article profiles notable projects, the technologies they use, and the political and social choices that made them scalable...",
+        "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
     },
     {
       id: "arena-001",
