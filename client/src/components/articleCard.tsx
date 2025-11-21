@@ -25,36 +25,40 @@ interface Article {
 const cardVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 30,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: "easeOut",
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
 
 const imageVariants: Variants = {
-  hidden: { scale: 1.05 },
+  hidden: {
+    opacity: 0.8,
+    scale: 1.02,
+  },
   visible: {
+    opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: "easeOut",
     },
   },
 };
 
 const textVariants: Variants = {
-  hidden: { opacity: 0, y: 15 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
       ease: "easeOut",
       delay: 0.1,
     },
@@ -79,8 +83,8 @@ function AnimatedArticleCard({
         setIsInView(entry.isIntersecting);
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.15,
+        rootMargin: "0px 0px -40px 0px",
       }
     );
 
@@ -102,27 +106,26 @@ function AnimatedArticleCard({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       whileHover={{
-        y: -6,
-        transition: { duration: 0.2, ease: "easeOut" },
+        y: -4,
+        transition: { duration: 0.3, ease: "easeOut" },
       }}
-      className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+      className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100"
     >
       <div className="relative overflow-hidden">
-        <motion.div
+        <motion.img
+          src={article.img}
+          alt={article.alt}
+          className="w-full h-48 md:h-52 lg:h-48 object-cover"
           variants={imageVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-        >
-          <img
-            src={article.img}
-            alt={article.alt}
-            className="w-full h-48 md:h-52 lg:h-48 object-cover"
-          />
-        </motion.div>
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.4 }}
+        />
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.3 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
           className="absolute animate-bounce [animation-duration:2s] top-3 left-3 bg-[#0ab39c] text-white text-xs px-3 py-1.5 rounded-full tracking-wider uppercase font-medium shadow-sm"
         >
           {article.category}
@@ -140,8 +143,8 @@ function AnimatedArticleCard({
           className="text-[1.37rem] font-bold leading-tight text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-2.5 group"
         >
           <motion.span
-            whileHover={{ x: 3 }}
-            transition={{ duration: 0.15 }}
+            whileHover={{ x: 2 }}
+            transition={{ duration: 0.2 }}
             className="inline-block"
           >
             {article.title}
@@ -152,7 +155,7 @@ function AnimatedArticleCard({
           className="flex items-center text-sm text-gray-500 mb-2.5 flex-wrap gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.15 }}
+          transition={{ delay: 0.2, duration: 0.4 }}
         >
           <span className="whitespace-nowrap">{article.date}</span>
           <span className="mx-1">•</span>
@@ -168,16 +171,16 @@ function AnimatedArticleCard({
           className="text-[#767676] leading-5 mb-5 flex-1 line-clamp-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.25, duration: 0.4 }}
         >
           {article.description}
         </motion.p>
 
         <motion.div
           className="flex justify-between pt-3 border-t border-gray-200"
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
         >
           <div>
             <Link
@@ -185,7 +188,7 @@ function AnimatedArticleCard({
               className="inline-flex items-center text-[#0ab39c] font-semibold hover:text-[#0ab39c] transition-colors duration-200 group"
             >
               Read Me
-              <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.15 }}>
+              <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
                 <ChevronDoubleRightIcon className="size-3.5 ml-1 transition-transform duration-200" />
               </motion.div>
             </Link>
@@ -193,8 +196,8 @@ function AnimatedArticleCard({
           <div className="space-x-4 flex">
             <motion.div
               onClick={() => handleBookmarkClick(article)}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              whileTap={{ scale: 0.92 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
             >
               {isSaved ? (
                 <BookmarkIconSolid className="size-5 cursor-pointer transition-transform text-[#0ab39c]" />
@@ -265,7 +268,7 @@ export default function FrontPageArticlesCard() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative"
     >
       {frontPageArticles.map((article) => {

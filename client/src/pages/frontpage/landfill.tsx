@@ -28,13 +28,13 @@ interface Article {
 const sectionVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 50,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.6,
       ease: "easeOut",
     },
   },
@@ -49,7 +49,7 @@ const imageVariants: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.8,
       ease: "easeOut",
     },
   },
@@ -58,13 +58,13 @@ const imageVariants: Variants = {
 const textVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 25,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.5,
       ease: "easeOut",
       delay: 0.1,
     },
@@ -74,13 +74,13 @@ const textVariants: Variants = {
 const floatingButtonVariants: Variants = {
   hidden: {
     opacity: 0,
-    x: 30,
+    x: 40,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
       ease: "easeOut",
       delay: 0.2,
     },
@@ -234,7 +234,7 @@ export default function Landfill() {
         variants={floatingButtonVariants}
         initial="hidden"
         animate="visible"
-        className="fixed right-3 md:right-40 top-1/2 transform -translate-y-1/2 z-40 flex flex-col items-center gap-4 bg-white/90 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-gray-200"
+        className="fixed right-4 md:right-40 top-1/2 transform -translate-y-1/2 z-40 flex flex-col items-center gap-4 bg-white/90 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-gray-200"
       >
         <motion.div
           onClick={handleBookmarkClick}
