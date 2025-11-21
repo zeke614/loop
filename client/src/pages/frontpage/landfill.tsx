@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+
 import BookmarkPopup from "../../components/bookmark";
 import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
@@ -27,14 +28,14 @@ interface Article {
 const sectionVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 60,
+    y: 40,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      duration: 0.4,
+      ease: "easeOut",
     },
   },
 };
@@ -42,13 +43,13 @@ const sectionVariants: Variants = {
 const imageVariants: Variants = {
   hidden: {
     opacity: 0,
-    scale: 1.1,
+    scale: 1.05,
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: "easeOut",
     },
   },
@@ -57,15 +58,15 @@ const imageVariants: Variants = {
 const textVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 30,
+    y: 20,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.3,
       ease: "easeOut",
-      delay: 0.2,
+      delay: 0.1,
     },
   },
 };
@@ -73,15 +74,15 @@ const textVariants: Variants = {
 const floatingButtonVariants: Variants = {
   hidden: {
     opacity: 0,
-    x: 50,
+    x: 30,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: "easeOut",
-      delay: 0.3,
+      delay: 0.2,
     },
   },
 };
@@ -99,13 +100,11 @@ function AnimatedSection({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
+        setIsInView(entry.isIntersecting);
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        rootMargin: "0px 0px -30px 0px",
       }
     );
 
@@ -228,7 +227,7 @@ export default function Landfill() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className="text-start py-22 px-4 mx-auto max-w-4xl relative"
     >
       <motion.div
@@ -240,7 +239,7 @@ export default function Landfill() {
         <motion.div
           onClick={handleBookmarkClick}
           className="flex flex-col items-center group cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.95 }}
         >
           <div className="p-1.5 rounded-full bg-gray-100 group-hover:bg-gray-200 transition-colors duration-200">
@@ -257,7 +256,7 @@ export default function Landfill() {
 
         <motion.div
           className="flex flex-col items-center group relative"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.95 }}
         >
           <div
@@ -270,9 +269,9 @@ export default function Landfill() {
 
           {showShareFeedback && (
             <motion.div
-              initial={{ opacity: 0, x: 10 }}
+              initial={{ opacity: 0, x: 8 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
+              exit={{ opacity: 0, x: 8 }}
               className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md whitespace-nowrap z-50"
             >
               Link copied to clipboard!
@@ -314,8 +313,8 @@ export default function Landfill() {
             variants={imageVariants}
             initial="hidden"
             animate="visible"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
+            whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.2 }}
           />
         </div>
       </AnimatedSection>

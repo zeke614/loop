@@ -6,7 +6,7 @@ export default function ArticlePage() {
 
   if (!articleId) {
     return (
-      <div className="flex flex-col items-center justify-center h-[85vh]">
+      <div className="flex flex-col items-center justify-center h-[90vh]">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             Article Not Found
@@ -21,7 +21,7 @@ export default function ArticlePage() {
 
   if (!ArticleComponent) {
     return (
-      <div className="flex flex-col items-center justify-center h-[85vh]">
+      <div className="flex flex-col items-center justify-center h-[90vh]">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             Article Not Found

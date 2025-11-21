@@ -33,7 +33,7 @@ export default function Saved() {
 
   if (savedArticles.length === 0) {
     return (
-      <div className="px-4.5 max-w-lg mx-auto flex flex-col items-center justify-center h-[85vh] space-y-4">
+      <div className="px-4.5 max-w-lg mx-auto flex flex-col items-center justify-center h-[90vh] space-y-4">
         <h1 className="text-[1.375rem] font-semibold">Saved Articles</h1>
         <p className="text-center mt-3 text-[#6e7780]">
           You haven't saved anything yet, but when you <br /> do, it will show
