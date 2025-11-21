@@ -1,3 +1,9 @@
+import { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import type { Variants } from "framer-motion";
+import BookmarkPopup from "../../components/bookmark";
+import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
 import recyclingPlant from "../../assets/imgs/recyclingPlant.jpg";
 import copenhill from "../../assets/imgs/copenhill.jpg";
 import reppie from "../../assets/imgs/reppie.jpg";
@@ -7,205 +13,419 @@ import beijing from "../../assets/imgs/chinaPlant.jpg";
 import tuasone from "../../assets/imgs/tuasone.png";
 import plant from "../../assets/imgs/manilaPlant.jpeg";
 
-export default function Landfill() {
+interface Article {
+  id: string;
+  category: string;
+  title: string;
+  date: string;
+  author: string;
+  img: string;
+  alt: string;
+  description: string;
+}
+
+const sectionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 1.1,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
+const textVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      delay: 0.2,
+    },
+  },
+};
+
+const floatingButtonVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: 0.3,
+    },
+  },
+};
+
+function AnimatedSection({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="text-start py-22 px-5.5 mx-auto">
-      <h1 className="text-center text-2xl md:text-3xl font-semibold pt-4">
-        Seven Cities Turning{" "}
-        <span className="block md:inline">Trash into Power</span>
-      </h1>
+    <motion.div
+      ref={sectionRef}
+      variants={sectionVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
-      <div className="flex items-center justify-center pt-3 text-gray-500 mb-10">
-        <span className="mr-3">October 29, 2025</span>
-        <span>•</span>
-        <span className="ml-3">
-          by
-          <span className="ml-1.5 font-medium text-gray-700">Daniel Opoku</span>
-        </span>
-      </div>
+export default function Landfill() {
+  const [popUp, setPopUp] = useState<boolean>(false);
+  const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
+  const [savedIds, setSavedIds] = useState<string[]>([]);
+  const [showShareFeedback, setShowShareFeedback] = useState(false);
 
-      <div className="overflow-hidden mb-6">
-        <img
-          src={recyclingPlant}
-          alt="Recycling Plant"
-          className="w-full h-48 md:h-[30rem] object-cover transition-transform duration-500"
-        />
-      </div>
+  const articleData: Article = {
+    id: "planet-007",
+    category: "The Living Planet",
+    title: "Seven Cities Turning Trash into Power",
+    date: "October 29, 2025",
+    author: "Daniel Opoku",
+    img: recyclingPlant,
+    alt: "Recycling Plant",
+    description:
+      "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
+  };
 
-      <div className="text-[#767676] text-start">
-        <p className="leading-6.5 px-2">
-          The modern city faces two ancient problems: waste and want. What to do
-          with mountains of trash — and how to feed the endless appetite for
-          energy. Across the globe, some cities are discovering that the answer
-          to both problems can come from the same source. Here are 7 cities that
-          have turned waste into power, lighting homes and warming streets from
-          what once filled their landfills.
-        </p>
-      </div>
+  useEffect(() => {
+    const saved: Article[] = JSON.parse(
+      localStorage.getItem("savedLoopArticles") || "[]"
+    );
+    setSavedIds(saved.map((item) => item.id));
+  }, []);
+
+  const handleBookmarkClick = () => {
+    const saved: Article[] = JSON.parse(
+      localStorage.getItem("savedLoopArticles") || "[]"
+    );
+    const isAlreadySaved = saved.some((item) => item.id === articleData.id);
+
+    let newSaved: Article[];
+
+    if (isAlreadySaved) {
+      newSaved = saved.filter((item) => item.id !== articleData.id);
+      setPopUpType("removed");
+      setPopUp(true);
+    } else {
+      newSaved = [...saved, articleData];
+      setPopUpType("added");
+      setPopUp(true);
+    }
+
+    localStorage.setItem("savedLoopArticles", JSON.stringify(newSaved));
+    setSavedIds(newSaved.map((item) => item.id));
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: articleData.title,
+      text: articleData.description,
+      url: `${window.location.origin}/articles/${articleData.id}`,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (error) {
+        console.log("Share canceled");
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        setShowShareFeedback(true);
+        setTimeout(() => setShowShareFeedback(false), 2000);
+      } catch (error) {
+        // Older browser fallback
+        const textArea = document.createElement("textarea");
+        textArea.value = shareData.url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        setShowShareFeedback(true);
+        setTimeout(() => setShowShareFeedback(false), 2000);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (popUp) {
+      const timer = setTimeout(() => {
+        setPopUp(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [popUp]);
+
+  const isSaved = savedIds.includes(articleData.id);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="text-start py-22 px-4 mx-auto max-w-4xl relative"
+    >
+      <motion.div
+        variants={floatingButtonVariants}
+        initial="hidden"
+        animate="visible"
+        className="fixed right-3 md:right-40 top-1/2 transform -translate-y-1/2 z-40 flex flex-col items-center gap-4 bg-white/90 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-gray-200"
+      >
+        <motion.div
+          onClick={handleBookmarkClick}
+          className="flex flex-col items-center group cursor-pointer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <div className="p-1.5 rounded-full bg-gray-100 group-hover:bg-gray-200 transition-colors duration-200">
+            {isSaved ? (
+              <BookmarkIconSolid className="size-4 text-[#0ab39c]" />
+            ) : (
+              <BookmarkIcon className="size-4 text-gray-600 group-hover:text-gray-800" />
+            )}
+          </div>
+          <span className="text-xs mt-1 text-gray-600 font-medium">
+            {isSaved ? "Saved" : "Save"}
+          </span>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col items-center group relative"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <div
+            onClick={handleShare}
+            className="p-1.5 rounded-full bg-gray-100 group-hover:bg-gray-200 transition-colors duration-200 cursor-pointer"
+          >
+            <ArrowUpOnSquareIcon className="size-4 text-gray-600 group-hover:text-gray-800" />
+          </div>
+          <span className="text-xs mt-1 text-gray-600 font-medium">Share</span>
+
+          {showShareFeedback && (
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              className="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-800 text-white text-xs rounded-md whitespace-nowrap z-50"
+            >
+              Link copied to clipboard!
+            </motion.div>
+          )}
+        </motion.div>
+      </motion.div>
+
+      <AnimatedSection className="text-center">
+        <motion.h1
+          className="text-2xl md:text-3xl font-semibold pt-4"
+          variants={textVariants}
+        >
+          Seven Cities Turning{" "}
+          <span className="block md:inline">Trash into Power</span>
+        </motion.h1>
+
+        <motion.div
+          className="flex items-center justify-center pt-3 text-gray-500 mb-10"
+          variants={textVariants}
+        >
+          <span className="mr-3">October 29, 2025</span>
+          <span>•</span>
+          <span className="ml-3">
+            by
+            <span className="ml-1.5 font-medium text-gray-700">
+              Daniel Opoku
+            </span>
+          </span>
+        </motion.div>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <div className="overflow-hidden mb-6 px-3">
+          <motion.img
+            src={recyclingPlant}
+            alt="Recycling Plant"
+            className="w-full h-48 md:h-[30rem] object-cover"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <div className="text-[#767676] text-start">
+          <motion.p className="leading-6.5 px-3" variants={textVariants}>
+            The modern city faces two ancient problems: waste and want. What to
+            do with mountains of trash — and how to feed the endless appetite
+            for energy. Across the globe, some cities are discovering that the
+            answer to both problems can come from the same source. Here are 7
+            cities that have turned waste into power, lighting homes and warming
+            streets from what once filled their landfills.
+          </motion.p>
+        </div>
+      </AnimatedSection>
 
       <div className="my-14 space-y-14 px-1.5">
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            1. Copenhagen, Denmark — Where Waste Powers Homes and Skiers
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={copenhill}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            The plant at Amager Bakke (also known as CopenHill) in Copenhagen
-            not only burns nearly 400,000 tons of municipal waste annually to
-            generate both electricity and district heating, but it also
-            transforms the facility’s rooftop into an 85-metre ski slope,
-            climbing wall and public recreation space. By embedding energy
-            recovery into civic life and making the waste-plant a landmark,
-            Copenhagen demonstrates how infrastructure and urban life can merge.
-          </p>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            2. Stockholm, Sweden — Keeping Landfills Almost Empty
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={sweden}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            Sweden, known for its high recycling rates, sends less than 1 % of
-            its municipal waste to landfills. The rest is recycled or
-            incinerated to produce power and heat for homes and industries. The
-            country’s success lies in combining policy (strict landfill bans),
-            infrastructure (34 + waste-to-energy plants) and culture (waste is
-            seen as resource). That integrated model gives Stockholm one of the
-            strongest circular-economy examples in the world.
-          </p>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            3. Istanbul, Turkey — A Megacity’s Waste Becomes Energy
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={instanbul}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            In the Eyüp district, the Istanbul Waste Power Plant processes
-            around 3,000 tons of waste daily and produces approximately 78 MWh
-            of electricity and 175 MWh of thermal energy — sufficient to meet
-            the needs of a million people. The scale of the operation and the
-            fact that it addresses both disposal and urban energy stress in one
-            of the world’s largest cities makes it a model for rapidly
-            urbanising regions.
-          </p>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            4. Addis Ababa, Ethiopia — Africa’s First Big Waste-to-Energy Plan
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={reppie}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            The Reppie Waste‑to‑Energy Plant in Addis Ababa was built on a
-            reclaimed landfill site, converting the city’s waste into roughly 25
-            MW of electricity while cutting methane emissions that would
-            otherwise escape from open dumps. In doing so, it shows that
-            waste-to-energy is not only for rich countries — with the right
-            design and financing, it can work in emerging cities with rapid
-            growth and major waste challenges.
-          </p>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            5. Beijing, China — Scaling Up Waste-to-Energy at National Level
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={beijing}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            In China, plants such as the Asuwei Domestic Waste Incineration
-            Power Plant handle thousands of tons of household waste daily,
-            convert it into 420 million kWh of green electricity per year, and
-            reclaim metals and other materials from the slag. China’s massive
-            deployment of waste-to-energy technology — combined with
-            waste-sorting policies and local innovation — presents not just a
-            city-level example but a national strategy for converting waste into
-            energy and materials.
-          </p>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            6. Singapore — An Island That Eats Its Own Trash
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={tuasone}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            The city-state of Singapore is advancing the Tuas Nexus project,
-            which integrates waste-to-energy, water reclamation and high-density
-            land use. With little space for landfills and a premium on land and
-            resources, Singapore turns its municipal solid waste into fuel and
-            reclaim water in a closed-loop system. (See reports on Gulf / Asian
-            cities turning waste into wealth.) This dual-loop model offers
-            lessons for dense cities everywhere: when waste and utilities are
-            re-imagined as interconnected, radical efficiency becomes possible.
-          </p>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            7. Manila, Philippines — From Wasteland to Waste-to-Energy Model
-          </h2>
-          <div className="overflow-hidden mb-6 md:mx-20">
-            <img
-              src={plant}
-              alt="Recycling Plant"
-              className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
-            />
-          </div>
-          <p className="mb-6 text-[#767676] leading-7">
-            In the Quezon City area of Metro Manila, a former uncontrolled
-            landfill is being transformed into a waste-to-energy model project,
-            showing how legacy disposal sites can become engines for clean
-            energy and land regeneration. Through design, extraction and
-            reclamation, the city illustrates how strategic intervention and
-            public-private partnerships can convert urban waste legacies into
-            sustainable infrastructure.
-          </p>
-        </div>
+        {[
+          {
+            title:
+              "1. Copenhagen, Denmark — Where Waste Powers Homes and Skiers",
+            img: copenhill,
+            content:
+              "The plant at Amager Bakke (also known as CopenHill) in Copenhagen not only burns nearly 400,000 tons of municipal waste annually to generate both electricity and district heating, but it also transforms the facility's rooftop into an 85-metre ski slope, climbing wall and public recreation space. By embedding energy recovery into civic life and making the waste-plant a landmark, Copenhagen demonstrates how infrastructure and urban life can merge.",
+          },
+          {
+            title: "2. Stockholm, Sweden — Keeping Landfills Almost Empty",
+            img: sweden,
+            content:
+              "Sweden, known for its high recycling rates, sends less than 1 % of its municipal waste to landfills. The rest is recycled or incinerated to produce power and heat for homes and industries. The country's success lies in combining policy (strict landfill bans), infrastructure (34 + waste-to-energy plants) and culture (waste is seen as resource). That integrated model gives Stockholm one of the strongest circular-economy examples in the world.",
+          },
+          {
+            title: "3. Istanbul, Turkey — A Megacity's Waste Becomes Energy",
+            img: instanbul,
+            content:
+              "In the Eyüp district, the Istanbul Waste Power Plant processes around 3,000 tons of waste daily and produces approximately 78 MWh of electricity and 175 MWh of thermal energy — sufficient to meet the needs of a million people. The scale of the operation and the fact that it addresses both disposal and urban energy stress in one of the world's largest cities makes it a model for rapidly urbanising regions.",
+          },
+          {
+            title:
+              "4. Addis Ababa, Ethiopia — Africa's First Big Waste-to-Energy Plant",
+            img: reppie,
+            content:
+              "The Reppie Waste‑to‑Energy Plant in Addis Ababa was built on a reclaimed landfill site, converting the city's waste into roughly 25 MW of electricity while cutting methane emissions that would otherwise escape from open dumps. In doing so, it shows that waste-to-energy is not only for rich countries — with the right design and financing, it can work in emerging cities with rapid growth and major waste challenges.",
+          },
+          {
+            title:
+              "5. Beijing, China — Scaling Up Waste-to-Energy at National Level",
+            img: beijing,
+            content:
+              "In China, plants such as the Asuwei Domestic Waste Incineration Power Plant handle thousands of tons of household waste daily, convert it into 420 million kWh of green electricity per year, and reclaim metals and other materials from the slag. China's massive deployment of waste-to-energy technology — combined with waste-sorting policies and local innovation — presents not just a city-level example but a national strategy for converting waste into energy and materials.",
+          },
+          {
+            title: "6. Singapore — An Island That Eats Its Own Trash",
+            img: tuasone,
+            content:
+              "The city-state of Singapore is advancing the Tuas Nexus project, which integrates waste-to-energy, water reclamation and high-density land use. With little space for landfills and a premium on land and resources, Singapore turns its municipal solid waste into fuel and reclaim water in a closed-loop system. (See reports on Gulf / Asian cities turning waste into wealth.) This dual-loop model offers lessons for dense cities everywhere: when waste and utilities are re-imagined as interconnected, radical efficiency becomes possible.",
+          },
+          {
+            title:
+              "7. Manila, Philippines — From Wasteland to Waste-to-Energy Model",
+            img: plant,
+            content:
+              "In the Quezon City area of Metro Manila, a former uncontrolled landfill is being transformed into a waste-to-energy model project, showing how legacy disposal sites can become engines for clean energy and land regeneration. Through design, extraction and reclamation, the city illustrates how strategic intervention and public-private partnerships can convert urban waste legacies into sustainable infrastructure.",
+          },
+        ].map((city, index) => (
+          <AnimatedSection key={index} className="space-y-6">
+            <motion.h2
+              className="text-[1.375rem] md:text-2xl font-medium"
+              variants={textVariants}
+            >
+              {city.title}
+            </motion.h2>
+            <motion.div
+              className="overflow-hidden mb-6 md:mx-20"
+              variants={imageVariants}
+            >
+              <img
+                src={city.img}
+                alt="Recycling Plant"
+                className="w-full h-48 md:h-105 object-cover"
+              />
+            </motion.div>
+            <motion.p
+              className="mb-6 text-[#767676] leading-7"
+              variants={textVariants}
+            >
+              {city.content}
+            </motion.p>
+          </AnimatedSection>
+        ))}
       </div>
 
-      <p className="text-[#767676] pt-3">
-        From these cities, a quiet revolution burns: garbage turned into green
-        gold. Their success shows that the future of energy might not lie deep
-        underground, but in what we throw away every day. These cities span
-        different geographies, income levels and waste-profiles — yet they share
-        a common pattern: waste is treated not as an after-thought but as a
-        feedstock. Energy systems that integrate thermal recovery, recycling,
-        and civic engagement are outperforming traditional disposal models. As
-        more urban centres grow, the question shifts from “What do we do with
-        trash?” to “What do we do with the value embedded in it?”
-      </p>
-    </div>
+      <AnimatedSection>
+        <motion.p className="text-[#767676] pt-3" variants={textVariants}>
+          From these cities, a quiet revolution burns: garbage turned into green
+          gold. Their success shows that the future of energy might not lie deep
+          underground, but in what we throw away every day. These cities span
+          different geographies, income levels and waste-profiles — yet they
+          share a common pattern: waste is treated not as an after-thought but
+          as a feedstock. Energy systems that integrate thermal recovery,
+          recycling, and civic engagement are outperforming traditional disposal
+          models. As more urban centres grow, the question shifts from "What do
+          we do with trash?" to "What do we do with the value embedded in it?"
+        </motion.p>
+      </AnimatedSection>
+
+      <AnimatePresence>
+        {popUp && <BookmarkPopup key="bookmark-popup" type={popUpType} />}
+      </AnimatePresence>
+    </motion.div>
   );
 }

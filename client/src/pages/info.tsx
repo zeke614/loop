@@ -1,6 +1,6 @@
 export default function Info() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center pt-27 pb-12 px-6 sm:px-8">
+    <div className="min-h-screen bg-white flex flex-col items-center pt-27 pb-12 px-7 md:px-8">
       <div className="max-w-2xl w-full space-y-16">
         <section className="space-y-6 text-center sm:text-left">
           <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
@@ -28,7 +28,7 @@ export default function Info() {
 
         <section className="space-y-6 text-center sm:text-left">
           <h2 className="text-xl font-semibold text-gray-900">Contact Us</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-gray-600 leading-relaxed">
             Reach out to the developer,{" "}
             <span className="text-black font-semibold mr-1">Zeke</span>
             via the socials below. You can also check out the project on GitHub
