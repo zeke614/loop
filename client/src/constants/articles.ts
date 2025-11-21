@@ -1,12 +1,6 @@
-// import space from "../assets/imgs/space.jpg";
 // import forest from "../assets/imgs/forest.png";
 // import movie from "../assets/imgs/movie.png";
 // import bacteria from "../assets/imgs/bacteria.png";
-// import code from "../assets/imgs/code.png";
-// import brain from "../assets/imgs/brain.png";
-// import football from "../assets/imgs/football.png";
-// import mailbox from "../assets/imgs/mailbox.jpg";
-// import signal from "../assets/imgs/signal.jpg";
 // import finance from "../assets/imgs/finance.jpg";
 import recyclingPlant from "../assets/imgs/recyclingPlant.jpg";
 import ruins from "../assets/imgs/ruins.jpg";
@@ -19,7 +13,7 @@ import typewriter from "../assets/imgs/typewriter.jpg";
 const articles = {
   "Front Page": [
     {
-      id: "science-002",
+      id: "failures-to-breakthroughs",
       category: "Genius & Folly",
       title: "Six Scientific Failures That Led to Major Breakthroughs",
       date: "September 3, 2025",
@@ -27,7 +21,7 @@ const articles = {
       img: lab,
       alt: "Laboratory experiment scene",
       description:
-        "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
+        "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible...",
     },
     {
       id: "time-007",
@@ -41,7 +35,7 @@ const articles = {
         "Ruins capture imagination because they embody past ambition and present mystery. This photo-essay and analysis surveys six architectural wonders that are partly lost to time, exploring their original functions, causes of decline and cultural afterlives...",
     },
     {
-      id: "planet-007",
+      id: "landfill-to-loop",
       category: "The Living Planet",
       title: "From Landfill to Loop: Cities That Turned Waste into Power",
       date: "November 7, 2025",
@@ -286,7 +280,7 @@ const articles = {
         "Not all introductions are purely destructive — in some contexts invasive species have altered ecosystems in surprising ways that benefited other species or human uses. This nuanced analysis traces six cases where management and adaptation reframed an invasive narrative...",
     },
     {
-      id: "planet-007",
+      id: "landfill-to-loop",
       category: "The Living Planet",
       title: "From Landfill to Loop: Cities That Turned Waste into Power",
       date: "March 19, 2025",
@@ -579,7 +573,7 @@ const articles = {
         "Some inventions began as curiosities or failed projects, but later became indispensable. This exploration highlights unexpected breakthroughs—like microwave ovens, Velcro, and penicillin analogies in tech—tracing the accidents, contexts and adopters that made them transformative...",
     },
     {
-      id: "science-002",
+      id: "failures-to-breakthroughs",
       category: "Genius & Folly",
       title: "Six Scientific Failures That Led to Major Breakthroughs",
       date: "October 27, 2025",

@@ -31,23 +31,8 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0.8,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
@@ -58,7 +43,7 @@ const textVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.5,
       ease: "easeOut",
       delay: 0.1,
     },
@@ -76,15 +61,21 @@ function AnimatedArticleCard({
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting && !hasAnimated) {
+          setIsInView(true);
+          setHasAnimated(true);
+        } else {
+          setIsInView(entry.isIntersecting);
+        }
       },
       {
-        threshold: 0.15,
-        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -97,7 +88,7 @@ function AnimatedArticleCard({
         observer.unobserve(cardRef.current);
       }
     };
-  }, []);
+  }, [hasAnimated]);
 
   return (
     <motion.div
@@ -112,19 +103,16 @@ function AnimatedArticleCard({
       className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100"
     >
       <div className="relative overflow-hidden">
-        <motion.img
+        <img
           src={article.img}
           alt={article.alt}
-          className="w-full h-48 md:h-52 lg:h-48 object-cover"
-          variants={imageVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.4 }}
+          className="w-full h-48 md:h-52 lg:h-48 object-cover transition-transform duration-300 hover:scale-105"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={
+            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+          }
           transition={{ delay: 0.3, duration: 0.4 }}
           className="absolute animate-bounce [animation-duration:2s] top-3 left-3 bg-[#0ab39c] text-white text-xs px-3 py-1.5 rounded-full tracking-wider uppercase font-medium shadow-sm"
         >

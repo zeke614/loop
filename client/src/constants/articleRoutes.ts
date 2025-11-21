@@ -1,3 +1,4 @@
+import Breakthrough from "../pages/frontpage/breakthroughs";
 import Landfill from "../pages/frontpage/landfill";
 
 // import Ruins from "../pages/frontpage/ruins";
@@ -10,8 +11,8 @@ interface ArticleRoutes {
 }
 
 export const articleRoutes: ArticleRoutes = {
-  "planet-007": Landfill,
-  // "frontpage-002": Landfill,
+  "landfill-to-loop": Landfill,
+  "failures-to-breakthroughs": Breakthrough,
   // "frontpage-003": Landfill,
   // "frontpage-004": Landfill,
   // "frontpage-005": Landfill,

@@ -139,7 +139,7 @@ export default function Landfill() {
   const [showShareFeedback, setShowShareFeedback] = useState(false);
 
   const articleData: Article = {
-    id: "planet-007",
+    id: "landfill-to-loop",
     category: "The Living Planet",
     title: "Seven Cities Turning Trash into Power",
     date: "October 29, 2025",
