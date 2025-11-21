@@ -10,7 +10,7 @@ interface ArticleRoutes {
 }
 
 export const articleRoutes: ArticleRoutes = {
-  "landfill-to-loop": Landfill,
+  "planet-007": Landfill,
   // "frontpage-002": Landfill,
   // "frontpage-003": Landfill,
   // "frontpage-004": Landfill,
