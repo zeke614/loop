@@ -1,7 +1,7 @@
 import Breakthrough from "../pages/frontpage/breakthroughs";
 import Landfill from "../pages/frontpage/landfill";
 
-// import Ruins from "../pages/frontpage/ruins";
+import Ruins from "../pages/frontpage/ruins";
 // import Lab from "../pages/frontpage/lab";
 
 type ArticleComponent = React.ComponentType;
@@ -13,7 +13,7 @@ interface ArticleRoutes {
 export const articleRoutes: ArticleRoutes = {
   "landfill-to-loop": Landfill,
   "failures-to-breakthroughs": Breakthrough,
-  // "frontpage-003": Landfill,
+  "architectural-ruins": Ruins,
   // "frontpage-004": Landfill,
   // "frontpage-005": Landfill,
   // "frontpage-006": Landfill,

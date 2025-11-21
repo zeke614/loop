@@ -48,8 +48,6 @@ userSchema.index({ email: 1 }, {
   sparse: true 
 });
 
-userSchema.index({ googleId: 1 }, { sparse: true });
-userSchema.index({ githubId: 1 }, { sparse: true });
 
 userSchema.pre('save', function(next) {
   if (this.googleId) {

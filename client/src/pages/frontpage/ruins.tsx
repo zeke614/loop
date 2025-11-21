@@ -5,14 +5,13 @@ import type { Variants } from "framer-motion";
 import BookmarkPopup from "../../components/bookmark";
 import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import recyclingPlant from "../../assets/imgs/recyclingPlant.jpg";
-import copenhill from "../../assets/imgs/copenhill.jpg";
-import reppie from "../../assets/imgs/reppie.jpg";
-import sweden from "../../assets/imgs/sweden.jpg";
-import instanbul from "../../assets/imgs/turkplant.png";
-import beijing from "../../assets/imgs/chinaPlant.jpg";
-import tuasone from "../../assets/imgs/tuasone.png";
-import plant from "../../assets/imgs/manilaPlant.jpeg";
+import ruins from "../../assets/imgs/ruins.jpg";
+import greatZimbabwe from "../../assets/imgs/great-zimbabwe.jpg";
+import machuPicchu from "../../assets/imgs/machuPicchu.jpg";
+import angkorWat from "../../assets/imgs/angkor-wat.jpg";
+import palmyra from "../../assets/imgs/palmyra.jpg";
+import parthenon from "../../assets/imgs/parthenon.jpg";
+import colosseum from "../../assets/imgs/colosseum.jpg";
 
 interface Article {
   id: string;
@@ -132,22 +131,22 @@ function AnimatedSection({
   );
 }
 
-export default function Landfill() {
+export default function Ruins() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
 
   const articleData: Article = {
-    id: "landfill-to-loop",
-    category: "The Living Planet",
-    title: "Seven Cities Turning Trash into Power",
-    date: "March 19, 2025",
-    author: "Daniel Opoku",
-    img: recyclingPlant,
-    alt: "Recycling Plant",
+    id: "architectural-ruins",
+    category: "Time Capsule",
+    title: "Six Architectural Marvels That Are Now Ruins — But Still Awe",
+    date: "March 14, 2025",
+    author: "Elena Rodriguez",
+    img: ruins,
+    alt: "Ruined architectural marvel",
     description:
-      "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
+      "Ruins invite imagination in ways polished monuments never can. They are the bones of past civilizations, exposed to wind, rain, and time, yet still powerful enough to shift how we think about beauty, ambition, and impermanence.",
   };
 
   useEffect(() => {
@@ -285,8 +284,8 @@ export default function Landfill() {
           className="text-2xl md:text-3xl font-semibold pt-2"
           variants={textVariants}
         >
-          Seven Cities Turning{" "}
-          <span className="block md:inline">Trash into Power</span>
+          Once Architectural Marvels,{" "}
+          <span className="block md:inline">Now Ruins — But Still Awe</span>
         </motion.h1>
 
         <motion.div
@@ -307,8 +306,8 @@ export default function Landfill() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={recyclingPlant}
-            alt="Recycling Plant"
+            src={ruins}
+            alt="Ancient ruins against dramatic sky"
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
@@ -322,12 +321,13 @@ export default function Landfill() {
       <AnimatedSection>
         <div className="text-[#767676] text-start">
           <motion.p className="leading-6.5 px-3" variants={textVariants}>
-            The modern city faces two ancient problems: waste and want. What to
-            do with mountains of trash — and how to feed the endless appetite
-            for energy. Across the globe, some cities are discovering that the
-            answer to both problems can come from the same source. Here are 7
-            cities that have turned waste into power, lighting homes and warming
-            streets from what once filled their landfills.
+            Ruins invite imagination in ways polished monuments never can. They
+            are the bones of past civilizations, exposed to wind, rain, and
+            time, yet still powerful enough to shift how we think about beauty,
+            ambition, and impermanence. This feature explores six extraordinary
+            structures that have partially crumbled into silence but continue to
+            inspire awe, scholarship, and cultural fascination. Their stones may
+            be fractured, but their stories remain unbroken.
           </motion.p>
         </div>
       </AnimatedSection>
@@ -336,65 +336,61 @@ export default function Landfill() {
         {[
           {
             title:
-              "1. Copenhagen, Denmark — Where Waste Powers Homes and Skiers",
-            img: copenhill,
+              "1. The Colosseum — A Monument That Outlived Its Empire (Rome, Italy)",
+            img: colosseum,
             content:
-              "The plant at Amager Bakke (also known as CopenHill) in Copenhagen not only burns nearly 400,000 tons of municipal waste annually to generate both electricity and district heating, but it also transforms the facility's rooftop into an 85-metre ski slope, climbing wall and public recreation space. By embedding energy recovery into civic life and making the waste-plant a landmark, Copenhagen demonstrates how infrastructure and urban life can merge.",
-          },
-          {
-            title: "2. Stockholm, Sweden — Keeping Landfills Almost Empty",
-            img: sweden,
-            content:
-              "Sweden, known for its high recycling rates, sends less than 1 % of its municipal waste to landfills. The rest is recycled or incinerated to produce power and heat for homes and industries. The country's success lies in combining policy (strict landfill bans), infrastructure (34 + waste-to-energy plants) and culture (waste is seen as resource). That integrated model gives Stockholm one of the strongest circular-economy examples in the world.",
-          },
-          {
-            title: "3. Istanbul, Turkey — A Megacity's Waste Becomes Energy",
-            img: instanbul,
-            content:
-              "In the Eyüp district, the Istanbul Waste Power Plant processes around 3,000 tons of waste daily and produces approximately 78 MWh of electricity and 175 MWh of thermal energy — sufficient to meet the needs of a million people. The scale of the operation and the fact that it addresses both disposal and urban energy stress in one of the world's largest cities makes it a model for rapidly urbanising regions.",
+              "Rome's Colosseum is instantly recognizable: a massive amphitheater with missing walls, broken arches, and exposed interior chambers. Earthquakes, stone theft, and centuries of neglect transformed it from a complete oval into the iconic semi-ruin known today. But the Colosseum's story didn't end when its gladiators did. Even damaged, it remains a symbol of a civilization both brilliant and brutal. Its surviving corridors reveal engineering genius, while its fragmented stones echo the cost of entertainment built on human suffering. Millions visit each year not to see a ruined stadium, but to experience a structure that somehow feels alive in its incompleteness. Its ruin gives it depth, weight, and honesty.",
           },
           {
             title:
-              "4. Addis Ababa, Ethiopia — Africa's First Big Waste-to-Energy Plant",
-            img: reppie,
+              "2. The Parthenon — A Shattered Temple Still Shaping Civilizations (Athens, Greece)",
+            img: parthenon,
             content:
-              "The Reppie Waste‑to‑Energy Plant in Addis Ababa was built on a reclaimed landfill site, converting the city's waste into roughly 25 MW of electricity while cutting methane emissions that would otherwise escape from open dumps. In doing so, it shows that waste-to-energy is not only for rich countries — with the right design and financing, it can work in emerging cities with rapid growth and major waste challenges.",
+              "The Parthenon sits atop the Acropolis as if keeping watch over Western civilization itself. Built to celebrate Athena and the political confidence of classical Athens, it has endured invasions, fires, earthquakes, and a catastrophic explosion in the 17th century. What stands now is a graceful frame of columns and carved fragments. Its ruin, far from diminishing its value, has strengthened its symbolic weight. The Parthenon continues to shape global ideas about democracy, aesthetics, and cultural heritage. Even as restoration efforts work carefully to preserve what remains, its broken edges invite reflection on impermanence and the long arc of human ambition. It is a masterpiece precisely because it has survived in pieces.",
           },
           {
             title:
-              "5. Beijing, China — Scaling Up Waste-to-Energy at National Level",
-            img: beijing,
+              "3. Great Zimbabwe — The Stone Kingdom That Refused to Vanish (Masvingo Province, Zimbabwe)",
+            img: greatZimbabwe,
             content:
-              "In China, plants such as the Asuwei Domestic Waste Incineration Power Plant handle thousands of tons of household waste daily, convert it into 420 million kWh of green electricity per year, and reclaim metals and other materials from the slag. China's massive deployment of waste-to-energy technology — combined with waste-sorting policies and local innovation — presents not just a city-level example but a national strategy for converting waste into energy and materials.",
-          },
-          {
-            title: "6. Singapore — An Island That Eats Its Own Trash",
-            img: tuasone,
-            content:
-              "The city-state of Singapore is advancing the Tuas Nexus project, which integrates waste-to-energy, water reclamation and high-density land use. With little space for landfills and a premium on land and resources, Singapore turns its municipal solid waste into fuel and reclaim water in a closed-loop system. (See reports on Gulf / Asian cities turning waste into wealth.) This dual-loop model offers lessons for dense cities everywhere: when waste and utilities are re-imagined as interconnected, radical efficiency becomes possible.",
+              "In southeastern Zimbabwe stand the remains of a once-thriving medieval capital: a sprawling stone city built entirely without mortar. Great Zimbabwe's curved walls and towering enclosures speak of a wealthy society that dominated regional trade. When its population dispersed in the 15th century—likely due to environmental pressure and political transition—the city was left to the elements. Yet the granite walls still lock together with stubborn precision, forming passageways and ceremonial spaces that draw archaeologists from around the world. Even in ruin, Great Zimbabwe challenges long-held assumptions about African architecture, reminding us that cultural sophistication flourished far beyond the borders of Europe and the Middle East. Its silence is a kind of power, a whispered insistence that forgotten kingdoms shaped history too.",
           },
           {
             title:
-              "7. Manila, Philippines — From Wasteland to Waste-to-Energy Model",
-            img: plant,
+              "4. Machu Picchu — The Hidden Citadel That Outsmarted Time (Cusco Region, Peru)",
+            img: machuPicchu,
             content:
-              "In the Quezon City area of Metro Manila, a former uncontrolled landfill is being transformed into a waste-to-energy model project, showing how legacy disposal sites can become engines for clean energy and land regeneration. Through design, extraction and reclamation, the city illustrates how strategic intervention and public-private partnerships can convert urban waste legacies into sustainable infrastructure.",
+              "Machu Picchu rises in the Peruvian Andes like a vision that almost shouldn't be real. Once a royal Incan estate and ceremonial retreat, it was abandoned in the 16th century during the empire's collapse and quickly swallowed by cloud forest. For centuries, it existed mostly in local stories until its early 20th-century rediscovery revealed terraces, temples, and stairways brushed by mist. Its partial ruin only intensifies its magic. The broken stones, the fragments of sun-aligned structures, the way nature clings to every ledge—everything feels deliberate, like the Inca crafted a city to remain impressive even in decay. Machu Picchu endures as a monument to human ingenuity but also to nature's ability to cradle and conceal the past.",
           },
-        ].map((city, index) => (
+          {
+            title:
+              "5. Palmyra — A Desert Crossroads Reduced but Not Erased (Homs Governorate, Syria)",
+            img: palmyra,
+            content:
+              "Once a wealthy caravan city connecting the Roman world to Persia, India, and Arabia, Palmyra flourished through cultural exchange. Its grand colonnades, triumphal arches, and temple complexes announced its importance to travelers crossing the Syrian desert. Time alone did not ruin Palmyra—conflicts, shifting trade routes, and more recently, devastating destruction contributed to its fragmentation. Yet even the broken sections carry a fierce dignity. Sunlight slides across the surviving columns as though illuminating an ancient memory. Palmyra's ruins speak of a city that once thrived on connection, negotiation, and cosmopolitan identity, reminding visitors today that cultural crossroads are fragile treasures worth defending.",
+          },
+          {
+            title:
+              "6. Angkor Wat (and the Greater Angkor Region) — Temples Entangled in a Living Jungle (Siem Reap Province, Cambodia)",
+            img: angkorWat,
+            content:
+              "Angkor Wat is only one piece of a vast temple complex that once formed the spiritual and political heart of the Khmer Empire. Over centuries, conflict, resource strain, and shifting capitals left many structures abandoned, offering the jungle an opportunity it seized with enthusiasm. Roots thicker than a person's arm curl through stone corridors, and trees burst through collapsed rooftops, turning every ruin into a collaboration between nature and forgotten artisans. Instead of diminishing the site's beauty, this entanglement enhances it. Angkor's half-buried towers and carved reliefs radiate a dreamlike intensity, as if the past is emerging and disappearing in the same moment. Even in ruin, Angkor remains one of humanity's most mesmerizing architectural feats.",
+          },
+        ].map((ruin, index) => (
           <AnimatedSection key={index} className="space-y-6">
             <motion.h2
               className="text-[1.375rem] md:text-2xl font-medium"
               variants={textVariants}
             >
-              {city.title}
+              {ruin.title}
             </motion.h2>
             <motion.div
               className="overflow-hidden mb-6 md:mx-20"
               variants={imageVariants}
             >
               <img
-                src={city.img}
-                alt="Recycling Plant"
+                src={ruin.img}
+                alt={ruin.title}
                 className="w-full h-48 md:h-105 object-cover"
               />
             </motion.div>
@@ -402,7 +398,7 @@ export default function Landfill() {
               className="mb-6 text-[#767676] leading-7"
               variants={textVariants}
             >
-              {city.content}
+              {ruin.content}
             </motion.p>
           </AnimatedSection>
         ))}
@@ -410,15 +406,14 @@ export default function Landfill() {
 
       <AnimatedSection>
         <motion.p className="text-[#767676] pt-3" variants={textVariants}>
-          From these cities, a quiet revolution burns: garbage turned into green
-          gold. Their success shows that the future of energy might not lie deep
-          underground, but in what we throw away every day. These cities span
-          different geographies, income levels and waste-profiles — yet they
-          share a common pattern: waste is treated not as an after-thought but
-          as a feedstock. Energy systems that integrate thermal recovery,
-          recycling, and civic engagement are outperforming traditional disposal
-          models. As more urban centres grow, the question shifts from "What do
-          we do with trash?" to "What do we do with the value embedded in it?"
+          Ruins preserve what polished monuments can't: the reminders of
+          fragility, ambition, and the unpredictable forces that shape
+          civilizations. These six architectural marvels are incomplete, yet
+          they continue to inspire curiosity, scholarship, preservation efforts,
+          and storytelling. Their broken stones are not losses but
+          invitations—proof that beauty can endure long after purpose fades, and
+          that even shattered structures can cast long, astonishing shadows
+          across history.
         </motion.p>
       </AnimatedSection>
 

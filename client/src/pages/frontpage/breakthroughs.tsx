@@ -141,12 +141,12 @@ export default function Breakthrough() {
     id: "failures-to-breakthroughs",
     category: "Genius & Folly",
     title: "Six Scientific Failures That Led to Major Breakthroughs",
-    date: "September 3, 2025",
+    date: "October 27, 2025",
     author: "Olu Jacobs",
     img: lab,
     alt: "Laboratory experiment scene",
     description:
-      "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
+      "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible.",
   };
 
   useEffect(() => {
@@ -281,7 +281,7 @@ export default function Breakthrough() {
 
       <AnimatedSection className="text-center">
         <motion.h1
-          className="text-2xl md:text-3xl font-semibold pt-4"
+          className="text-2xl md:text-3xl font-semibold pt-2"
           variants={textVariants}
         >
           Six Scientific Failures,
@@ -292,11 +292,13 @@ export default function Breakthrough() {
           className="flex items-center justify-center pt-3 text-gray-500 mb-10"
           variants={textVariants}
         >
-          <span className="mr-3">September 3, 2025</span>
+          <span className="mr-3">{articleData.date}</span>
           <span>•</span>
           <span className="ml-3">
             by
-            <span className="ml-1.5 font-medium text-gray-700">Olu Jacobs</span>
+            <span className="ml-1.5 font-medium text-gray-700">
+              {articleData.author}
+            </span>
           </span>
         </motion.div>
       </AnimatedSection>
