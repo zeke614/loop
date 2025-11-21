@@ -2,6 +2,10 @@ import recyclingPlant from "../../assets/imgs/recyclingPlant.jpg";
 import copenhill from "../../assets/imgs/copenhill.jpg";
 import reppie from "../../assets/imgs/reppie.jpg";
 import sweden from "../../assets/imgs/sweden.jpg";
+import instanbul from "../../assets/imgs/turkplant.png";
+import beijing from "../../assets/imgs/chinaPlant.jpg";
+import tuasone from "../../assets/imgs/tuasone.png";
+import plant from "../../assets/imgs/manilaPlant.jpeg";
 
 export default function Landfill() {
   return (
@@ -88,7 +92,7 @@ export default function Landfill() {
           </h2>
           <div className="overflow-hidden mb-6 md:mx-20">
             <img
-              src={copenhill}
+              src={instanbul}
               alt="Recycling Plant"
               className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
             />
@@ -126,11 +130,11 @@ export default function Landfill() {
         </div>
         <div className="space-y-6">
           <h2 className="text-[1.375rem] md:text-2xl font-medium">
-            5. Beijing, China — Scaling Up Waste-to-Energy at National Scale
+            5. Beijing, China — Scaling Up Waste-to-Energy at National Level
           </h2>
           <div className="overflow-hidden mb-6 md:mx-20">
             <img
-              src={copenhill}
+              src={beijing}
               alt="Recycling Plant"
               className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
             />
@@ -152,7 +156,7 @@ export default function Landfill() {
           </h2>
           <div className="overflow-hidden mb-6 md:mx-20">
             <img
-              src={copenhill}
+              src={tuasone}
               alt="Recycling Plant"
               className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
             />
@@ -174,7 +178,7 @@ export default function Landfill() {
           </h2>
           <div className="overflow-hidden mb-6 md:mx-20">
             <img
-              src={copenhill}
+              src={plant}
               alt="Recycling Plant"
               className="w-full h-48 md:h-105 object-cover transition-transform duration-500"
             />

@@ -19,7 +19,7 @@ import typewriter from "../assets/imgs/typewriter.jpg";
 const articles = {
   "Front Page": [
     {
-      id: "frontpage-003",
+      id: "science-002",
       category: "Genius & Folly",
       title: "Six Scientific Failures That Led to Major Breakthroughs",
       date: "September 3, 2025",
@@ -30,7 +30,7 @@ const articles = {
         "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
     },
     {
-      id: "frontpage-002",
+      id: "time-007",
       category: "Time Capsule",
       title: "Six Architectural Marvels That Are Now Ruins — But Still Awe",
       date: "October 1, 2025",
@@ -41,7 +41,7 @@ const articles = {
         "Ruins capture imagination because they embody past ambition and present mystery. This photo-essay and analysis surveys six architectural wonders that are partly lost to time, exploring their original functions, causes of decline and cultural afterlives...",
     },
     {
-      id: "landfill-to-loop",
+      id: "planet-007",
       category: "The Living Planet",
       title: "From Landfill to Loop: Cities That Turned Waste into Power",
       date: "November 7, 2025",
@@ -52,7 +52,7 @@ const articles = {
         "A number of cities have transformed waste management into energy, building circular systems that cut emissions and create jobs. This article profiles notable projects, the technologies they use, and the political and social choices that made them scalable...",
     },
     {
-      id: "frontpage-004",
+      id: "arena-001",
       category: "Arena of Fame",
       title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
       date: "July 20, 2025",
@@ -63,7 +63,7 @@ const articles = {
         "From improbably overturned deficits to last-second victories, these five matches became shorthand for resilience in sport. Each case is studied for its tactics, psychological turning points, and cultural impact on how fans and competitors understand grit...",
     },
     {
-      id: "frontpage-005",
+      id: "finance-006",
       category: "Money & Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "June 12, 2025",
@@ -74,7 +74,7 @@ const articles = {
         "High-profile collapses prompted regulatory reforms, new auditing norms, and shifts in board accountability. This historical review traces corporate failures and the governance changes they catalyzed, revealing how policy and culture adapt after crisis...",
     },
     {
-      id: "frontpage-006",
+      id: "human-003",
       category: "Human Currents",
       title:
         "Six Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
@@ -86,7 +86,7 @@ const articles = {
         "From tactical breathing to cognitive rehearsal, elite performers use repeatable mental tools to convert anxiety into focused action. This article breaks down six evidence-backed techniques across sport, stage, and science and gives real examples of practitioners who credit them for breakthroughs...",
     },
     {
-      id: "frontpage-007",
+      id: "time-001",
       category: "Time Capsule",
       title: "Five Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "January 28, 2025",
@@ -128,7 +128,7 @@ const articles = {
         "Six Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
       date: "April 24, 2025",
       author: "Rina Patel",
-      img: "",
+      img: psyche,
       alt: "Athlete closing eyes before a race",
       description:
         "From tactical breathing to cognitive rehearsal, elite performers use repeatable mental tools to convert anxiety into focused action. This article breaks down six evidence-backed techniques across sport, stage, and science and gives real examples of practitioners who credit them for breakthroughs...",
@@ -291,7 +291,7 @@ const articles = {
       title: "From Landfill to Loop: Cities That Turned Waste into Power",
       date: "March 19, 2025",
       author: "Daniel Opoku",
-      img: "/images/planet-007.jpg",
+      img: recyclingPlant,
       alt: "Waste-to-energy facility",
       description:
         "A number of cities have transformed waste management into energy, building circular systems that cut emissions and create jobs. This article profiles notable projects, the technologies they use, and the political and social choices that made them scalable...",
@@ -397,7 +397,7 @@ const articles = {
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "July 26, 2025",
       author: "Yasmin Khalid",
-      img: "/images/finance-006.jpg",
+      img: boardroom,
       alt: "Boardroom with empty chairs",
       description:
         "High-profile collapses prompted regulatory reforms, new auditing norms, and shifts in board accountability. This historical review traces corporate failures and the governance changes they catalyzed, revealing how policy and culture adapt after crisis...",
@@ -456,7 +456,7 @@ const articles = {
       title: "Five Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
       author: "Hannah Clarke",
-      img: "/images/stage-001.jpg",
+      img: sports,
       alt: "Athlete celebrating a comeback win",
       description:
         "From improbably overturned deficits to last-second victories, these five matches became shorthand for resilience in sport. Each case is studied for its tactics, psychological turning points, and cultural impact on how fans and competitors understand grit...",
@@ -584,7 +584,7 @@ const articles = {
       title: "Six Scientific Failures That Led to Major Breakthroughs",
       date: "October 27, 2025",
       author: "Olu Jacobs",
-      img: "/images/science-002.jpg",
+      img: lab,
       alt: "Laboratory experiment scene",
       description:
         "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
@@ -688,7 +688,7 @@ const articles = {
       title: "Five Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "May 14, 2025",
       author: "Ada Mensah",
-      img: "/images/time-001.jpg",
+      img: typewriter,
       alt: "Vintage mechanical invention",
       description:
         "History remembers winners but overlooks clever failures that prefigured later breakthroughs. This article revives five inventions that failed commercially but anticipated future technologies and asks what their stories teach about timing and adoption...",
@@ -755,7 +755,7 @@ const articles = {
       title: "Six Architecture-Marvels That Are Now Ruins — But Still Awe",
       date: "March 14, 2025",
       author: "Chioma Eze",
-      img: "/images/time-007.jpg",
+      img: ruins,
       alt: "Ruined architectural marvel",
       description:
         "Ruins capture imagination because they embody past ambition and present mystery. This photo-essay and analysis surveys six architectural wonders that are partly lost to time, exploring their original functions, causes of decline and cultural afterlives...",

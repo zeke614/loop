@@ -17,11 +17,15 @@ export const registerUser = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+  
+    const firstName = username.charAt(0).toUpperCase() + username.slice(1).replace(/[0-9]/g, '');
+
     const newUser = new User({ 
       username, 
       email, 
       password: hashedPassword,
-      authProvider: 'local'
+      authProvider: 'local',
+      firstName: firstName 
     });
     await newUser.save();
 
@@ -37,7 +41,8 @@ export const registerUser = async (req, res) => {
       user: { 
         id: newUser._id, 
         username: newUser.username, 
-        email: newUser.email 
+        email: newUser.email,
+        firstName: newUser.firstName 
       }
     });
   } catch (err) {
@@ -65,8 +70,7 @@ export const loginUser = async (req, res) => {
       });
     }
 
-    // Compare passwords (only for local users)
-    const isMatch = bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
@@ -82,7 +86,8 @@ export const loginUser = async (req, res) => {
       user: { 
         id: user._id, 
         username: user.username, 
-        email: user.email 
+        email: user.email,
+        firstName: user.firstName 
       } 
     });
   } catch (err) {

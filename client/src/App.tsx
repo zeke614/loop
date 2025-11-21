@@ -33,7 +33,7 @@ function App() {
         <Route path="life" element={<Life />} />
         <Route path="science" element={<Science />} />
         <Route path="earth" element={<Earth />} />
-        <Route path="sports" element={<Legacy />} />
+        <Route path="legacy" element={<Legacy />} />
         <Route path="finance" element={<Finance />} />
         <Route path="info" element={<Info />} />
         <Route path="articles/:articleId" element={<ArticlePage />} />
