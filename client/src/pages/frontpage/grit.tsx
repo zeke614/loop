@@ -1,27 +1,36 @@
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-
 import BookmarkPopup from "../../components/bookmark";
-import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  ArrowUpOnSquareIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import sports from "../../assets/imgs/sports.jpg";
+
+import articles from "../../constants/articles";
+
 import liverpool from "../../assets/imgs/liverpool.webp";
 import serena from "../../assets/imgs/serena.webp";
 import patriotsFalcons from "../../assets/imgs/patriotsFalcons.png";
 import cleveland from "../../assets/imgs/cleveland.jpeg";
 import tWoods from "../../assets/imgs/tWoods.jpg";
 
-interface Article {
+type Article = {
   id: string;
-  category: string;
   title: string;
-  date: string;
-  author: string;
-  img: string;
-  alt: string;
-  description: string;
-}
+  description?: string;
+  date?: string;
+  author?: string;
+  img?: string;
+  alt?: string;
+  [key: string]: any;
+};
+
+const articleData = (articles["Arena of Fame"] as Article[]).find(
+  (article) => article.id === "the-will-to-win"
+)!;
 
 const sectionVariants: Variants = {
   hidden: {
@@ -135,18 +144,7 @@ export default function Grit() {
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
-
-  const articleData: Article = {
-    id: "the-will-to-win",
-    category: "Arena of Fame",
-    title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
-    date: "February 20, 2025",
-    author: "Hannah Clarke",
-    img: sports,
-    alt: "Athlete celebrating a comeback win",
-    description:
-      "Comebacks endure because they reveal something elemental about competition: talent matters, but resolve is its own kind of physics. These five stories capture the moment when athletes and teams refused to accept predictable endings.",
-  };
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
@@ -154,6 +152,22 @@ export default function Grit() {
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleBookmarkClick = () => {
     const saved: Article[] = JSON.parse(
@@ -228,6 +242,22 @@ export default function Grit() {
       transition={{ duration: 0.3 }}
       className="text-start pt-19 pb-24 px-4 mx-auto max-w-4xl relative"
     >
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-4 md:bottom-12 md:right-42 z-50 p-2.5 bg-[#0ab39c] text-white rounded-full shadow-lg hover:bg-[#089c8a] transition-all duration-200 hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronUpIcon className="size-4.5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       <motion.div
         variants={floatingButtonVariants}
         initial="hidden"
@@ -283,10 +313,8 @@ export default function Grit() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          The Will to Win:{" "}
-          <span className="block md:inline">
-            Five Sports Comebacks That Redefined Grit
-          </span>
+          Five Sports Comebacks
+          <span className="block md:inline"> That Redefined Grit</span>
         </motion.h1>
 
         <motion.div
@@ -307,8 +335,8 @@ export default function Grit() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={sports}
-            alt="Athlete celebrating victory in dramatic comeback"
+            src={articleData.img}
+            alt={articleData.alt}
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
@@ -365,8 +393,7 @@ export default function Grit() {
             img: cleveland,
             alt: "LeBron James with the 2016 NBA Finals trophy",
             content:
-              // "In a Finals series where the Warriors had set records for wins and were heavily favored, the Cavaliers faced a 3–1 deficit that seemed insurmountable. Yet, led by LeBron James' transcendent performances, Cleveland clawed back. Each game in the comeback was a study in adaptation—defensive schemes shifted, offensive roles evolved, and mental toughness was tested to its limits. The final game, punctuated by James' iconic block and Kyrie Irving's decisive three-pointer, wasn't just a win; it was a seismic shift in NBA history. This comeback underscored that in sport, as in life, the narrative is never fully written until the final buzzer sounds.",
-              "The 2016 Finals seemed predetermined: the 73–9 Warriors up 3–1, Cleveland clinging to mathematical hope more than momentum. Then LeBron James and Kyrie Irving launched a three-game counterattack that felt equal parts resolve and rebellion. Game 7 in Oakland delivered the defining moments—LeBron’s chase-down block, Kyrie’s step-back three, and a final defensive stand that turned a superteam mortal. This wasn’t just a scoreboard reversal; it was the first successful comeback from a 3–1 deficit in Finals history, a demolition of the impossible. Cleveland’s long-suffering sports identity flipped overnight, leaving a victory remembered as much for its psychological weight as its athletic brilliance.",
+              "The 2016 Finals seemed predetermined: the 73–9 Warriors up 3–1, Cleveland clinging to mathematical hope more than momentum. Then LeBron James and Kyrie Irving launched a three-game counterattack that felt equal parts resolve and rebellion. Game 7 in Oakland delivered the defining moments—LeBron's chase-down block, Kyrie's step-back three, and a final defensive stand that turned a superteam mortal. This wasn't just a scoreboard reversal; it was the first successful comeback from a 3–1 deficit in Finals history, a demolition of the impossible. Cleveland's long-suffering sports identity flipped overnight, leaving a victory remembered as much for its psychological weight as its athletic brilliance.",
           },
           {
             title:
@@ -412,8 +439,7 @@ export default function Grit() {
           capture the moment when athletes and teams refused to accept
           predictable endings. Their victories remind us that sport is not only
           played on fields and courts but in the unresolved spaces of the human
-          spirit. Your readers will feel that echo long after they leave the
-          page.
+          spirit.
         </motion.p>
       </AnimatedSection>
 

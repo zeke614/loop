@@ -1,29 +1,38 @@
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-
 import BookmarkPopup from "../../components/bookmark";
-import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  ArrowUpOnSquareIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import boardroom from "../../assets/imgs/boardroom.jpg";
+
+import articles from "../../constants/articles";
+
 import enron from "../../assets/imgs/enron.jpg";
 import worldcom from "../../assets/imgs/worldCom.png";
 import wellsFargo from "../../assets/imgs/wellsFargo.jpg";
 import toshiba from "../../assets/imgs/toshiba.jpg";
 import lehman from "../../assets/imgs/lehman.jpg";
 import ftx from "../../assets/imgs/ftx.jpg";
-import wirecard from "../../assets/imgs/wirecard.jpg";
+import wirecard from "../../assets/imgs/wirecard.avif";
 
-interface Article {
+type Article = {
   id: string;
-  category: string;
   title: string;
-  date: string;
-  author: string;
-  img: string;
-  alt: string;
-  description: string;
-}
+  description?: string;
+  date?: string;
+  author?: string;
+  img?: string;
+  alt?: string;
+  [key: string]: any;
+};
+
+const articleData = (articles["Money & Madness"] as Article[]).find(
+  (article) => article.id === "corporate-failures-to-better-governance"
+)!;
 
 const sectionVariants: Variants = {
   hidden: {
@@ -137,18 +146,7 @@ export default function CorporateFailures() {
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
-
-  const articleData: Article = {
-    id: "corporate-failures-governance",
-    category: "Money & Madness",
-    title: "Seven Corporate Failures That Reshaped Modern Governance",
-    date: "July 26, 2025",
-    author: "David Chen",
-    img: boardroom,
-    alt: "Corporate building facade representing business failures",
-    description:
-      "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight and governance.",
-  };
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
@@ -156,6 +154,22 @@ export default function CorporateFailures() {
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleBookmarkClick = () => {
     const saved: Article[] = JSON.parse(
@@ -230,6 +244,22 @@ export default function CorporateFailures() {
       transition={{ duration: 0.3 }}
       className="text-start pt-19 pb-24 px-4 mx-auto max-w-4xl relative"
     >
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-4 md:bottom-12 md:right-42 z-50 p-2.5 bg-[#0ab39c] text-white rounded-full shadow-lg hover:bg-[#089c8a] transition-all duration-200 hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronUpIcon className="size-4.5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       <motion.div
         variants={floatingButtonVariants}
         initial="hidden"
@@ -285,8 +315,8 @@ export default function CorporateFailures() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          Seven Corporate Failures That{" "}
-          <span className="block md:inline">Reshaped Modern Governance</span>
+          Seven Corporate Failures,
+          <span className="block md:inline"> Governments' Hard Lessons</span>
         </motion.h1>
 
         <motion.div
@@ -307,8 +337,8 @@ export default function CorporateFailures() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={boardroom}
-            alt="Corporate building facade representing business failures"
+            src={articleData.img}
+            alt={articleData.alt}
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
@@ -337,21 +367,43 @@ export default function CorporateFailures() {
       <div className="my-14 space-y-14 px-1.5">
         {[
           {
-            title: "1. Enron (2001) — Innovation Built on Illusion",
+            title:
+              "1. Lehman Brothers (2008) — A Collapse Felt Around the Globe",
+            img: lehman,
+            alt: "Lehman Brothers headquarters during financial crisis",
+            content:
+              "Lehman masked its true financial risk through exotic mortgage-backed securities and the infamous Repo 105 maneuver, temporarily shifting debt off its balance sheet to appear stable. When the U.S. housing bubble burst, Lehman was exposed and ultimately filed the largest bankruptcy in American history. The aftermath froze global credit markets and triggered worldwide reforms, including the Dodd–Frank Act, stricter liquidity requirements, and mandatory stress testing to detect systemic risk before it spirals out of control.",
+          },
+          {
+            title: "2. Enron (2001) — Innovation Built on Illusion",
             img: enron,
             alt: "Enron stocks plummet",
             content:
               "Enron dazzled the world with its reputation for bold energy trading, complex financial engineering, and oversized ambition. But beneath the glow sat an empire propped up by hidden debt, inflated profits, and a culture that rewarded deception over discipline. When its accounting tricks were exposed, Enron collapsed in spectacular fashion, wiping out billions and shattering public trust. The fallout birthed the Sarbanes–Oxley Act, which reshaped how corporations audit, disclose, and govern themselves, proving that transparency can't be optional.",
           },
           {
-            title: "2. WorldCom (2002) — When Numbers Became Fiction",
+            title: "3. FTX (2022) — When Hype Outran Responsibility",
+            img: ftx,
+            alt: "FTX cryptocurrency exchange logo and branding",
+            content:
+              "FTX rose meteorically as the 'friendly, futuristic' crypto exchange run by a founder celebrated as a genius. Behind that façade, customer deposits were quietly funneled into speculative bets through a sister company with virtually no oversight. When cracks appeared, billions evaporated in days, shaking confidence across the entire crypto market. The collapse accelerated global efforts to regulate digital asset platforms, reinforcing that trust cannot be built on charisma or marketing alone.",
+          },
+          {
+            title: "4. WorldCom (2002) — When Numbers Became Fiction",
             img: worldcom,
             alt: "WorldCom corporate headquarters",
             content:
               "WorldCom engineered one of the largest frauds in corporate history by disguising ordinary expenses as lucrative investments and inflating earnings by more than $11 billion. What looked like steady growth was really a spreadsheet built out of smoke. When internal auditors uncovered the scheme, the company imploded, and investors suffered massive losses. Its demise pushed regulators to strengthen internal auditing roles, clarify accounting standards, and demand clearer separation between executives and those tasked with monitoring them.",
           },
           {
-            title: "3. Wells Fargo (2016) — Growth at Any Cost",
+            title: "5. Wirecard (2020) — A Fintech Mirage",
+            img: wirecard,
+            alt: "Wirecard fintech company offices",
+            content:
+              "Wirecard was long seen as Europe's answer to Silicon Valley fintech stars—until auditors revealed that €1.9 billion in supposed cash simply didn't exist. Forged documents, phantom subsidiaries, and a willingness to bully critics allowed the illusion to persist for years. Its downfall spurred a major overhaul of Germany's financial oversight systems, strengthened whistleblower protections, and forced regulators to confront the risks of being too cozy with rapid-growth tech companies.",
+          },
+          {
+            title: "6. Wells Fargo (2016) — Growth at Any Cost",
             img: wellsFargo,
             alt: "Wells Fargo bank branch exterior",
             content:
@@ -359,33 +411,11 @@ export default function CorporateFailures() {
           },
           {
             title:
-              "4. Toshiba Accounting Scandal (2015) — The Weight of Corporate Tradition",
+              "7. Toshiba Accounting Scandal (2015) — The Weight of Corporate Tradition",
             img: toshiba,
             alt: "Toshiba corporate headquarters in Tokyo",
             content:
               "Toshiba's leadership culture valued obedience and perfection, creating an internal environment where subordinates felt compelled to meet profits—even if they had to invent them. Over several years, profits were overstated by roughly $1.2 billion through improper accounting practices. The scandal forced resignations at the highest levels and drove Japan to strengthen corporate governance codes, mandate more independent directors, and address long-standing issues around hierarchy and transparency in major firms.",
-          },
-          {
-            title:
-              "5. Lehman Brothers (2008) — A Collapse Felt Around the Globe",
-            img: lehman,
-            alt: "Lehman Brothers headquarters during financial crisis",
-            content:
-              "Lehman masked its true financial risk through exotic mortgage-backed securities and the infamous Repo 105 maneuver, temporarily shifting debt off its balance sheet to appear stable. When the U.S. housing bubble burst, Lehman was exposed and ultimately filed the largest bankruptcy in American history. The aftermath froze global credit markets and triggered worldwide reforms, including the Dodd–Frank Act, stricter liquidity requirements, and mandatory stress testing to detect systemic risk before it spirals out of control.",
-          },
-          {
-            title: "6. FTX (2022) — When Hype Outran Responsibility",
-            img: ftx,
-            alt: "FTX cryptocurrency exchange logo and branding",
-            content:
-              "FTX rose meteorically as the 'friendly, futuristic' crypto exchange run by a founder celebrated as a genius. Behind that façade, customer deposits were quietly funneled into speculative bets through a sister company with virtually no oversight. When cracks appeared, billions evaporated in days, shaking confidence across the entire crypto market. The collapse accelerated global efforts to regulate digital asset platforms, reinforcing that trust cannot be built on charisma or marketing alone.",
-          },
-          {
-            title: "7. Wirecard (2020) — A Fintech Mirage",
-            img: wirecard,
-            alt: "Wirecard fintech company offices",
-            content:
-              "Wirecard was long seen as Europe's answer to Silicon Valley fintech stars—until auditors revealed that €1.9 billion in supposed cash simply didn't exist. Forged documents, phantom subsidiaries, and a willingness to bully critics allowed the illusion to persist for years. Its downfall spurred a major overhaul of Germany's financial oversight systems, strengthened whistleblower protections, and forced regulators to confront the risks of being too cozy with rapid-growth tech companies.",
           },
         ].map((failure, index) => (
           <AnimatedSection key={index} className="space-y-6">

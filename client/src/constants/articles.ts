@@ -10,12 +10,23 @@ import boardroom from "../assets/imgs/boardroom.jpg";
 import psyche from "../assets/imgs/psyche.jpg";
 import typewriter from "../assets/imgs/typewriter.jpg";
 
-const articles = {
+interface Article {
+  id: string;
+  category?: string;
+  title?: string;
+  description?: string;
+  img?: string;
+  alt?: string;
+  author?: string;
+  date?: string;
+}
+
+const articles: Record<string, Article[]> = {
   "Front Page": [
     {
       id: "failures-to-breakthroughs",
       category: "Genius & Folly",
-      title: "Six Scientific Failures That Led to Major Breakthroughs",
+      title: "Scientific Failures That Led to Major Breakthroughs",
       date: "October 27, 2025",
       author: "Olu Jacobs",
       img: lab,
@@ -26,7 +37,7 @@ const articles = {
     {
       id: "architectural-ruins",
       category: "Time Capsule",
-      title: "Six Architectural Marvels That Are Now Ruins — But Still Awe",
+      title: "Architectural Marvels That Are Now Ruins — But Still Awe",
       date: "March 14, 2025",
       author: "Elena Rodriguez",
       img: ruins,
@@ -48,7 +59,7 @@ const articles = {
     {
       id: "the-will-to-win",
       category: "Arena of Fame",
-      title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
+      title: "The Will to Win: Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
       author: "Hannah Clarke",
       img: sports,
@@ -65,13 +76,13 @@ const articles = {
       img: boardroom,
       alt: "Boardroom with empty chairs",
       description:
-        "High-profile collapses prompted regulatory reforms, new auditing norms, and shifts in board accountability. This historical review traces corporate failures and the governance changes they catalyzed, revealing how policy and culture adapt after crisis...",
+        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
     },
     {
       id: "human-003",
       category: "Human Currents",
       title:
-        "Six Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
+        "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
       date: "April 5, 2025",
       author: "Rina Patel",
       img: psyche,
@@ -82,7 +93,7 @@ const articles = {
     {
       id: "time-001",
       category: "Time Capsule",
-      title: "Five Inventions Forgotten by Time That Were Ahead of Their Era",
+      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "January 28, 2025",
       author: "Ada Mensah",
       img: typewriter,
@@ -123,7 +134,7 @@ const articles = {
       date: "April 24, 2025",
       author: "Rina Patel",
       img: psyche,
-      alt: "Athlete closing eyes before a race",
+      alt: "Girl trying to focus",
       description:
         "From tactical breathing to cognitive rehearsal, elite performers use repeatable mental tools to convert anxiety into focused action. This article breaks down six evidence-backed techniques across sport, stage, and science and gives real examples of practitioners who credit them for breakthroughs...",
     },
@@ -392,9 +403,9 @@ const articles = {
       date: "July 26, 2025",
       author: "Yasmin Khalid",
       img: boardroom,
-      alt: "Boardroom with empty chairs",
+      alt: "handcuff on a newspaper",
       description:
-        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight and governance.",
+        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
     },
     {
       id: "finance-007",
@@ -447,7 +458,7 @@ const articles = {
     {
       id: "the-will-to-win",
       category: "Arena of Fame",
-      title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
+      title: "The Will to Win: Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
       author: "Hannah Clarke",
       img: sports,
@@ -575,7 +586,7 @@ const articles = {
     {
       id: "failures-to-breakthroughs",
       category: "Genius & Folly",
-      title: "Six Scientific Failures That Led to Major Breakthroughs",
+      title: "Scientific Failures That Led to Major Breakthroughs",
       date: "October 27, 2025",
       author: "Olu Jacobs",
       img: lab,
@@ -677,9 +688,9 @@ const articles = {
 
   "Time Capsule": [
     {
-      id: "time-001",
+      id: "inventions-forgotten-by-time",
       category: "Time Capsule",
-      title: "Five Inventions Forgotten by Time That Were Ahead of Their Era",
+      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "May 14, 2025",
       author: "Ada Mensah",
       img: typewriter,
@@ -746,7 +757,7 @@ const articles = {
     {
       id: "architectural-ruins",
       category: "Time Capsule",
-      title: "Six Architectural Marvels That Are Now Ruins — But Still Awe",
+      title: "Architectural Marvels That Are Now Ruins — But Still Awe",
       date: "March 14, 2025",
       author: "Elena Rodriguez",
       img: ruins,

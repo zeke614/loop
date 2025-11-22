@@ -1,11 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-
 import BookmarkPopup from "../../components/bookmark";
-import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  ArrowUpOnSquareIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import ruins from "../../assets/imgs/ruins.jpg";
+
+import articles from "../../constants/articles";
+
 import greatZimbabwe from "../../assets/imgs/great-zimbabwe.jpg";
 import machuPicchu from "../../assets/imgs/machuPicchu.jpg";
 import angkorWat from "../../assets/imgs/angkor-wat.jpg";
@@ -13,16 +18,20 @@ import palmyra from "../../assets/imgs/palmyra.jpg";
 import parthenon from "../../assets/imgs/parthenon.jpg";
 import colosseum from "../../assets/imgs/colosseum.jpg";
 
-interface Article {
+type Article = {
   id: string;
-  category: string;
   title: string;
-  date: string;
-  author: string;
-  img: string;
-  alt: string;
-  description: string;
-}
+  description?: string;
+  date?: string;
+  author?: string;
+  img?: string;
+  alt?: string;
+  [key: string]: any;
+};
+
+const articleData = (articles["Time Capsule"] as Article[]).find(
+  (article) => article.id === "architectural-ruins"
+)!;
 
 const sectionVariants: Variants = {
   hidden: {
@@ -136,18 +145,7 @@ export default function Ruins() {
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
-
-  const articleData: Article = {
-    id: "architectural-ruins",
-    category: "Time Capsule",
-    title: "Six Architectural Marvels That Are Now Ruins — But Still Awe",
-    date: "March 14, 2025",
-    author: "Elena Rodriguez",
-    img: ruins,
-    alt: "Ruined architectural marvel",
-    description:
-      "Ruins invite imagination in ways polished monuments never can. They are the bones of past civilizations, exposed to wind, rain, and time, yet still powerful enough to shift how we think about beauty, ambition, and impermanence.",
-  };
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
@@ -155,6 +153,22 @@ export default function Ruins() {
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleBookmarkClick = () => {
     const saved: Article[] = JSON.parse(
@@ -229,6 +243,22 @@ export default function Ruins() {
       transition={{ duration: 0.3 }}
       className="text-start pt-19 pb-24 px-4 mx-auto max-w-4xl relative"
     >
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-4 md:bottom-12 md:right-42 z-50 p-2.5 bg-[#0ab39c] text-white rounded-full shadow-lg hover:bg-[#089c8a] transition-all duration-200 hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronUpIcon className="size-4.5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       <motion.div
         variants={floatingButtonVariants}
         initial="hidden"
@@ -284,8 +314,8 @@ export default function Ruins() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          Once Architectural Marvels,{" "}
-          <span className="block md:inline">Now Ruins — But Still Awe</span>
+          Six Architectural Marvels,
+          <span className="block md:inline"> Now Ruins — But Still Awe</span>
         </motion.h1>
 
         <motion.div
@@ -306,8 +336,8 @@ export default function Ruins() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={ruins}
-            alt="Ancient ruins against dramatic sky"
+            src={articleData.img}
+            alt={articleData.alt}
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"

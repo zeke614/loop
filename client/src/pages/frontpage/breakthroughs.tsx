@@ -1,11 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-
 import BookmarkPopup from "../../components/bookmark";
-import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  ArrowUpOnSquareIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import lab from "../../assets/imgs/lab.jpg";
+
+import articles from "../../constants/articles";
+
 import penicillin from "../../assets/imgs/penicillin.jpg";
 import xray from "../../assets/imgs/xray.jpg";
 import pacemaker from "../../assets/imgs/pacemaker.jpg";
@@ -13,16 +18,20 @@ import microwave from "../../assets/imgs/microwave.jpg";
 import glue from "../../assets/imgs/glue.jpg";
 import nuclear from "../../assets/imgs/nuclear.jpg";
 
-interface Article {
+type Article = {
   id: string;
-  category: string;
   title: string;
-  date: string;
-  author: string;
-  img: string;
-  alt: string;
-  description: string;
-}
+  description?: string;
+  date?: string;
+  author?: string;
+  img?: string;
+  alt?: string;
+  [key: string]: any;
+};
+
+const articleData = (articles["Genius & Folly"] as Article[]).find(
+  (article) => article.id === "failures-to-breakthroughs"
+)!;
 
 const sectionVariants: Variants = {
   hidden: {
@@ -131,23 +140,12 @@ function AnimatedSection({
   );
 }
 
-export default function Breakthrough() {
+export default function Breakthroughs() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
-
-  const articleData: Article = {
-    id: "failures-to-breakthroughs",
-    category: "Genius & Folly",
-    title: "Six Scientific Failures That Led to Major Breakthroughs",
-    date: "October 27, 2025",
-    author: "Olu Jacobs",
-    img: lab,
-    alt: "Laboratory experiment scene",
-    description:
-      "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible.",
-  };
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
@@ -155,6 +153,22 @@ export default function Breakthrough() {
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleBookmarkClick = () => {
     const saved: Article[] = JSON.parse(
@@ -229,6 +243,22 @@ export default function Breakthrough() {
       transition={{ duration: 0.3 }}
       className="text-start pt-19 pb-24 px-4 mx-auto max-w-4xl relative"
     >
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-4 md:bottom-12 md:right-42 z-50 p-2.5 bg-[#0ab39c] text-white rounded-full shadow-lg hover:bg-[#089c8a] transition-all duration-200 hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronUpIcon className="size-4.5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       <motion.div
         variants={floatingButtonVariants}
         initial="hidden"
@@ -285,7 +315,7 @@ export default function Breakthrough() {
           variants={textVariants}
         >
           Six Scientific Failures,
-          <span className="block md:inline">Now Breakthroughs</span>
+          <span className="block md:inline">Now Major Breakthroughs</span>
         </motion.h1>
 
         <motion.div
@@ -306,8 +336,8 @@ export default function Breakthrough() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={lab}
-            alt="Laboratory experiment scene"
+            src={articleData.img}
+            alt={articleData.alt}
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
@@ -321,17 +351,11 @@ export default function Breakthrough() {
       <AnimatedSection>
         <div className="text-[#767676] text-start">
           <motion.p className="leading-6.5 px-3" variants={textVariants}>
-            {/* Failure is often a hidden ingredient of discovery; some experiments
-            that 'failed' paved the way for paradigm shifts. Through archival
-            research and interviews, this article follows six cases where
-            apparent setbacks revealed new routes to understanding the world—and
-            in doing so, saved lives, transformed medicine, and reshaped modern
-            civilization. */}
             Science is often portrayed as a straight staircase to truth, but
             many of its greatest leaps started with a misstep. Failed
             experiments, stray bacteria, overheated equipment—these tiny
             disasters reshaped medicine, physics, technology and even daily
-            life. This feature explores six moments where mistakes didn’t just
+            life. This feature explores six moments where mistakes didn't just
             guide innovation; they became the spark that rewrote what humanity
             thought possible.
           </motion.p>

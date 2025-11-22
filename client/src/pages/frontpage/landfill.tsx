@@ -1,11 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-
 import BookmarkPopup from "../../components/bookmark";
-import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  ArrowUpOnSquareIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import recyclingPlant from "../../assets/imgs/recyclingPlant.jpg";
+
+import articles from "../../constants/articles";
+
 import copenhill from "../../assets/imgs/copenhill.jpg";
 import reppie from "../../assets/imgs/reppie.jpg";
 import sweden from "../../assets/imgs/sweden.jpg";
@@ -14,16 +19,20 @@ import beijing from "../../assets/imgs/chinaPlant.jpg";
 import tuasone from "../../assets/imgs/tuasone.png";
 import plant from "../../assets/imgs/manilaPlant.jpeg";
 
-interface Article {
+type Article = {
   id: string;
-  category: string;
   title: string;
-  date: string;
-  author: string;
-  img: string;
-  alt: string;
-  description: string;
-}
+  description?: string;
+  date?: string;
+  author?: string;
+  img?: string;
+  alt?: string;
+  [key: string]: any;
+};
+
+const articleData = (articles["The Living Planet"] as Article[]).find(
+  (article) => article.id === "landfill-to-loop"
+)!;
 
 const sectionVariants: Variants = {
   hidden: {
@@ -132,23 +141,12 @@ function AnimatedSection({
   );
 }
 
-export default function Landfill() {
+export default function LandfillToLoop() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
-
-  const articleData: Article = {
-    id: "landfill-to-loop",
-    category: "The Living Planet",
-    title: "Seven Cities Turning Trash into Power",
-    date: "March 19, 2025",
-    author: "Daniel Opoku",
-    img: recyclingPlant,
-    alt: "Recycling Plant",
-    description:
-      "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
-  };
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
@@ -156,6 +154,22 @@ export default function Landfill() {
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleBookmarkClick = () => {
     const saved: Article[] = JSON.parse(
@@ -230,6 +244,22 @@ export default function Landfill() {
       transition={{ duration: 0.3 }}
       className="text-start pt-19 pb-24 px-4 mx-auto max-w-4xl relative"
     >
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-4 md:bottom-12 md:right-42 z-50 p-2.5 bg-[#0ab39c] text-white rounded-full shadow-lg hover:bg-[#089c8a] transition-all duration-200 hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ChevronUpIcon className="size-4.5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
       <motion.div
         variants={floatingButtonVariants}
         initial="hidden"
@@ -285,8 +315,8 @@ export default function Landfill() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          Seven Cities Turning{" "}
-          <span className="block md:inline">Trash into Power</span>
+          Seven Cities Turning
+          <span className="block md:inline"> Trash into Power</span>
         </motion.h1>
 
         <motion.div
@@ -307,8 +337,8 @@ export default function Landfill() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={recyclingPlant}
-            alt="Recycling Plant"
+            src={articleData.img}
+            alt={articleData.alt}
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
