@@ -46,15 +46,15 @@ const articles = {
         "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
     },
     {
-      id: "arena-001",
+      id: "the-will-to-win",
       category: "Arena of Fame",
       title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
-      date: "July 20, 2025",
+      date: "February 20, 2025",
       author: "Hannah Clarke",
       img: sports,
       alt: "Athlete celebrating a comeback win",
       description:
-        "From improbably overturned deficits to last-second victories, these five matches became shorthand for resilience in sport. Each case is studied for its tactics, psychological turning points, and cultural impact on how fans and competitors understand grit...",
+        "Resilience in sport rarely arrives neatly wrapped; it erupts in moments when defeat seems inevitable and adrenaline rewrites the script. This feature revisits five astonishing comebacks across different eras and disciplines, examining not just the scorelines but the psychological swings, tactical recalibrations, and cultural ripples they left behind. These are the matches that turned despair into legend…",
     },
     {
       id: "finance-006",
@@ -445,15 +445,15 @@ const articles = {
 
   "Arena of Fame": [
     {
-      id: "arena-001",
+      id: "the-will-to-win",
       category: "Arena of Fame",
-      title: "Five Sports Comebacks That Redefined Grit",
+      title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
       author: "Hannah Clarke",
       img: sports,
       alt: "Athlete celebrating a comeback win",
       description:
-        "From improbably overturned deficits to last-second victories, these five matches became shorthand for resilience in sport. Each case is studied for its tactics, psychological turning points, and cultural impact on how fans and competitors understand grit...",
+        "Comebacks endure because they reveal something elemental about competition: talent matters, but resolve is its own kind of physics. These five stories capture the moment when athletes and teams refused to accept predictable endings.",
     },
     {
       id: "arena-002",

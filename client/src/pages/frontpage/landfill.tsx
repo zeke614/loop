@@ -282,7 +282,7 @@ export default function Landfill() {
 
       <AnimatedSection className="text-center">
         <motion.h1
-          className="text-2xl md:text-3xl font-semibold pt-2"
+          className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
           Seven Cities Turning{" "}
@@ -338,18 +338,21 @@ export default function Landfill() {
             title:
               "1. Copenhagen, Denmark — Where Waste Powers Homes and Skiers",
             img: copenhill,
+            alt: "CopenHill Waste to Energy Plant",
             content:
               "The plant at Amager Bakke (also known as CopenHill) in Copenhagen not only burns nearly 400,000 tons of municipal waste annually to generate both electricity and district heating, but it also transforms the facility's rooftop into an 85-metre ski slope, climbing wall and public recreation space. By embedding energy recovery into civic life and making the waste-plant a landmark, Copenhagen demonstrates how infrastructure and urban life can merge.",
           },
           {
             title: "2. Stockholm, Sweden — Keeping Landfills Almost Empty",
             img: sweden,
+            alt: "Stockholm Waste to Energy Plant",
             content:
               "Sweden, known for its high recycling rates, sends less than 1 % of its municipal waste to landfills. The rest is recycled or incinerated to produce power and heat for homes and industries. The country's success lies in combining policy (strict landfill bans), infrastructure (34 + waste-to-energy plants) and culture (waste is seen as resource). That integrated model gives Stockholm one of the strongest circular-economy examples in the world.",
           },
           {
             title: "3. Istanbul, Turkey — A Megacity's Waste Becomes Energy",
             img: instanbul,
+            alt: "Istanbul Waste to Energy Plant",
             content:
               "In the Eyüp district, the Istanbul Waste Power Plant processes around 3,000 tons of waste daily and produces approximately 78 MWh of electricity and 175 MWh of thermal energy — sufficient to meet the needs of a million people. The scale of the operation and the fact that it addresses both disposal and urban energy stress in one of the world's largest cities makes it a model for rapidly urbanising regions.",
           },
@@ -357,6 +360,7 @@ export default function Landfill() {
             title:
               "4. Addis Ababa, Ethiopia — Africa's First Big Waste-to-Energy Plant",
             img: reppie,
+            alt: "Reppie Waste to Energy Plant",
             content:
               "The Reppie Waste‑to‑Energy Plant in Addis Ababa was built on a reclaimed landfill site, converting the city's waste into roughly 25 MW of electricity while cutting methane emissions that would otherwise escape from open dumps. In doing so, it shows that waste-to-energy is not only for rich countries — with the right design and financing, it can work in emerging cities with rapid growth and major waste challenges.",
           },
@@ -364,12 +368,14 @@ export default function Landfill() {
             title:
               "5. Beijing, China — Scaling Up Waste-to-Energy at National Level",
             img: beijing,
+            alt: "Beijing Waste to Energy Plant",
             content:
               "In China, plants such as the Asuwei Domestic Waste Incineration Power Plant handle thousands of tons of household waste daily, convert it into 420 million kWh of green electricity per year, and reclaim metals and other materials from the slag. China's massive deployment of waste-to-energy technology — combined with waste-sorting policies and local innovation — presents not just a city-level example but a national strategy for converting waste into energy and materials.",
           },
           {
             title: "6. Singapore — An Island That Eats Its Own Trash",
             img: tuasone,
+            alt: "Tuas Nexus Waste to Energy Plant",
             content:
               "The city-state of Singapore is advancing the Tuas Nexus project, which integrates waste-to-energy, water reclamation and high-density land use. With little space for landfills and a premium on land and resources, Singapore turns its municipal solid waste into fuel and reclaim water in a closed-loop system. (See reports on Gulf / Asian cities turning waste into wealth.) This dual-loop model offers lessons for dense cities everywhere: when waste and utilities are re-imagined as interconnected, radical efficiency becomes possible.",
           },
@@ -377,6 +383,7 @@ export default function Landfill() {
             title:
               "7. Manila, Philippines — From Wasteland to Waste-to-Energy Model",
             img: plant,
+            alt: "Manila Waste to Energy Plant",
             content:
               "In the Quezon City area of Metro Manila, a former uncontrolled landfill is being transformed into a waste-to-energy model project, showing how legacy disposal sites can become engines for clean energy and land regeneration. Through design, extraction and reclamation, the city illustrates how strategic intervention and public-private partnerships can convert urban waste legacies into sustainable infrastructure.",
           },
@@ -394,7 +401,7 @@ export default function Landfill() {
             >
               <img
                 src={city.img}
-                alt="Recycling Plant"
+                alt={city.alt}
                 className="w-full h-48 md:h-105 object-cover"
               />
             </motion.div>

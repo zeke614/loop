@@ -5,13 +5,12 @@ import type { Variants } from "framer-motion";
 import BookmarkPopup from "../../components/bookmark";
 import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import ruins from "../../assets/imgs/ruins.jpg";
-import greatZimbabwe from "../../assets/imgs/great-zimbabwe.jpg";
-import machuPicchu from "../../assets/imgs/machuPicchu.jpg";
-import angkorWat from "../../assets/imgs/angkor-wat.jpg";
-import palmyra from "../../assets/imgs/palmyra.jpg";
-import parthenon from "../../assets/imgs/parthenon.jpg";
-import colosseum from "../../assets/imgs/colosseum.jpg";
+import sports from "../../assets/imgs/sports.jpg";
+import liverpool from "../../assets/imgs/liverpool.webp";
+import serena from "../../assets/imgs/serena.webp";
+import patriotsFalcons from "../../assets/imgs/patriotsFalcons.png";
+import cleveland from "../../assets/imgs/cleveland.jpeg";
+import tWoods from "../../assets/imgs/tWoods.jpg";
 
 interface Article {
   id: string;
@@ -131,22 +130,22 @@ function AnimatedSection({
   );
 }
 
-export default function Ruins() {
+export default function Grit() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
 
   const articleData: Article = {
-    id: "architectural-ruins",
-    category: "Time Capsule",
-    title: "Six Architectural Marvels That Are Now Ruins — But Still Awe",
-    date: "March 14, 2025",
-    author: "Elena Rodriguez",
-    img: ruins,
-    alt: "Ruined architectural marvel",
+    id: "the-will-to-win",
+    category: "Arena of Fame",
+    title: "The Will to Win: Five Sports Comebacks That Redefined Grit",
+    date: "February 20, 2025",
+    author: "Hannah Clarke",
+    img: sports,
+    alt: "Athlete celebrating a comeback win",
     description:
-      "Ruins invite imagination in ways polished monuments never can. They are the bones of past civilizations, exposed to wind, rain, and time, yet still powerful enough to shift how we think about beauty, ambition, and impermanence.",
+      "Comebacks endure because they reveal something elemental about competition: talent matters, but resolve is its own kind of physics. These five stories capture the moment when athletes and teams refused to accept predictable endings.",
   };
 
   useEffect(() => {
@@ -284,8 +283,10 @@ export default function Ruins() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          Once Architectural Marvels,{" "}
-          <span className="block md:inline">Now Ruins — But Still Awe</span>
+          The Will to Win:{" "}
+          <span className="block md:inline">
+            Five Sports Comebacks That Redefined Grit
+          </span>
         </motion.h1>
 
         <motion.div
@@ -306,8 +307,8 @@ export default function Ruins() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={ruins}
-            alt="Ancient ruins against dramatic sky"
+            src={sports}
+            alt="Athlete celebrating victory in dramatic comeback"
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
@@ -321,13 +322,13 @@ export default function Ruins() {
       <AnimatedSection>
         <div className="text-[#767676] text-start">
           <motion.p className="leading-6.5 px-3" variants={textVariants}>
-            Ruins invite imagination in ways polished monuments never can. They
-            are the bones of past civilizations, exposed to wind, rain, and
-            time, yet still powerful enough to shift how we think about beauty,
-            ambition, and impermanence. This feature explores six extraordinary
-            structures that have partially crumbled into silence but continue to
-            inspire awe, scholarship, and cultural fascination. Their stones may
-            be fractured, but their stories remain unbroken.
+            Resilience in sport rarely arrives neatly wrapped; it erupts in
+            moments when defeat seems inevitable and adrenaline rewrites the
+            script. This feature revisits five astonishing comebacks across
+            different eras and disciplines, examining not just the scorelines
+            but the psychological swings, tactical recalibrations, and cultural
+            ripples they left behind. These are the matches that turned despair
+            into legend…
           </motion.p>
         </div>
       </AnimatedSection>
@@ -336,67 +337,60 @@ export default function Ruins() {
         {[
           {
             title:
-              "1. The Colosseum — A Monument That Outlived Its Empire (Rome, Italy)",
-            img: colosseum,
-            alt: "Ruins of the Colosseum in Rome",
+              "1. Liverpool vs. AC Milan (2005 UEFA Champions League Final, Istanbul) — The Miracle of Instanbul",
+            img: liverpool,
+            alt: "Liverpool - Miracle of Istanbul",
             content:
-              "Rome's Colosseum is instantly recognizable: a massive amphitheater with missing walls, broken arches, and exposed interior chambers. Earthquakes, stone theft, and centuries of neglect transformed it from a complete oval into the iconic semi-ruin known today. But the Colosseum's story didn't end when its gladiators did. Even damaged, it remains a symbol of a civilization both brilliant and brutal. Its surviving corridors reveal engineering genius, while its fragmented stones echo the cost of entertainment built on human suffering. Millions visit each year not to see a ruined stadium, but to experience a structure that somehow feels alive in its incompleteness. Its ruin gives it depth, weight, and honesty.",
+              "In Istanbul on a warm May night, Liverpool trailed AC Milan 3 – 0 at halftime—a deficit so crushing that commentators had mentally engraved Milan's name on the trophy. Liverpool's players looked broken; their fans looked heartbroken. Yet within a six-minute burst early in the second half, something irrational happened. The underdogs scored three times, each goal a small rebellion against inevitability. What followed was a stretch of football where desire outweighed fatigue, tactics bent to willpower, and a goalkeeper named Jerzy Dudek turned into folklore during the penalty shootout. The comeback became more than a victory; it became an emblem of defiance, a reminder that sport is a stage where logic occasionally crumbles under the weight of belief.",
           },
           {
             title:
-              "2. The Parthenon — A Shattered Temple Still Shaping Civilizations (Athens, Greece)",
-            img: parthenon,
-            alt: "Ruins of the Parthenon temple in Athens",
+              "2. New England Patriots vs. Atlanta Falcons (Super Bowl LI, 2017) — The 28–3 Mythology",
+            img: patriotsFalcons,
+            alt: "Tom Brady leading the Patriots comeback in Super Bowl LI",
             content:
-              "The Parthenon sits atop the Acropolis as if keeping watch over Western civilization itself. Built to celebrate Athena and the political confidence of classical Athens, it has endured invasions, fires, earthquakes, and a catastrophic explosion in the 17th century. What stands now is a graceful frame of columns and carved fragments. Its ruin, far from diminishing its value, has strengthened its symbolic weight. The Parthenon continues to shape global ideas about democracy, aesthetics, and cultural heritage. Even as restoration efforts work carefully to preserve what remains, its broken edges invite reflection on impermanence and the long arc of human ambition. It is a masterpiece precisely because it has survived in pieces.",
+              "No deficit in American football carries as much cultural baggage as '28–3.' It's shorthand now, a meme, a memory, and a lesson. Midway through the third quarter, the Falcons had a 25-point lead and a statistical probability of winning that practically reached the moon. Yet the Patriots, with Tom Brady's unnerving calm, began eroding that lead point by point. Each drive was a thesis on persistence; each defensive stop felt like an argument against math itself. By the time the game entered overtime—something no Super Bowl had ever done—the momentum had entirely reversed. The comeback became immortal not simply because of the points, but because it illustrated how belief can be engineered through discipline, repetition, and refusal to panic.",
           },
           {
             title:
-              "3. Great Zimbabwe — The Stone Kingdom That Refused to Vanish (Masvingo Province, Zimbabwe)",
-            img: greatZimbabwe,
-            alt: "Great Zimbabwe ruins",
+              "3. Serena Williams vs. Victoria Azarenka (2012 US Open Final) — A Champion Rewrites the Script",
+            img: serena,
+            alt: "Serena Williams celebrating her 2012 US Open victory",
             content:
-              "In southeastern Zimbabwe stand the remains of a once-thriving medieval capital: a sprawling stone city built entirely without mortar. Great Zimbabwe's curved walls and towering enclosures speak of a wealthy society that dominated regional trade. When its population dispersed in the 15th century—likely due to environmental pressure and political transition—the city was left to the elements. Yet the granite walls still lock together with stubborn precision, forming passageways and ceremonial spaces that draw archaeologists from around the world. Even in ruin, Great Zimbabwe challenges long-held assumptions about African architecture, reminding us that cultural sophistication flourished far beyond the borders of Europe and the Middle East. Its silence is a kind of power, a whispered insistence that forgotten kingdoms shaped history too.",
+              "When Serena Williams found herself down 5–3 in the third set of the US Open final, even seasoned analysts considered the match all but finished. Azarenka was dictating rallies, moving Serena across the baseline with the precision of a surgeon. But champions are strange creatures; just when the script appears sealed, they find a crack and climb through it. Williams summoned a level of ferocity that felt almost physical in the air, breaking Azarenka twice and unleashing serves that seemed charged with thunder. The comeback wasn't just athletic—it was psychological, a masterclass in emotional regulation under pressure. For many young athletes, this match became a template for learning that grit is often a choice made in one impossible moment.",
           },
           {
             title:
-              "4. Machu Picchu — The Hidden Citadel That Outsmarted Time (Cusco Region, Peru)",
-            img: machuPicchu,
-            alt: "Machu Picchu ruins with mountainous background",
+              "4. Cleveland Cavaliers vs. Golden State Warriors (2016 NBA Finals) — History Against the Odds",
+            img: cleveland,
+            alt: "LeBron James with the 2016 NBA Finals trophy",
             content:
-              "Machu Picchu rises in the Peruvian Andes like a vision that almost shouldn't be real. Once a royal Incan estate and ceremonial retreat, it was abandoned in the 16th century during the empire's collapse and quickly swallowed by cloud forest. For centuries, it existed mostly in local stories until its early 20th-century rediscovery revealed terraces, temples, and stairways brushed by mist. Its partial ruin only intensifies its magic. The broken stones, the fragments of sun-aligned structures, the way nature clings to every ledge—everything feels deliberate, like the Inca crafted a city to remain impressive even in decay. Machu Picchu endures as a monument to human ingenuity but also to nature's ability to cradle and conceal the past.",
+              // "In a Finals series where the Warriors had set records for wins and were heavily favored, the Cavaliers faced a 3–1 deficit that seemed insurmountable. Yet, led by LeBron James' transcendent performances, Cleveland clawed back. Each game in the comeback was a study in adaptation—defensive schemes shifted, offensive roles evolved, and mental toughness was tested to its limits. The final game, punctuated by James' iconic block and Kyrie Irving's decisive three-pointer, wasn't just a win; it was a seismic shift in NBA history. This comeback underscored that in sport, as in life, the narrative is never fully written until the final buzzer sounds.",
+              "The 2016 Finals seemed predetermined: the 73–9 Warriors up 3–1, Cleveland clinging to mathematical hope more than momentum. Then LeBron James and Kyrie Irving launched a three-game counterattack that felt equal parts resolve and rebellion. Game 7 in Oakland delivered the defining moments—LeBron’s chase-down block, Kyrie’s step-back three, and a final defensive stand that turned a superteam mortal. This wasn’t just a scoreboard reversal; it was the first successful comeback from a 3–1 deficit in Finals history, a demolition of the impossible. Cleveland’s long-suffering sports identity flipped overnight, leaving a victory remembered as much for its psychological weight as its athletic brilliance.",
           },
           {
             title:
-              "5. Palmyra — A Desert Crossroads Reduced but Not Erased (Homs Governorate, Syria)",
-            img: palmyra,
-            alt: "Ruins of Palmyra with desert background",
+              "5. Tiger Woods Wins the 2019 Masters — A Return from the Ashes",
+            img: tWoods,
+            alt: "Tiger Woods celebrating his 2019 Masters victory",
             content:
-              "Once a wealthy caravan city connecting the Roman world to Persia, India, and Arabia, Palmyra flourished through cultural exchange. Its grand colonnades, triumphal arches, and temple complexes announced its importance to travelers crossing the Syrian desert. Time alone did not ruin Palmyra—conflicts, shifting trade routes, and more recently, devastating destruction contributed to its fragmentation. Yet even the broken sections carry a fierce dignity. Sunlight slides across the surviving columns as though illuminating an ancient memory. Palmyra's ruins speak of a city that once thrived on connection, negotiation, and cosmopolitan identity, reminding visitors today that cultural crossroads are fragile treasures worth defending.",
+              "Tiger Woods' return at the 2019 Masters wasn't a comeback in a single match—it was a comeback from a decade of injuries, surgeries, personal crises, and doubts that mutated into headlines. Standing on the 12th hole during the final round, Woods played with a calmness that contrasted sharply with the chaos of the players ahead of him. Mistakes from his rivals created an opening, and Woods stepped through it with the heart of the champion he once was. His victory wasn't just about golf; it was about reinvention. It became one of the most emotional moments in modern sports—the resurrection of an athlete once considered unreachable, then lost, then astonishingly human.",
           },
-          {
-            title:
-              "6. Angkor Wat (and the Greater Angkor Region) — Temples Entangled in a Living Jungle (Siem Reap Province, Cambodia)",
-            img: angkorWat,
-            alt: "Angkor Wat temple ruins",
-            content:
-              "Angkor Wat is only one piece of a vast temple complex that once formed the spiritual and political heart of the Khmer Empire. Over centuries, conflict, resource strain, and shifting capitals left many structures abandoned, offering the jungle an opportunity it seized with enthusiasm. Roots thicker than a person's arm curl through stone corridors, and trees burst through collapsed rooftops, turning every ruin into a collaboration between nature and forgotten artisans. Instead of diminishing the site's beauty, this entanglement enhances it. Angkor's half-buried towers and carved reliefs radiate a dreamlike intensity, as if the past is emerging and disappearing in the same moment. Even in ruin, Angkor remains one of humanity's most mesmerizing architectural feats.",
-          },
-        ].map((ruin, index) => (
+        ].map((comeback, index) => (
           <AnimatedSection key={index} className="space-y-6">
             <motion.h2
               className="text-[1.375rem] md:text-2xl font-medium"
               variants={textVariants}
             >
-              {ruin.title}
+              {comeback.title}
             </motion.h2>
             <motion.div
               className="overflow-hidden mb-6 md:mx-20"
               variants={imageVariants}
             >
               <img
-                src={ruin.img}
-                alt={ruin.alt}
+                src={comeback.img}
+                alt={comeback.alt}
                 className="w-full h-48 md:h-105 object-cover"
               />
             </motion.div>
@@ -404,7 +398,7 @@ export default function Ruins() {
               className="mb-6 text-[#767676] leading-7"
               variants={textVariants}
             >
-              {ruin.content}
+              {comeback.content}
             </motion.p>
           </AnimatedSection>
         ))}
@@ -412,14 +406,14 @@ export default function Ruins() {
 
       <AnimatedSection>
         <motion.p className="text-[#767676] pt-3" variants={textVariants}>
-          Ruins preserve what polished monuments can't: the reminders of
-          fragility, ambition, and the unpredictable forces that shape
-          civilizations. These six architectural marvels are incomplete, yet
-          they continue to inspire curiosity, scholarship, preservation efforts,
-          and storytelling. Their broken stones are not losses but
-          invitations—proof that beauty can endure long after purpose fades, and
-          that even shattered structures can cast long, astonishing shadows
-          across history.
+          Comebacks endure because they reveal something elemental about
+          competition: talent matters, but resolve is its own kind of physics.
+          These five stories have lived far beyond their scorelines because they
+          capture the moment when athletes and teams refused to accept
+          predictable endings. Their victories remind us that sport is not only
+          played on fields and courts but in the unresolved spaces of the human
+          spirit. Your readers will feel that echo long after they leave the
+          page.
         </motion.p>
       </AnimatedSection>
 

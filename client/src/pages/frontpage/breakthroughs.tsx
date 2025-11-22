@@ -281,7 +281,7 @@ export default function Breakthrough() {
 
       <AnimatedSection className="text-center">
         <motion.h1
-          className="text-2xl md:text-3xl font-semibold pt-2"
+          className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
           Six Scientific Failures,
@@ -343,18 +343,21 @@ export default function Breakthrough() {
           {
             title: "1. Penicillin — A Dirty Petri Dish That Saved the World",
             img: penicillin,
+            alt: "Penicillium drug",
             content:
               "Alexander Fleming didn't set out to change medicine in 1928. He was simply studying staphylococcal bacteria, went on holiday, and returned to find mold blooming across a forgotten petri dish. Instead of tossing the spoiled sample, he noticed something odd: the bacteria around the mold were dead, as if an invisible barrier had formed. The mold, Penicillium notatum, produced a substance that erased bacteria with ruthless precision. Fleming recognized its power, but even he didn't foresee antibiotics transforming human survival. What began as laboratory sloppiness became a new medical era—one where infections that once killed millions became treatable within days. The world owes an immeasurable debt to one unwashed dish.",
           },
           {
             title: "2. X-Rays — Wilhelm Röntgen's Glowing Accident",
             img: xray,
+            alt: "doctor assessing an X-ray image",
             content:
               "In 1895, Wilhelm Röntgen was investigating cathode rays—harmless, low-energy stuff—when a fluorescent screen across the room began to glow. The rays he was studying shouldn't have caused that. Puzzled, he darkened the room and continued experimenting, eventually placing his hand between the tube and the screen. He saw his bones. Röntgen had stumbled upon a hidden slice of the electromagnetic spectrum, soon named 'X-rays.' This accidental glow became one of medicine's most powerful diagnostic tools. In weeks, scientists replicated the discovery; in months, hospitals adopted it. A failure to predict the behavior of mysterious rays opened a window into the human body itself.",
           },
           {
             title: "3. The Pacemaker — A Circuit Running Too Slowly",
             img: pacemaker,
+            alt: "Doctor holding a pacemaker device",
             content:
               "Electrical engineer Wilson Greatbatch was building a device to record irregular heartbeats. While assembling the circuit, he reached for a resistor but grabbed the wrong one—a mistake every engineering student knows all too well. Instead of recording pulses, the circuit produced a gentle, rhythmic electrical signal—eerily similar to a human heartbeat. Greatbatch immediately knew what he had in his hands: not a diagnostic tool, but something that could restore a failing heart's rhythm. His 'error' became the first implantable pacemaker, a device now carried by millions. A swapped component meant for data capture became an instrument of life.",
           },
@@ -362,6 +365,7 @@ export default function Breakthrough() {
             title:
               "4. Microwave Ovens — A Melted Candy Bar Sparks a Kitchen Revolution",
             img: microwave,
+            alt: "Microwave oven",
             content:
               "Percy Spencer, a self-taught engineer, was testing magnetrons—the vacuum tubes used in radar systems—when he noticed a chocolate bar in his pocket begin to melt. Confused, he placed popcorn kernels near the device. They popped. Spencer had unknowingly exposed the food to microwave radiation, which agitates water molecules and heats food rapidly. What was supposed to be a dry engineering test became the origin of a household appliance that redefined cooking convenience. A radar engineer trying to improve communication systems accidentally modernized the global kitchen.",
           },
@@ -369,12 +373,14 @@ export default function Breakthrough() {
             title:
               "5. Superglue — A Material Too Sticky to Use... Until It Was",
             img: glue,
+            alt: "glue illustration",
             content:
               "During World War II, chemist Harry Coover was searching for heat-resistant materials for gun sights. Instead, he created cyanoacrylates—compounds that stuck to everything, including the instruments meant to measure them. The substance was shelved as useless. Years later, while working on another project, Coover and his colleague Fred Joyner rediscovered the glue and finally recognized its potential. What had once been an annoyance became one of the strongest, most versatile adhesives ever produced—vital in manufacturing, medicine, and everyday household repairs. Failure transformed into a multi-billion dollar innovation hiding in plain sight.",
           },
           {
             title: "6. Nuclear Fission — A Measurement That Seemed Impossible",
             img: nuclear,
+            alt: "Nuclear fission illustration",
             content:
               "In 1938, physicists Otto Hahn and Fritz Strassmann found that uranium bombarded with neutrons produced barium—an impossibly lighter element. Their calculations suggested the atom had split, but that wasn't supposed to happen. They assumed they were wrong. Lise Meitner and her nephew Otto Frisch later explained the process: the uranium nucleus had indeed fractured, releasing vast energy. What began as an 'impossible result' became a cornerstone of nuclear physics—leading to reactors, weapons, and a new understanding of atomic structure. A result dismissed as experimental error revealed a force powerful enough to reshape geopolitics and energy for generations.",
           },
@@ -392,7 +398,7 @@ export default function Breakthrough() {
             >
               <img
                 src={breakthrough.img}
-                alt={breakthrough.title}
+                alt={breakthrough.alt}
                 className="w-full h-48 md:h-105 object-cover"
               />
             </motion.div>
