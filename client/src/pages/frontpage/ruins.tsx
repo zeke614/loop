@@ -227,7 +227,7 @@ export default function Ruins() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="text-start py-22 px-4 mx-auto max-w-4xl relative"
+      className="text-start pt-19 pb-24 px-4 mx-auto max-w-4xl relative"
     >
       <motion.div
         variants={floatingButtonVariants}

@@ -1,8 +1,8 @@
 import Breakthrough from "../pages/frontpage/breakthroughs";
 import Landfill from "../pages/frontpage/landfill";
-
 import Ruins from "../pages/frontpage/ruins";
 import Grit from "../pages/frontpage/grit";
+import CorporateFailures from "../pages/frontpage/failures";
 
 type ArticleComponent = React.ComponentType;
 
@@ -15,7 +15,7 @@ export const articleRoutes: ArticleRoutes = {
   "failures-to-breakthroughs": Breakthrough,
   "architectural-ruins": Ruins,
   "the-will-to-win": Grit,
-  // "frontpage-005": Landfill,
+  "corporate-failures-to-better-governance": CorporateFailures,
   // "frontpage-006": Landfill,
   // "frontpage-007": Landfill,
 };

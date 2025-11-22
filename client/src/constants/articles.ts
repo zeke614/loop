@@ -57,10 +57,10 @@ const articles = {
         "Resilience in sport rarely arrives neatly wrapped; it erupts in moments when defeat seems inevitable and adrenaline rewrites the script. This feature revisits five astonishing comebacks across different eras and disciplines, examining not just the scorelines but the psychological swings, tactical recalibrations, and cultural ripples they left behind. These are the matches that turned despair into legend…",
     },
     {
-      id: "finance-006",
+      id: "corporate-failures-to-better-governance",
       category: "Money & Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
-      date: "June 12, 2025",
+      date: "July 26, 2025",
       author: "Yasmin Khalid",
       img: boardroom,
       alt: "Boardroom with empty chairs",
@@ -386,7 +386,7 @@ const articles = {
         "Digital tools are reshaping informal and subsistence economies—improving access to markets, credit and resilience while introducing new risks. This reporting looks at grassroots fintech, cooperatives, and local adaptation strategies that are closing information gaps...",
     },
     {
-      id: "finance-006",
+      id: "corporate-failures-to-better-governance",
       category: "Money & Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "July 26, 2025",
@@ -394,7 +394,7 @@ const articles = {
       img: boardroom,
       alt: "Boardroom with empty chairs",
       description:
-        "High-profile collapses prompted regulatory reforms, new auditing norms, and shifts in board accountability. This historical review traces corporate failures and the governance changes they catalyzed, revealing how policy and culture adapt after crisis...",
+        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight and governance.",
     },
     {
       id: "finance-007",

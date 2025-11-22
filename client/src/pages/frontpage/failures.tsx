@@ -5,13 +5,14 @@ import type { Variants } from "framer-motion";
 import BookmarkPopup from "../../components/bookmark";
 import { BookmarkIcon, ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
-import lab from "../../assets/imgs/lab.jpg";
-import penicillin from "../../assets/imgs/penicillin.jpg";
-import xray from "../../assets/imgs/xray.jpg";
-import pacemaker from "../../assets/imgs/pacemaker.jpg";
-import microwave from "../../assets/imgs/microwave.jpg";
-import glue from "../../assets/imgs/glue.jpg";
-import nuclear from "../../assets/imgs/nuclear.jpg";
+import boardroom from "../../assets/imgs/boardroom.jpg";
+import enron from "../../assets/imgs/enron.jpg";
+import worldcom from "../../assets/imgs/worldCom.png";
+import wellsFargo from "../../assets/imgs/wellsFargo.jpg";
+import toshiba from "../../assets/imgs/toshiba.jpg";
+import lehman from "../../assets/imgs/lehman.jpg";
+import ftx from "../../assets/imgs/ftx.jpg";
+import wirecard from "../../assets/imgs/wirecard.jpg";
 
 interface Article {
   id: string;
@@ -131,22 +132,22 @@ function AnimatedSection({
   );
 }
 
-export default function Breakthrough() {
+export default function CorporateFailures() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [showShareFeedback, setShowShareFeedback] = useState(false);
 
   const articleData: Article = {
-    id: "failures-to-breakthroughs",
-    category: "Genius & Folly",
-    title: "Six Scientific Failures That Led to Major Breakthroughs",
-    date: "October 27, 2025",
-    author: "Olu Jacobs",
-    img: lab,
-    alt: "Laboratory experiment scene",
+    id: "corporate-failures-governance",
+    category: "Money & Madness",
+    title: "Seven Corporate Failures That Reshaped Modern Governance",
+    date: "July 26, 2025",
+    author: "David Chen",
+    img: boardroom,
+    alt: "Corporate building facade representing business failures",
     description:
-      "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible.",
+      "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight and governance.",
   };
 
   useEffect(() => {
@@ -284,8 +285,8 @@ export default function Breakthrough() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          Six Scientific Failures,
-          <span className="block md:inline">Now Breakthroughs</span>
+          Seven Corporate Failures That{" "}
+          <span className="block md:inline">Reshaped Modern Governance</span>
         </motion.h1>
 
         <motion.div
@@ -306,8 +307,8 @@ export default function Breakthrough() {
       <AnimatedSection>
         <div className="overflow-hidden mb-6 px-3">
           <motion.img
-            src={lab}
-            alt="Laboratory experiment scene"
+            src={boardroom}
+            alt="Corporate building facade representing business failures"
             className="w-full h-48 md:h-[30rem] object-cover"
             variants={imageVariants}
             initial="hidden"
@@ -321,19 +322,14 @@ export default function Breakthrough() {
       <AnimatedSection>
         <div className="text-[#767676] text-start">
           <motion.p className="leading-6.5 px-3" variants={textVariants}>
-            {/* Failure is often a hidden ingredient of discovery; some experiments
-            that 'failed' paved the way for paradigm shifts. Through archival
-            research and interviews, this article follows six cases where
-            apparent setbacks revealed new routes to understanding the world—and
-            in doing so, saved lives, transformed medicine, and reshaped modern
-            civilization. */}
-            Science is often portrayed as a straight staircase to truth, but
-            many of its greatest leaps started with a misstep. Failed
-            experiments, stray bacteria, overheated equipment—these tiny
-            disasters reshaped medicine, physics, technology and even daily
-            life. This feature explores six moments where mistakes didn’t just
-            guide innovation; they became the spark that rewrote what humanity
-            thought possible.
+            Corporate collapse is rarely sudden—it's usually the slow unraveling
+            of ambition, secrecy, and flawed incentives. This article revisits
+            seven infamous failures whose shockwaves reshaped modern oversight,
+            from manipulated accounts to reckless cultures that prized growth
+            over truth. Through financial autopsies and governance lessons, it
+            explores how disaster became the catalyst for stronger rules,
+            sharper scrutiny, and a deeper understanding of what responsible
+            leadership truly demands...
           </motion.p>
         </div>
       </AnimatedSection>
@@ -341,64 +337,71 @@ export default function Breakthrough() {
       <div className="my-14 space-y-14 px-1.5">
         {[
           {
-            title: "1. Penicillin — A Dirty Petri Dish That Saved the World",
-            img: penicillin,
-            alt: "Penicillium drug",
+            title: "1. Enron (2001) — Innovation Built on Illusion",
+            img: enron,
+            alt: "Enron stocks plummet",
             content:
-              "Alexander Fleming didn't set out to change medicine in 1928. He was simply studying staphylococcal bacteria, went on holiday, and returned to find mold blooming across a forgotten petri dish. Instead of tossing the spoiled sample, he noticed something odd: the bacteria around the mold were dead, as if an invisible barrier had formed. The mold, Penicillium notatum, produced a substance that erased bacteria with ruthless precision. Fleming recognized its power, but even he didn't foresee antibiotics transforming human survival. What began as laboratory sloppiness became a new medical era—one where infections that once killed millions became treatable within days. The world owes an immeasurable debt to one unwashed dish.",
+              "Enron dazzled the world with its reputation for bold energy trading, complex financial engineering, and oversized ambition. But beneath the glow sat an empire propped up by hidden debt, inflated profits, and a culture that rewarded deception over discipline. When its accounting tricks were exposed, Enron collapsed in spectacular fashion, wiping out billions and shattering public trust. The fallout birthed the Sarbanes–Oxley Act, which reshaped how corporations audit, disclose, and govern themselves, proving that transparency can't be optional.",
           },
           {
-            title: "2. X-Rays — Wilhelm Röntgen's Glowing Accident",
-            img: xray,
-            alt: "doctor assessing an X-ray image",
+            title: "2. WorldCom (2002) — When Numbers Became Fiction",
+            img: worldcom,
+            alt: "WorldCom corporate headquarters",
             content:
-              "In 1895, Wilhelm Röntgen was investigating cathode rays—harmless, low-energy stuff—when a fluorescent screen across the room began to glow. The rays he was studying shouldn't have caused that. Puzzled, he darkened the room and continued experimenting, eventually placing his hand between the tube and the screen. He saw his bones. Röntgen had stumbled upon a hidden slice of the electromagnetic spectrum, soon named 'X-rays.' This accidental glow became one of medicine's most powerful diagnostic tools. In weeks, scientists replicated the discovery; in months, hospitals adopted it. A failure to predict the behavior of mysterious rays opened a window into the human body itself.",
+              "WorldCom engineered one of the largest frauds in corporate history by disguising ordinary expenses as lucrative investments and inflating earnings by more than $11 billion. What looked like steady growth was really a spreadsheet built out of smoke. When internal auditors uncovered the scheme, the company imploded, and investors suffered massive losses. Its demise pushed regulators to strengthen internal auditing roles, clarify accounting standards, and demand clearer separation between executives and those tasked with monitoring them.",
           },
           {
-            title: "3. The Pacemaker — A Circuit Running Too Slowly",
-            img: pacemaker,
-            alt: "Doctor holding a pacemaker device",
+            title: "3. Wells Fargo (2016) — Growth at Any Cost",
+            img: wellsFargo,
+            alt: "Wells Fargo bank branch exterior",
             content:
-              "Electrical engineer Wilson Greatbatch was building a device to record irregular heartbeats. While assembling the circuit, he reached for a resistor but grabbed the wrong one—a mistake every engineering student knows all too well. Instead of recording pulses, the circuit produced a gentle, rhythmic electrical signal—eerily similar to a human heartbeat. Greatbatch immediately knew what he had in his hands: not a diagnostic tool, but something that could restore a failing heart's rhythm. His 'error' became the first implantable pacemaker, a device now carried by millions. A swapped component meant for data capture became an instrument of life.",
-          },
-          {
-            title:
-              "4. Microwave Ovens — A Melted Candy Bar Sparks a Kitchen Revolution",
-            img: microwave,
-            alt: "Microwave oven",
-            content:
-              "Percy Spencer, a self-taught engineer, was testing magnetrons—the vacuum tubes used in radar systems—when he noticed a chocolate bar in his pocket begin to melt. Confused, he placed popcorn kernels near the device. They popped. Spencer had unknowingly exposed the food to microwave radiation, which agitates water molecules and heats food rapidly. What was supposed to be a dry engineering test became the origin of a household appliance that redefined cooking convenience. A radar engineer trying to improve communication systems accidentally modernized the global kitchen.",
+              "For years, Wells Fargo employees were pressured to meet unrealistic sales quotas, leading to the creation of millions of fake accounts—often without customer permission or knowledge. What began as a culture of 'cross-selling excellence' spiraled into one of modern banking's biggest ethical breakdowns. The scandal triggered leadership turnovers, billions in fines, and strict oversight from U.S. regulators. It also prompted companies everywhere to rethink incentive structures and prioritize ethical performance over aggressive metrics.",
           },
           {
             title:
-              "5. Superglue — A Material Too Sticky to Use... Until It Was",
-            img: glue,
-            alt: "glue illustration",
+              "4. Toshiba Accounting Scandal (2015) — The Weight of Corporate Tradition",
+            img: toshiba,
+            alt: "Toshiba corporate headquarters in Tokyo",
             content:
-              "During World War II, chemist Harry Coover was searching for heat-resistant materials for gun sights. Instead, he created cyanoacrylates—compounds that stuck to everything, including the instruments meant to measure them. The substance was shelved as useless. Years later, while working on another project, Coover and his colleague Fred Joyner rediscovered the glue and finally recognized its potential. What had once been an annoyance became one of the strongest, most versatile adhesives ever produced—vital in manufacturing, medicine, and everyday household repairs. Failure transformed into a multi-billion dollar innovation hiding in plain sight.",
+              "Toshiba's leadership culture valued obedience and perfection, creating an internal environment where subordinates felt compelled to meet profits—even if they had to invent them. Over several years, profits were overstated by roughly $1.2 billion through improper accounting practices. The scandal forced resignations at the highest levels and drove Japan to strengthen corporate governance codes, mandate more independent directors, and address long-standing issues around hierarchy and transparency in major firms.",
           },
           {
-            title: "6. Nuclear Fission — A Measurement That Seemed Impossible",
-            img: nuclear,
-            alt: "Nuclear fission illustration",
+            title:
+              "5. Lehman Brothers (2008) — A Collapse Felt Around the Globe",
+            img: lehman,
+            alt: "Lehman Brothers headquarters during financial crisis",
             content:
-              "In 1938, physicists Otto Hahn and Fritz Strassmann found that uranium bombarded with neutrons produced barium—an impossibly lighter element. Their calculations suggested the atom had split, but that wasn't supposed to happen. They assumed they were wrong. Lise Meitner and her nephew Otto Frisch later explained the process: the uranium nucleus had indeed fractured, releasing vast energy. What began as an 'impossible result' became a cornerstone of nuclear physics—leading to reactors, weapons, and a new understanding of atomic structure. A result dismissed as experimental error revealed a force powerful enough to reshape geopolitics and energy for generations.",
+              "Lehman masked its true financial risk through exotic mortgage-backed securities and the infamous Repo 105 maneuver, temporarily shifting debt off its balance sheet to appear stable. When the U.S. housing bubble burst, Lehman was exposed and ultimately filed the largest bankruptcy in American history. The aftermath froze global credit markets and triggered worldwide reforms, including the Dodd–Frank Act, stricter liquidity requirements, and mandatory stress testing to detect systemic risk before it spirals out of control.",
           },
-        ].map((breakthrough, index) => (
+          {
+            title: "6. FTX (2022) — When Hype Outran Responsibility",
+            img: ftx,
+            alt: "FTX cryptocurrency exchange logo and branding",
+            content:
+              "FTX rose meteorically as the 'friendly, futuristic' crypto exchange run by a founder celebrated as a genius. Behind that façade, customer deposits were quietly funneled into speculative bets through a sister company with virtually no oversight. When cracks appeared, billions evaporated in days, shaking confidence across the entire crypto market. The collapse accelerated global efforts to regulate digital asset platforms, reinforcing that trust cannot be built on charisma or marketing alone.",
+          },
+          {
+            title: "7. Wirecard (2020) — A Fintech Mirage",
+            img: wirecard,
+            alt: "Wirecard fintech company offices",
+            content:
+              "Wirecard was long seen as Europe's answer to Silicon Valley fintech stars—until auditors revealed that €1.9 billion in supposed cash simply didn't exist. Forged documents, phantom subsidiaries, and a willingness to bully critics allowed the illusion to persist for years. Its downfall spurred a major overhaul of Germany's financial oversight systems, strengthened whistleblower protections, and forced regulators to confront the risks of being too cozy with rapid-growth tech companies.",
+          },
+        ].map((failure, index) => (
           <AnimatedSection key={index} className="space-y-6">
             <motion.h2
               className="text-[1.375rem] md:text-2xl font-medium"
               variants={textVariants}
             >
-              {breakthrough.title}
+              {failure.title}
             </motion.h2>
             <motion.div
               className="overflow-hidden mb-6 md:mx-20"
               variants={imageVariants}
             >
               <img
-                src={breakthrough.img}
-                alt={breakthrough.alt}
+                src={failure.img}
+                alt={failure.alt}
                 className="w-full h-48 md:h-105 object-cover"
               />
             </motion.div>
@@ -406,7 +409,7 @@ export default function Breakthrough() {
               className="mb-6 text-[#767676] leading-7"
               variants={textVariants}
             >
-              {breakthrough.content}
+              {failure.content}
             </motion.p>
           </AnimatedSection>
         ))}
@@ -414,13 +417,16 @@ export default function Breakthrough() {
 
       <AnimatedSection>
         <motion.p className="text-[#767676] pt-3" variants={textVariants}>
-          These six stories share a quiet, universal truth: discovery is rarely
-          a straight path. The human instinct to pause, notice, and question the
-          unexpected has given us antibiotics, modern medicine, global
-          communication, faster cooking, sticky miracles, and the key to the
-          atom. Science advances not only from brilliance but from curiosity in
-          the face of failure. Every misstep holds the potential for
-          transformation when examined with patient, stubborn wonder.
+          Each scandal left wreckage: lost savings, broken trust, and industries
+          forced to reckon with their blind spots. Yet every collapse also
+          pushed global governance forward. Regulators tightened rules. Boards
+          became more accountable. Auditing turned more independent and less
+          ceremonial. Culture—often the invisible culprit—became a priority
+          instead of an afterthought. These failures reveal a simple truth:
+          corporate governance doesn't evolve when things go right, but when
+          things go wrong. The world learns more from shattered empires than
+          from flawless ones, and those lessons continue to define how companies
+          operate today.
         </motion.p>
       </AnimatedSection>
 
