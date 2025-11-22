@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="text-center">
-      <div className="max-w-6xl px-6 text-base py-1.5 mx-auto flex flex-col space-x-2.5 md:gap-0 md:flex-row md:justify-between items-center">
+      <div className="max-w-6xl px-6 text-[0.969rem] pb-1 pt-3 md:py-0 mx-auto flex flex-col space-x-2.5 md:gap-0 md:flex-row md:justify-between items-center">
         {/* <div className="border-t border-[#5452521f] pb-4 mx-auto max-w-7xl"></div> */}
-        <div className="gap-1.5 my-1 items-center justify-center flex">
+        <div className="gap-1.5 my-0.5 items-center justify-center flex">
           <a
             href="https://x.com/devzeke146"
             target="_blank"
