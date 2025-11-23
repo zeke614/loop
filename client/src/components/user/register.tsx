@@ -64,8 +64,8 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4 py-8">
-      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl p-4.5">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-5.5 py-8">
+      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl py-4.5 px-5.5">
         <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link>
@@ -149,13 +149,13 @@ export default function Register() {
               name="password"
               value={form.password}
               onChange={handleChange}
-              placeholder="i bet you forget me in 5 minutes"
+              placeholder="i bet you forget me in 5 mins"
               required
               className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-4 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
@@ -191,7 +191,7 @@ export default function Register() {
 
         <p className="text-center text-[#6e7780] mt-10 md:text-base">
           Have an account?
-          <Link to="/login" className="text-[#04aa6d] ml-1 font-medium">
+          <Link to="/login" className="text-[#0ab39c] ml-1 font-medium">
             Sign In
           </Link>
         </p>

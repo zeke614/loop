@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import axios from "axios";
 import DeleteAccountPopup from "../user/delete";
+import DeleteSuccessPopup from "../user/deleteSuccess";
 import { getCountryName } from "../../constants/data";
 import {
   ArrowLeftIcon,
@@ -15,6 +16,7 @@ export default function PersonalDetails() {
   const [, setLoading] = useState(true);
   const navigate = useNavigate();
   const [popUp, setPopUp] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false); // Add this state
   const [isDeleting, setIsDeleting] = useState(false);
   const { logout, token } = useAuth();
   const ipInfoToken = import.meta.env.VITE_IPINFO_TOKEN;
@@ -74,22 +76,27 @@ export default function PersonalDetails() {
         },
       });
 
-      // Close popup and logout user after successful deletion
       setPopUp(false);
-      logout();
+      setShowSuccess(true);
 
-      // Show success message and redirect
-      alert("Account deleted successfully");
-      window.location.href = "/";
+      setTimeout(() => {
+        logout();
+        window.location.href = "/";
+      }, 3000);
     } catch (error: any) {
       console.error("Account deletion failed:", error);
       alert(
         error.response?.data?.message ||
           "Failed to delete account. Please try again."
       );
-    } finally {
       setIsDeleting(false);
     }
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
+    logout();
+    window.location.href = "/";
   };
 
   if (!user) return null;
@@ -195,6 +202,11 @@ export default function PersonalDetails() {
           isDeleting={isDeleting}
         />
       )}
+
+      <DeleteSuccessPopup
+        isVisible={showSuccess}
+        onClose={handleSuccessClose}
+      />
     </div>
   );
 }

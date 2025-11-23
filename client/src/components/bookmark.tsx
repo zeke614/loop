@@ -55,16 +55,16 @@ export default function BookmarkPopup({
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -20, scale: 0.95 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm p-2"
+      className="fixed top-9 left-1/2 -translate-x-1/2 z-50 w-[80%] max-w-sm p-2"
     >
-      <div className="bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
-        <div className="bg-white px-3 py-1.5 flex items-center justify-center gap-3">
+      <div className="bg-white rounded-lg shadow-2xl border border-gray-200 gap-1.5 p-2 overflow-hidden flex flex-col">
+        <div className="bg-white flex items-center justify-center gap-3">
           {icon}
           <span className="font-medium text-[0.906rem]">{message}</span>
         </div>
 
         {type === "added" && (
-          <div className="bg-white px-3">
+          <div className="bg-white">
             <Link
               to={"/saved"}
               className="block w-full bg-[#0ab39c] hover:bg-[#129684] text-white text-center text-[0.906rem] font-medium py-1 rounded-full transition-colors"

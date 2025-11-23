@@ -63,8 +63,8 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4 py-8">
-      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl p-4.5">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-5.5 py-8">
+      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl py-4.5 px-5.5">
         <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link>
@@ -104,12 +104,12 @@ export default function Login() {
               value={form.password}
               onChange={handleChange}
               required
-              placeholder="i bet you forget me in 5 minutes"
+              placeholder="i bet you forget me in 5 mins"
               className="w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-4 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
@@ -120,12 +120,12 @@ export default function Login() {
             )}
           </div>
 
-          <div className="flex items-center justify-between mt-3 mx-0.5">
-            <label className="flex items-center space-x-2 cursor-pointer">
-              <input type="checkbox" className="accent-[#04aa6d]" />
+          <div className="flex items-center justify-between mt-3 text-sm">
+            <label className="flex items-center space-x-1.5 cursor-pointer">
+              <input type="checkbox" className="accent-[#0ab39c]" />
               <span className="text-gray-600">Remember me</span>
             </label>
-            <span className="text-[#04aa6d] font-medium cursor-pointer">
+            <span className="text-[#0ab39c] font-medium cursor-pointer">
               Forgot Password?
             </span>
           </div>
@@ -185,7 +185,7 @@ export default function Login() {
 
         <p className="text-center text-[#6e7780] mt-10">
           New here?
-          <Link to="/register" className="text-[#04aa6d] ml-1 font-medium">
+          <Link to="/register" className="text-[#0ab39c] ml-1 font-medium">
             Sign Up
           </Link>
         </p>
