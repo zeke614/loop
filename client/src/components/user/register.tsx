@@ -25,17 +25,9 @@ export default function Register() {
     setErrorMessage("");
 
     try {
-      console.log(
-        "Attempting registration to:",
-        `${API_URL}/api/users/register`
-      );
-      console.log("Registration data:", form);
-
       const res = await axios.post(`${API_URL}/api/users/register`, form, {
         headers: { "Content-Type": "application/json" },
       });
-
-      console.log("Registration response:", res.data);
 
       if (res.data.token && res.data.user) {
         login(res.data.user, res.data.token);
@@ -44,8 +36,6 @@ export default function Register() {
         throw new Error("No token or user data received after registration");
       }
     } catch (error: any) {
-      console.error("Registration error details:", error);
-
       if (error.code === "ECONNABORTED") {
         setErrorMessage("Request timeout - server is not responding");
       } else if (error.response) {
@@ -74,27 +64,20 @@ export default function Register() {
   };
 
   return (
-    <div
-      className="
-        flex flex-col justify-center items-center
-        px-6 mb-12 mt-4 sm:px-10 md:px-16 lg:px-20
-        bg-white
-      "
-    >
-      <Link to="/" className="text-[1.688rem] font-bold mb-4">
-        <img src={logo} alt="loop logo" className="h-20 w-auto" />{" "}
-      </Link>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4 py-8">
+      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl p-4.5">
+        <Link to="/" className="text-center block mb-6">
+          <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
+        </Link>
 
-      <div className="w-full max-w-md">
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Create your account
         </h1>
-        <p className="text-center text-[#6e7780] mb-10 md:text-base">
-          Join Loop — dive into stories that spark <br /> curiosity and
-          conversation.
+        <p className="text-center text-[#6e7780] mb-8 md:text-base">
+          Join Loop — dive into stories that spark curiosity and conversation.
         </p>
 
-        <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3">
+        <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-6">
           <button
             onClick={handleGoogleLogin}
             className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
@@ -120,7 +103,7 @@ export default function Register() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center my-6 mx-10">
+        <div className="flex items-center justify-center my-6">
           <div className="flex-grow border-t border-gray-300"></div>
           <span className="mx-3 text-gray-500">Or</span>
           <div className="flex-grow border-t border-gray-300"></div>
@@ -142,11 +125,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="your fanfiction pseudonym"
               required
-              className="
-                w-full px-4 py-3 mt-2 rounded-full border border-gray-300
-                focus:outline-none focus:border-[#6e7780] placeholder-gray-400
-                transition
-              "
+              className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -159,11 +138,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="please.be.valid@i.beg.you.com"
               required
-              className="
-                w-full px-4 py-3 mt-2 rounded-full border border-gray-300
-                focus:outline-none focus:border-[#6e7780] placeholder-gray-400
-                transition
-              "
+              className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -174,13 +149,9 @@ export default function Register() {
               name="password"
               value={form.password}
               onChange={handleChange}
-              placeholder="something you'll forget in 5 minutes"
+              placeholder="i bet you forget me in 5 minutes"
               required
-              className="
-                w-full px-4 py-3 mt-2 rounded-full border border-gray-300
-                focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10
-                transition
-              "
+              className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
@@ -200,14 +171,12 @@ export default function Register() {
             disabled={
               !form.username || !form.email || !form.password || loading
             }
-            className={`
-              w-full rounded-full py-3 mt-10 font-medium transition
+            className={`w-full rounded-full py-3 mt-6 font-medium transition
               ${
                 !form.username || !form.email || !form.password || loading
                   ? "bg-[#d4d6dc] text-gray-500 cursor-not-allowed"
                   : "bg-[#202124] text-white hover:bg-[#000000] cursor-pointer"
-              }
-            `}
+              }`}
           >
             {loading ? (
               <span className="flex items-center justify-center space-x-2">

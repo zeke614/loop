@@ -1,12 +1,14 @@
 import express from "express";
 import passport from "../config/passport.js";
 import jwt from "jsonwebtoken";
-import { registerUser, loginUser } from "../controllers/authControllers.js";
+import { registerUser, loginUser, deleteUser } from "../controllers/authControllers.js";
+import authenticateToken from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
+router.delete("/delete", authenticateToken, deleteUser);
 
 
 router.get("/google", passport.authenticate("google", { 

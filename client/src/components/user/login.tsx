@@ -25,13 +25,9 @@ export default function Login() {
     setLoading(true);
 
     try {
-      console.log("Attempting login to:", `${API_URL}/api/users/login`);
-
       const response = await axios.post(`${API_URL}/api/users/login`, form, {
         headers: { "Content-Type": "application/json" },
       });
-
-      console.log("Login response:", response.data);
 
       if (response.data.token && response.data.user) {
         login(response.data.user, response.data.token);
@@ -40,8 +36,6 @@ export default function Login() {
         throw new Error("No token or user data received");
       }
     } catch (error: any) {
-      console.error("Login error details:", error);
-
       if (error.code === "ECONNABORTED") {
         setErrorMessage("Request timeout - server is not responding");
       } else if (error.response) {
@@ -69,22 +63,16 @@ export default function Login() {
   };
 
   return (
-    <div
-      className="
-        flex flex-col justify-center items-center 
-         mb-12 mt-4 px-6 sm:px-10 md:px-16 lg:px-20
-        bg-white
-      "
-    >
-      <Link to="/" className="text-[1.688rem] font-bold mb-4">
-        <img src={logo} alt="loop logo" className="h-20 w-auto" />{" "}
-      </Link>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4 py-8">
+      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl p-4.5">
+        <Link to="/" className="text-center block mb-6">
+          <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
+        </Link>
 
-      <div className="w-full max-w-md">
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-1.5">
           Sign in
         </h1>
-        <p className="text-center text-[#6e7780] mb-10">
+        <p className="text-center text-[#6e7780] mb-8">
           Stay informed. Stay in the 'loop'.
         </p>
 
@@ -104,11 +92,7 @@ export default function Login() {
               onChange={handleChange}
               required
               placeholder="please.be.valid@i.beg.you.com"
-              className="
-                w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 
-                focus:outline-none focus:border-[#6e7780] placeholder-gray-400
-                transition
-              "
+              className="w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -120,12 +104,8 @@ export default function Login() {
               value={form.password}
               onChange={handleChange}
               required
-              placeholder="something you'll forget in 5 minutes"
-              className="
-                w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 
-                focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10
-                transition
-              "
+              placeholder="i bet you forget me in 5 minutes"
+              className="w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
@@ -140,29 +120,25 @@ export default function Login() {
             )}
           </div>
 
-          <div className="flex items-center justify-between mt-3 mx-1">
+          <div className="flex items-center justify-between mt-3 mx-0.5">
             <label className="flex items-center space-x-2 cursor-pointer">
               <input type="checkbox" className="accent-[#04aa6d]" />
               <span className="text-gray-600">Remember me</span>
             </label>
             <span className="text-[#04aa6d] font-medium cursor-pointer">
-              {/* <Link to="/forgot-password" className="text-[#04aa6d] font-medium"> */}
               Forgot Password?
-              {/* </Link> */}
             </span>
           </div>
 
           <button
             type="submit"
             disabled={!form.email || !form.password || loading}
-            className={`
-              w-full rounded-full py-3 mt-6 font-medium transition flex items-center justify-center
+            className={`w-full rounded-full py-3 mt-6 font-medium transition flex items-center justify-center
               ${
                 !form.email || !form.password || loading
                   ? "bg-[#d4d6dc] text-gray-500 cursor-not-allowed"
                   : "bg-[#202124] text-white hover:bg-[#000000] cursor-pointer"
-              }
-            `}
+              }`}
           >
             {loading ? (
               <span className="flex items-center space-x-2">
@@ -175,7 +151,7 @@ export default function Login() {
           </button>
         </form>
 
-        <div className="flex items-center justify-center my-6 mx-10">
+        <div className="flex items-center justify-center my-6">
           <div className="flex-grow border-t border-gray-300"></div>
           <span className="mx-3 text-gray-500">Or login with</span>
           <div className="flex-grow border-t border-gray-300"></div>

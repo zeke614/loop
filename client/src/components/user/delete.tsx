@@ -4,11 +4,13 @@ import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 interface DeleteAccountPopupProps {
   togglePopUp: () => void;
   handleDeleteAccount: () => void;
+  isDeleting?: boolean;
 }
 
 export default function DeleteAccountPopup({
   togglePopUp,
   handleDeleteAccount,
+  isDeleting = false,
 }: DeleteAccountPopupProps) {
   return (
     <AnimatePresence>
@@ -46,13 +48,22 @@ export default function DeleteAccountPopup({
           <div className="flex justify-center gap-4">
             <button
               onClick={handleDeleteAccount}
-              className="bg-red-500 text-white px-4 py-1.5 rounded-lg font-medium hover:bg-red-600 transition cursor-pointer"
+              disabled={isDeleting}
+              className="bg-red-500 text-white px-4 py-1.5 rounded-lg font-medium hover:bg-red-600 transition cursor-pointer disabled:bg-red-300 disabled:cursor-not-allowed flex items-center gap-2 min-w-20 justify-center"
             >
-              Yes, delete
+              {isDeleting ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  Deleting...
+                </>
+              ) : (
+                "Yes, delete"
+              )}
             </button>
             <button
               onClick={togglePopUp}
-              className="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-lg font-medium hover:bg-gray-300 transition cursor-pointer"
+              disabled={isDeleting}
+              className="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-lg font-medium hover:bg-gray-300 transition cursor-pointer disabled:bg-gray-100 disabled:cursor-not-allowed"
             >
               Cancel
             </button>

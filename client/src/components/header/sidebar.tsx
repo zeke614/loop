@@ -50,7 +50,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
       >
         <div className="flex justify-end">
           <button onClick={closeMenu} className="pr-3.5 pt-2 cursor-pointer">
-            <XMarkIcon className="size-6 text-gray-600" />
+            <XMarkIcon className="size-6 text-gray-700" />
           </button>
         </div>
 
@@ -69,7 +69,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                     className={`flex items-center gap-3 transition-colors duration-200 text-lg py-2.5 ${
                       isActive
                         ? "border-l-[0.188rem] border-black pl-[0.813rem] font-semibold text-black"
-                        : "pl-4 font-medium text-gray-600 hover:text-black"
+                        : "pl-4 font-medium text-gray-700 hover:text-black"
                     }`}
                   >
                     {IconComponent && (
@@ -92,12 +92,12 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
               onClick={closeMenu}
               className="flex items-center justify-between mb-4 pl-4 pr-3.5"
             >
-              <div className="flex items-center text-lg gap-3 font-medium text-gray-600 hover:text-black transition-colors">
+              <div className="flex items-center text-lg gap-3 font-medium text-gray-700 hover:text-black transition-colors">
                 <InformationCircleIcon className="size-5" />
                 <span>More</span>
               </div>
               <div className="flex items-center justify-between">
-                <ChevronRightIcon className="size-5 text-gray-600" />{" "}
+                <ChevronRightIcon className="size-5 text-gray-700" />{" "}
               </div>
             </Link>
 

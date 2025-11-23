@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../../contexts/authContext";
+import axios from "axios";
 import DeleteAccountPopup from "../user/delete";
 import { getCountryName } from "../../constants/data";
-import { ArrowLeftIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowLeftIcon,
+  PencilSquareIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 
 export default function PersonalDetails() {
   const [user, setUser] = useState<any>(null);
   const [, setLoading] = useState(true);
   const navigate = useNavigate();
   const [popUp, setPopUp] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const { logout, token } = useAuth();
   const ipInfoToken = import.meta.env.VITE_IPINFO_TOKEN;
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -54,6 +63,34 @@ export default function PersonalDetails() {
   };
 
   const togglePopUp = () => setPopUp((prev) => !prev);
+
+  const handleDeleteAccount = async () => {
+    setIsDeleting(true);
+    try {
+      await axios.delete(`${API_URL}/api/users/delete`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      // Close popup and logout user after successful deletion
+      setPopUp(false);
+      logout();
+
+      // Show success message and redirect
+      alert("Account deleted successfully");
+      window.location.href = "/";
+    } catch (error: any) {
+      console.error("Account deletion failed:", error);
+      alert(
+        error.response?.data?.message ||
+          "Failed to delete account. Please try again."
+      );
+    } finally {
+      setIsDeleting(false);
+    }
+  };
 
   if (!user) return null;
 
@@ -140,8 +177,11 @@ export default function PersonalDetails() {
             </div>
             <button
               onClick={togglePopUp}
-              className="px-4 py-2 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap"
+              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap"
             >
+              <span>
+                <TrashIcon className="size-5" />
+              </span>
               Delete Account
             </button>
           </div>
@@ -151,7 +191,8 @@ export default function PersonalDetails() {
       {popUp && (
         <DeleteAccountPopup
           togglePopUp={togglePopUp}
-          handleDeleteAccount={() => null}
+          handleDeleteAccount={handleDeleteAccount}
+          isDeleting={isDeleting}
         />
       )}
     </div>
