@@ -149,7 +149,14 @@ export default function Earth() {
         })}
 
         <AnimatePresence>
-          {popUp && <BookmarkPopup key="bookmark-popup" type={popUpType} />}
+          {popUp && (
+            <BookmarkPopup
+              key="bookmark-popup"
+              type={popUpType}
+              popUpShows={popUp}
+              closeMenu={() => setPopUp(false)}
+            />
+          )}
         </AnimatePresence>
       </div>
     </div>

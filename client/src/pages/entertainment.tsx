@@ -148,8 +148,16 @@ export default function Entertainment() {
         })}
 
         <AnimatePresence>
-          {popUp && <BookmarkPopup key="bookmark-popup" type={popUpType} />}
-        </AnimatePresence>
+  {popUp && (
+    <BookmarkPopup
+      key="bookmark-popup"
+      type={popUpType}
+      popUpShows={popUp}
+      closeMenu={() => setPopUp(false)}
+    />
+  )}
+</AnimatePresence>
+
       </div>
     </div>
   );

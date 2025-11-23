@@ -148,7 +148,14 @@ export default function Science() {
         })}
 
         <AnimatePresence>
-          {popUp && <BookmarkPopup key="bookmark-popup" type={popUpType} />}
+          {popUp && (
+            <BookmarkPopup
+              key="bookmark-popup"
+              type={popUpType}
+              popUpShows={popUp}
+              closeMenu={() => setPopUp(false)}
+            />
+          )}
         </AnimatePresence>
       </div>
     </div>
