@@ -48,10 +48,12 @@ export default function PrivacyPolicy() {
             </p>
             <ul className="list-disc pt-1.5 pl-5 space-y-2">
               <li>
-                <strong>Log and Usage Data:</strong> Log data usage
-                service-related, diagnostic, usage and performance information
-                our servers automatically collect when you access or use our
-                website.
+                <strong>Log and Usage Data:</strong> This includes
+                service-related, diagnostic, usage, and performance data our
+                servers automatically collect when you access or use our
+                website, such as your IP address, browser and device details,
+                operating system, pages visited, timestamps, and similar
+                technical information.
               </li>
               <li>
                 <strong>Device Data:</strong> We collect device data such as
@@ -76,15 +78,15 @@ export default function PrivacyPolicy() {
               2. How We Handle Your Social Logins
             </h3>
             <p>
-              Our application offers you the ability to register and log in
-              using your third-party social media account details (Google and
-              GitHub). Where you choose to do this, we will receive certain
-              profile information about you from your social media provider.
+              Our application allows you to register and log in using your
+              third-party social media account details (Google and GitHub).
+              Where you choose to do this, we will receive certain profile
+              information about you from your social media provider.
             </p>
             <p>
               The profile information we receive may vary depending on the
               social media provider concerned, but will often include your{" "}
-              <strong>name</strong>, <strong>email address</strong>, and or{" "}
+              <strong>name</strong>, <strong>email address</strong>, and/or{" "}
               <strong>profile picture</strong>.
             </p>
             <p>
@@ -113,12 +115,15 @@ export default function PrivacyPolicy() {
                 bookmarked articles associated with your account ID.
               </li>
               <li>
-                <strong>To Request Feedback:</strong> We may use your
+                <strong>To request feedback:</strong> We may use your
                 information to request feedback and to contact you about your
                 use of our website.
               </li>
               <li>
-                <strong>To manage user accounts.</strong>
+                <strong>
+                  To manage user accounts and keep your profile information up
+                  to date.
+                </strong>
               </li>
             </ul>
           </div>

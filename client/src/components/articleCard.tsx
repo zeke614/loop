@@ -273,7 +273,14 @@ export default function FrontPageArticlesCard() {
       })}
 
       <AnimatePresence>
-        {popUp && <BookmarkPopup key="bookmark-popup" type={popUpType} />}
+        {popUp && (
+          <BookmarkPopup
+            key="bookmark-popup"
+            type={popUpType}
+            popUpShows={popUp}
+            closeMenu={() => setPopUp(false)}
+          />
+        )}
       </AnimatePresence>
     </motion.div>
   );

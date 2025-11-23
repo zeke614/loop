@@ -1,16 +1,41 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { BookmarkIcon } from "@heroicons/react/24/solid";
-import {
-  BookmarkSlashIcon,
-  // CheckCircleIcon,
-} from "@heroicons/react/24/outline";
+import { BookmarkSlashIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 interface BookmarkPopupProps {
   type: "added" | "removed";
+  popUpShows: boolean;
+  closeMenu: () => void;
 }
 
-export default function BookmarkPopup({ type }: BookmarkPopupProps) {
+export default function BookmarkPopup({
+  type,
+  popUpShows,
+  closeMenu,
+}: BookmarkPopupProps) {
+  const popupRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!popUpShows) return;
+
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target as Node)
+      ) {
+        closeMenu();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [popUpShows, closeMenu]);
+
   const message =
     type === "added"
       ? "Article added to your Bookmarks"
@@ -25,11 +50,12 @@ export default function BookmarkPopup({ type }: BookmarkPopupProps) {
 
   return (
     <motion.div
+      ref={popupRef}
       initial={{ opacity: 0, y: -50, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -20, scale: 0.95 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-sm"
+      className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm"
     >
       <div className="bg-white rounded-xl shadow-xl overflow-hidden flex flex-col">
         <div className="bg-white px-3 py-2.5 flex items-center justify-center gap-3">

@@ -72,7 +72,7 @@ export default function Header() {
               className="flex items-center justify-center space-x-1"
             >
               <UserOutline className="size-[1.063rem]" />
-              <span className="text-[1.063rem]">Sign In</span>
+              <span>Sign In</span>
             </Link>
           ) : (
             <button
@@ -80,7 +80,7 @@ export default function Header() {
               aria-label="Open profile"
               className="flex items-center justify-center md:w-10 md:h-10 cursor-pointer md:rounded-full md:hover:bg-gray-100"
             >
-              <UserSolid className="size-6" />
+              <UserSolid className="size-5.5" />
             </button>
           )}
         </div>

@@ -2,11 +2,11 @@ export default function Info() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center pt-27 pb-12 px-7 md:px-8">
       <div className="max-w-2xl w-full space-y-16">
-        <section className="space-y-6 text-center sm:text-left">
+        <section className="space-y-6 text-left">
           <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
             About Loop
           </h1>
-          <div className="prose prose-lg text-gray-600 leading-relaxed">
+          <div className="prose-base md:prose-lg text-gray-600 leading-relaxed">
             <p>
               Loop is a space for stories that linger — the kind that loop in
               your mind long after you've read them.
@@ -26,7 +26,7 @@ export default function Info() {
 
         <div className="border-t border-gray-100 w-full"></div>
 
-        <section className="space-y-6 text-center sm:text-left">
+        <section className="space-y-6 text-left">
           <h2 className="text-xl font-semibold text-gray-900">Contact Us</h2>
           <p className="text-gray-600 leading-relaxed">
             Reach out to the developer,{" "}
