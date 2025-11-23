@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import articles from "../constants/articles";
-import BookmarkPopup from "./bookmark";
 import {
   ChevronDoubleRightIcon,
   BookmarkIcon,
@@ -50,15 +48,17 @@ const textVariants: Variants = {
   },
 };
 
-function AnimatedArticleCard({
-  article,
-  isSaved,
-  handleBookmarkClick,
-}: {
+interface AnimatedArticleCardProps {
   article: Article;
   isSaved: boolean;
   handleBookmarkClick: (article: Article) => void;
-}) {
+}
+
+export default function AnimatedArticleCard({
+  article,
+  isSaved,
+  handleBookmarkClick,
+}: AnimatedArticleCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -124,11 +124,11 @@ function AnimatedArticleCard({
         variants={textVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="flex-1 px-4 py-3 flex flex-col"
+        className="flex-1 py-4 px-4.5 flex flex-col"
       >
         <Link
           to={`/articles/${article.id}`}
-          className="text-[1.37rem] font-bold leading-tight text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-2.5 group"
+          className="text-[1.37rem] font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
         >
           <motion.span
             whileHover={{ x: 2 }}
@@ -140,7 +140,7 @@ function AnimatedArticleCard({
         </Link>
 
         <motion.div
-          className="flex items-center text-sm text-gray-500 mb-2.5 flex-wrap gap-2"
+          className="flex items-center text-sm text-[#989797] mb-3 flex-wrap gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
@@ -149,14 +149,14 @@ function AnimatedArticleCard({
           <span className="mx-1">•</span>
           <span>
             by
-            <span className="text-gray-700 font-medium whitespace-nowrap ml-1.5">
+            <span className="text-gray-600 font-medium whitespace-nowrap ml-1.5">
               {article.author}
             </span>
           </span>
         </motion.div>
 
         <motion.p
-          className="text-[#767676] leading-5 mb-5 flex-1 line-clamp-5"
+          className="text-[#767676] leading-5.5 mb-5 flex-1 line-clamp-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25, duration: 0.4 }}
@@ -165,7 +165,7 @@ function AnimatedArticleCard({
         </motion.p>
 
         <motion.div
-          className="flex justify-between pt-3 border-t border-gray-200"
+          className="flex justify-between pt-3.5 border-t border-gray-200"
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.4 }}
@@ -203,85 +203,6 @@ function AnimatedArticleCard({
           </div>
         </motion.div>
       </motion.div>
-    </motion.div>
-  );
-}
-
-export default function FrontPageArticlesCard() {
-  const frontPageArticles: Article[] = (articles as any)["Front Page"] || [];
-
-  const [popUp, setPopUp] = useState<boolean>(false);
-  const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
-  const [savedIds, setSavedIds] = useState<string[]>([]);
-
-  useEffect(() => {
-    const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
-    );
-    setSavedIds(saved.map((item) => item.id));
-  }, []);
-
-  const handleBookmarkClick = (article: Article) => {
-    const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
-    );
-    const isAlreadySaved = saved.some((item) => item.id === article.id);
-
-    let newSaved: Article[];
-
-    if (isAlreadySaved) {
-      newSaved = saved.filter((item) => item.id !== article.id);
-      setPopUp(true);
-      setPopUpType("removed");
-    } else {
-      newSaved = [...saved, article];
-      setPopUpType("added");
-      setPopUp(true);
-    }
-
-    localStorage.setItem("savedLoopArticles", JSON.stringify(newSaved));
-    setSavedIds(newSaved.map((item) => item.id));
-  };
-
-  useEffect(() => {
-    if (popUp) {
-      const timer = setTimeout(() => {
-        setPopUp(false);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [popUp]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative"
-    >
-      {frontPageArticles.map((article) => {
-        const isSaved = savedIds.includes(article.id);
-
-        return (
-          <AnimatedArticleCard
-            key={article.id}
-            article={article}
-            isSaved={isSaved}
-            handleBookmarkClick={handleBookmarkClick}
-          />
-        );
-      })}
-
-      <AnimatePresence>
-        {popUp && (
-          <BookmarkPopup
-            key="bookmark-popup"
-            type={popUpType}
-            popUpShows={popUp}
-            closeMenu={() => setPopUp(false)}
-          />
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 }

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import articles from "../constants/articles";
-import BookmarkPopup from "../components/bookmark";
-import AnimatedArticleCard from "../components/articleCard";
+import articles from "../../constants/articles";
+import BookmarkPopup from "../../components/bookmark";
+import AnimatedArticleCard from "../../components/articleCard";
 
 interface Article {
   id: string;
@@ -15,9 +15,8 @@ interface Article {
   description: string;
 }
 
-export default function Science() {
-  const geniusAndFollyArticles: Article[] =
-    (articles as any)["Genius & Folly"] || [];
+export default function FrontPageArticlesCard() {
+  const frontPageArticles: Article[] = (articles as any)["Front Page"] || [];
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
@@ -61,41 +60,35 @@ export default function Science() {
   }, [popUp]);
 
   return (
-    <div className="py-10">
-      <h1 className="text-center text-[1.375rem] mt-9 font-medium">
-        Genius and Folly
-      </h1>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-7 lg:px-3 relative"
+    >
+      {frontPageArticles.map((article) => {
+        const isSaved = savedIds.includes(article.id);
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative"
-      >
-        {geniusAndFollyArticles.map((article) => {
-          const isSaved = savedIds.includes(article.id);
+        return (
+          <AnimatedArticleCard
+            key={article.id}
+            article={article}
+            isSaved={isSaved}
+            handleBookmarkClick={handleBookmarkClick}
+          />
+        );
+      })}
 
-          return (
-            <AnimatedArticleCard
-              key={article.id}
-              article={article}
-              isSaved={isSaved}
-              handleBookmarkClick={handleBookmarkClick}
-            />
-          );
-        })}
-
-        <AnimatePresence>
-          {popUp && (
-            <BookmarkPopup
-              key="bookmark-popup"
-              type={popUpType}
-              popUpShows={popUp}
-              closeMenu={() => setPopUp(false)}
-            />
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </div>
+      <AnimatePresence>
+        {popUp && (
+          <BookmarkPopup
+            key="bookmark-popup"
+            type={popUpType}
+            popUpShows={popUp}
+            closeMenu={() => setPopUp(false)}
+          />
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }

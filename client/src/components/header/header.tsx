@@ -6,10 +6,7 @@ import AccountPanel from "../header/accountPanel";
 import { useAuth } from "../../contexts/authContext";
 import logo from "../../assets/imgs/loopLogo.png";
 import { UserIcon as UserSolid } from "@heroicons/react/24/solid";
-import {
-  UserIcon as UserOutline,
-  Bars3Icon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,10 +66,9 @@ export default function Header() {
           {!user ? (
             <Link
               to="/login"
-              className="flex items-center justify-center space-x-1"
+              className="flex items-center justify-center px-3 py-[0.313rem] border border-gray-300 rounded-full hover:shadow-xl transition-all duration-300 ease-out hover:text-[#0ab39c]"
             >
-              <UserOutline className="size-[1.063rem]" />
-              <span>Sign In</span>
+              <span className="text-sm">Sign In</span>
             </Link>
           ) : (
             <button
