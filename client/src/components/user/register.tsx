@@ -64,7 +64,7 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-5.5 py-8">
+    <div className="min-h-screen flex items-center justify-center bg-[#c4c1c1] px-5.5 py-8">
       <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl py-4.5 px-5.5">
         <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
@@ -160,7 +160,7 @@ export default function Register() {
               />
             ) : (
               <EyeIcon
-                className="size-4 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             )}

@@ -3,6 +3,7 @@ import Landfill from "../pages/frontpage/landfill";
 import Ruins from "../pages/frontpage/ruins";
 import Grit from "../pages/frontpage/grit";
 import CorporateFailures from "../pages/frontpage/failures";
+import Forgotten from "../pages/frontpage/forgotten";
 
 type ArticleComponent = React.ComponentType;
 
@@ -16,7 +17,7 @@ export const articleRoutes: ArticleRoutes = {
   "architectural-ruins": Ruins,
   "the-will-to-win": Grit,
   "corporate-failures-to-better-governance": CorporateFailures,
-  // "frontpage-006": Landfill,
+  "forgotten-inventions": Forgotten,
   // "frontpage-007": Landfill,
 };
 

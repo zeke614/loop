@@ -66,9 +66,9 @@ export default function Header() {
           {!user ? (
             <Link
               to="/login"
-              className="flex items-center justify-center px-3 py-[0.313rem] border border-gray-300 rounded-full hover:shadow-xl transition-all duration-300 ease-out hover:text-[#0ab39c]"
+              className="flex items-center justify-center px-3 py-[0.281rem] border border-gray-300 rounded-full hover:shadow-xl transition-all duration-300 ease-out hover:text-[#0ab39c]"
             >
-              <span className="text-sm">Sign In</span>
+              <span className="text-sm">Sign in</span>
             </Link>
           ) : (
             <button

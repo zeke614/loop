@@ -263,7 +263,7 @@ export default function Breakthroughs() {
         variants={floatingButtonVariants}
         initial="hidden"
         animate="visible"
-        className="fixed right-4 md:right-40 top-1/2 transform -translate-y-1/2 z-40 flex flex-col items-center gap-4 bg-white/90 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-gray-200"
+        className="fixed right-4 md:right-40 top-2/3 transform -translate-y-1/2 z-40 flex flex-col items-center gap-4 bg-white/90 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-gray-200"
       >
         <motion.div
           onClick={handleBookmarkClick}
@@ -315,18 +315,18 @@ export default function Breakthroughs() {
           variants={textVariants}
         >
           Six Scientific Failures,
-          <span className="block md:inline">Now Major Breakthroughs</span>
+          <span className="block md:inline">Now Big Breakthroughs</span>
         </motion.h1>
 
         <motion.div
-          className="flex items-center justify-center pt-3 text-gray-500 mb-10"
+          className="flex items-center justify-center pt-3 text-[#989797] mb-10"
           variants={textVariants}
         >
           <span className="mr-3">{articleData.date}</span>
           <span>•</span>
           <span className="ml-3">
             by
-            <span className="ml-1.5 font-medium text-gray-700">
+            <span className="ml-1.5 font-medium text-gray-600">
               {articleData.author}
             </span>
           </span>

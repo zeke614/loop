@@ -11,12 +11,11 @@ import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
 
 import articles from "../../constants/articles";
 
-import greatZimbabwe from "../../assets/imgs/great-zimbabwe.jpg";
-import machuPicchu from "../../assets/imgs/machuPicchu.jpg";
-import angkorWat from "../../assets/imgs/angkor-wat.jpg";
-import palmyra from "../../assets/imgs/palmyra.jpg";
-import parthenon from "../../assets/imgs/parthenon.jpg";
-import colosseum from "../../assets/imgs/colosseum.jpg";
+import dynasphere from "../../assets/imgs/dynasphere.jpg";
+import telharmonium from "../../assets/imgs/telharmonium.jpg";
+import antikythera from "../../assets/imgs/antikythera.webp";
+import picturephone from "../../assets/imgs/picturephone.webp";
+import aerialSteam from "../../assets/imgs/aerialSteam.jpg";
 
 type Article = {
   id: string;
@@ -30,7 +29,7 @@ type Article = {
 };
 
 const articleData = (articles["Time Capsule"] as Article[]).find(
-  (article) => article.id === "architectural-ruins"
+  (article) => article.id === "forgotten-inventions"
 )!;
 
 const sectionVariants: Variants = {
@@ -140,7 +139,7 @@ function AnimatedSection({
   );
 }
 
-export default function Ruins() {
+export default function Forgotten() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
@@ -314,8 +313,8 @@ export default function Ruins() {
           className="text-2xl md:text-3xl font-semibold pt-1"
           variants={textVariants}
         >
-          Six Architectural Marvels,
-          <span className="block md:inline"> Now Ruins — But Still Awe</span>
+          Inventions Forgotten by Time
+          <span className="block md:inline">That Were Ahead of Their Era</span>
         </motion.h1>
 
         <motion.div
@@ -351,13 +350,20 @@ export default function Ruins() {
       <AnimatedSection>
         <div className="text-[#767676] text-start">
           <motion.p className="leading-6.5 px-3" variants={textVariants}>
-            Ruins invite imagination in ways polished monuments never can. They
-            are the bones of past civilizations, exposed to wind, rain, and
-            time, yet still powerful enough to shift how we think about beauty,
-            ambition, and impermanence. This feature explores six extraordinary
-            structures that have partially crumbled into silence but continue to
-            inspire awe, scholarship, and cultural fascination. Their stones may
-            be fractured, but their stories remain unbroken.
+            History treats innovation like a spotlight: a few names glow bright,
+            while the rest dissolve into the dim backstage. Yet scattered across
+            that backstage are inventions so forward-thinking they feel like
+            they slipped through a crack in time — ideas born decades too early,
+            misunderstood by their century, only to reappear later in more
+            successful forms. These are the prototypes of the future that the
+            world wasn't ready to adopt.
+          </motion.p>
+          <motion.p className="leading-6.5 px-3 mt-4" variants={textVariants}>
+            This article dusts off five such inventions. They weren't failures
+            of imagination; they were failures of timing, infrastructure, market
+            readiness, or sheer luck. Their stories show how an idea can be
+            brilliant and still fall flat, and how innovation is often less
+            about genius and more about catching the wave exactly when it rises.
           </motion.p>
         </div>
       </AnimatedSection>
@@ -365,68 +371,55 @@ export default function Ruins() {
       <div className="my-14 space-y-14 px-1.5">
         {[
           {
-            title:
-              "1. The Colosseum — A Monument That Outlived Its Empire (Rome, Italy)",
-            img: colosseum,
-            alt: "Ruins of the Colosseum in Rome",
+            title: "1. The Dynasphere (1932)",
+            img: dynasphere,
+            alt: "The Dynasphere single-wheel vehicle",
             content:
-              "Rome's Colosseum is instantly recognizable: a massive amphitheater with missing walls, broken arches, and exposed interior chambers. Earthquakes, stone theft, and centuries of neglect transformed it from a complete oval into the iconic semi-ruin known today. But the Colosseum's story didn't end when its gladiators did. Even damaged, it remains a symbol of a civilization both brilliant and brutal. Its surviving corridors reveal engineering genius, while its fragmented stones echo the cost of entertainment built on human suffering. Millions visit each year not to see a ruined stadium, but to experience a structure that somehow feels alive in its incompleteness. Its ruin gives it depth, weight, and honesty.",
+              "A single giant wheel you sat inside, designed to revolutionize personal transport. The inventor imagined a world where people glided down roads in sleek rolling circles. In practice, it looked spectacular but had the unfortunate habit of rolling uncontrollably downhill and struggling to steer. The concept, though, showed up years later in robotics and specialty vehicles.",
           },
           {
-            title:
-              "2. The Parthenon — A Shattered Temple Still Shaping Civilizations (Athens, Greece)",
-            img: parthenon,
-            alt: "Ruins of the Parthenon temple in Athens",
+            title: "2. The Telharmonium (1906)",
+            img: telharmonium,
+            alt: "The massive Telharmonium music machine",
             content:
-              "The Parthenon sits atop the Acropolis as if keeping watch over Western civilization itself. Built to celebrate Athena and the political confidence of classical Athens, it has endured invasions, fires, earthquakes, and a catastrophic explosion in the 17th century. What stands now is a graceful frame of columns and carved fragments. Its ruin, far from diminishing its value, has strengthened its symbolic weight. The Parthenon continues to shape global ideas about democracy, aesthetics, and cultural heritage. Even as restoration efforts work carefully to preserve what remains, its broken edges invite reflection on impermanence and the long arc of human ambition. It is a masterpiece precisely because it has survived in pieces.",
+              "A 200-ton massive electrical music machine — basically the grandfather of the synthesizer. You could 'stream' its music over telephone lines to hotel lobbies and restaurants. But it generated so much electrical interference that phone lines buzzed with unwanted symphonies. The world wasn't ready, but electronic music absolutely was.",
           },
           {
-            title:
-              "3. Great Zimbabwe — The Stone Kingdom That Refused to Vanish (Masvingo Province, Zimbabwe)",
-            img: greatZimbabwe,
-            alt: "Great Zimbabwe ruins",
+            title: "3. The Antikythera Mechanism (100 BCE)",
+            img: antikythera,
+            alt: "fragment of Antikythera mechanism",
             content:
-              "In southeastern Zimbabwe stand the remains of a once-thriving medieval capital: a sprawling stone city built entirely without mortar. Great Zimbabwe's curved walls and towering enclosures speak of a wealthy society that dominated regional trade. When its population dispersed in the 15th century—likely due to environmental pressure and political transition—the city was left to the elements. Yet the granite walls still lock together with stubborn precision, forming passageways and ceremonial spaces that draw archaeologists from around the world. Even in ruin, Great Zimbabwe challenges long-held assumptions about African architecture, reminding us that cultural sophistication flourished far beyond the borders of Europe and the Middle East. Its silence is a kind of power, a whispered insistence that forgotten kingdoms shaped history too.",
+              "An ancient Greek device so intricate it feels like time travelers dropped it in the Aegean Sea. Using bronze gears and astonishing precision, it predicted eclipses, tracked celestial cycles, and modeled the cosmos. Its sophistication wouldn’t be matched for over a thousand years, making it one of history’s most astonishing technological outliers.",
           },
           {
-            title:
-              "4. Machu Picchu — The Hidden Citadel That Outsmarted Time (Cusco Region, Peru)",
-            img: machuPicchu,
-            alt: "Machu Picchu ruins with mountainous background",
+            title: "4. The Picturephone (1964)",
+            img: picturephone,
+            alt: "AT&T Picturephone prototype",
             content:
-              "Machu Picchu rises in the Peruvian Andes like a vision that almost shouldn't be real. Once a royal Incan estate and ceremonial retreat, it was abandoned in the 16th century during the empire's collapse and quickly swallowed by cloud forest. For centuries, it existed mostly in local stories until its early 20th-century rediscovery revealed terraces, temples, and stairways brushed by mist. Its partial ruin only intensifies its magic. The broken stones, the fragments of sun-aligned structures, the way nature clings to every ledge—everything feels deliberate, like the Inca crafted a city to remain impressive even in decay. Machu Picchu endures as a monument to human ingenuity but also to nature's ability to cradle and conceal the past.",
+              "AT&T demonstrated video calling at the World's Fair, predicting that face-to-face communication would become normal. The prediction was spot-on, but the product cost more than some cars, required special installations, and arrived in a society that simply didn't need video calls yet. Fast-forward to the smartphone age: the world caught up.",
           },
           {
-            title:
-              "5. Palmyra — A Desert Crossroads Reduced but Not Erased (Homs Governorate, Syria)",
-            img: palmyra,
-            alt: "Ruins of Palmyra with desert background",
+            title: "5. The Aerial Steam Carriage (1842)",
+            img: aerialSteam,
+            alt: "Victorian-era Aerial Steam Carriage design",
             content:
-              "Once a wealthy caravan city connecting the Roman world to Persia, India, and Arabia, Palmyra flourished through cultural exchange. Its grand colonnades, triumphal arches, and temple complexes announced its importance to travelers crossing the Syrian desert. Time alone did not ruin Palmyra—conflicts, shifting trade routes, and more recently, devastating destruction contributed to its fragmentation. Yet even the broken sections carry a fierce dignity. Sunlight slides across the surviving columns as though illuminating an ancient memory. Palmyra's ruins speak of a city that once thrived on connection, negotiation, and cosmopolitan identity, reminding visitors today that cultural crossroads are fragile treasures worth defending.",
+              "A Victorian-era flying machine designed before internal combustion engines, aviation principles, or suitable materials existed. The inventors envisioned commercial air travel — a radical idea that sounded like fiction. Their machine never got off the ground (literally), but the blueprint eerily resembles early aircraft from decades later.",
           },
-          {
-            title:
-              "6. Angkor Wat (and the Greater Angkor Region) — Temples Entangled in a Living Jungle (Siem Reap Province, Cambodia)",
-            img: angkorWat,
-            alt: "Angkor Wat temple ruins",
-            content:
-              "Angkor Wat is only one piece of a vast temple complex that once formed the spiritual and political heart of the Khmer Empire. Over centuries, conflict, resource strain, and shifting capitals left many structures abandoned, offering the jungle an opportunity it seized with enthusiasm. Roots thicker than a person's arm curl through stone corridors, and trees burst through collapsed rooftops, turning every ruin into a collaboration between nature and forgotten artisans. Instead of diminishing the site's beauty, this entanglement enhances it. Angkor's half-buried towers and carved reliefs radiate a dreamlike intensity, as if the past is emerging and disappearing in the same moment. Even in ruin, Angkor remains one of humanity's most mesmerizing architectural feats.",
-          },
-        ].map((ruin, index) => (
+        ].map((invention, index) => (
           <AnimatedSection key={index} className="space-y-6">
             <motion.h2
               className="text-[1.375rem] md:text-2xl font-medium"
               variants={textVariants}
             >
-              {ruin.title}
+              {invention.title}
             </motion.h2>
             <motion.div
               className="overflow-hidden mb-6 md:mx-20"
               variants={imageVariants}
             >
               <img
-                src={ruin.img}
-                alt={ruin.alt}
+                src={invention.img}
+                alt={invention.alt}
                 className="w-full h-48 md:h-105 object-cover"
               />
             </motion.div>
@@ -434,23 +427,26 @@ export default function Ruins() {
               className="mb-6 text-[#767676] leading-7"
               variants={textVariants}
             >
-              {ruin.content}
+              {invention.content}
             </motion.p>
           </AnimatedSection>
         ))}
       </div>
 
       <AnimatedSection>
-        <motion.p className="text-[#767676] pt-3" variants={textVariants}>
-          Ruins preserve what polished monuments can't: the reminders of
-          fragility, ambition, and the unpredictable forces that shape
-          civilizations. These six architectural marvels are incomplete, yet
-          they continue to inspire curiosity, scholarship, preservation efforts,
-          and storytelling. Their broken stones are not losses but
-          invitations—proof that beauty can endure long after purpose fades, and
-          that even shattered structures can cast long, astonishing shadows
-          across history.
-        </motion.p>
+        <motion.div className="text-[#767676] pt-3" variants={textVariants}>
+          <p className="mb-4">
+            They remind us that innovation is a dance between possibility and
+            readiness. Being "too early" can look a lot like being wrong, but
+            only temporarily. When these inventions are placed back into
+            context, they read like precursors — the first drafts of
+            technologies that shape modern life.
+          </p>
+          <p>
+            If anything, they show that the future tends to arrive twice: once
+            as an oddity misunderstood, and later as a revolution embraced.
+          </p>
+        </motion.div>
       </AnimatedSection>
 
       <AnimatePresence>

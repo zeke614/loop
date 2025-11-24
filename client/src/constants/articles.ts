@@ -26,7 +26,7 @@ const articles: Record<string, Article[]> = {
     {
       id: "failures-to-breakthroughs",
       category: "Genius & Folly",
-      title: "Scientific Failures That Led to Major Breakthroughs",
+      title: "Scientific Failures That Sparked Big Discoveries",
       date: "October 27, 2025",
       author: "Olu Jacobs",
       img: lab,
@@ -91,15 +91,15 @@ const articles: Record<string, Article[]> = {
         "From tactical breathing to cognitive rehearsal, elite performers use repeatable mental tools to convert anxiety into focused action. This article breaks down six evidence-backed techniques across sport, stage, and science and gives real examples of practitioners who credit them for breakthroughs...",
     },
     {
-      id: "time-001",
+      id: "forgotten-inventions",
       category: "Time Capsule",
-      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
-      date: "January 28, 2025",
+      title: "Ahead of Their Time: Forgotten Inventions",
+      date: "May 14, 2025",
       author: "Ada Mensah",
       img: typewriter,
       alt: "Vintage mechanical invention",
       description:
-        "History remembers winners but overlooks clever failures that prefigured later breakthroughs. This article revives five inventions that failed commercially but anticipated future technologies and asks what their stories teach about timing and adoption...",
+        "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms. These are the prototypes of the future that the world wasn’t ready to adopt. This article dusts off five such inventions. They weren’t failures of imagination; they were failures of timing, infrastructure, market readiness, or sheer luck. Their stories show how an idea can be brilliant and still fall flat, and how innovation is often less about genius and more about catching the wave exactly when it rises.",
     },
   ],
   "Human Currents": [
@@ -586,7 +586,7 @@ const articles: Record<string, Article[]> = {
     {
       id: "failures-to-breakthroughs",
       category: "Genius & Folly",
-      title: "Scientific Failures That Led to Major Breakthroughs",
+      title: "Scientific Failures That Sparked Big Discoveries",
       date: "October 27, 2025",
       author: "Olu Jacobs",
       img: lab,
@@ -688,15 +688,15 @@ const articles: Record<string, Article[]> = {
 
   "Time Capsule": [
     {
-      id: "inventions-forgotten-by-time",
+      id: "forgotten-inventions",
       category: "Time Capsule",
-      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
+      title: "Ahead of Their Time: Forgotten Inventions",
       date: "May 14, 2025",
       author: "Ada Mensah",
       img: typewriter,
       alt: "Vintage mechanical invention",
       description:
-        "History remembers winners but overlooks clever failures that prefigured later breakthroughs. This article revives five inventions that failed commercially but anticipated future technologies and asks what their stories teach about timing and adoption...",
+        "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms. These are the prototypes of the future that the world wasn’t ready to adopt. This article dusts off five such inventions. They weren’t failures of imagination; they were failures of timing, infrastructure, market readiness, or sheer luck. Their stories show how an idea can be brilliant and still fall flat, and how innovation is often less about genius and more about catching the wave exactly when it rises.",
     },
     {
       id: "time-002",

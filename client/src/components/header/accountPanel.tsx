@@ -31,7 +31,7 @@ export default function AccountPanel({
           ${profileOpen ? "translate-y-0" : "translate-y-full"}
 
           /* --- DESKTOP (md: Dropdown Menu) --- */
-          md:top-14 md:right-4 md:h-auto md:w-64 md:bottom-auto md:left-auto md:rounded-xl
+          md:top-14 md:right-35 md:h-auto md:w-64 md:bottom-auto md:left-auto md:rounded-xl
           md:transition-opacity md:duration-100 md:ease-out
           
           /* Show/Hide for Desktop: Opacity/Visibility */
