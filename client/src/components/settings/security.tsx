@@ -44,7 +44,7 @@ export default function Security() {
   };
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-25 px-5 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto md:mt-10">
         <div className="mb-8">
           <Link
@@ -64,10 +64,10 @@ export default function Security() {
 
         <div className="flex items-center justify-between py-5 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <h3 className="text-base font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900">
               Login Alerts
             </h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-gray-500 mt-1">
               Get notified about account access from different devices.
             </p>
           </div>
@@ -88,10 +88,10 @@ export default function Security() {
 
         <div className="flex items-center justify-between py-5 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900">
               Two-Factor Authentication
             </h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-gray-500 mt-1">
               Add an extra layer of security to your account using an
               authenticator app.
             </p>
@@ -113,8 +113,10 @@ export default function Security() {
 
         <div className="flex items-center justify-between py-5 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">Public Profile</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-semibold text-lg text-gray-900">
+              Public Profile
+            </h3>
+            <p className="text-gray-500 mt-1">
               Allow others to find your profile and view your reading lists.
             </p>
           </div>
@@ -135,10 +137,10 @@ export default function Security() {
 
         <div className="flex items-center justify-between py-5">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900">
               Search Engine Indexing
             </h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-gray-500 mt-1">
               Allow search engines like Google to index your public profile
               page.
             </p>

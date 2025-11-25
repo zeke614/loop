@@ -104,7 +104,7 @@ export default function PersonalDetails() {
   return (
     <div className="min-h-screen py-25 md:pt-40 px-5 md:px-8">
       <div className="max-w-3xl mx-auto">
-        <div className="mb-14">
+        <div className="mb-8">
           <Link
             to="/settings"
             className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors mb-4"

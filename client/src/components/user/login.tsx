@@ -63,7 +63,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#c4c1c1] px-5.5 py-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-200 px-5.5 py-8">
       <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl py-4.5 px-5.5">
         <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />

@@ -32,8 +32,6 @@ export default function EmailPrefs() {
         console.error("Error loading email preferences:", error);
         setPreferences(defaultPreferences);
       }
-    } else {
-      console.log("No saved preferences found, using defaults");
     }
   }, []);
 
@@ -47,7 +45,7 @@ export default function EmailPrefs() {
   };
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-25 px-5 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto md:mt-10">
         <div className="mb-8">
           <Link
@@ -67,8 +65,10 @@ export default function EmailPrefs() {
 
         <div className="flex items-center justify-between py-5 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">Weekly Digest</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-semibold text-lg text-gray-900">
+              Weekly Digest
+            </h3>
+            <p className="text-gray-500 mt-1">
               A summary of the week's top stories.
             </p>
           </div>
@@ -89,8 +89,10 @@ export default function EmailPrefs() {
 
         <div className="flex items-center justify-between py-5 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">New Article Alerts</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-semibold text-lg text-gray-900">
+              New Article Alerts
+            </h3>
+            <p className="text-gray-500 mt-1">
               Get notified when new articles are published.
             </p>
           </div>
@@ -111,8 +113,10 @@ export default function EmailPrefs() {
 
         <div className="flex items-center justify-between py-5 border-b border-gray-100">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">Product Updates</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-semibold text-lg text-gray-900">
+              Product Updates
+            </h3>
+            <p className="text-gray-500 mt-1">
               News about new features on <strong>loop</strong>.
             </p>
           </div>
@@ -133,8 +137,10 @@ export default function EmailPrefs() {
 
         <div className="flex items-center justify-between py-5 bg-gray-50/50">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-gray-900">Security Alerts</h3>
-            <p className="text-sm text-gray-500 mt-1">
+            <h3 className="font-semibold text-lg text-gray-900">
+              Security Alerts
+            </h3>
+            <p className="text-gray-500 mt-1">
               Notifications about security and login attempts.
             </p>
           </div>
