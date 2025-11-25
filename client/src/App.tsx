@@ -5,7 +5,9 @@ import Login from "./components/user/login.tsx";
 import Logout from "./components/user/logout.tsx";
 import Settings from "./components/settings/settings.tsx";
 import PersonalDetails from "./components/settings/details.tsx";
+import EmailReset from "./components/settings/emailReset.tsx";
 import EmailPrefs from "./components/settings/emailPrefs.tsx";
+import PasswordReset from "./components/settings/passwordReset.tsx";
 import Security from "./components/settings/security.tsx";
 import Saved from "./pages/saved.tsx";
 import Home from "./pages/frontpage/home.tsx";
@@ -26,6 +28,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="settings" element={<Settings />} />
         <Route path="settings/details" element={<PersonalDetails />} />
+        <Route path="settings/emailReset" element={<EmailReset />} />
+        <Route path="settings/passwordReset" element={<PasswordReset />} />
         <Route path="settings/emailPrefs" element={<EmailPrefs />} />
         <Route path="settings/security" element={<Security />} />
         <Route path="saved" element={<Saved />} />
