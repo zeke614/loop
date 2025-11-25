@@ -64,8 +64,8 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200 px-5.5 py-8">
-      <div className="w-full max-w-md bg-white shadow-lg shadow-gray-300/20 rounded-xl py-4.5 px-5.5">
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="w-full max-w-md py-15 px-7">
         <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link>
@@ -87,7 +87,8 @@ export default function Register() {
               alt="Google"
               className="w-5 h-5"
             />
-            <span>Sign up with Google</span>
+            <span className="md:hidden">Sign up with Google</span>
+            <span className="hidden md:block">Google</span>
           </button>
 
           <button
@@ -99,7 +100,8 @@ export default function Register() {
               alt="GitHub"
               className="w-5 h-5"
             />
-            <span>Sign up with GitHub</span>
+            <span className="md:hidden">Sign up with Github</span>
+            <span className="hidden md:block">Github</span>{" "}
           </button>
         </div>
 
@@ -110,7 +112,7 @@ export default function Register() {
         </div>
 
         {errorMessage && (
-          <p className="text-center text-red-500 mb-4 text-sm">
+          <p className="text-center text-[#e6044c] text-[0.938rem] mb-2">
             {errorMessage}
           </p>
         )}
@@ -174,8 +176,8 @@ export default function Register() {
             className={`w-full rounded-full py-3 mt-6 font-medium transition
               ${
                 !form.username || !form.email || !form.password || loading
-                  ? "bg-[#d4d6dc] text-gray-500 cursor-not-allowed"
-                  : "bg-[#202124] text-white hover:bg-[#000000] cursor-pointer"
+                  ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
+                  : "bg-[#0ab39c] hover:bg-[#089c8a] text-white cursor-pointer"
               }`}
           >
             {loading ? (

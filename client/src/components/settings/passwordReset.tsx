@@ -102,15 +102,15 @@ export default function PasswordReset() {
   };
 
   return (
-    <div className="min-h-screen bg-white w-full max-w-md px-4 mx-auto pt-20">
+    <div className="min-h-screen bg-white w-full max-w-md px-4 mx-auto pt-21 md:pt-24">
       <Link
         to="/settings/details"
-        className="inline-flex items-center font-medium transition-colors mb-5"
+        className="inline-flex items-center font-medium transition-colors mb-7"
       >
         <ChevronLeftIcon className="size-5.5 -ml-1" />
       </Link>
 
-      <h3 className="text-2xl font-bold mb-3.5">Change Password</h3>
+      <h3 className="text-2xl font-bold mb-3.5">Password</h3>
 
       <p className="text-gray-600 mb-5">
         Enter your new password below. Make sure it's strong and memorable.
@@ -129,7 +129,7 @@ export default function PasswordReset() {
 
         <div className="relative pb-1">
           <label className="font-medium text-gray-700 block mb-2">
-            New password *
+            New password
           </label>
           <input
             type={showPassword ? "text" : "password"}
@@ -155,7 +155,7 @@ export default function PasswordReset() {
 
         <div className="relative">
           <label className="font-medium text-gray-700 block mb-2">
-            Confirm new password *
+            Confirm new password
           </label>
           <input
             type={showConfirmPassword ? "text" : "password"}
@@ -187,7 +187,7 @@ export default function PasswordReset() {
           Password must include at least 1 digit.
         </p>
 
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm text-gray-500 mb-7">
           Password must include at least 1 non-digit character.
         </p>
 
@@ -197,17 +197,17 @@ export default function PasswordReset() {
           className={`w-full rounded-lg py-3 font-medium transition flex items-center justify-center
             ${
               !form.password || !form.confirmPassword || loading
-                ? "bg-[#d4d6dc] text-gray-500 cursor-not-allowed"
+                ? "bg-[#babcc0]  text-white cursor-not-allowed"
                 : "bg-[#0ab39c] text-white hover:bg-[#089c8a] cursor-pointer"
             }`}
         >
           {loading ? (
             <span className="flex items-center space-x-2">
               <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-              <span>Resetting Password...</span>
+              <span>Updating Password...</span>
             </span>
           ) : (
-            "Reset Password"
+            "Update Password"
           )}
         </button>
       </form>

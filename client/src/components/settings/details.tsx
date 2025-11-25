@@ -154,10 +154,8 @@ export default function PersonalDetails() {
 
             <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-500 mb-1">
-                  Email Address
-                </p>
-                <p className="text-base font-semibold text-gray-900">
+                <p className="font-medium text-gray-500 mb-1">Email Address</p>
+                <p className="font-semibold text-gray-900">
                   {user.email || "—"}
                 </p>
               </div>
@@ -170,10 +168,8 @@ export default function PersonalDetails() {
 
             <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-500 mb-1">
-                  Password
-                </p>
-                <p className="text-base font-semibold text-gray-900 tracking-widest">
+                <p className="font-medium text-gray-500 mb-1">Password</p>
+                <p className="font-semibold text-gray-900 tracking-widest">
                   ●●●●●●●●
                 </p>
               </div>
@@ -186,24 +182,24 @@ export default function PersonalDetails() {
 
             <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-500 mb-1">
-                  Display Name
-                </p>
-                <p className="text-base font-semibold text-gray-900">
+                <p className="font-medium text-gray-500 mb-1">Display Name</p>
+                <p className="font-semibold text-gray-900">
                   {user.username || "None added"}
                 </p>
               </div>
               <button className="p-2 text-gray-400 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
-                <PencilSquareIcon className="size-5" />
+                <Link to="/settings/displayNameReset">
+                  <PencilSquareIcon className="size-5" />
+                </Link>{" "}
               </button>
             </div>
 
             <div className="flex items-center justify-between py-5">
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-500 mb-1">
+                <p className="font-medium text-gray-500 mb-1">
                   Country of Residence
                 </p>
-                <p className="text-base font-semibold text-gray-900">
+                <p className="font-semibold text-gray-900">
                   {user.country || "Fetching..."}
                 </p>
               </div>
