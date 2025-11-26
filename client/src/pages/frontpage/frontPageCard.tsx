@@ -64,7 +64,7 @@ export default function FrontPageArticlesCard() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-7 lg:px-3 relative"
+      className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-12 sm:grid-cols-2 xl:grid-cols-3 md:gap-y-14 px-7 sm:px-5 relative"
     >
       {frontPageArticles.map((article) => {
         const isSaved = savedIds.includes(article.id);

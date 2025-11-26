@@ -25,9 +25,9 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full  z-50">
+    <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
       <div
-        className="max-w-7xl sm:max-w-6xl mx-auto flex items-center justify-between 
+        className="max-w-7xl mx-auto flex items-center justify-between 
                px-3.5 sm:px-5 border-b border-b-[#928f8f1f] md:h-16"
       >
         <button
@@ -41,20 +41,20 @@ export default function Header() {
 
         <Link
           to="/"
-          className={`text-[1.688rem] font-bold ${
+          className={`text-[1.688rem] sm:mr-10 font-bold ${
             user ? "pl-0" : "pl-11.5"
           } md:p-0`}
         >
           <img src={logo} alt="loop logo" className="h-12 w-auto text-black" />{" "}
         </Link>
 
-        <div className="flex items-center space-x-10">
-          <nav className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center sm:gap-7">
+          <nav className="hidden md:flex items-center justify-center gap-4">
             {navLinks.map(({ path, label }) => (
               <Link
                 key={path}
                 to={path}
-                className={`text-[1.063rem] ${
+                className={`text-[1.063rem] sm:text-base flex items-center justify-center ${
                   location.pathname === path ? "font-semibold" : "font-medium"
                 }`}
               >

@@ -149,7 +149,7 @@ export default function CurrencyModal({
               }
               transition={{ duration: 0.35, ease: "easeOut" }}
               className="
-                bg-white w-full rounded-t-2xl px-3 pt-3 pb-6 max-h-[40%] overflow-hidden shadow-2xl border-t border-gray-200
+                bg-white w-full rounded-t-2xl px-3 pt-3 pb-6 max-h-[35%] overflow-hidden shadow-2xl border-t border-gray-200
                 sm:rounded-xl sm:max-w-md sm:border sm:border-gray-200 sm:px-3 sm:pt-4 sm:pb-4 sm:max-h-[85vh]
               "
               role="dialog"
@@ -169,7 +169,6 @@ export default function CurrencyModal({
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-9 py-2.5 border border-gray-300 rounded-xl outline-none transition-all duration-150 focus:border-gray-500 "
-                  autoFocus
                 />
               </div>
 
@@ -213,7 +212,7 @@ export default function CurrencyModal({
                   </ul>
                 ) : (
                   <div className="text-center py-5 text-gray-500">
-                    <i className="bx bx-search text-3xl mb-2" />
+                    <i className="bx bx-search text-[1.75rem] mb-2" />
                     <p>No countries found</p>
                     <p className="text-sm">Try a different search term</p>
                   </div>

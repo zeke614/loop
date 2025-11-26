@@ -243,7 +243,7 @@ export default function Breakthroughs() {
           <motion.img
             src={articleData.img}
             alt={articleData.alt}
-            className="w-full h-58 sm:h-[24.5rem] object-cover"
+            className="w-full h-60 sm:h-[24rem] object-cover"
             variants={imageVariants}
             initial="hidden"
             animate="visible"
@@ -332,8 +332,7 @@ export default function Breakthroughs() {
             className="text-2xl md:text-[1.75rem] font-semibold"
             variants={textVariants}
           >
-            Six Scientific Failures,
-            <span className="block sm:inline"> Now Big Breakthroughs</span>
+            Six Scientific Failures, Now Major Breakthroughs
           </motion.h1>
 
           <motion.div
@@ -361,7 +360,7 @@ export default function Breakthroughs() {
           </div>
         </AnimatedSection>
 
-        <div className="my-14 space-y-14 px-1.5">
+        <div className="my-14 space-y-14">
           {[
             {
               title: "1. Penicillin — A Dirty Petri Dish That Saved the World",

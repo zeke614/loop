@@ -22,6 +22,7 @@ export default function BookmarkPopup({
 
   useEffect(() => {
     if (!popUpShows) return;
+
     function handleClickOutside(event: MouseEvent) {
       if (
         popupRef.current &&
@@ -30,6 +31,7 @@ export default function BookmarkPopup({
         closeMenu();
       }
     }
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [popUpShows, closeMenu]);
@@ -43,31 +45,49 @@ export default function BookmarkPopup({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 100 }}
       transition={{ type: "spring", damping: 25, stiffness: 200 }}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-md px-4"
     >
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {type === "added" ? (
-              <BookmarkIcon className="size-5 text-[#0ab39c]" />
-            ) : (
-              <BookmarkSlashIcon className="size-5 text-gray-500" />
-            )}
-            <div>
-              <p className="font-medium text-gray-800">{message}</p>
-            </div>
-          </div>
-          {type === "added" && (
-            <Link
-              to="/saved"
-              className="flex items-center text-[#0ab39c] font-medium cursor-pointer"
-            >
-              <p>View</p>
-              <ChevronRightIcon />
-            </Link>
+      <motion.div
+        initial={{
+          backdropFilter: "blur(0px)",
+          backgroundColor: "rgba(255,255,255,0)",
+        }}
+        animate={{
+          backdropFilter: "blur(16px)",
+          backgroundColor: "rgba(255,255,255,0.25)",
+        }}
+        transition={{ duration: 0.1 }}
+        className="
+          border border-white/30 
+          rounded-2xl 
+          shadow-lg 
+          p-4
+          flex items-center justify-between
+          relative
+          overflow-hidden
+        "
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl" />
+
+        <div className="flex items-center gap-3 relative z-10">
+          {type === "added" ? (
+            <BookmarkIcon className="size-5 text-[#0ab39c]" />
+          ) : (
+            <BookmarkSlashIcon className="size-5 text-white" />
           )}
+          <p className="font-medium text-white drop-shadow-sm">{message}</p>
         </div>
-      </div>
+
+        {type === "added" && (
+          <Link
+            to="/saved"
+            className="flex items-center gap-1 text-white font-medium hover:text-[#0ab39c] transition-colors relative z-10"
+          >
+            <p className="drop-shadow-sm">View</p>
+            <ChevronRightIcon className="w-5 h-5 drop-shadow-sm" />
+          </Link>
+        )}
+      </motion.div>
     </motion.div>
   );
 }
