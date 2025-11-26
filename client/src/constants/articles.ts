@@ -79,7 +79,7 @@ const articles: Record<string, Article[]> = {
         "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
     },
     {
-      id: "human-003",
+      id: "performance-hacks",
       category: "Human Currents",
       title:
         "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
@@ -88,7 +88,7 @@ const articles: Record<string, Article[]> = {
       img: psyche,
       alt: "Athlete closing eyes before a race",
       description:
-        "From tactical breathing to cognitive rehearsal, elite performers use repeatable mental tools to convert anxiety into focused action. This article breaks down six evidence-backed techniques across sport, stage, and science and gives real examples of practitioners who credit them for breakthroughs...",
+        "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
     },
     {
       id: "forgotten-inventions",
@@ -127,16 +127,16 @@ const articles: Record<string, Article[]> = {
         "From neighborhood newsletters to niche online forums, small, tightly knit groups are regaining cultural influence once held by mass outlets. This deep dive looks at case studies where micro-communities shaped policy, launched creators, and rebuilt trust in information flows...",
     },
     {
-      id: "human-003",
+      id: "performance-hacks",
       category: "Human Currents",
       title:
-        "Six Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
-      date: "April 24, 2025",
+        "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
+      date: "April 5, 2025",
       author: "Rina Patel",
       img: psyche,
-      alt: "Girl trying to focus",
+      alt: "Athlete closing eyes before a race",
       description:
-        "From tactical breathing to cognitive rehearsal, elite performers use repeatable mental tools to convert anxiety into focused action. This article breaks down six evidence-backed techniques across sport, stage, and science and gives real examples of practitioners who credit them for breakthroughs...",
+        "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
     },
     {
       id: "human-004",

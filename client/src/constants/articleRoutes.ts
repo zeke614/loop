@@ -4,6 +4,7 @@ import Ruins from "../pages/frontpage/ruins";
 import Grit from "../pages/frontpage/grit";
 import CorporateFailures from "../pages/frontpage/failures";
 import Forgotten from "../pages/frontpage/forgotten";
+import Hacks from "../pages/frontpage/hacks";
 
 type ArticleComponent = React.ComponentType;
 
@@ -18,7 +19,7 @@ export const articleRoutes: ArticleRoutes = {
   "the-will-to-win": Grit,
   "corporate-failures-to-better-governance": CorporateFailures,
   "forgotten-inventions": Forgotten,
-  // "frontpage-007": Landfill,
+  "performance-hacks": Hacks,
 };
 
 export const getArticleComponent = (

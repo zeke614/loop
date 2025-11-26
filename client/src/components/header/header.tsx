@@ -54,7 +54,7 @@ export default function Header() {
               <Link
                 key={path}
                 to={path}
-                className={`text-[1.063rem] sm:text-base flex items-center justify-center ${
+                className={`flex items-center justify-center ${
                   location.pathname === path ? "font-semibold" : "font-medium"
                 }`}
               >

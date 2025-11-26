@@ -132,8 +132,9 @@ export default function PersonalDetails() {
         initial="initial"
         animate="in"
         exit="out"
+        className="pt-25"
       >
-        <div className="min-h-screen py-25 md:pt-40 px-5 md:px-8">
+        <div className="min-h-screen pb-25 md:pt-40 px-5 md:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="mb-7">
               <Link

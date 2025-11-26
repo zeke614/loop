@@ -76,7 +76,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                         key={path}
                         to={path}
                         onClick={closeMenu}
-                        className={`flex items-center gap-3 transition-colors duration-200 text-lg py-3 ${
+                        className={`flex items-center text-[1.063rem] gap-3 transition-colors duration-200 py-3 ${
                           isActive
                             ? "border-l-[0.188rem] border-black pl-[0.813rem] font-semibold text-black"
                             : "pl-4 font-medium text-gray-700 hover:text-black"
@@ -102,7 +102,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                   onClick={closeMenu}
                   className="flex items-center justify-between mb-4 pl-4 pr-3.5"
                 >
-                  <div className="flex items-center text-lg gap-3 font-medium text-gray-700 hover:text-black transition-colors">
+                  <div className="flex items-center text-[1.063rem] gap-3 font-medium text-gray-700 hover:text-black transition-colors">
                     <InformationCircleIcon className="size-5" />
                     <span>More</span>
                   </div>

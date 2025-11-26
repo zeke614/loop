@@ -11,12 +11,12 @@ import { BookmarkIcon as BookmarkIconSolid } from "@heroicons/react/24/solid";
 
 import articles from "../../constants/articles";
 
-import penicillin from "../../assets/imgs/penicillin.jpg";
-import xray from "../../assets/imgs/xray.jpg";
-import pacemaker from "../../assets/imgs/pacemaker.jpg";
-import microwave from "../../assets/imgs/microwave.jpg";
-import glue from "../../assets/imgs/glue.jpg";
-import nuclear from "../../assets/imgs/nuclear.jpg";
+// import tacticalBreathing from "../../assets/imgs/tactical-breathing.jpg";
+// import cognitiveRehearsal from "../../assets/imgs/cognitive-rehearsal.jpg";
+// import cueWords from "../../assets/imgs/cue-words.jpg";
+// import attentionalNarrowing from "../../assets/imgs/attentional-narrowing.jpg";
+// import prePerformance from "../../assets/imgs/pre-performance.jpg";
+// import reframingStress from "../../assets/imgs/reframing-stress.jpg";
 
 type Article = {
   id: string;
@@ -29,53 +29,52 @@ type Article = {
   [key: string]: any;
 };
 
-const articleData = (articles["Genius & Folly"] as Article[]).find(
-  (article) => article.id === "failures-to-breakthroughs"
+const articleData = (articles["Human Currents"] as Article[]).find(
+  (article) => article.id === "performance-hacks"
 )!;
 
-const breakthroughs = [
+const hacks = [
   {
-    title: "1. Penicillin — A Dirty Petri Dish That Saved the World",
-    img: penicillin,
-    alt: "Penicillium drug",
+    title: "1. Tactical Breathing: The Nervous System Reset",
+    // img: "tacticalBreathing",
+    alt: "Person practicing tactical breathing technique",
     content:
-      "Alexander Fleming didn't set out to change medicine in 1928. He was simply studying staphylococcal bacteria, went on holiday, and returned to find mold blooming across a forgotten petri dish. Instead of tossing the spoiled sample, he noticed something odd: the bacteria around the mold were dead, as if an invisible barrier had formed. The mold, Penicillium notatum, produced a substance that erased bacteria with ruthless precision. Fleming recognized its power, but even he didn't foresee antibiotics transforming human survival. What began as laboratory sloppiness became a new medical era—one where infections that once killed millions became treatable within days. The world owes an immeasurable debt to one unwashed dish.",
+      "Navy SEALs use a regulated breath pattern called 'box breathing,' a simple 4-4-4-4 rhythm (inhale, hold, exhale, hold). Sports psychologists note that this slows activity in the sympathetic nervous system—the part responsible for fight-or-flight. Example: Mikaela Shiffrin, the world-class skier, openly attributes her between-run breathing routines to helping her stay emotionally level on the world stage. She treats each breath like a reset button.",
   },
   {
-    title: "2. X-Rays — Wilhelm Röntgen's Glowing Accident",
-    img: xray,
-    alt: "doctor assessing an X-ray image",
+    title: "2. Cognitive Rehearsal: Mental Reps for Real Performance",
+    // img: "cognitiveRehearsal",
+    alt: "Athlete visualizing performance mentally",
     content:
-      "In 1895, Wilhelm Röntgen was investigating cathode rays—harmless, low-energy stuff—when a fluorescent screen across the room began to glow. The rays he was studying shouldn't have caused that. Puzzled, he darkened the room and continued experimenting, eventually placing his hand between the tube and the screen. He saw his bones. Röntgen had stumbled upon a hidden slice of the electromagnetic spectrum, soon named 'X-rays.' This accidental glow became one of medicine's most powerful diagnostic tools. In weeks, scientists replicated the discovery; in months, hospitals adopted it. A failure to predict the behavior of mysterious rays opened a window into the human body itself.",
+      "Neuroscience shows that mentally simulating an action activates nearly identical brain circuits as physically doing it. Elite performers rehearse entire sequences—from starting stance to final gesture—until the brain treats the event like déjà vu. Example: Violinist Hilary Hahn is known for silently walking through finger placements and bowing patterns backstage. She says it makes the concert feel 'already lived once' before she steps onstage.",
   },
   {
-    title: "3. The Pacemaker — A Circuit Running Too Slowly",
-    img: pacemaker,
-    alt: "Doctor holding a pacemaker device",
+    title: "3. Cue Words: Shortcuts to the Optimal Mindset",
+    // img: "cueWords",
+    alt: "Basketball player at free throw line using cue words",
     content:
-      "Electrical engineer Wilson Greatbatch was building a device to record irregular heartbeats. While assembling the circuit, he reached for a resistor but grabbed the wrong one—a mistake every engineering student knows all too well. Instead of recording pulses, the circuit produced a gentle, rhythmic electrical signal—eerily similar to a human heartbeat. Greatbatch immediately knew what he had in his hands: not a diagnostic tool, but something that could restore a failing heart's rhythm. His 'error' became the first implantable pacemaker, a device now carried by millions. A swapped component meant for data capture became an instrument of life.",
+      "These are single words or tiny phrases that instantly redirect attention. Runners use 'relax.' Actors use 'presence.' Chess players use 'clarity.' The brain develops an association so strong that the word triggers an entire psychological routine. Example: NBA players frequently whisper their cue words at the free-throw line. Steph Curry has mentioned using 'rhythm' as his internal anchor.",
   },
   {
-    title:
-      "4. Microwave Ovens — A Melted Candy Bar Sparks a Kitchen Revolution",
-    img: microwave,
-    alt: "Microwave oven",
+    title: "4. Attentional Narrowing: Shrinking the Universe on Purpose",
+    // img: "attentionalNarrowing",
+    alt: "Astronaut focusing during spacewalk",
     content:
-      "Percy Spencer, a self-taught engineer, was testing magnetrons—the vacuum tubes used in radar systems—when he noticed a chocolate bar in his pocket begin to melt. Confused, he placed popcorn kernels near the device. They popped. Spencer had unknowingly exposed the food to microwave radiation, which agitates water molecules and heats food rapidly. What was supposed to be a dry engineering test became the origin of a household appliance that redefined cooking convenience. A radar engineer trying to improve communication systems accidentally modernized the global kitchen.",
+      "Under pressure, humans often choke because they take in too much sensory information. Elite performers intentionally narrow focus to a single tactile, visual, or auditory point. Example: Astronaut Sunita Williams described focusing exclusively on her glove seals during critical spacewalk moments. She said it kept her brain 'anchored to one real thing' in an environment full of danger.",
   },
   {
-    title: "5. Superglue — A Material Too Sticky to Use... Until It Was",
-    img: glue,
-    alt: "glue illustration",
+    title: "5. Pre-Performance Routines: Your Own Personal Launch Sequence",
+    // img: "prePerformance",
+    alt: "Tennis player with pre-serve routine",
     content:
-      "During World War II, chemist Harry Coover was searching for heat-resistant materials for gun sights. Instead, he created cyanoacrylates—compounds that stuck to everything, including the instruments meant to measure them. The substance was shelved as useless. Years later, while working on another project, Coover and his colleague Fred Joyner rediscovered the glue and finally recognized its potential. What had once been an annoyance became one of the strongest, most versatile adhesives ever produced—vital in manufacturing, medicine, and everyday household repairs. Failure transformed into a multi-billion dollar innovation hiding in plain sight.",
+      "A consistent ritual—tying shoes the same way, stretching in the same order—tells the brain that stress is predictable, not chaotic. Studies show this reduces cortisol spikes and increases confidence. Example: Serena Williams bounces the ball exactly the same number of times before serving. She calls it 'a comfort pattern' when pressure rises.",
   },
   {
-    title: "6. Nuclear Fission — A Measurement That Seemed Impossible",
-    img: nuclear,
-    alt: "Nuclear fission illustration",
+    title: "6. Reframing Stress as Fuel, Not Danger",
+    // img: "reframingStress",
+    alt: "Performer backstage preparing for show",
     content:
-      "In 1938, physicists Otto Hahn and Fritz Strassmann found that uranium bombarded with neutrons produced barium—an impossibly lighter element. Their calculations suggested the atom had split, but that wasn't supposed to happen. They assumed they were wrong. Lise Meitner and her nephew Otto Frisch later explained the process: the uranium nucleus had indeed fractured, releasing vast energy. What began as an 'impossible result' became a cornerstone of nuclear physics—leading to reactors, weapons, and a new understanding of atomic structure. A result dismissed as experimental error revealed a force powerful enough to reshape geopolitics and energy for generations.",
+      "Psychologists have long known that the body's stress response is similar to excitement. Elite performers train themselves to interpret a racing heart as readiness instead of fear. Example: Stage actor Rami Malek once said he tells himself, 'This energy is my edge,' right as the curtain rises. The nerves don't disappear—they get repurposed.",
   },
 ];
 
@@ -277,24 +276,19 @@ function BackToTopButton({ showBackToTop }: { showBackToTop: boolean }) {
   );
 }
 
-function BreakthroughItem({
-  breakthrough,
-}: {
-  breakthrough: (typeof breakthroughs)[0];
-  index: number;
-}) {
+function HackItem({ hack }: { hack: (typeof hacks)[0]; index: number }) {
   return (
     <AnimatedSection className="space-y-6">
       <motion.h2
         className="text-[1.375rem] md:text-2xl font-medium"
         variants={textVariants}
       >
-        {breakthrough.title}
+        {hack.title}
       </motion.h2>
       <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
         <img
-          src={breakthrough.img}
-          alt={breakthrough.alt}
+          // src={ruin.img}
+          alt={hack.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
       </motion.div>
@@ -302,13 +296,13 @@ function BreakthroughItem({
         className="mb-6 text-[#767676] leading-7"
         variants={textVariants}
       >
-        {breakthrough.content}
+        {hack.content}
       </motion.p>
     </AnimatedSection>
   );
 }
 
-export default function Breakthroughs() {
+export default function Hacks() {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
@@ -376,13 +370,11 @@ export default function Breakthroughs() {
         console.log("Share canceled");
       }
     } else {
-      // Fallback: copy to clipboard
       try {
         await navigator.clipboard.writeText(shareData.url);
         setShowShareFeedback(true);
         setTimeout(() => setShowShareFeedback(false), 2000);
       } catch (error) {
-        // Older browser fallback
         const textArea = document.createElement("textarea");
         textArea.value = shareData.url;
         document.body.appendChild(textArea);
@@ -434,7 +426,7 @@ export default function Breakthroughs() {
             className="text-[1.438rem] md:text-[1.75rem] font-semibold"
             variants={textVariants}
           >
-            Six Scientific Failures, Now Major Breakthroughs
+            Six Mental Performance Hacks Used by Elite Performers
           </motion.h1>
 
           <motion.div
@@ -451,36 +443,34 @@ export default function Breakthroughs() {
         <AnimatedSection>
           <div className="text-[#767676] text-start">
             <motion.p className="leading-6.5" variants={textVariants}>
-              Science is often portrayed as a straight staircase to truth, but
-              many of its greatest leaps started with a misstep. Failed
-              experiments, stray bacteria, overheated equipment—these tiny
-              disasters reshaped medicine, physics, technology and even daily
-              life. This feature explores six moments where mistakes didn't just
-              guide innovation; they became the spark that rewrote what humanity
-              thought possible.
+              Elite performers live in environments where heart rates spike,
+              crowds roar, expectations tighten the chest, and errors carry
+              consequences. Yet their defining skill isn't a genetic gift—it's
+              the ability to regulate stress so effectively that pressure
+              becomes a tailwind rather than an anchor.
+            </motion.p>
+            <motion.p className="leading-6.5 mt-4" variants={textVariants}>
+              Across sports psychology, performing arts research, and
+              high-stakes science, several mental techniques show up again and
+              again. What follows is a breakdown of six evidence-backed tools
+              and real people who use them.
             </motion.p>
           </div>
         </AnimatedSection>
 
         <div className="my-14 space-y-14">
-          {breakthroughs.map((breakthrough, index) => (
-            <BreakthroughItem
-              key={index}
-              breakthrough={breakthrough}
-              index={index}
-            />
+          {hacks.map((hack, index) => (
+            <HackItem key={index} hack={hack} index={index} />
           ))}
         </div>
 
         <AnimatedSection>
           <motion.p className="text-[#767676] pt-3" variants={textVariants}>
-            These six stories share a quiet, universal truth: discovery is
-            rarely a straight path. The human instinct to pause, notice, and
-            question the unexpected has given us antibiotics, modern medicine,
-            global communication, faster cooking, sticky miracles, and the key
-            to the atom. Science advances not only from brilliance but from
-            curiosity in the face of failure. Every misstep holds the potential
-            for transformation when examined with patient, stubborn wonder.
+            All six strategies share a theme: they regulate uncertainty.
+            Pressure becomes overwhelming only when the brain feels out of
+            control. These tools restore predictability, control, and agency.
+            The more repeatable the technique, the more powerful it becomes.
+            Elite performance isn't magic—it's the mastery of internal weather.
           </motion.p>
         </AnimatedSection>
 

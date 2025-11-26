@@ -128,7 +128,7 @@ export default function AnimatedArticleCard({
       >
         <Link
           to={`/articles/${article.id}`}
-          className="text-[1.37rem] font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
+          className="text-xl font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
         >
           <motion.span
             whileHover={{ x: 2 }}

@@ -75,8 +75,9 @@ export default function EmailPrefs() {
       initial="initial"
       animate="in"
       exit="out"
+      className="pt-25"
     >
-      <div className="min-h-screen py-25 px-5 sm:px-6 lg:px-8">
+      <div className="min-h-screen pb-25 px-5 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto md:mt-10">
           <div className="mb-7">
             <Link
