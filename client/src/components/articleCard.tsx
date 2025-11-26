@@ -128,7 +128,7 @@ export default function AnimatedArticleCard({
       >
         <Link
           to={`/articles/${article.id}`}
-          className="text-[1.37rem] text-center font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
+          className="text-[1.37rem] font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
         >
           <motion.span
             whileHover={{ x: 2 }}
@@ -140,7 +140,7 @@ export default function AnimatedArticleCard({
         </Link>
 
         <motion.div
-          className="flex items-center justify-center text-sm text-[#989797] mb-3 flex-wrap gap-2"
+          className="flex items-center text-sm text-[#989797] mb-3 flex-wrap gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
@@ -150,7 +150,7 @@ export default function AnimatedArticleCard({
         </motion.div>
 
         <motion.p
-          className="text-[#767676] text-center leading-5.5 mb-5 flex-1 line-clamp-5"
+          className="text-[#767676] leading-5.5 mb-5 flex-1 line-clamp-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25, duration: 0.4 }}

@@ -50,24 +50,24 @@ export default function BookmarkPopup({
       <motion.div
         initial={{
           backdropFilter: "blur(0px)",
-          backgroundColor: "rgba(255,255,255,0)",
+          backgroundColor: "rgba(30,30,30,0)",
         }}
         animate={{
           backdropFilter: "blur(16px)",
-          backgroundColor: "rgba(255,255,255,0.25)",
+          backgroundColor: "rgba(30,30,30,0.35)",
         }}
         transition={{ duration: 0.1 }}
         className="
-          border border-white/30 
-          rounded-2xl 
-          shadow-lg 
+          border border-white/20
+          rounded-2xl
+          shadow-lg
           p-4
           flex items-center justify-between
           relative
           overflow-hidden
         "
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-2xl" />
 
         <div className="flex items-center gap-3 relative z-10">
           {type === "added" ? (
