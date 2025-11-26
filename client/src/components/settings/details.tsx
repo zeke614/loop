@@ -13,6 +13,8 @@ import {
   TrashIcon,
 } from "@heroicons/react/24/outline";
 
+import CurrencyModal from "../settings/countries";
+
 const pageVariants: Variants = {
   initial: {
     y: "100vh",
@@ -21,18 +23,12 @@ const pageVariants: Variants = {
   in: {
     y: 0,
     opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeInOut",
-    },
+    transition: { duration: 0.6, ease: "easeInOut" },
   },
   out: {
-    y: "-100vh",
+    y: "100vh",
     opacity: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeInOut",
-    },
+    transition: { duration: 0.6, ease: "easeInOut" },
   },
 };
 
@@ -46,6 +42,8 @@ export default function PersonalDetails() {
   const { logout, token } = useAuth();
   const ipInfoToken = import.meta.env.VITE_IPINFO_TOKEN;
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+  const [currencyModalOpen, setCurrencyModalOpen] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -159,7 +157,7 @@ export default function PersonalDetails() {
                   {user.email || "—"}
                 </p>
               </div>
-              <button className="p-2 text-gray-400 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
                 <Link to="/settings/emailReset">
                   <PencilSquareIcon className="size-5" />
                 </Link>
@@ -173,7 +171,7 @@ export default function PersonalDetails() {
                   ●●●●●●●●
                 </p>
               </div>
-              <button className="p-2 text-gray-400 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
                 <Link to="/settings/passwordReset">
                   <PencilSquareIcon className="size-5" />
                 </Link>{" "}
@@ -187,14 +185,14 @@ export default function PersonalDetails() {
                   {user.username || "None added"}
                 </p>
               </div>
-              <button className="p-2 text-gray-400 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
                 <Link to="/settings/displayNameReset">
                   <PencilSquareIcon className="size-5" />
                 </Link>{" "}
               </button>
             </div>
 
-            <div className="flex items-center justify-between py-5">
+            <div className="group flex items-center justify-between py-5 transition-colors">
               <div className="flex-1">
                 <p className="font-medium text-gray-500 mb-1">
                   Country of Residence
@@ -203,6 +201,14 @@ export default function PersonalDetails() {
                   {user.country || "Fetching..."}
                 </p>
               </div>
+
+              <button
+                onClick={() => setCurrencyModalOpen(true)}
+                className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100"
+                aria-label="Edit country"
+              >
+                <PencilSquareIcon className="size-5" />
+              </button>
             </div>
           </div>
 
@@ -239,6 +245,17 @@ export default function PersonalDetails() {
         <DeleteSuccessPopup
           isVisible={showSuccess}
           onClose={handleSuccessClose}
+        />
+
+        <CurrencyModal
+          open={currencyModalOpen}
+          setOpen={setCurrencyModalOpen}
+          setSelected={(c) => {
+            // update local user state and localStorage when a new country selected
+            const updated = { ...user, country: c.name };
+            setUser(updated);
+            localStorage.setItem("user", JSON.stringify(updated));
+          }}
         />
       </motion.div>
     </AnimatePresence>

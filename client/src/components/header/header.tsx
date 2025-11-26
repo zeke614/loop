@@ -25,10 +25,10 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
+    <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full  z-50">
       <div
-        className="max-w-7xl mx-auto flex items-center justify-between 
-               px-3.5 border-b border-b-[#928f8f1f] md:h-16"
+        className="max-w-7xl sm:max-w-6xl mx-auto flex items-center justify-between 
+               px-3.5 sm:px-5 border-b border-b-[#928f8f1f] md:h-16"
       >
         <button
           onClick={toggleMenu}

@@ -69,11 +69,11 @@ export default function Login() {
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link>
 
-        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-1.5">
+        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
           Sign in
         </h1>
         <p className="text-center text-[#6e7780] mb-8">
-          Stay informed. Stay in the 'loop'.
+          Stay informed. Stay in the <strong>'loop'</strong>.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -120,9 +120,12 @@ export default function Login() {
             )}
           </div>
 
-          <div className="flex items-center justify-between mt-3 text-sm">
+          <div className="flex items-center justify-between mt-3 text-[0.938rem]">
             <label className="flex items-center space-x-1.5 cursor-pointer">
-              <input type="checkbox" className="accent-[#0ab39c] size-3" />
+              <input
+                type="checkbox"
+                className="accent-[#0ab39c] size-[0.8rem]"
+              />
               <span className="text-gray-600">Remember me</span>
             </label>
             <span className="text-[#0ab39c] font-medium cursor-pointer">

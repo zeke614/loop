@@ -10,6 +10,7 @@ import PasswordReset from "./components/settings/passwordReset.tsx";
 import UsernameReset from "./components/settings/displayNameReset.tsx";
 import EmailPrefs from "./components/settings/emailPrefs.tsx";
 import Security from "./components/settings/security.tsx";
+import Countries from "./components/settings/countries.tsx";
 import Saved from "./pages/saved.tsx";
 import Home from "./pages/frontpage/home.tsx";
 import Entertainment from "./pages/entertainment.tsx";
@@ -32,6 +33,7 @@ function App() {
         <Route path="settings/emailReset" element={<EmailReset />} />
         <Route path="settings/passwordReset" element={<PasswordReset />} />
         <Route path="settings/displayNameReset" element={<UsernameReset />} />
+        <Route path="settings/countries" element={<Countries />} />
         <Route path="settings/emailPrefs" element={<EmailPrefs />} />
         <Route path="settings/security" element={<Security />} />
         <Route path="saved" element={<Saved />} />

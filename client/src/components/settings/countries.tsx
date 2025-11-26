@@ -1,0 +1,228 @@
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { countryData } from "../../constants/data";
+
+interface Country {
+  name: string;
+  flag: string;
+}
+
+interface Props {
+  selected?: Country;
+  setSelected?: (country: Country) => void;
+  open?: boolean;
+  setOpen?: (value: boolean) => void;
+}
+
+export default function CurrencyModal({
+  selected,
+  setSelected,
+  open: openProp,
+  setOpen: setOpenProp,
+}: Props) {
+  const [openInternal, setOpenInternal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [internalSelected, setInternalSelected] = useState<Country>({
+    name: "Ghana",
+    flag: "gh",
+  });
+
+  const isControlled =
+    typeof openProp !== "undefined" && typeof setOpenProp === "function";
+
+  const open = isControlled ? openProp : openInternal;
+
+  const setOpen = (value: boolean) => {
+    if (isControlled && setOpenProp) {
+      setOpenProp(value);
+    } else {
+      setOpenInternal(value);
+    }
+  };
+
+  const currentSelectedRef = useRef(selected || internalSelected);
+
+  useEffect(() => {
+    if (selected) {
+      currentSelectedRef.current = selected;
+    }
+  }, [selected]);
+
+  useEffect(() => {
+    if (!selected) {
+      currentSelectedRef.current = internalSelected;
+    }
+  }, [internalSelected, selected]);
+
+  const handleSetSelected = setSelected || setInternalSelected;
+
+  const backdropRef = useRef<HTMLDivElement | null>(null);
+  const sheetRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [setOpen]);
+
+  useEffect(() => {
+    const onDocClick = (e: MouseEvent) => {
+      if (!open) return;
+      if (backdropRef.current && e.target === backdropRef.current) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, [open, setOpen]);
+
+  useEffect(() => {
+    if (open) {
+      setSearchTerm("");
+    }
+  }, [open]);
+
+  const filteredCountries = countryData.filter((country) =>
+    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const flagFor = (flag: string) => flag.toLowerCase();
+
+  const handleCountrySelect = (country: Country) => {
+    handleSetSelected(country);
+    currentSelectedRef.current = country;
+    setSearchTerm("");
+    setOpen(false);
+  };
+
+  return (
+    <>
+      {/* If uncontrolled, render the original small trigger button */}
+      {!isControlled && (
+        <div className="relative">
+          <button
+            onClick={() => setOpen(true)}
+            className="flex items-center w-fit gap-2 hover:bg-gray-50 rounded-lg px-2 py-1 transition-colors"
+          >
+            <img
+              src={`https://flagcdn.com/${flagFor(
+                currentSelectedRef.current.flag
+              )}.svg`}
+              alt={`${currentSelectedRef.current.name} flag`}
+              className="w-5 h-[0.9375rem] rounded-sm object-cover"
+            />
+            <i className="bx bx-chevron-down text-2xl" aria-hidden />
+          </button>
+        </div>
+      )}
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            ref={backdropRef}
+            className="
+              fixed inset-0 z-50 
+              flex justify-center 
+              items-end sm:items-center 
+              bg-black/40
+            "
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              ref={sheetRef}
+              initial={
+                window.innerWidth < 640
+                  ? { y: "100%" }
+                  : { opacity: 0, scale: 0.95 }
+              }
+              animate={
+                window.innerWidth < 640 ? { y: "0%" } : { opacity: 1, scale: 1 }
+              }
+              exit={
+                window.innerWidth < 640
+                  ? { y: "100%" }
+                  : { opacity: 0, scale: 0.95 }
+              }
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="
+                bg-white w-full rounded-t-2xl px-3 pt-3 pb-6 max-h-[40%] overflow-hidden shadow-2xl border-t border-gray-200
+                sm:rounded-xl sm:max-w-md sm:border sm:border-gray-200 sm:px-3 sm:pt-4 sm:pb-4 sm:max-h-[85vh]
+              "
+              role="dialog"
+              aria-modal="true"
+            >
+              {/* <div className="flex justify-center mb-3 sm:hidden">
+                <div className="w-12 h-1 rounded-full bg-gray-200" />
+              </div> */}
+
+              <div className="relative mb-3">
+                <div className="absolute left-3 inset-y-0 flex items-center pointer-events-none">
+                  <i className="bx bx-search text-gray-400 text-lg" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search country..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-9 py-2.5 border border-gray-300 rounded-xl outline-none transition-all duration-150 focus:border-gray-500 "
+                  autoFocus
+                />
+              </div>
+
+              <div className="max-h-[58vh] overflow-y-auto thin-scrollbar px-1">
+                {filteredCountries.length > 0 ? (
+                  <ul className="space-y-1">
+                    {filteredCountries.map((country) => (
+                      <li key={country.name}>
+                        <button
+                          onClick={() => handleCountrySelect(country)}
+                          className={`w-full flex items-center justify-between p-1.5 rounded-lg transition-colors text-left ${
+                            currentSelectedRef.current.name === country.name
+                              ? "bg-white border border-none"
+                              : "hover:bg-gray-50"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3 min-w-0">
+                            <img
+                              src={`https://flagcdn.com/${flagFor(
+                                country.flag
+                              )}.svg`}
+                              alt={`${country.name} flag`}
+                              className="w-6 h-4 rounded object-cover flex-shrink-0"
+                            />
+                            <div className="flex flex-col min-w-0">
+                              <span className="text-gray-600 truncate max-w-[220px]">
+                                {country.name}
+                              </span>
+                            </div>
+                          </div>
+
+                          {currentSelectedRef.current.name === country.name && (
+                            <i
+                              className="bx bx-check text-[#0ab39c] text-xl"
+                              aria-hidden
+                            />
+                          )}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="text-center py-5 text-gray-500">
+                    <i className="bx bx-search text-3xl mb-2" />
+                    <p>No countries found</p>
+                    <p className="text-sm">Try a different search term</p>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

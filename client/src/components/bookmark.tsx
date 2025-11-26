@@ -1,7 +1,10 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { BookmarkIcon } from "@heroicons/react/24/solid";
-import { BookmarkSlashIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkSlashIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 interface BookmarkPopupProps {
@@ -19,7 +22,6 @@ export default function BookmarkPopup({
 
   useEffect(() => {
     if (!popUpShows) return;
-
     function handleClickOutside(event: MouseEvent) {
       if (
         popupRef.current &&
@@ -28,51 +30,43 @@ export default function BookmarkPopup({
         closeMenu();
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [popUpShows, closeMenu]);
 
-  const message =
-    type === "added"
-      ? "Article added to your Bookmarks"
-      : "Article removed from Bookmarks";
-
-  const icon =
-    type === "added" ? (
-      <BookmarkIcon className="size-4.5 text-[#0ab39c]" />
-    ) : (
-      <BookmarkSlashIcon className="size-4.5" />
-    );
+  const message = type === "added" ? "Saved" : "Removed from bookmarks";
 
   return (
     <motion.div
       ref={popupRef}
-      initial={{ opacity: 0, y: -50, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: -20, scale: 0.95 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed top-9 left-1/2 -translate-x-1/2 z-50 w-[85%] max-w-sm p-2"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 100 }}
+      transition={{ type: "spring", damping: 25, stiffness: 200 }}
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4"
     >
-      <div className="bg-white rounded-lg shadow-2xl border border-gray-200 gap-1.5 p-[0.563rem] overflow-hidden flex flex-col">
-        <div className="bg-white flex items-center justify-center gap-3">
-          {icon}
-          <span className="font-medium text-[0.906rem]">{message}</span>
-        </div>
-
-        {type === "added" && (
-          <div className="bg-white">
-            <Link
-              to={"/saved"}
-              className="block w-full bg-[#0ab39c] hover:bg-[#129684] text-white text-center text-[0.906rem] font-medium py-[0.313rem] rounded-full transition-colors"
-            >
-              View Bookmarks
-            </Link>
+      <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            {type === "added" ? (
+              <BookmarkIcon className="size-5 text-[#0ab39c]" />
+            ) : (
+              <BookmarkSlashIcon className="size-5 text-gray-500" />
+            )}
+            <div>
+              <p className="font-medium text-gray-800">{message}</p>
+            </div>
           </div>
-        )}
+          {type === "added" && (
+            <Link
+              to="/saved"
+              className="flex items-center text-[#0ab39c] font-medium cursor-pointer"
+            >
+              <p>View</p>
+              <ChevronRightIcon />
+            </Link>
+          )}
+        </div>
       </div>
     </motion.div>
   );

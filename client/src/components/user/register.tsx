@@ -74,7 +74,8 @@ export default function Register() {
           Create your account
         </h1>
         <p className="text-center text-[#6e7780] mb-8 md:text-base">
-          Join Loop — dive into stories that spark curiosity and conversation.
+          Join <strong>loop</strong> — dive into stories that spark curiosity
+          and conversation.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-6">

@@ -58,7 +58,7 @@ export default function EmailReset() {
           <button
             type="submit"
             disabled={newEmail === user?.email || loading}
-            className={`w-full rounded-lg py-3 text-white 
+            className={`w-full rounded-lg sm:mt-56 py-3 text-white 
                 font-medium transition 
                 ${
                   newEmail === user?.email

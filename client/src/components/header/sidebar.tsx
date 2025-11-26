@@ -53,7 +53,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 left-0 h-full w-8/12 bg-white z-50 md:hidden rounded-br-md rounded-tr-md shadow-xl"
+            className="fixed top-0 left-0 h-full w-[15.625rem] bg-white z-50 md:hidden rounded-br-md rounded-tr-md shadow-xl"
           >
             <div className="flex justify-end">
               <button

@@ -13,5 +13,5 @@ body {
 }
 
 main {
-  @apply md:max-w-[78rem] md:mx-auto
+  @apply sm:max-w-[78rem] sm:mx-auto
 }

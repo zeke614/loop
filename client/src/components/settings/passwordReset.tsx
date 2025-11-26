@@ -194,7 +194,7 @@ export default function PasswordReset() {
         <button
           type="submit"
           disabled={!form.password || !form.confirmPassword || loading}
-          className={`w-full rounded-lg py-3 font-medium transition flex items-center justify-center
+          className={`w-full rounded-lg py-3 font-medium transition sm:mt-28 flex items-center justify-center
             ${
               !form.password || !form.confirmPassword || loading
                 ? "bg-[#babcc0]  text-white cursor-not-allowed"

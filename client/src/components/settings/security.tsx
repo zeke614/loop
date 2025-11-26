@@ -34,7 +34,7 @@ const pageVariants: Variants = {
     y: "-100vh",
     opacity: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.6,
       ease: "easeInOut",
     },
   },

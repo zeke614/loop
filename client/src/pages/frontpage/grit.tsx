@@ -412,7 +412,7 @@ export default function Grit() {
               {comeback.title}
             </motion.h2>
             <motion.div
-              className="overflow-hidden mb-6 md:mx-20"
+              className="overflow-hidden mb-6"
               variants={imageVariants}
             >
               <img
