@@ -5,6 +5,7 @@ import {
   Cog6ToothIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
+import { useEffect } from "react";
 
 interface AccountPanelProps {
   user: { email: string; username?: string } | null;
@@ -19,6 +20,18 @@ export default function AccountPanel({
   setProfileOpen,
   handleSignOut,
 }: AccountPanelProps) {
+  useEffect(() => {
+    if (profileOpen) {
+      document.body.style.overscrollBehavior = "contain";
+    } else {
+      document.body.style.overscrollBehavior = "";
+    }
+
+    return () => {
+      document.body.style.overscrollBehavior = "";
+    };
+  }, [profileOpen]);
+
   return (
     <>
       <div
@@ -31,6 +44,7 @@ export default function AccountPanel({
           }
           ${profileOpen ? "md:pointer-events-auto" : "md:pointer-events-none"}
         `}
+        style={{ overscrollBehavior: "contain" }}
       />
 
       <div
@@ -56,6 +70,7 @@ export default function AccountPanel({
           }
         `}
         aria-hidden={!profileOpen}
+        style={{ overscrollBehavior: "contain" }}
       >
         <div className="flex flex-col items-center flex-shrink-0">
           <div className="flex justify-between items-center w-full px-4 pt-3.5 md:hidden">

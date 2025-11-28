@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import navLinks from "../../constants/data";
 import {
   XMarkIcon,
@@ -18,7 +19,6 @@ interface SidebarProps {
   closeMenu: () => void;
 }
 
-// Hourglass icon with rounder edges
 const HourglassIcon = ({ className }: { className?: string }) => (
   <svg
     className={className}
@@ -51,6 +51,29 @@ const iconMap: { [key: string]: React.ElementType } = {
 export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
   const location = useLocation();
 
+  // Prevent background scrolling when sidebar is open
+  useEffect(() => {
+    if (menuOpen) {
+      // Save the current scroll position
+      const scrollY = window.scrollY;
+
+      // Add styles to prevent scrolling
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+
+      return () => {
+        // Restore scrolling when sidebar closes
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [menuOpen]);
+
   return (
     <AnimatePresence>
       {menuOpen && (
@@ -69,7 +92,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 left-0 h-full w-[15.625rem] bg-white z-50 md:hidden rounded-br-md rounded-tr-md shadow-xl"
+            className="fixed top-0 left-0 h-full w-[15.625rem] bg-white z-50 md:hidden rounded-br-md rounded-tr-md shadow-xl overflow-y-auto"
           >
             <div className="flex justify-end">
               <button
