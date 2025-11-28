@@ -81,10 +81,12 @@ export default function AccountPanel({
         `}
         aria-hidden={!profileOpen}
       >
+        <div className="w-10 h-[0.3rem] bg-black/20 rounded-full mx-auto mt-1.5" />
+
         <div className="flex flex-col items-center flex-shrink-0">
-          <div className="flex justify-between items-center w-full px-4 pt-3.5 md:hidden">
+          {/* <div className="flex items-center w-full px-4 pt-2.5 md:hidden">
             <h3 className="text-[1.063rem] font-medium">My Account</h3>
-          </div>
+          </div> */}
 
           <div className="hidden md:flex items-center gap-3 px-3.5 py-2.5 bg-gray-50 w-full rounded-lg border-b border-gray-100 flex-shrink-0">
             <UserIcon className="size-5 text-gray-700" />
@@ -124,7 +126,7 @@ export default function AccountPanel({
           <div className="border-t border-gray-100 mx-4 md:hidden"></div>
 
           <div className="md:hidden">
-            <p className="text-sm text-center text-[#6e7780] py-3 px-4">
+            <p className="text-sm text-center text-[#6e7780] py-2 px-4">
               Signed in as <span className="font-medium">{user?.email}</span>
             </p>
           </div>
