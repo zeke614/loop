@@ -2,8 +2,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../contexts/authContext";
-import logo from "../../assets/imgs/logo.png";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+// import logo from "../../assets/imgs/loopLogo.png";
+import {
+  EyeIcon,
+  EyeSlashIcon,
+  HomeModernIcon,
+} from "@heroicons/react/24/outline";
+// import ForgotPasswordModal from "./forgotPassword";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,6 +17,7 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
+  // const [forgotOpen, setForgotOpen] = useState(false);
 
   const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -65,8 +71,12 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="w-full max-w-md py-15 px-7">
-        <Link to="/" className="text-center block mb-6">
+        {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
+        </Link> */}
+
+        <Link to="/">
+          <HomeModernIcon className="size-5 mb-8" />
         </Link>
 
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
@@ -76,7 +86,7 @@ export default function Login() {
           Stay informed. Stay in the <strong>'loop'</strong>.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {errorMessage && (
             <p className="text-center text-[#e6044c] text-[0.938rem] mb-2">
               {errorMessage}
@@ -84,43 +94,43 @@ export default function Login() {
           )}
 
           <div>
-            <label className="font-medium text-gray-700">Email *</label>
+            {/* <label className="font-medium text-gray-700">Email *</label> */}
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               required
-              placeholder="please.be.valid@i.beg.you.com"
+              placeholder="Email"
               className="w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
           <div className="relative">
-            <label className="font-medium text-gray-700">Password *</label>
+            {/* <label className="font-medium text-gray-700">Password *</label> */}
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               value={form.password}
               onChange={handleChange}
               required
-              placeholder="i bet you forget me in 5 mins"
+              placeholder="Password"
               className="w-full px-4 py-3 mt-1.5 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
               <EyeIcon
-                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             )}
           </div>
 
-          <div className="flex items-center justify-between mt-3 text-[0.938rem]">
+          <div className="flex items-center justify-between mt-3 text-[0.938rem] px-1">
             <label className="flex items-center space-x-1.5 cursor-pointer">
               <input
                 type="checkbox"
@@ -128,9 +138,11 @@ export default function Login() {
               />
               <span className="text-gray-600">Remember me</span>
             </label>
-            <span className="text-[#0ab39c] font-medium cursor-pointer">
-              Forgot Password?
-            </span>
+            <Link to="/forgotPassword">
+              <span className="text-[#0ab39c] font-medium cursor-pointer">
+                Forgot Password?
+              </span>
+            </Link>
           </div>
 
           <button
@@ -193,6 +205,11 @@ export default function Login() {
           </Link>
         </p>
       </div>
+
+      {/* <ForgotPasswordModal
+        isOpen={forgotOpen}
+        close={() => setForgotOpen(false)}
+      /> */}
     </div>
   );
 }

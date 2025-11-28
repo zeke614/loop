@@ -2,8 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../contexts/authContext";
-import logo from "../../assets/imgs/logo.png";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+// import logo from "../../assets/imgs/loopLogo.png";
+import {
+  EyeIcon,
+  EyeSlashIcon,
+  HomeModernIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -64,10 +68,14 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="flex items-center justify-center bg-white">
       <div className="w-full max-w-md py-15 px-7">
-        <Link to="/" className="text-center block mb-6">
+        {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
+        </Link> */}
+
+        <Link to="/">
+          <HomeModernIcon className="size-5 mb-8" />
         </Link>
 
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
@@ -118,52 +126,52 @@ export default function Register() {
           </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="font-medium text-gray-700">Username *</label>
+            {/* <label className="font-medium text-gray-700">Username *</label> */}
             <input
               type="text"
               name="username"
               value={form.username}
               onChange={handleChange}
-              placeholder="your fanfiction pseudonym"
+              placeholder="Username"
               required
               className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
           <div>
-            <label className="font-medium text-gray-700">Email *</label>
+            {/* <label className="font-medium text-gray-700">Email *</label> */}
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="please.be.valid@i.beg.you.com"
+              placeholder="Email"
               required
               className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
           <div className="relative">
-            <label className="font-medium text-gray-700">Password *</label>
+            {/* <label className="font-medium text-gray-700">Password *</label> */}
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               value={form.password}
               onChange={handleChange}
-              placeholder="i bet you forget me in 5 mins"
+              placeholder="Password"
               required
               className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
               <EyeIcon
-                className="size-4.5 absolute right-4 top-[68%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             )}
@@ -187,7 +195,7 @@ export default function Register() {
                 <span>Signing up...</span>
               </span>
             ) : (
-              "Sign Up"
+              "Sign up"
             )}
           </button>
         </form>

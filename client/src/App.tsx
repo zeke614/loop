@@ -22,6 +22,7 @@ import Legacy from "./pages/legacy.tsx";
 import Info from "./pages/info.tsx";
 import ArticlePage from "./components/articlePage";
 import PrivacyPolicy from "./components/privacy.tsx";
+import ForgotPassword from "./components/user/forgotPassword.tsx";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="settings/countries" element={<Countries />} />
         <Route path="settings/emailPrefs" element={<EmailPrefs />} />
         <Route path="settings/security" element={<Security />} />
+        <Route path="forgotPassword" element={<ForgotPassword />} />
         <Route path="saved" element={<Saved />} />
         <Route path="entertainment" element={<Entertainment />} />
         <Route path="life" element={<Life />} />

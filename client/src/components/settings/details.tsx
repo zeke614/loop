@@ -132,106 +132,102 @@ export default function PersonalDetails() {
         initial="initial"
         animate="in"
         exit="out"
-        className="pt-25"
+        className="pt-25 md:pt-40 px-5 md:px-8"
       >
-        <div className="min-h-screen pb-25 md:pt-40 px-5 md:px-8">
-          <div className="max-w-3xl mx-auto">
-            <div className="mb-7">
-              <Link
-                to="/settings"
-                className="inline-flex items-center font-medium transition-colors mb-5"
-              >
-                <ChevronLeftIcon className="size-5.5 -ml-1" />
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-7">
+            <Link
+              to="/settings"
+              className="inline-flex items-center font-medium transition-colors mb-5"
+            >
+              <ChevronLeftIcon className="size-5.5 -ml-1" />
+            </Link>
+            <h1 className="text-2xl font-bold text-gray-900">
+              Personal Details
+            </h1>
+            <p className="mt-2 text-gray-500">
+              Manage your profile information <br /> and account preferences.
+            </p>
+          </div>
+
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
+            <div className="flex-1">
+              <p className="font-medium text-gray-500 mb-1">Email Address</p>
+              <p className="font-semibold text-gray-900">{user.email || "—"}</p>
+            </div>
+            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <Link to="/settings/emailReset">
+                <PencilSquareIcon className="size-5" />
               </Link>
-              <h1 className="text-2xl font-bold text-gray-900">
-                Personal Details
-              </h1>
-              <p className="mt-2 text-gray-500">
-                Manage your profile information <br /> and account preferences.
+            </button>
+          </div>
+
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
+            <div className="flex-1">
+              <p className="font-medium text-gray-500 mb-1">Password</p>
+              <p className="font-semibold text-gray-900 tracking-widest">
+                ●●●●●●●●
+              </p>
+            </div>
+            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <Link to="/settings/passwordReset">
+                <PencilSquareIcon className="size-5" />
+              </Link>{" "}
+            </button>
+          </div>
+
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
+            <div className="flex-1">
+              <p className="font-medium text-gray-500 mb-1">Display Name</p>
+              <p className="font-semibold text-gray-900">
+                {user.username || "None added"}
+              </p>
+            </div>
+            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+              <Link to="/settings/displayNameReset">
+                <PencilSquareIcon className="size-5" />
+              </Link>{" "}
+            </button>
+          </div>
+
+          <div className="group flex items-center justify-between py-5 transition-colors">
+            <div className="flex-1">
+              <p className="font-medium text-gray-500 mb-1">
+                Country of Residence
+              </p>
+              <p className="font-semibold text-gray-900">
+                {user.country || "Fetching..."}
               </p>
             </div>
 
-            <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
-              <div className="flex-1">
-                <p className="font-medium text-gray-500 mb-1">Email Address</p>
-                <p className="font-semibold text-gray-900">
-                  {user.email || "—"}
-                </p>
-              </div>
-              <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
-                <Link to="/settings/emailReset">
-                  <PencilSquareIcon className="size-5" />
-                </Link>
-              </button>
-            </div>
-
-            <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
-              <div className="flex-1">
-                <p className="font-medium text-gray-500 mb-1">Password</p>
-                <p className="font-semibold text-gray-900 tracking-widest">
-                  ●●●●●●●●
-                </p>
-              </div>
-              <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
-                <Link to="/settings/passwordReset">
-                  <PencilSquareIcon className="size-5" />
-                </Link>{" "}
-              </button>
-            </div>
-
-            <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
-              <div className="flex-1">
-                <p className="font-medium text-gray-500 mb-1">Display Name</p>
-                <p className="font-semibold text-gray-900">
-                  {user.username || "None added"}
-                </p>
-              </div>
-              <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
-                <Link to="/settings/displayNameReset">
-                  <PencilSquareIcon className="size-5" />
-                </Link>{" "}
-              </button>
-            </div>
-
-            <div className="group flex items-center justify-between py-5 transition-colors">
-              <div className="flex-1">
-                <p className="font-medium text-gray-500 mb-1">
-                  Country of Residence
-                </p>
-                <p className="font-semibold text-gray-900">
-                  {user.country || "Fetching..."}
-                </p>
-              </div>
-
-              <button
-                onClick={() => setCurrencyModalOpen(true)}
-                className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100"
-                aria-label="Edit country"
-              >
-                <PencilSquareIcon className="size-5" />
-              </button>
-            </div>
+            <button
+              onClick={() => setCurrencyModalOpen(true)}
+              className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100"
+              aria-label="Edit country"
+            >
+              <PencilSquareIcon className="size-5" />
+            </button>
           </div>
+        </div>
 
-          <div className="mt-10">
-            <h3 className="text-lg font-semibold text-gray-900">Danger Zone</h3>
-            <div className="py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div>
-                <p className="font-medium text-gray-900">Delete Account</p>
-                <p className="text-sm text-gray-500 mt-1">
-                  Permanently remove your profile and all data.
-                </p>
-              </div>
-              <button
-                onClick={togglePopUp}
-                className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap"
-              >
-                <span>
-                  <TrashIcon className="size-5" />
-                </span>
-                Delete Account
-              </button>
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-gray-900">Danger Zone</h3>
+          <div className="py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
+              <p className="font-medium text-gray-900">Delete Account</p>
+              <p className="text-sm text-gray-500 mt-1">
+                Permanently remove your profile and all data.
+              </p>
             </div>
+            <button
+              onClick={togglePopUp}
+              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap"
+            >
+              <span>
+                <TrashIcon className="size-5" />
+              </span>
+              Delete Account
+            </button>
           </div>
         </div>
 

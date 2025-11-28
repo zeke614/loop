@@ -425,7 +425,7 @@ export default function Forgotten() {
             className="text-[1.438rem] md:text-[1.75rem] font-semibold"
             variants={textVariants}
           >
-            Inventions Forgotten by Time That Were Ahead of Their Era
+            Ahead of Their Time: Forgotten Inventions
           </motion.h1>
 
           <motion.div

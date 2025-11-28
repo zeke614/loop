@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import articles from "../../constants/articles";
 import BookmarkPopup from "../../components/bookmark";
 import AnimatedArticleCard from "../../components/articleCard";
@@ -14,6 +15,36 @@ interface Article {
   alt: string;
   description: string;
 }
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
 
 export default function FrontPageArticlesCard() {
   const frontPageArticles: Article[] = (articles as any)["Front Page"] || [];
@@ -61,25 +92,35 @@ export default function FrontPageArticlesCard() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-12 sm:grid-cols-2 xl:grid-cols-3 md:gap-y-14 px-7 sm:px-5 relative"
     >
-      {frontPageArticles.map((article) => {
+      {frontPageArticles.map((article, index) => {
         const isSaved = savedIds.includes(article.id);
 
         return (
-          <AnimatedArticleCard
+          <motion.div
             key={article.id}
-            article={article}
-            isSaved={isSaved}
-            handleBookmarkClick={handleBookmarkClick}
-          />
+            variants={itemVariants}
+            custom={index}
+            layout
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+            }}
+          >
+            <AnimatedArticleCard
+              article={article}
+              isSaved={isSaved}
+              handleBookmarkClick={handleBookmarkClick}
+            />
+          </motion.div>
         );
       })}
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {popUp && (
           <BookmarkPopup
             key="bookmark-popup"

@@ -35,19 +35,6 @@ const cardVariants: Variants = {
   },
 };
 
-const textVariants: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-      delay: 0.1,
-    },
-  },
-};
-
 interface AnimatedArticleCardProps {
   article: Article;
   isSaved: boolean;
@@ -60,22 +47,22 @@ export default function AnimatedArticleCard({
   handleBookmarkClick,
 }: AnimatedArticleCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
-          setIsInView(true);
           setHasAnimated(true);
-        } else {
-          setIsInView(entry.isIntersecting);
+          // Only trigger once - remove observer after animation
+          if (cardRef.current) {
+            observer.unobserve(cardRef.current);
+          }
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.15, // Slightly higher threshold
+        rootMargin: "50px 0px -50px 0px", // Better margins
       }
     );
 
@@ -95,7 +82,7 @@ export default function AnimatedArticleCard({
       ref={cardRef}
       variants={cardVariants}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={hasAnimated ? "visible" : "hidden"}
       whileHover={{
         y: -4,
         transition: { duration: 0.3, ease: "easeOut" },
@@ -111,28 +98,25 @@ export default function AnimatedArticleCard({
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={
-            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+            hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
           }
-          transition={{ delay: 0.3, duration: 0.4 }}
-          className="absolute animate-bounce [animation-duration:2s] top-3 left-3 bg-[#0ab39c] text-white text-xs px-3 py-1.5 rounded-full tracking-wider uppercase font-medium shadow-sm"
+          transition={{ delay: 0.2, duration: 0.4 }}
+          className="absolute top-3 left-3 bg-[#0ab39c] text-white text-xs px-3 py-1.5 rounded-full tracking-wider uppercase font-medium shadow-sm"
         >
           {article.category}
         </motion.div>
       </div>
 
-      <motion.div
-        variants={textVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="flex-1 py-4 px-4.5 flex flex-col"
-      >
+      <div className="flex-1 py-4 px-4.5 flex flex-col">
         <Link
           to={`/articles/${article.id}`}
-          className="text-xl font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
+          className="text-[1.313rem] font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 group"
         >
           <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
             whileHover={{ x: 2 }}
-            transition={{ duration: 0.2 }}
             className="inline-block"
           >
             {article.title}
@@ -142,8 +126,8 @@ export default function AnimatedArticleCard({
         <motion.div
           className="flex items-center text-sm text-[#989797] mb-3 flex-wrap gap-2"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.4 }}
+          animate={hasAnimated ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.4, duration: 0.4 }}
         >
           <span className="font-medium text-gray-600">{article.author},</span>
           <span className="mr-3">{article.date}</span>
@@ -152,8 +136,8 @@ export default function AnimatedArticleCard({
         <motion.p
           className="text-[#767676] leading-5.5 mb-5 flex-1 line-clamp-5"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.25, duration: 0.4 }}
+          animate={hasAnimated ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.5, duration: 0.4 }}
         >
           {article.description}
         </motion.p>
@@ -161,8 +145,8 @@ export default function AnimatedArticleCard({
         <motion.div
           className="flex justify-between pt-3.5 border-t border-gray-200"
           initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.4 }}
+          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 5 }}
+          transition={{ delay: 0.6, duration: 0.4 }}
         >
           <div>
             <Link
@@ -196,7 +180,7 @@ export default function AnimatedArticleCard({
             />
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

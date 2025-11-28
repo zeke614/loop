@@ -5,7 +5,7 @@ import {
   XMarkIcon,
   ChevronRightIcon,
   InformationCircleIcon,
-  HomeIcon,
+  HomeModernIcon,
   LightBulbIcon,
   UserGroupIcon,
   GlobeEuropeAfricaIcon,
@@ -18,12 +18,28 @@ interface SidebarProps {
   closeMenu: () => void;
 }
 
+// Hourglass icon with rounder edges
 const HourglassIcon = ({ className }: { className?: string }) => (
-  <i className={`bx bx-hourglass text-xl ${className}`}></i>
+  <svg
+    className={className}
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 22h14" />
+    <path d="M5 2h14" />
+    <path d="M17 22v-4.5a1 1 0 0 0-.3-.7l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 0 .3-.7V2" />
+    <path d="M7 2v4.5a1 1 0 0 0 .3.7l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 0-.3.7V22" />
+  </svg>
 );
 
 const iconMap: { [key: string]: React.ElementType } = {
-  "Front Page": HomeIcon,
+  "Front Page": HomeModernIcon,
   "Genius & Folly": LightBulbIcon,
   "Human Currents": UserGroupIcon,
   "The Living Planet": GlobeEuropeAfricaIcon,

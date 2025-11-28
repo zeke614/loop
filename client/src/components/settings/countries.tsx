@@ -88,7 +88,9 @@ export default function CurrencyModal({
     country.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const flagFor = (flag: string) => flag.toLowerCase();
+  const getFlagUrl = (flagCode: string) => {
+    return `https://flagcdn.com/${flagCode.toLowerCase()}.svg`;
+  };
 
   const handleCountrySelect = (country: Country) => {
     handleSetSelected(country);
@@ -99,25 +101,6 @@ export default function CurrencyModal({
 
   return (
     <>
-      {/* If uncontrolled, render the original small trigger button */}
-      {!isControlled && (
-        <div className="relative">
-          <button
-            onClick={() => setOpen(true)}
-            className="flex items-center w-fit gap-2 hover:bg-gray-50 rounded-lg px-2 py-1 transition-colors"
-          >
-            <img
-              src={`https://flagcdn.com/${flagFor(
-                currentSelectedRef.current.flag
-              )}.svg`}
-              alt={`${currentSelectedRef.current.name} flag`}
-              className="w-5 h-[0.9375rem] rounded-sm object-cover"
-            />
-            <i className="bx bx-chevron-down text-2xl" aria-hidden />
-          </button>
-        </div>
-      )}
-
       <AnimatePresence>
         {open && (
           <motion.div
@@ -155,10 +138,6 @@ export default function CurrencyModal({
               role="dialog"
               aria-modal="true"
             >
-              {/* <div className="flex justify-center mb-3 sm:hidden">
-                <div className="w-12 h-1 rounded-full bg-gray-200" />
-              </div> */}
-
               <div className="relative mb-3">
                 <div className="absolute left-3 inset-y-0 flex items-center pointer-events-none">
                   <i className="bx bx-search text-gray-400 text-lg" />
@@ -187,9 +166,7 @@ export default function CurrencyModal({
                         >
                           <div className="flex items-center gap-3 min-w-0">
                             <img
-                              src={`https://flagcdn.com/${flagFor(
-                                country.flag
-                              )}.svg`}
+                              src={getFlagUrl(country.flag)}
                               alt={`${country.name} flag`}
                               className="w-6 h-4 rounded object-cover flex-shrink-0"
                             />

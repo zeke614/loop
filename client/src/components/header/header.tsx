@@ -4,7 +4,7 @@ import navLinks from "../../constants/data";
 import Sidebar from "../header/sidebar";
 import AccountPanel from "../header/accountPanel";
 import { useAuth } from "../../contexts/authContext";
-import logo from "../../assets/imgs/loopLogo.png";
+import logo from "../../assets/imgs/loopLogo.avif";
 import { UserIcon as UserSolid } from "@heroicons/react/24/solid";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
@@ -64,11 +64,8 @@ export default function Header() {
           </nav>
 
           {!user ? (
-            <Link
-              to="/login"
-              className="flex items-center justify-center px-3 py-[0.281rem] border border-gray-300 rounded-full hover:shadow-xl transition-all duration-300 ease-out hover:text-[#0ab39c]"
-            >
-              <span className="text-sm">Sign in</span>
+            <Link to="/login">
+              <span className="text-[#0ab39c]">Sign in</span>
             </Link>
           ) : (
             <button

@@ -3,9 +3,9 @@
 // import bacteria from "../assets/imgs/bacteria.png";
 // import finance from "../assets/imgs/finance.jpg";
 import recyclingPlant from "../assets/imgs/recyclingPlant.jpg";
-import ruins from "../assets/imgs/ruins.jpg";
-import lab from "../assets/imgs/lab.jpg";
-import sports from "../assets/imgs/sports.jpg";
+import ruins from "../assets/imgs/ruins.avif";
+import lab from "../assets/imgs/lab.avif";
+import sports from "../assets/imgs/sports.avif";
 import boardroom from "../assets/imgs/boardroom.jpg";
 import psyche from "../assets/imgs/psyche.jpg";
 import typewriter from "../assets/imgs/typewriter.jpg";
@@ -93,7 +93,7 @@ const articles: Record<string, Article[]> = {
     {
       id: "forgotten-inventions",
       category: "Time Capsule",
-      title: "Ahead of Their Time: Forgotten Inventions",
+      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "May 14, 2025",
       author: "Ada Mensah",
       img: typewriter,
@@ -690,7 +690,7 @@ const articles: Record<string, Article[]> = {
     {
       id: "forgotten-inventions",
       category: "Time Capsule",
-      title: "Ahead of Their Time: Forgotten Inventions",
+      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "May 14, 2025",
       author: "Ada Mensah",
       img: typewriter,

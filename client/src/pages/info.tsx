@@ -14,7 +14,7 @@ export default function Info() {
             <p className="mt-4">
               From scientific wonders to untold sports triumphs, from financial
               turns that shaped lives to cultural moments that defined eras,
-              Loop gathers thoughtful write-ups about the extraordinary sides of
+              loop gathers thoughtful write-ups about the extraordinary sides of
               ordinary things.
             </p>
             <p className="mt-4 font-semibold text-gray-900">
