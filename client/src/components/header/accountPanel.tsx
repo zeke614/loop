@@ -20,16 +20,27 @@ export default function AccountPanel({
   setProfileOpen,
   handleSignOut,
 }: AccountPanelProps) {
+  // Prevent background scrolling when modal is open
   useEffect(() => {
     if (profileOpen) {
-      document.body.style.overscrollBehavior = "contain";
-    } else {
-      document.body.style.overscrollBehavior = "";
-    }
+      // Save the current scroll position
+      const scrollY = window.scrollY;
 
-    return () => {
-      document.body.style.overscrollBehavior = "";
-    };
+      // Add overflow hidden to body
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+
+      return () => {
+        // Restore scrolling when modal closes
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
   }, [profileOpen]);
 
   return (
@@ -44,7 +55,6 @@ export default function AccountPanel({
           }
           ${profileOpen ? "md:pointer-events-auto" : "md:pointer-events-none"}
         `}
-        style={{ overscrollBehavior: "contain" }}
       />
 
       <div
@@ -70,7 +80,6 @@ export default function AccountPanel({
           }
         `}
         aria-hidden={!profileOpen}
-        style={{ overscrollBehavior: "contain" }}
       >
         <div className="flex flex-col items-center flex-shrink-0">
           <div className="flex justify-between items-center w-full px-4 pt-3.5 md:hidden">
