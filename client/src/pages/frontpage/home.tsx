@@ -77,7 +77,7 @@ export default function Home() {
           "Welcome"
         )}
       </h1>
-      <p className="text-center text-[#767676] text-lg">
+      <p className="text-center text-[#767676]  text-lg">
         Your next great discovery starts below.
       </p>
       <FrontPageArticleCard />

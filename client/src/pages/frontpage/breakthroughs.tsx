@@ -403,7 +403,7 @@ export default function Breakthroughs() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="text-start pb-24 px-4 mx-auto max-w-4xl pt-12 sm:mt-4 relative"
+        className="text-start pb-24 px-4 mx-auto max-w-4xl relative"
       >
         <BackToTopButton showBackToTop={showBackToTop} />
 

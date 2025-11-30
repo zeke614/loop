@@ -132,7 +132,7 @@ export default function PersonalDetails() {
         initial="initial"
         animate="in"
         exit="out"
-        className="pt-25 md:pt-40 px-5 md:px-8"
+        className="py-24 md:pt-27 px-5 md:px-8"
       >
         <div className="max-w-3xl mx-auto">
           <div className="mb-7">
@@ -152,8 +152,8 @@ export default function PersonalDetails() {
 
           <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-500 mb-1">Email Address</p>
-              <p className="font-semibold text-gray-900">{user.email || "—"}</p>
+              <p className="font-medium text-gray-900 mb-1">Email Address</p>
+              <p className="font-semibold text-gray-500">{user.email || "—"}</p>
             </div>
             <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
               <Link to="/settings/emailReset">
@@ -164,8 +164,8 @@ export default function PersonalDetails() {
 
           <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-500 mb-1">Password</p>
-              <p className="font-semibold text-gray-900 tracking-widest">
+              <p className="font-medium text-gray-900 mb-1">Password</p>
+              <p className="font-semibold text-gray-500 tracking-widest">
                 ●●●●●●●●
               </p>
             </div>
@@ -178,8 +178,8 @@ export default function PersonalDetails() {
 
           <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-500 mb-1">Display Name</p>
-              <p className="font-semibold text-gray-900">
+              <p className="font-medium text-gray-900 mb-1">Display Name</p>
+              <p className="font-semibold text-gray-500">
                 {user.username || "None added"}
               </p>
             </div>
@@ -192,10 +192,10 @@ export default function PersonalDetails() {
 
           <div className="group flex items-center justify-between py-5 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-500 mb-1">
+              <p className="font-medium text-gray-900 mb-1">
                 Country of Residence
               </p>
-              <p className="font-semibold text-gray-900">
+              <p className="font-semibold text-gray-500">
                 {user.country || "Fetching..."}
               </p>
             </div>

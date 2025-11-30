@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import navLinks from "../../constants/data";
 import {
-  XMarkIcon,
-  ChevronRightIcon,
+  // XMarkIcon,
+  // ChevronRightIcon,
   InformationCircleIcon,
   HomeModernIcon,
   LightBulbIcon,
@@ -34,7 +34,7 @@ const HourglassIcon = ({ className }: { className?: string }) => (
     <path d="M5 22h14" />
     <path d="M5 2h14" />
     <path d="M17 22v-4.5a1 1 0 0 0-.3-.7l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 0 .3-.7V2" />
-    <path d="M7 2v4.5a1 1 0 0 0 .3.7l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 0-.3.7V22" />
+    <path d="M7 2v4.5a1 1 0 0 0 .3.7l4 4a1 1 0 1 1 0 1.4l-4 4a1 1 0 0 0-.3.7V22" />
   </svg>
 );
 
@@ -51,28 +51,25 @@ const iconMap: { [key: string]: React.ElementType } = {
 export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
   const location = useLocation();
 
-  // Prevent background scrolling when sidebar is open
-  useEffect(() => {
-    if (menuOpen) {
-      // Save the current scroll position
-      const scrollY = window.scrollY;
+  // // Prevent background scrolling when sidebar is open
+  // useEffect(() => {
+  //   if (menuOpen) {
+  //     const scrollY = window.scrollY;
 
-      // Add styles to prevent scrolling
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
+  //     document.body.style.overflow = "hidden";
+  //     document.body.style.position = "fixed";
+  //     document.body.style.top = `-${scrollY}px`;
+  //     document.body.style.width = "100%";
 
-      return () => {
-        // Restore scrolling when sidebar closes
-        document.body.style.overflow = "";
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.width = "";
-        window.scrollTo(0, scrollY);
-      };
-    }
-  }, [menuOpen]);
+  //     return () => {
+  //       document.body.style.overflow = "";
+  //       document.body.style.position = "";
+  //       document.body.style.top = "";
+  //       document.body.style.width = "";
+  //       window.scrollTo(0, scrollY);
+  //     };
+  //   }
+  // }, [menuOpen]);
 
   return (
     <AnimatePresence>
@@ -84,80 +81,63 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={closeMenu}
-            className="fixed inset-0 bg-black/30 backdrop-blur-xs z-40 md:hidden"
+            className="fixed inset-0 z-40 md:hidden"
           />
 
           <motion.nav
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 left-0 h-full w-[15.625rem] bg-white z-50 md:hidden rounded-br-md rounded-tr-md shadow-xl overflow-y-auto"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -50, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 200, damping: 22 }}
+            className="
+              fixed left-4 top-16 
+              w-[55%] max-w-sm max-h-[60vh]
+              z-50 md:hidden 
+              rounded-xl shadow-xl overflow-y-auto
+              backdrop-blur-xl bg-white
+            "
           >
-            <div className="flex justify-end">
-              <button
-                onClick={closeMenu}
-                className="pr-3.5 pt-2 cursor-pointer"
-              >
-                <XMarkIcon className="size-6 text-gray-700" />
-              </button>
-            </div>
+            <div className="flex flex-col justify-between h-full py-1.5">
+              <div className="flex flex-col pt-2">
+                {navLinks.map(({ path, label }: any) => {
+                  const isActive = location.pathname === path;
+                  const IconComponent = iconMap[label];
 
-            <div className="flex flex-col justify-between h-full pb-10">
-              <div className="flex flex-col pt-5">
-                {navLinks.map(
-                  ({ path, label }: { path: string; label: string }) => {
-                    const isActive = location.pathname === path;
-                    const IconComponent = iconMap[label];
-
-                    return (
-                      <Link
-                        key={path}
-                        to={path}
-                        onClick={closeMenu}
-                        className={`flex items-center text-[1.063rem] gap-3 transition-colors duration-200 py-3 ${
-                          isActive
-                            ? "border-l-[0.188rem] border-black pl-[0.813rem] font-semibold text-black"
-                            : "pl-4 font-medium text-gray-700 hover:text-black"
-                        }`}
-                      >
-                        {IconComponent && (
-                          <IconComponent
-                            className={`size-5 ${
-                              isActive ? "text-black" : "text-gray-600"
-                            }`}
-                          />
-                        )}
-                        <span>{label}</span>
-                      </Link>
-                    );
-                  }
-                )}
+                  return (
+                    <Link
+                      key={path}
+                      to={path}
+                      onClick={closeMenu}
+                      className={`flex items-center gap-3 py-3 text-[1.063rem] transition-colors ${
+                        isActive
+                          ? "border-l-4 border-black pl-3 font-semibold text-black"
+                          : "pl-3.5 font-medium text-gray-700"
+                      }`}
+                    >
+                      {IconComponent && (
+                        <IconComponent
+                          className={`size-5 ${
+                            isActive ? "text-black" : "text-gray-700"
+                          }`}
+                        />
+                      )}
+                      <span>{label}</span>
+                    </Link>
+                  );
+                })}
               </div>
 
               <div>
                 <Link
                   to="/info"
                   onClick={closeMenu}
-                  className="flex items-center justify-between mb-4 pl-4 pr-3.5"
+                  className="flex items-center justify-between mb-4 pl-4 text-gray-700 transition-colors"
                 >
-                  <div className="flex items-center text-[1.063rem] gap-3 font-medium text-gray-700 hover:text-black transition-colors">
+                  <div className="flex items-center gap-3 text-[1.063rem] font-medium">
                     <InformationCircleIcon className="size-5" />
                     <span>More</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <ChevronRightIcon className="size-5 text-gray-700" />{" "}
-                  </div>
                 </Link>
-
-                <div className="pl-4 text-sm text-[#889397]">
-                  <p className="space-x-1">
-                    <span>&copy;</span>
-                    <span>{new Date().getFullYear()}</span>
-                    <span className="font-bold text-black"> loop</span>
-                    <span> All rights reserved.</span>
-                  </p>
-                </div>
               </div>
             </div>
           </motion.nav>

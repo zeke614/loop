@@ -50,7 +50,7 @@ export default function ShareButton({ article }: ShareButtonProps) {
     <div className="relative">
       <ArrowUpOnSquareIcon
         onClick={handleShare}
-        className="size-5 cursor-pointer hover:text-[#0ab39c] transition-colors duration-200"
+        className="size-5 cursor-pointer text-gray-800 hover:text-[#0ab39c] transition-colors duration-200"
       />
 
       {showFallback && (

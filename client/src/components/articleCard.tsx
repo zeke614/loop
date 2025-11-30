@@ -168,7 +168,7 @@ export default function AnimatedArticleCard({
               {isSaved ? (
                 <BookmarkIconSolid className="size-5 cursor-pointer transition-transform text-[#0ab39c]" />
               ) : (
-                <BookmarkIcon className="size-5 cursor-pointer transition-transform" />
+                <BookmarkIcon className="size-5 cursor-pointer transition-transform text-gray-800 hover:text-[#0ab39c]" />
               )}
             </motion.div>
             <ShareButton

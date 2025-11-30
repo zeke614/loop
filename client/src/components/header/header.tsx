@@ -4,9 +4,9 @@ import navLinks from "../../constants/data";
 import Sidebar from "../header/sidebar";
 import AccountPanel from "../header/accountPanel";
 import { useAuth } from "../../contexts/authContext";
-import logo from "../../assets/imgs/loopLogo.avif";
+// import logo from "../../assets/imgs/loopLogo.avif";
 import { UserIcon as UserSolid } from "@heroicons/react/24/solid";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,60 +25,72 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white text-black shadow-2xs fixed top-0 left-0 w-full z-50">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-none">
       <div
-        className="max-w-7xl mx-auto flex items-center justify-between 
-               px-3.5 sm:px-5 border-b border-b-[#928f8f1f] md:h-16"
+        className="max-w-7xl md:mx-auto sm:mx-3 mx-3 mt-2 rounded-full
+               bg-white/20 backdrop-blur-xl
+               border border-white/30 shadow-lg
+               flex items-center justify-between
+               px-4 py-2 sm:px-6"
       >
         <button
           onClick={toggleMenu}
           aria-label="menu button"
           className="flex items-center justify-center cursor-pointer md:hidden"
         >
-          {/* <i className="bx bx-menu-left text-2xl"></i> */}
           <Bars3Icon className="size-6" />
         </button>
 
         <Link
           to="/"
-          className={`text-[1.688rem] sm:mr-10 font-bold ${
-            user ? "pl-0" : "pl-11.5"
+          className={`text-[1.375rem] font-bold flex items-center ${
+            user ? "pl-0" : "pl-6"
           } md:p-0`}
         >
-          <img src={logo} alt="loop logo" className="h-12 w-auto text-black" />{" "}
+          {/* <img src={logo} alt="loop logo" className="h-10 w-auto" /> */}
+          loop
         </Link>
 
-        <div className="flex items-center sm:gap-7">
-          <nav className="hidden md:flex items-center justify-center gap-4">
-            {navLinks.map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`flex items-center justify-center ${
-                  location.pathname === path ? "font-semibold" : "font-medium"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`${
+                location.pathname === path
+                  ? "font-semibold text-black"
+                  : "font-medium text-[#444]"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
 
+        <div className="flex items-center gap-4">
           {!user ? (
             <Link to="/login">
-              <span className="text-[#0ab39c]">Sign in</span>
+              <span className="text-[#0ab39c] font-medium">Sign in</span>
             </Link>
           ) : (
             <button
               onClick={toggleProfile}
               aria-label="Open profile"
-              className="flex items-center justify-center md:w-10 md:h-10 cursor-pointer md:rounded-full md:hover:bg-gray-100"
+              className="flex items-center justify-center md:w-10 md:h-10 
+                     cursor-pointer md:rounded-full md:hover:bg-white/20"
             >
-              <UserSolid className="size-5.5" />
+              {!profileOpen ? (
+                <UserSolid className="size-5.5" />
+              ) : (
+                <XMarkIcon className="size-5.5" />
+              )}
             </button>
           )}
         </div>
       </div>
+
       <Sidebar menuOpen={menuOpen} closeMenu={() => setMenuOpen(false)} />
+
       <AccountPanel
         user={user}
         profileOpen={profileOpen}

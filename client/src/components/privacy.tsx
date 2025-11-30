@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white py-25 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
+        <div className="mb-7">
           <Link
             to="/"
-            className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+            className="inline-flex items-center font-medium transition-colors"
           >
-            <ArrowLeftIcon className="size-4 mr-2" />
-            Back to Home
+            <ChevronLeftIcon className="size-5.5 -ml-1" />
           </Link>
         </div>
 
@@ -39,7 +38,9 @@ export default function PrivacyPolicy() {
           </p>
 
           <div>
-            <h3 className="font-bold mb-1.5">1. Information We Collect</h3>
+            <h3 className="font-bold mb-1.5 text-lg">
+              1. Information We Collect
+            </h3>
             <p>
               We collect personal information that you voluntarily provide to us
               when you register on the website, express an interest in obtaining
@@ -74,7 +75,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5">
+            <h3 className="font-bold mb-1.5 text-lg">
               2. How We Handle Your Social Logins
             </h3>
             <p>
@@ -97,7 +98,9 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5">3. How We Use Your Information</h3>
+            <h3 className="font-bold mb-1.5 text-lg">
+              3. How We Use Your Information
+            </h3>
             <p>
               We use personal information collected via our website for a
               variety of business purposes described below. We process your
@@ -129,7 +132,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5">
+            <h3 className="font-bold mb-1.5 text-lg">
               4. Will Your Information Be Shared With Anyone?
             </h3>
             <p>
@@ -150,7 +153,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5">
+            <h3 className="font-bold mb-1.5 text-lg">
               5. How Long Do We Keep Your Information?
             </h3>
             <p>
@@ -162,7 +165,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5">6. Your Privacy Rights</h3>
+            <h3 className="font-bold mb-1.5 text-lg">6. Your Privacy Rights</h3>
             <p>
               You may review, change, or terminate your account at any time.
             </p>
@@ -176,8 +179,8 @@ export default function PrivacyPolicy() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-bold mb-1.5">7. Contact Us</h3>
+          <div className="mb-10">
+            <h3 className="font-bold mb-1.5 text-lg">7. Contact Us</h3>
             <p>
               If you have questions or comments about this policy, you may email
               us at{" "}
@@ -191,8 +194,6 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-
-        <div className="h-20"></div>
       </div>
     </div>
   );
