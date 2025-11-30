@@ -38,7 +38,11 @@ export default function Header() {
           aria-label="menu button"
           className="flex items-center justify-center cursor-pointer md:hidden"
         >
-          <Bars3Icon className="size-6" />
+          {!menuOpen ? (
+            <Bars3Icon className="size-6" />
+          ) : (
+            <XMarkIcon className="size-6" />
+          )}
         </button>
 
         <Link

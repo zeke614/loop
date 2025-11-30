@@ -4,7 +4,7 @@ import {
   BookmarkIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface AccountPanelProps {
@@ -20,23 +20,23 @@ export default function AccountPanel({
   setProfileOpen,
   handleSignOut,
 }: AccountPanelProps) {
-  useEffect(() => {
-    if (profileOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
+  // useEffect(() => {
+  //   if (profileOpen) {
+  //     const scrollY = window.scrollY;
+  //     document.body.style.overflow = "hidden";
+  //     document.body.style.position = "fixed";
+  //     document.body.style.top = `-${scrollY}px`;
+  //     document.body.style.width = "100%";
 
-      return () => {
-        document.body.style.overflow = "";
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.width = "";
-        window.scrollTo(0, scrollY);
-      };
-    }
-  }, [profileOpen]);
+  //     return () => {
+  //       document.body.style.overflow = "";
+  //       document.body.style.position = "";
+  //       document.body.style.top = "";
+  //       document.body.style.width = "";
+  //       window.scrollTo(0, scrollY);
+  //     };
+  //   }
+  // }, [profileOpen]);
 
   return (
     <>
