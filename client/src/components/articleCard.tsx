@@ -166,9 +166,9 @@ export default function AnimatedArticleCard({
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
             >
               {isSaved ? (
-                <BookmarkIconSolid className="size-5 cursor-pointer transition-transform text-[#0ab39c]" />
+                <BookmarkIconSolid className="size-4.5 cursor-pointer transition-transform text-[#0ab39c]" />
               ) : (
-                <BookmarkIcon className="size-5 cursor-pointer transition-transform text-gray-800 hover:text-[#0ab39c]" />
+                <BookmarkIcon className="size-4.5 cursor-pointer transition-transform text-gray-800 hover:text-[#0ab39c]" />
               )}
             </motion.div>
             <ShareButton

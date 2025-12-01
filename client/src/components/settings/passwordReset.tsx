@@ -138,7 +138,7 @@ export default function PasswordReset() {
             onChange={handleChange}
             required
             placeholder="Enter your new password"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
           />
           {showPassword ? (
             <EyeSlashIcon
@@ -164,7 +164,7 @@ export default function PasswordReset() {
             onChange={handleChange}
             required
             placeholder="Confirm your new password"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
           />
           {showConfirmPassword ? (
             <EyeSlashIcon
@@ -194,7 +194,7 @@ export default function PasswordReset() {
         <button
           type="submit"
           disabled={!form.password || !form.confirmPassword || loading}
-          className={`w-full rounded-lg py-3 font-medium transition sm:mt-28 flex items-center justify-center
+          className={`w-full rounded-full py-3 font-medium transition sm:mt-28 flex items-center justify-center
             ${
               !form.password || !form.confirmPassword || loading
                 ? "bg-[#babcc0]  text-white cursor-not-allowed"
@@ -203,7 +203,7 @@ export default function PasswordReset() {
         >
           {loading ? (
             <span className="flex items-center space-x-2">
-              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <span className="w-4 h-4 border-2 border-white border-t-transparent animate-spin"></span>
               <span>Updating Password...</span>
             </span>
           ) : (

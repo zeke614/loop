@@ -55,8 +55,8 @@ export default function AccountPanel({
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
             className="
-              fixed top-16 right-4 md:top-18 md:right-30 z-50
-              flex flex-col items-end gap-3
+              fixed top-17.5 right-4 md:top-18 md:right-30 z-50
+              flex flex-col items-end gap-4
             "
           >
             <Link
@@ -89,9 +89,9 @@ export default function AccountPanel({
               onClick={handleSignOut}
               className="
                 px-4 py-2 rounded-full 
-                bg-black backdrop-blur-xl
-                shadow-lg text-red-500 font-medium 
-                flex items-center gap-2
+                bg-red-500 backdrop-blur-xl
+                shadow-lg text-white font-medium 
+                flex items-center gap-2 cursor-pointer
               "
             >
               <ArrowRightStartOnRectangleIcon className="size-5" />

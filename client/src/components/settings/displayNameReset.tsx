@@ -46,7 +46,7 @@ export default function UsernameReset() {
               value={newUsername}
               onChange={(e) => setNewUsername(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
+              className="w-full px-4 py-3 rounded-xl border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
                 "
             />
           </div>
@@ -58,7 +58,7 @@ export default function UsernameReset() {
           <button
             type="submit"
             disabled={newUsername === user?.username || loading}
-            className={`w-full rounded-lg py-3 sm:mt-56 text-white 
+            className={`w-full rounded-full py-3 sm:mt-56 text-white 
                 font-medium transition 
                 ${
                   newUsername === user?.username

@@ -67,7 +67,7 @@ export default function Home() {
 
   return (
     <div className="py-10 mb-20">
-      <h1 className="text-center text-2xl mt-8 sm:mt-10 font-medium">
+      <h1 className="text-center text-2xl mt-10 font-medium">
         {user ? (
           <>
             <span>Hello, </span>

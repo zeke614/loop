@@ -46,7 +46,7 @@ export default function EmailReset() {
               value={newEmail}
               onChange={(e) => setNewEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
+              className="w-full px-4 py-3 rounded-xl border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
                 "
             />
           </div>
@@ -58,7 +58,7 @@ export default function EmailReset() {
           <button
             type="submit"
             disabled={newEmail === user?.email || loading}
-            className={`w-full rounded-lg sm:mt-56 py-3 text-white 
+            className={`w-full rounded-full sm:mt-56 py-3 text-white 
                 font-medium transition 
                 ${
                   newEmail === user?.email

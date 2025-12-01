@@ -1,15 +1,18 @@
 /* @import url('https://fonts.cdnfonts.com/css/satoshi'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+
 @import "tailwindcss";
 
 @theme {
-  --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif; 
+  --font-google-sans-flex: "Google Sans Flex", sans-serif; 
 }
 
 body {
-  @apply font-plus-jakarta-sans;
+  @apply font-google-sans-flex;
   /* @apply bg-[#CFCFCF] text-white; */
 }
 

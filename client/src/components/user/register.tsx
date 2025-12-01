@@ -86,7 +86,7 @@ export default function Register() {
           and conversation.
         </p>
 
-        <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-6">
+        <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3.5 mb-6">
           <button
             onClick={handleGoogleLogin}
             className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
@@ -136,7 +136,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Username"
               required
-              className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -149,7 +149,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Email"
               required
-              className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -162,7 +162,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Password"
               required
-              className="w-full px-4 py-3 mt-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+              className="w-full px-4 py-3 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
