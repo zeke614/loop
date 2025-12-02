@@ -31,13 +31,9 @@ function App() {
         <Route index element={<Home />} />
         <Route path="settings" element={<Settings />} />
         <Route path="settings/details" element={<PersonalDetails />} />
-        <Route path="settings/emailReset" element={<EmailReset />} />
-        <Route path="settings/passwordReset" element={<PasswordReset />} />
-        <Route path="settings/displayNameReset" element={<UsernameReset />} />
         <Route path="settings/countries" element={<Countries />} />
         <Route path="settings/emailPrefs" element={<EmailPrefs />} />
         <Route path="settings/security" element={<Security />} />
-        <Route path="forgotPassword" element={<ForgotPassword />} />
         <Route path="saved" element={<Saved />} />
         <Route path="entertainment" element={<Entertainment />} />
         <Route path="life" element={<Life />} />
@@ -53,6 +49,10 @@ function App() {
       <Route path="register" element={<Register />} />
       <Route path="login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
+      <Route path="settings/emailReset" element={<EmailReset />} />
+      <Route path="settings/passwordReset" element={<PasswordReset />} />
+      <Route path="forgotPassword" element={<ForgotPassword />} />
+      <Route path="settings/displayNameReset" element={<UsernameReset />} />
     </Routes>
   );
 }

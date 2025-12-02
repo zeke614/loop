@@ -14,8 +14,8 @@ export default function UsernameReset() {
   };
 
   return (
-    <>
-      <div className="min-h-screen bg-white w-full max-w-md px-4 mx-auto pt-21 sm:pt-24">
+    <div className="min-h-screen flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
+      <div>
         <Link
           to="/settings/details"
           className="inline-flex items-center font-medium transition-colors mb-7"
@@ -50,33 +50,35 @@ export default function UsernameReset() {
                 "
             />
           </div>
-
-          <p className="text-sm text-gray-500 mb-7">
-            Nice name, eh? 😉 You can change it anytime.
-          </p>
-
-          <button
-            type="submit"
-            disabled={newUsername === user?.username || loading}
-            className={`w-full rounded-full py-3 sm:mt-56 text-white 
-                font-medium transition 
-                ${
-                  newUsername === user?.username
-                    ? "bg-[#babcc0] white cursor-not-allowed"
-                    : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
-                }`}
-          >
-            {loading ? (
-              <span className="flex items-center space-x-2">
-                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                <span>Updating Name...</span>
-              </span>
-            ) : (
-              "Update Name"
-            )}{" "}
-          </button>
         </form>
       </div>
-    </>
+
+      <p className="text-sm text-gray-500 mb-7">
+        Nice name, eh? 😉 You can change it anytime.
+      </p>
+
+      <div className="mt-auto pb-8">
+        <button
+          type="submit"
+          disabled={newUsername === user?.username || loading}
+          className={`w-full rounded-full py-3 sm:mt-56 text-white 
+                  font-medium transition 
+                  ${
+                    newUsername === user?.username
+                      ? "bg-[#babcc0] white cursor-not-allowed"
+                      : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
+                  }`}
+        >
+          {loading ? (
+            <span className="flex items-center space-x-2">
+              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <span>Updating Name...</span>
+            </span>
+          ) : (
+            "Update Name"
+          )}{" "}
+        </button>
+      </div>
+    </div>
   );
 }

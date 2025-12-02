@@ -9,7 +9,6 @@ export default function ForgotPasswordPage() {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
-    // Check if email contains @ and has content after @
     setIsValidEmail(value.includes("@") && value.split("@")[1]?.length > 0);
   };
 
@@ -23,8 +22,8 @@ export default function ForgotPasswordPage() {
   const isButtonDisabled = !isValidEmail || email.trim() === "";
 
   return (
-    <>
-      <div className="min-h-screen bg-white w-full max-w-md px-4 mx-auto pt-21 sm:pt-24">
+    <div className="min-h-screen bg-white w-full max-w-md mx-auto px-4 pt-10 flex flex-col">
+      <div>
         <Link
           to="/settings/details"
           className="inline-flex items-center font-medium transition-colors mb-7"
@@ -47,27 +46,29 @@ export default function ForgotPasswordPage() {
               onChange={handleEmailChange}
               placeholder="Enter your email"
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#6e7780] transition"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] transition"
             />
           </div>
 
           <p className="text-sm text-gray-500 mb-7">
-            Try not to forget your password again, buddy.{" "}
+            Try not to forget your password again, buddy.
           </p>
-
-          <button
-            type="submit"
-            disabled={isButtonDisabled}
-            className={`w-full rounded-lg py-3 sm:mt-56 text-white font-medium transition ${
-              isButtonDisabled
-                ? "bg-[#babcc0] cursor-not-allowed"
-                : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
-            }`}
-          >
-            Send Reset Link
-          </button>
         </form>
       </div>
-    </>
+
+      <div className="mt-auto pb-8">
+        <button
+          type="submit"
+          disabled={isButtonDisabled}
+          className={`w-full rounded-full py-3 text-white font-medium transition ${
+            isButtonDisabled
+              ? "bg-[#babcc0] cursor-not-allowed"
+              : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
+          }`}
+        >
+          Send Reset Link
+        </button>
+      </div>
+    </div>
   );
 }

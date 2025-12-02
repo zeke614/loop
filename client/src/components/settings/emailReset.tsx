@@ -14,8 +14,8 @@ export default function EmailReset() {
   };
 
   return (
-    <>
-      <div className="min-h-screen bg-white w-full max-w-md px-4 mx-auto pt-21 sm:pt-24">
+    <div className="min-h-screen flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
+      <div>
         <Link
           to="/settings/details"
           className="inline-flex items-center font-medium transition-colors mb-7"
@@ -47,36 +47,38 @@ export default function EmailReset() {
               onChange={(e) => setNewEmail(e.target.value)}
               required
               className="w-full px-4 py-3 rounded-xl border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
-                "
+                  "
             />
           </div>
-
-          <p className="text-sm text-gray-500 mb-7">
-            A verification code will be sent to this email.
-          </p>
-
-          <button
-            type="submit"
-            disabled={newEmail === user?.email || loading}
-            className={`w-full rounded-full sm:mt-56 py-3 text-white 
-                font-medium transition 
-                ${
-                  newEmail === user?.email
-                    ? "bg-[#babcc0] white cursor-not-allowed"
-                    : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
-                }`}
-          >
-            {loading ? (
-              <span className="flex items-center space-x-2">
-                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                <span>Updating Email...</span>
-              </span>
-            ) : (
-              "Update Email"
-            )}{" "}
-          </button>
         </form>
       </div>
-    </>
+
+      <p className="text-sm text-gray-500 mb-7">
+        A verification code will be sent to this email.
+      </p>
+
+      <div className="mt-auto pb-8">
+        <button
+          type="submit"
+          disabled={newEmail === user?.email || loading}
+          className={`w-full rounded-full py-3 text-white 
+                    font-medium transition 
+                    ${
+                      newEmail === user?.email
+                        ? "bg-[#babcc0] white cursor-not-allowed"
+                        : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
+                    }`}
+        >
+          {loading ? (
+            <span className="flex items-center space-x-2">
+              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <span>Updating Email...</span>
+            </span>
+          ) : (
+            "Update Email"
+          )}{" "}
+        </button>
+      </div>
+    </div>
   );
 }

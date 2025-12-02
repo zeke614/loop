@@ -67,7 +67,7 @@ export default function Saved() {
                   alt={article.alt}
                   className="w-full h-48 md:h-52 lg:h-48 object-cover transition-transform duration-500 hover:scale-105"
                 />
-                <div className="absolute animate-bounce [animation-duration:2s] top-3 left-3 bg-[#0ab39c] text-white text-xs px-3 py-1.5 rounded-full tracking-wider uppercase font-medium shadow-sm">
+                <div className="absolute animate-bounce [animation-duration:2s] top-3 left-2.5 bg-[#0ab39c] text-white text-sm px-2.5 py-1.5 rounded-full tracking-wider font-medium shadow-sm">
                   {article.category}
                 </div>
               </div>
@@ -81,21 +81,17 @@ export default function Saved() {
                 </Link>
 
                 <div className="flex items-center text-sm text-gray-500 mb-2.5 flex-wrap gap-2">
-                  <span className="whitespace-nowrap">{article.date}</span>
-                  <span className="mx-1">•</span>
-                  <span>
-                    by
-                    <span className="text-gray-700 font-medium whitespace-nowrap ml-1.5">
-                      {article.author}
-                    </span>
+                  <span className="font-medium text-gray-600">
+                    {article.author},
                   </span>
+                  <span className="mr-3">{article.date}</span>
                 </div>
 
-                <p className="text-[#767676] leading-5 mb-5 flex-1 line-clamp-5">
+                <p className="text-[#767676] leading-5.5 mb-5 flex-1 line-clamp-5">
                   {article.description}
                 </p>
 
-                <div className="flex justify-between pt-3 border-t border-gray-200">
+                <div className="flex justify-between pt-3.5 border-t border-gray-200">
                   <div>
                     <Link
                       to={`/articles/${article.id}`}
@@ -105,23 +101,21 @@ export default function Saved() {
                       <ChevronDoubleRightIcon className="size-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-200" />{" "}
                     </Link>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-3">
                     <button
                       onClick={() => removeArticle(article.id)}
                       className="hover:bg-gray-50 p-1 rounded-full transition-colors group/icon"
                       title="Unsave"
                     >
-                      <BookmarkIconSolid className="size-5 cursor-pointer active:scale-90 transition-transform text-[#0ab39c]" />
+                      <BookmarkIconSolid className="size-4.5 cursor-pointer active:scale-90 transition-transform text-[#0ab39c]" />
                     </button>
-                    <button className="transition-colors p-1">
-                      <ShareButton
-                        article={{
-                          title: article.title,
-                          url: `/articles/${article.id}`,
-                          description: article.description,
-                        }}
-                      />
-                    </button>
+                    <ShareButton
+                      article={{
+                        title: article.title,
+                        url: `/articles/${article.id}`,
+                        description: article.description,
+                      }}
+                    />
                   </div>
                 </div>
               </div>

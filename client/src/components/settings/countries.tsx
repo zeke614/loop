@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { countryData } from "../../constants/data";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface Country {
   name: string;
@@ -140,7 +141,7 @@ export default function CurrencyModal({
             >
               <div className="relative mb-3">
                 <div className="absolute left-3 inset-y-0 flex items-center pointer-events-none">
-                  <i className="bx bx-search text-gray-400 text-lg" />
+                  <MagnifyingGlassIcon className="size-4.5" />
                 </div>
                 <input
                   type="text"

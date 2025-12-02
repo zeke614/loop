@@ -102,104 +102,110 @@ export default function PasswordReset() {
   };
 
   return (
-    <div className="min-h-screen bg-white w-full max-w-md px-4 mx-auto pt-21 md:pt-24">
-      <Link
-        to="/settings/details"
-        className="inline-flex items-center font-medium transition-colors mb-7"
-      >
-        <ChevronLeftIcon className="size-5.5 -ml-1" />
-      </Link>
+    <div className="min-h-screen flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
+      <div>
+        <Link
+          to="/settings/details"
+          className="inline-flex items-center font-medium transition-colors mb-7"
+        >
+          <ChevronLeftIcon className="size-5.5 -ml-1" />
+        </Link>
 
-      <h3 className="text-2xl font-bold mb-3.5">Password</h3>
+        <h3 className="text-2xl font-bold mb-3.5">Password</h3>
 
-      <p className="text-gray-600 mb-5">
-        Enter your new password below. Make sure it's strong and memorable.
+        <p className="text-gray-600 mb-5">
+          Enter your new password below. Make sure it's strong and memorable.
+        </p>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {errorMessage && (
+            <p className="text-center text-red-500 font-medium">
+              {errorMessage}
+            </p>
+          )}
+
+          {successMessage && (
+            <p className="text-center text-green-500 font-medium">
+              {successMessage}
+            </p>
+          )}
+
+          <div className="relative pb-1">
+            <label className="font-medium text-gray-700 block mb-2">
+              New password
+            </label>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              required
+              placeholder="Enter your new password"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+            />
+            {showPassword ? (
+              <EyeSlashIcon
+                className="size-4.5 absolute right-4 top-[56%] text-gray-500 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            ) : (
+              <EyeIcon
+                className="size-4.5 absolute right-4 top-[56%] text-gray-500 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            )}
+          </div>
+
+          <div className="relative">
+            <label className="font-medium text-gray-700 block mb-2">
+              Confirm new password
+            </label>
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              name="confirmPassword"
+              value={form.confirmPassword}
+              onChange={handleChange}
+              required
+              placeholder="Confirm your new password"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+            />
+            {showConfirmPassword ? (
+              <EyeSlashIcon
+                className="size-4.5 absolute right-4 top-[60%] text-gray-500 cursor-pointer"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              />
+            ) : (
+              <EyeIcon
+                className="size-4.5 absolute right-4 top-[60%] text-gray-500 cursor-pointer"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              />
+            )}
+          </div>
+        </form>
+      </div>
+
+      <p className="text-sm text-gray-500 mb-1">
+        Password must be at least 8 characters long.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {errorMessage && (
-          <p className="text-center text-red-500 font-medium">{errorMessage}</p>
-        )}
+      <p className="text-sm text-gray-500 mb-1">
+        Password must include at least 1 digit.
+      </p>
 
-        {successMessage && (
-          <p className="text-center text-green-500 font-medium">
-            {successMessage}
-          </p>
-        )}
+      <p className="text-sm text-gray-500 mb-7">
+        Password must include at least 1 non-digit character.
+      </p>
 
-        <div className="relative pb-1">
-          <label className="font-medium text-gray-700 block mb-2">
-            New password
-          </label>
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            required
-            placeholder="Enter your new password"
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
-          />
-          {showPassword ? (
-            <EyeSlashIcon
-              className="size-4.5 absolute right-4 top-[56%] text-gray-500 cursor-pointer"
-              onClick={() => setShowPassword(!showPassword)}
-            />
-          ) : (
-            <EyeIcon
-              className="size-4.5 absolute right-4 top-[56%] text-gray-500 cursor-pointer"
-              onClick={() => setShowPassword(!showPassword)}
-            />
-          )}
-        </div>
-
-        <div className="relative">
-          <label className="font-medium text-gray-700 block mb-2">
-            Confirm new password
-          </label>
-          <input
-            type={showConfirmPassword ? "text" : "password"}
-            name="confirmPassword"
-            value={form.confirmPassword}
-            onChange={handleChange}
-            required
-            placeholder="Confirm your new password"
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
-          />
-          {showConfirmPassword ? (
-            <EyeSlashIcon
-              className="size-4.5 absolute right-4 top-[60%] text-gray-500 cursor-pointer"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            />
-          ) : (
-            <EyeIcon
-              className="size-4.5 absolute right-4 top-[60%] text-gray-500 cursor-pointer"
-              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            />
-          )}
-        </div>
-
-        <p className="text-sm text-gray-500 mb-1">
-          Password must be at least 8 characters long.
-        </p>
-
-        <p className="text-sm text-gray-500 mb-1">
-          Password must include at least 1 digit.
-        </p>
-
-        <p className="text-sm text-gray-500 mb-7">
-          Password must include at least 1 non-digit character.
-        </p>
-
+      <div className="mt-auto pb-8">
         <button
           type="submit"
           disabled={!form.password || !form.confirmPassword || loading}
-          className={`w-full rounded-full py-3 font-medium transition sm:mt-28 flex items-center justify-center
-            ${
-              !form.password || !form.confirmPassword || loading
-                ? "bg-[#babcc0]  text-white cursor-not-allowed"
-                : "bg-[#0ab39c] text-white hover:bg-[#089c8a] cursor-pointer"
-            }`}
+          className={`w-full rounded-full py-3 font-medium transition flex items-center justify-center
+                ${
+                  !form.password || !form.confirmPassword || loading
+                    ? "bg-[#babcc0]  text-white cursor-not-allowed"
+                    : "bg-[#0ab39c] text-white hover:bg-[#089c8a] cursor-pointer"
+                }`}
         >
           {loading ? (
             <span className="flex items-center space-x-2">
@@ -210,14 +216,7 @@ export default function PasswordReset() {
             "Update Password"
           )}
         </button>
-      </form>
-
-      {/* <p className="text-center text-[#6e7780] mt-10">
-        Remember your password?
-        <Link to="/login" className="text-[#0ab39c] ml-1 font-medium">
-          Back to Login
-        </Link>
-      </p> */}
+      </div>
     </div>
   );
 }
