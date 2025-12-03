@@ -66,6 +66,10 @@ export default function Finance() {
         Money and Madness
       </h1>
 
+      <p className="text-center text-[#767676]  text-lg">
+        Markets moving like they’ve had three coffees.{" "}
+      </p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

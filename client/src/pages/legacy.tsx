@@ -66,6 +66,10 @@ export default function Legacy() {
         Time Capsule
       </h1>
 
+      <p className="text-center text-[#767676]  text-lg">
+        Echoes from the past, still making noise.{" "}
+      </p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

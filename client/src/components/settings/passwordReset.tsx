@@ -102,7 +102,7 @@ export default function PasswordReset() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
+    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
       <div>
         <Link
           to="/settings/details"
@@ -156,7 +156,7 @@ export default function PasswordReset() {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative mb-1">
             <label className="font-medium text-gray-700 block mb-2">
               Confirm new password
             </label>
@@ -184,19 +184,19 @@ export default function PasswordReset() {
         </form>
       </div>
 
-      <p className="text-sm text-gray-500 mb-1">
+      <p className="text-sm text-gray-500 mb-0.5">
         Password must be at least 8 characters long.
       </p>
 
-      <p className="text-sm text-gray-500 mb-1">
+      <p className="text-sm text-gray-500 mb-0.5">
         Password must include at least 1 digit.
       </p>
 
-      <p className="text-sm text-gray-500 mb-7">
+      <p className="text-sm text-gray-500">
         Password must include at least 1 non-digit character.
       </p>
 
-      <div className="mt-auto pb-8">
+      <div className="mt-auto safe-bottom pb-6">
         <button
           type="submit"
           disabled={!form.password || !form.confirmPassword || loading}

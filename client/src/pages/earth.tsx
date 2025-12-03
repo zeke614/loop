@@ -66,6 +66,10 @@ export default function Earth() {
         The Living Planet
       </h1>
 
+      <p className="text-center text-[#767676]  text-lg">
+        Nature doing what nature does — surprise us.{" "}
+      </p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

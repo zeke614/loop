@@ -19,3 +19,7 @@ body {
 main {
   @apply sm:max-w-[78rem] sm:mx-auto
 }
+
+.safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 1.5rem);
+}

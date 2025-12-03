@@ -66,6 +66,10 @@ export default function Science() {
         Genius and Folly
       </h1>
 
+      <p className="text-center text-[#767676]  text-lg">
+        Where brilliance meets beautiful mistakes.{" "}
+      </p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -54,8 +54,6 @@ export const countryData: Country[] = [
   { code: "KHR", name: "Cambodia", flag: "kh" },
   { code: "XAF", name: "Cameroon", flag: "cm" },
   { code: "CAD", name: "Canada", flag: "ca" },
-  { code: "EUR", name: "Cyprus", flag: "cy" },
-  { code: "CZK", name: "Czech Republic", flag: "cz" },
   { code: "XAF", name: "Central African Republic", flag: "cf" },
   { code: "XAF", name: "Chad", flag: "td" },
   { code: "CLP", name: "Chile", flag: "cl" },
@@ -265,6 +263,8 @@ export const countryData: Country[] = [
 ];
 
 export const getCountryName = (countryCode: string): string => {
-  const found = countryData.find((c) => c.code === countryCode);
+  const found = countryData.find(
+    (c) => c.flag.toUpperCase === countryCode.toUpperCase
+  );
   return found ? found.name : countryCode;
 };

@@ -152,7 +152,7 @@ export default function CurrencyModal({
                 />
               </div>
 
-              <div className="max-h-[58vh] overflow-y-auto thin-scrollbar px-1">
+              <div className="max-h-[11.25rem] sm:max-h-[45vh] overflow-y-auto thin-scrollbar px-1">
                 {filteredCountries.length > 0 ? (
                   <ul className="space-y-1">
                     {filteredCountries.map((country) => (
@@ -165,19 +165,17 @@ export default function CurrencyModal({
                               : "hover:bg-gray-50"
                           }`}
                         >
-                          <div className="flex items-center gap-3 min-w-0">
+                          <div className="flex items-center gap-3">
                             <img
                               src={getFlagUrl(country.flag)}
                               alt={`${country.name} flag`}
-                              className="w-6 h-4 rounded object-cover flex-shrink-0"
+                              className="w-5 h-4 rounded object-cover flex-shrink-0"
                             />
-                            <div className="flex flex-col min-w-0">
-                              <span className="text-gray-600 truncate max-w-[220px]">
-                                {country.name}
-                              </span>
-                            </div>
-                          </div>
 
+                            <span className="text-gray-600">
+                              {country.name}
+                            </span>
+                          </div>
                           {currentSelectedRef.current.name === country.name && (
                             <i
                               className="bx bx-check text-[#0ab39c] text-xl"

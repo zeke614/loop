@@ -104,6 +104,18 @@ const articles: Record<string, Article[]> = {
   ],
   "Human Currents": [
     {
+      id: "performance-hacks",
+      category: "Human Currents",
+      title:
+        "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
+      date: "April 5, 2025",
+      author: "Rina Patel",
+      img: psyche,
+      alt: "Athlete closing eyes before a race",
+      description:
+        "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
+    },
+    {
       id: "human-001",
       category: "Human Currents",
       title: "Five Subcultures That Redefined Fashion in the 21st Century",
@@ -125,18 +137,6 @@ const articles: Record<string, Article[]> = {
       alt: "Community members sharing around a table",
       description:
         "From neighborhood newsletters to niche online forums, small, tightly knit groups are regaining cultural influence once held by mass outlets. This deep dive looks at case studies where micro-communities shaped policy, launched creators, and rebuilt trust in information flows...",
-    },
-    {
-      id: "performance-hacks",
-      category: "Human Currents",
-      title:
-        "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
-      date: "April 5, 2025",
-      author: "Rina Patel",
-      img: psyche,
-      alt: "Athlete closing eyes before a race",
-      description:
-        "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
     },
     {
       id: "human-004",
@@ -223,6 +223,17 @@ const articles: Record<string, Article[]> = {
   ],
   "The Living Planet": [
     {
+      id: "landfill-to-loop",
+      category: "The Living Planet",
+      title: "From Landfill to Loop: Cities That Turned Waste into Power",
+      date: "March 19, 2025",
+      author: "Daniel Opoku",
+      img: recyclingPlant,
+      alt: "Waste-to-energy facility",
+      description:
+        "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
+    },
+    {
       id: "planet-001",
       category: "The Living Planet",
       title: "Seven Ecosystems That Should Have Collapsed — But Didn’t",
@@ -291,17 +302,6 @@ const articles: Record<string, Article[]> = {
         "Not all introductions are purely destructive — in some contexts invasive species have altered ecosystems in surprising ways that benefited other species or human uses. This nuanced analysis traces six cases where management and adaptation reframed an invasive narrative...",
     },
     {
-      id: "landfill-to-loop",
-      category: "The Living Planet",
-      title: "From Landfill to Loop: Cities That Turned Waste into Power",
-      date: "March 19, 2025",
-      author: "Daniel Opoku",
-      img: recyclingPlant,
-      alt: "Waste-to-energy facility",
-      description:
-        "A number of cities have transformed waste management into energy, building circular systems that cut emissions and create jobs. This article profiles notable projects, the technologies they use, and the political and social choices that made them scalable...",
-    },
-    {
       id: "planet-008",
       category: "The Living Planet",
       title:
@@ -338,6 +338,17 @@ const articles: Record<string, Article[]> = {
   ],
 
   "Money & Madness": [
+    {
+      id: "corporate-failures-to-better-governance",
+      category: "Money & Madness",
+      title: "The Corporate Failures That Led to Better Governance Models",
+      date: "July 26, 2025",
+      author: "Yasmin Khalid",
+      img: boardroom,
+      alt: "handcuff on a newspaper",
+      description:
+        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
+    },
     {
       id: "finance-001",
       category: "Money & Madness",
@@ -395,17 +406,6 @@ const articles: Record<string, Article[]> = {
       alt: "Local market in rural area",
       description:
         "Digital tools are reshaping informal and subsistence economies—improving access to markets, credit and resilience while introducing new risks. This reporting looks at grassroots fintech, cooperatives, and local adaptation strategies that are closing information gaps...",
-    },
-    {
-      id: "corporate-failures-to-better-governance",
-      category: "Money & Madness",
-      title: "The Corporate Failures That Led to Better Governance Models",
-      date: "July 26, 2025",
-      author: "Yasmin Khalid",
-      img: boardroom,
-      alt: "handcuff on a newspaper",
-      description:
-        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
     },
     {
       id: "finance-007",
@@ -573,17 +573,6 @@ const articles: Record<string, Article[]> = {
 
   "Genius & Folly": [
     {
-      id: "science-001",
-      category: "Genius & Folly",
-      title: "The Most Unlikely Tech Inventions That Changed the World",
-      date: "August 2, 2025",
-      author: "Rhea Kapoor",
-      img: "/images/science-001.jpg",
-      alt: "Collage of surprising inventions",
-      description:
-        "Some inventions began as curiosities or failed projects, but later became indispensable. This exploration highlights unexpected breakthroughs—like microwave ovens, Velcro, and penicillin analogies in tech—tracing the accidents, contexts and adopters that made them transformative...",
-    },
-    {
       id: "failures-to-breakthroughs",
       category: "Genius & Folly",
       title: "Scientific Failures That Sparked Big Discoveries",
@@ -593,6 +582,17 @@ const articles: Record<string, Article[]> = {
       alt: "Laboratory experiment scene",
       description:
         "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
+    },
+    {
+      id: "science-001",
+      category: "Genius & Folly",
+      title: "The Most Unlikely Tech Inventions That Changed the World",
+      date: "August 2, 2025",
+      author: "Rhea Kapoor",
+      img: "/images/science-001.jpg",
+      alt: "Collage of surprising inventions",
+      description:
+        "Some inventions began as curiosities or failed projects, but later became indispensable. This exploration highlights unexpected breakthroughs—like microwave ovens, Velcro, and penicillin analogies in tech—tracing the accidents, contexts and adopters that made them transformative...",
     },
     {
       id: "science-003",
@@ -699,6 +699,17 @@ const articles: Record<string, Article[]> = {
         "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms. These are the prototypes of the future that the world wasn’t ready to adopt. This article dusts off five such inventions. They weren’t failures of imagination; they were failures of timing, infrastructure, market readiness, or sheer luck. Their stories show how an idea can be brilliant and still fall flat, and how innovation is often less about genius and more about catching the wave exactly when it rises.",
     },
     {
+      id: "architectural-ruins",
+      category: "Time Capsule",
+      title: "Architectural Marvels That Are Now Ruins — But Still Awe",
+      date: "March 14, 2025",
+      author: "Elena Rodriguez",
+      img: ruins,
+      alt: "Ruined architectural marvel",
+      description:
+        "Ruins invite the imagination in ways polished monuments never can. They are the bones of past civilizations, exposed to wind, rain, and time, yet still powerful enough to shift how we think about beauty, ambition, and impermanence.",
+    },
+    {
       id: "time-002",
       category: "Time Capsule",
       title:
@@ -753,17 +764,6 @@ const articles: Record<string, Article[]> = {
       alt: "Archive of newspapers",
       description:
         "Newspapers built narratives, norms and civic rituals central to modern life. This historical analysis shows how reporting styles, business models and editorial choices influenced politics, public health and culture, and what contemporary media can learn from that history...",
-    },
-    {
-      id: "architectural-ruins",
-      category: "Time Capsule",
-      title: "Architectural Marvels That Are Now Ruins — But Still Awe",
-      date: "March 14, 2025",
-      author: "Elena Rodriguez",
-      img: ruins,
-      alt: "Ruined architectural marvel",
-      description:
-        "Ruins invite the imagination in ways polished monuments never can. They are the bones of past civilizations, exposed to wind, rain, and time, yet still powerful enough to shift how we think about beauty, ambition, and impermanence.",
     },
     {
       id: "time-008",

@@ -14,7 +14,7 @@ export default function UsernameReset() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
+    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
       <div>
         <Link
           to="/settings/details"
@@ -53,11 +53,11 @@ export default function UsernameReset() {
         </form>
       </div>
 
-      <p className="text-sm text-gray-500 mb-7">
+      <p className="text-sm text-gray-500">
         Nice name, eh? 😉 You can change it anytime.
       </p>
 
-      <div className="mt-auto pb-8">
+      <div className="mt-auto safe-bottom pb-6">
         <button
           type="submit"
           disabled={newUsername === user?.username || loading}

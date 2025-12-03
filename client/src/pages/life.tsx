@@ -66,6 +66,10 @@ export default function Life() {
         Human Currents
       </h1>
 
+      <p className="text-center text-[#767676]  text-lg">
+        The pulse of people, in all their messy glory.{" "}
+      </p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

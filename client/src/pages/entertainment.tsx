@@ -66,6 +66,10 @@ export default function Entertainment() {
         Arena of Fame
       </h1>
 
+      <p className="text-center text-[#767676]  text-lg">
+        Spotlights, plot twists, and star-forged drama.{" "}
+      </p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

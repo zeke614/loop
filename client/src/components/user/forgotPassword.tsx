@@ -22,7 +22,7 @@ export default function ForgotPasswordPage() {
   const isButtonDisabled = !isValidEmail || email.trim() === "";
 
   return (
-    <div className="min-h-screen bg-white w-full max-w-md mx-auto px-4 pt-10 flex flex-col">
+    <div className="min-h-[100dvh] bg-white w-full max-w-md mx-auto px-4 pt-10 flex flex-col">
       <div>
         <Link
           to="/settings/details"
@@ -50,13 +50,13 @@ export default function ForgotPasswordPage() {
             />
           </div>
 
-          <p className="text-sm text-gray-500 mb-7">
+          <p className="text-sm text-gray-500">
             Try not to forget your password again, buddy.
           </p>
         </form>
       </div>
 
-      <div className="mt-auto pb-8">
+      <div className="mt-auto safe-bottom pb-6">
         <button
           type="submit"
           disabled={isButtonDisabled}
