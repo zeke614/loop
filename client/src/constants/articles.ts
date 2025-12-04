@@ -9,6 +9,7 @@ import sports from "../assets/imgs/sports.avif";
 import boardroom from "../assets/imgs/boardroom.jpg";
 import psyche from "../assets/imgs/psyche.jpg";
 import typewriter from "../assets/imgs/typewriter.jpg";
+import aiEthics from "../assets/imgs/aiEthics.png";
 
 interface Article {
   id: string;
@@ -584,16 +585,27 @@ const articles: Record<string, Article[]> = {
         "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
     },
     {
-      id: "science-001",
+      id: "ai-ethics-dilemmas",
       category: "Genius & Folly",
-      title: "The Most Unlikely Tech Inventions That Changed the World",
-      date: "August 2, 2025",
-      author: "Rhea Kapoor",
-      img: "/images/science-001.jpg",
-      alt: "Collage of surprising inventions",
+      title: "The Ethics of AI: Dilemmas We Still Can’t Solve",
+      date: "May 3, 2025",
+      author: "Ethan Liu",
+      img: aiEthics,
+      alt: "Abstract representation of AI ethics",
       description:
-        "Some inventions began as curiosities or failed projects, but later became indispensable. This exploration highlights unexpected breakthroughs—like microwave ovens, Velcro, and penicillin analogies in tech—tracing the accidents, contexts and adopters that made them transformative...",
+        "AI raises ethical questions about bias, agency, and responsibility that resist easy answers. This longform lays out six open dilemmas, from explainability to labor displacement, and examines existing governance proposals and their practical limitations...",
     },
+    // {
+    //   id: "science-001",
+    //   category: "Genius & Folly",
+    //   title: "The Most Unlikely Tech Inventions That Changed the World",
+    //   date: "August 2, 2025",
+    //   author: "Rhea Kapoor",
+    //   img: "/images/science-001.jpg",
+    //   alt: "Collage of surprising inventions",
+    //   description:
+    //     "Some inventions began as curiosities or failed projects, but later became indispensable. This exploration highlights unexpected breakthroughs—like microwave ovens, Velcro, and penicillin analogies in tech—tracing the accidents, contexts and adopters that made them transformative...",
+    // },
     {
       id: "science-003",
       category: "Genius & Folly",
@@ -604,17 +616,6 @@ const articles: Record<string, Article[]> = {
       alt: "Inventor in a garage workshop",
       description:
         "Garage inventors and small teams have repeatedly sparked innovation by pursuing niche problems with unconventional methods. This piece profiles inventors who built impactful tools outside institutional R&D and asks what established labs can learn from grassroots ingenuity...",
-    },
-    {
-      id: "science-004",
-      category: "Genius & Folly",
-      title: "The Ethics of AI: Six Dilemmas We Still Can’t Solve",
-      date: "May 3, 2025",
-      author: "Ethan Liu",
-      img: "/images/science-004.jpg",
-      alt: "Abstract representation of AI ethics",
-      description:
-        "AI raises ethical questions about bias, agency, and responsibility that resist easy answers. This longform lays out six open dilemmas, from explainability to labor displacement, and examines existing governance proposals and their practical limitations...",
     },
     {
       id: "science-005",
@@ -639,6 +640,17 @@ const articles: Record<string, Article[]> = {
         "Biohacking sits at the intersection of curiosity and risk, and some experiments have provoked ethical alarms. This investigative piece documents cases where DIY biology crossed lines, the consequences that followed, and how communities responded to normalize safer practices...",
     },
     {
+      id: "science-009",
+      category: "Genius & Folly",
+      title: "Quantum Computing: Six Milestones on the Road Ahead",
+      date: "June 2, 2025",
+      author: "Sofia Gutiérrez",
+      img: "/images/science-009.jpg",
+      alt: "Quantum chip closeup",
+      description:
+        "Quantum computing is advancing through incremental technical breakthroughs and conceptual milestones. This explanatory article outlines six markers—both practical and theoretical—that researchers interpret as meaningful progress toward useful quantum advantage...",
+    },
+    {
       id: "science-007",
       category: "Genius & Folly",
       title:
@@ -660,17 +672,6 @@ const articles: Record<string, Article[]> = {
       alt: "City at night with network outage overlay",
       description:
         "Network outages can cascade into public-safety and economic threats. This piece reconstructs incidents where digital infrastructure failed, the systemic vulnerabilities they exposed, and the design changes aimed at building more resilient urban systems...",
-    },
-    {
-      id: "science-009",
-      category: "Genius & Folly",
-      title: "Quantum Computing: Six Milestones on the Road Ahead",
-      date: "June 2, 2025",
-      author: "Sofia Gutiérrez",
-      img: "/images/science-009.jpg",
-      alt: "Quantum chip closeup",
-      description:
-        "Quantum computing is advancing through incremental technical breakthroughs and conceptual milestones. This explanatory article outlines six markers—both practical and theoretical—that researchers interpret as meaningful progress toward useful quantum advantage...",
     },
     {
       id: "science-010",

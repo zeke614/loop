@@ -5,6 +5,7 @@ import Grit from "../pages/frontpage/grit";
 import CorporateFailures from "../pages/frontpage/failures";
 import Forgotten from "../pages/frontpage/forgotten";
 import Hacks from "../pages/frontpage/hacks";
+import Ethics from "../pages/science/ethics";
 
 type ArticleComponent = React.ComponentType;
 
@@ -20,6 +21,7 @@ export const articleRoutes: ArticleRoutes = {
   "corporate-failures-to-better-governance": CorporateFailures,
   "forgotten-inventions": Forgotten,
   "performance-hacks": Hacks,
+  "ai-ethics-dilemmas": Ethics,
 };
 
 export const getArticleComponent = (
