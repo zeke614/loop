@@ -6,6 +6,9 @@ import CorporateFailures from "../pages/frontpage/failures";
 import Forgotten from "../pages/frontpage/forgotten";
 import Hacks from "../pages/frontpage/hacks";
 import Ethics from "../pages/science/ethics";
+import Amateurs from "../pages/science/amateurs";
+import Biomimicry from "../pages/science/biomimicry";
+import SpaceMining from "../pages/science/space";
 
 type ArticleComponent = React.ComponentType;
 
@@ -22,6 +25,9 @@ export const articleRoutes: ArticleRoutes = {
   "forgotten-inventions": Forgotten,
   "performance-hacks": Hacks,
   "ai-ethics-dilemmas": Ethics,
+  "amateur-inventors": Amateurs,
+  "tech-in-nature": Biomimicry,
+  "space-junk-to-mining": SpaceMining,
 };
 
 export const getArticleComponent = (

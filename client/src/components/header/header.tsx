@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-none">
       <div
-        className="max-w-7xl md:mx-auto sm:mx-3 mx-3 mt-2 rounded-full
+        className="max-w-7xl md:mx-auto sm:mx-3 mx-3 mt-1.5 rounded-full
                bg-white/20 backdrop-blur-xl
                border border-white/30 shadow-lg
                flex items-center justify-between

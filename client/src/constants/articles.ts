@@ -1,9 +1,9 @@
 // import forest from "../assets/imgs/forest.png";
-// import movie from "../assets/imgs/movie.png";
-// import bacteria from "../assets/imgs/bacteria.png";
-// import finance from "../assets/imgs/finance.jpg";
+import spaceJunk from "../assets/imgs/spaceJunk.jpg";
+import biomimicry from "../assets/imgs/biomimicry.webp";
+import amateur from "../assets/imgs/amateur.jpg";
 import recyclingPlant from "../assets/imgs/recyclingPlant.jpg";
-import ruins from "../assets/imgs/ruins.avif";
+import ruins from "../assets/imgs/ruins.jpg";
 import lab from "../assets/imgs/lab.avif";
 import sports from "../assets/imgs/sports.avif";
 import boardroom from "../assets/imgs/boardroom.jpg";
@@ -574,17 +574,6 @@ const articles: Record<string, Article[]> = {
 
   "Genius & Folly": [
     {
-      id: "failures-to-breakthroughs",
-      category: "Genius & Folly",
-      title: "Scientific Failures That Sparked Big Discoveries",
-      date: "October 27, 2025",
-      author: "Olu Jacobs",
-      img: lab,
-      alt: "Laboratory experiment scene",
-      description:
-        "Failure is often a hidden ingredient of discovery; some experiments that 'failed' paved the way for paradigm shifts. Through archival research and interviews, this article follows six cases where apparent setbacks revealed new routes to understanding...",
-    },
-    {
       id: "ai-ethics-dilemmas",
       category: "Genius & Folly",
       title: "The Ethics of AI: Dilemmas We Still Can’t Solve",
@@ -593,7 +582,53 @@ const articles: Record<string, Article[]> = {
       img: aiEthics,
       alt: "Abstract representation of AI ethics",
       description:
-        "AI raises ethical questions about bias, agency, and responsibility that resist easy answers. This longform lays out six open dilemmas, from explainability to labor displacement, and examines existing governance proposals and their practical limitations...",
+        "Artificial intelligence promises dazzling leaps in medicine, climate modeling, education, and creativity. Yet every breakthrough seems to drag behind it a small parade of ethical thorns. The core problem isn't evil robots or runaway superintelligence—it's that our systems are becoming powerful in ways that challenge long-standing norms about fairness, duty, autonomy, and responsibility.",
+    },
+    {
+      id: "amateur-inventors",
+      category: "Genius & Folly",
+      title: "How Amateur Inventors Are Disrupting Big Tech",
+      date: "April 19, 2025",
+      author: "Marta Kovács",
+      img: amateur,
+      alt: "kid building a robot",
+      description:
+        "There's a romantic myth that all groundbreaking inventions begin in gleaming labs guarded by PhD-level gatekeepers. In reality, many of the tools we now treat as inevitable were born in garages, sheds, cramped bedrooms, and badly lit basements that smelled faintly of solder and ambition. The amateur inventor has always been the sneaky wildcard in the world of innovation—untethered from bureaucracy, unburdened by product roadmaps, and propelled mostly by stubborn curiosity. What's surprising isn't that this tradition continues. It's that it is accelerating.",
+    },
+    {
+      id: "failures-to-breakthroughs",
+      category: "Genius & Folly",
+      title: "Scientific Failures That Sparked Big Discoveries",
+      date: "October 27, 2025",
+      author: "Olu Jacobs",
+      img: lab,
+      alt: "Laboratory experiment scene",
+      description:
+        "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible.",
+    },
+    {
+      id: "tech-in-nature",
+      category: "Genius & Folly",
+      title:
+        "The Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
+      date: "February 27, 2025",
+      author: "Lin Zhou",
+      img: biomimicry,
+      alt: "Gecko climbing glass closeup",
+      description:
+        "Engineers often pride themselves on cutting-edge tools, yet many of the cleverest ideas arrive pre-installed in the living world. Plants, insects, birds, and marine life have spent billions of years refining designs humans are only beginning to notice. Biomimicry takes these natural strategies and turns them into practical technologies—sometimes simple, sometimes wildly futuristic. The examples below illustrate how looking to nature can reshape everything from architecture to robotics.",
+    },
+    {
+      id: "space-junk-to-mining",
+      category: "Genius & Folly",
+      title: "Space Junk to Space Mining: The Next Frontier of Tech",
+      date: "July 14, 2025",
+      author: "Greta Sørensen",
+      img: spaceJunk,
+      alt: "Satellites and orbitals",
+      description:
+        // "As orbital congestion grows, entrepreneurs and governments are exploring cleanup tech and extraction from asteroids. This article surveys technological possibilities, legal questions, and the environmental calculus of bringing industry into near-Earth space...",
+        " Earth's orbit is becoming a junkyard. Thousands of defunct satellites, spent rocket stages, and fragments of debris drift silently at tens of thousands of kilometers per hour. Meanwhile, on the horizon is a more ambitious dream: mining asteroids and other celestial bodies for metals, water, and resources that could fuel life and industry—beyond Earth.",
     },
     // {
     //   id: "science-001",
@@ -606,85 +641,51 @@ const articles: Record<string, Article[]> = {
     //   description:
     //     "Some inventions began as curiosities or failed projects, but later became indispensable. This exploration highlights unexpected breakthroughs—like microwave ovens, Velcro, and penicillin analogies in tech—tracing the accidents, contexts and adopters that made them transformative...",
     // },
-    {
-      id: "science-003",
-      category: "Genius & Folly",
-      title: "How Amateur Inventors Are Disrupting Big Tech",
-      date: "April 19, 2025",
-      author: "Marta Kovács",
-      img: "/images/science-003.jpg",
-      alt: "Inventor in a garage workshop",
-      description:
-        "Garage inventors and small teams have repeatedly sparked innovation by pursuing niche problems with unconventional methods. This piece profiles inventors who built impactful tools outside institutional R&D and asks what established labs can learn from grassroots ingenuity...",
-    },
-    {
-      id: "science-005",
-      category: "Genius & Folly",
-      title: "Space Junk to Space Mining: The Next Frontier of Tech",
-      date: "July 14, 2025",
-      author: "Greta Sørensen",
-      img: "/images/science-005.jpg",
-      alt: "Satellites and orbital debris",
-      description:
-        "As orbital congestion grows, entrepreneurs and governments are exploring cleanup tech and extraction from asteroids. This article surveys technological possibilities, legal questions, and the environmental calculus of bringing industry into near-Earth space...",
-    },
-    {
-      id: "science-006",
-      category: "Genius & Folly",
-      title: "Six Bio-hacks That Went Too Far — and What We Learned",
-      date: "March 23, 2025",
-      author: "Karim Hassan",
-      img: "/images/science-006.jpg",
-      alt: "Lab equipment and biohacking tools",
-      description:
-        "Biohacking sits at the intersection of curiosity and risk, and some experiments have provoked ethical alarms. This investigative piece documents cases where DIY biology crossed lines, the consequences that followed, and how communities responded to normalize safer practices...",
-    },
-    {
-      id: "science-009",
-      category: "Genius & Folly",
-      title: "Quantum Computing: Six Milestones on the Road Ahead",
-      date: "June 2, 2025",
-      author: "Sofia Gutiérrez",
-      img: "/images/science-009.jpg",
-      alt: "Quantum chip closeup",
-      description:
-        "Quantum computing is advancing through incremental technical breakthroughs and conceptual milestones. This explanatory article outlines six markers—both practical and theoretical—that researchers interpret as meaningful progress toward useful quantum advantage...",
-    },
-    {
-      id: "science-007",
-      category: "Genius & Folly",
-      title:
-        "The Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
-      date: "February 27, 2025",
-      author: "Lin Zhou",
-      img: "/images/science-007.jpg",
-      alt: "Gecko climbing glass closeup",
-      description:
-        "Nature evolved clever solutions over millennia and engineers increasingly borrow from biological designs. This article traces emblematic examples of biomimicry—what worked, what failed, and how lessons from living systems inform sustainable innovation...",
-    },
-    {
-      id: "science-008",
-      category: "Genius & Folly",
-      title: "When the Internet Goes Dark: Tech Failures That Paralyzed Cities",
-      date: "January 10, 2025",
-      author: "Beom-Jun Park",
-      img: "/images/science-008.jpg",
-      alt: "City at night with network outage overlay",
-      description:
-        "Network outages can cascade into public-safety and economic threats. This piece reconstructs incidents where digital infrastructure failed, the systemic vulnerabilities they exposed, and the design changes aimed at building more resilient urban systems...",
-    },
-    {
-      id: "science-010",
-      category: "Genius & Folly",
-      title:
-        "Why Some Innovations Succeed and Others Vanish: A Sociotechnical Study",
-      date: "November 18, 2025",
-      author: "Alejandro Ruiz",
-      img: "/images/science-010.jpg",
-      alt: "Old technology in a display case",
-      description:
-        "An invention’s fate depends on networks, timing, regulation and narratives as much as engineering. This analytical study examines historical cases to map the social and technical conditions that turn inventions into enduring tools or forgotten curiosities...",
-    },
+    // {
+    //   id: "science-006",
+    //   category: "Genius & Folly",
+    //   title: "Six Bio-hacks That Went Too Far — and What We Learned",
+    //   date: "March 23, 2025",
+    //   author: "Karim Hassan",
+    //   img: "/images/science-006.jpg",
+    //   alt: "Lab equipment and biohacking tools",
+    //   description:
+    //     "Biohacking sits at the intersection of curiosity and risk, and some experiments have provoked ethical alarms. This investigative piece documents cases where DIY biology crossed lines, the consequences that followed, and how communities responded to normalize safer practices...",
+    // },
+    // {
+    //   id: "science-009",
+    //   category: "Genius & Folly",
+    //   title: "Quantum Computing: Six Milestones on the Road Ahead",
+    //   date: "June 2, 2025",
+    //   author: "Sofia Gutiérrez",
+    //   img: "/images/science-009.jpg",
+    //   alt: "Quantum chip closeup",
+    //   description:
+    //     "Quantum computing is advancing through incremental technical breakthroughs and conceptual milestones. This explanatory article outlines six markers—both practical and theoretical—that researchers interpret as meaningful progress toward useful quantum advantage...",
+    // },
+    // {
+    //   id: "science-008",
+    //   category: "Genius & Folly",
+    //   title: "When the Internet Goes Dark: Tech Failures That Paralyzed Cities",
+    //   date: "January 10, 2025",
+    //   author: "Beom-Jun Park",
+    //   img: "/images/science-008.jpg",
+    //   alt: "City at night with network outage overlay",
+    //   description:
+    //     "Network outages can cascade into public-safety and economic threats. This piece reconstructs incidents where digital infrastructure failed, the systemic vulnerabilities they exposed, and the design changes aimed at building more resilient urban systems...",
+    // },
+    // {
+    //   id: "science-010",
+    //   category: "Genius & Folly",
+    //   title:
+    //     "Why Some Innovations Succeed and Others Vanish: A Sociotechnical Study",
+    //   date: "November 18, 2025",
+    //   author: "Alejandro Ruiz",
+    //   img: "/images/science-010.jpg",
+    //   alt: "Old technology in a display case",
+    //   description:
+    //     "An invention’s fate depends on networks, timing, regulation and narratives as much as engineering. This analytical study examines historical cases to map the social and technical conditions that turn inventions into enduring tools or forgotten curiosities...",
+    // },
   ],
 
   "Time Capsule": [
