@@ -9,6 +9,8 @@ import Ethics from "../pages/science/ethics";
 import Amateurs from "../pages/science/amateurs";
 import Biomimicry from "../pages/science/biomimicry";
 import SpaceMining from "../pages/science/space";
+import Worklife from "../pages/life/worklife";
+import Intimacy from "../pages/life/intimacy";
 
 type ArticleComponent = React.ComponentType;
 
@@ -28,6 +30,8 @@ export const articleRoutes: ArticleRoutes = {
   "amateur-inventors": Amateurs,
   "tech-in-nature": Biomimicry,
   "space-junk-to-mining": SpaceMining,
+  "work-life-balance": Worklife,
+  "digital-intimacy": Intimacy,
 };
 
 export const getArticleComponent = (

@@ -1,4 +1,4 @@
-// import forest from "../assets/imgs/forest.png";
+import worklife from "../assets/imgs/worklife.jpg";
 import spaceJunk from "../assets/imgs/spaceJunk.jpg";
 import biomimicry from "../assets/imgs/biomimicry.webp";
 import amateur from "../assets/imgs/amateur.jpg";
@@ -10,6 +10,7 @@ import boardroom from "../assets/imgs/boardroom.jpg";
 import psyche from "../assets/imgs/psyche.jpg";
 import typewriter from "../assets/imgs/typewriter.jpg";
 import aiEthics from "../assets/imgs/aiEthics.png";
+import intimacy from "../assets/imgs/intimacy.jpg";
 
 interface Article {
   id: string;
@@ -105,6 +106,17 @@ const articles: Record<string, Article[]> = {
   ],
   "Human Currents": [
     {
+      id: "work-life-balance",
+      category: "Human Currents",
+      title:
+        "The Evolution of Work-Life Balance: From 1950s Office to Remote Nomad",
+      date: "May 2, 2025",
+      author: "Omar K. Benson",
+      img: worklife,
+      alt: "Vintage office and modern remote workspace split image",
+      description: `Work hasn't just changed — the very idea of what a "workday" is has mutated across decades of policy, technology, and culture. The journey from the postwar cubicle age to the era of remote nomads is less a straight line and more a renegotiation of what humans owe their jobs and what they owe their lives.`,
+    },
+    {
       id: "performance-hacks",
       category: "Human Currents",
       title:
@@ -115,6 +127,17 @@ const articles: Record<string, Article[]> = {
       alt: "Athlete closing eyes before a race",
       description:
         "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
+    },
+    {
+      id: "digital-intimacy",
+      category: "Human Currents",
+      title: "How Digital Intimacy Is Changing the Way We Date and Relate",
+      date: "July 5, 2025",
+      author: "Kai Mwangi",
+      img: intimacy,
+      alt: "Two phones with chat bubbles overlapping",
+      description:
+        "Dating apps, video calls, and social feeds have remapped the geography of intimacy, creating novel opportunities and novel anxieties. Drawing on studies and first-person accounts, this article tracks the rituals, etiquette and psychological consequences of love mediated by screens.",
     },
     {
       id: "human-001",
@@ -140,18 +163,6 @@ const articles: Record<string, Article[]> = {
         "From neighborhood newsletters to niche online forums, small, tightly knit groups are regaining cultural influence once held by mass outlets. This deep dive looks at case studies where micro-communities shaped policy, launched creators, and rebuilt trust in information flows...",
     },
     {
-      id: "human-004",
-      category: "Human Currents",
-      title:
-        "The Evolution of Work-Life Balance: From 1950s Office to Remote Nomad",
-      date: "May 2, 2025",
-      author: "Omar K. Benson",
-      img: "",
-      alt: "Vintage office and modern remote workspace split image",
-      description:
-        "Work has shifted from fixed hours and brick offices to distributed schedules and digital nomadism, but the cultural negotiations continue. This essay traces policies, technologies, and personal practices that reshaped how people think about time, productivity and family life across generations...",
-    },
-    {
       id: "human-005",
       category: "Human Currents",
       title:
@@ -162,17 +173,6 @@ const articles: Record<string, Article[]> = {
       alt: "People participating in a traditional ritual",
       description:
         "Rituals anchor communities with rhythms, shared language and symbolic acts — and many ancient practices still thrive in contemporary contexts. This piece visits seven living traditions to reveal how rituals adapt and why they remain essential to human belonging...",
-    },
-    {
-      id: "human-006",
-      category: "Human Currents",
-      title: "How Digital Intimacy Is Changing the Way We Date and Relate",
-      date: "July 5, 2025",
-      author: "Kai Mwangi",
-      img: "",
-      alt: "Two phones with chat bubbles overlapping",
-      description:
-        "Dating apps, video calls, and social feeds have remapped the geography of intimacy, creating novel opportunities and novel anxieties. Drawing on studies and first-person accounts, this article tracks the rituals, etiquette and psychological consequences of love mediated by screens...",
     },
     {
       id: "human-007",
@@ -219,7 +219,7 @@ const articles: Record<string, Article[]> = {
       img: "",
       alt: "People in a supportive circle",
       description:
-        "Loneliness has medical, social and economic consequences, but solutions are emerging from unlikely places — libraries, co-housing and peer networks. This investigation surveys interventions that actually reduce isolation and how local design can rebuild meaningful connection...",
+        "Loneliness has medical, social and economic consequences, but solutions are emerging from unlikely places—libraries, co-housing and peer networks. This investigation surveys interventions that actually reduce isolation and how local design can rebuild meaningful connection.",
     },
   ],
   "The Living Planet": [

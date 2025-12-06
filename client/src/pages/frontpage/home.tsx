@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import FrontPageArticleCard from "../frontpage/frontPageCard";
+import Newsletter from "../../components/newsletter";
 
 const getFirstName = (user: any) => {
   if (!user) return "";
@@ -66,7 +67,7 @@ export default function Home() {
   const displayName = getFirstName(user);
 
   return (
-    <div className="py-10 mb-10">
+    <div className="pt-10">
       <h1 className="text-center text-2xl mt-10 font-medium">
         {user ? (
           <>
@@ -81,6 +82,7 @@ export default function Home() {
         Your next great discovery starts below.
       </p>
       <FrontPageArticleCard />
+      <Newsletter />
     </div>
   );
 }

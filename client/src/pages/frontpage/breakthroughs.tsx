@@ -112,7 +112,7 @@ const textVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.35,
+      duration: 0.2,
       ease: "easeOut",
       delay: 0.05,
     },
@@ -306,7 +306,7 @@ export default function Breakthroughs() {
           </div>
         </AnimatedSection>
 
-        <div className="my-14 space-y-14">
+        <div className="my-10 space-y-14">
           {breakthroughs.map((breakthrough, index) => (
             <BreakthroughItem
               key={index}
