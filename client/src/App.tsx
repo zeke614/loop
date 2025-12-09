@@ -42,7 +42,6 @@ function App() {
         <Route path="legacy" element={<Legacy />} />
         <Route path="finance" element={<Finance />} />
         <Route path="info" element={<Info />} />
-        <Route path="articles/:articleId" element={<ArticlePage />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Route>
 
@@ -53,6 +52,7 @@ function App() {
       <Route path="settings/passwordReset" element={<PasswordReset />} />
       <Route path="forgotPassword" element={<ForgotPassword />} />
       <Route path="settings/displayNameReset" element={<UsernameReset />} />
+      <Route path="articles/:articleId" element={<ArticlePage />} />
     </Routes>
   );
 }

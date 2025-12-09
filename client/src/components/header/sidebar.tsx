@@ -70,14 +70,14 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             exit={{ y: -50, opacity: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 22 }}
             className="
-              fixed left-3.5 top-17.5 
-              w-[55%] max-w-sm max-h-[60vh]
+              fixed left-3.5 top-16.5 w-[50vw]
+               max-w-sm max-h-[60vh]
               z-50 md:hidden 
               rounded-xl shadow-xl overflow-y-auto
               backdrop-blur-xl bg-white
             "
           >
-            <div className="flex flex-col justify-between h-full py-2.5">
+            <div className="flex flex-col justify-between h-full py-2">
               <div className="flex flex-col">
                 {navLinks.map(({ path, label }: any) => {
                   const isActive = location.pathname === path;
@@ -88,7 +88,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                       key={path}
                       to={path}
                       onClick={closeMenu}
-                      className={`flex items-center gap-3 py-3 text-[1.063rem] transition-colors ${
+                      className={`flex items-center gap-3 py-2.5 text-[1.063rem] transition-colors ${
                         isActive
                           ? "border-l-4 border-black pl-2.5 font-semibold text-black"
                           : "pl-3.5 font-medium text-gray-700"

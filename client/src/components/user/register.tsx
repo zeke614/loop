@@ -69,7 +69,7 @@ export default function Register() {
 
   return (
     <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md py-15 px-7">
+      <div className="w-full max-w-md py-10 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
@@ -200,7 +200,14 @@ export default function Register() {
           </button>
         </form>
 
-        <p className="text-center text-[#6e7780] mt-10 md:text-base">
+        {/* <p className="pt-2 text-center text-[#6e7780]">
+          By continuing, you're agreeing to our{" "}
+          <Link to="/privacy" className="underline">
+            Privacy Policy
+          </Link>
+        </p> */}
+
+        <p className="text-center text-[#6e7780] mt-8 md:text-base">
           Have an account?
           <Link to="/login" className="text-[#0ab39c] ml-1 font-medium">
             Sign In

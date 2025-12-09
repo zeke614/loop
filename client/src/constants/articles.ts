@@ -11,6 +11,7 @@ import psyche from "../assets/imgs/psyche.jpg";
 import typewriter from "../assets/imgs/typewriter.jpg";
 import aiEthics from "../assets/imgs/aiEthics.png";
 import intimacy from "../assets/imgs/intimacy.jpg";
+import college from "../assets/imgs/college.jpg";
 
 interface Article {
   id: string;
@@ -67,7 +68,7 @@ const articles: Record<string, Article[]> = {
       img: sports,
       alt: "Athlete celebrating a comeback win",
       description:
-        "Resilience in sport rarely arrives neatly wrapped; it erupts in moments when defeat seems inevitable and adrenaline rewrites the script. This feature revisits five astonishing comebacks across different eras and disciplines, examining not just the scorelines but the psychological swings, tactical recalibrations, and cultural ripples they left behind. These are the matches that turned despair into legend…",
+        "Resilience in sport rarely arrives neatly wrapped; it erupts in moments when defeat seems inevitable and adrenaline rewrites the script. This feature revisits five astonishing comebacks across different eras and disciplines, examining not just the scorelines but the psychological swings, tactical recalibrations, and cultural ripples they left behind. These are the matches that turned despair into legend.",
     },
     {
       id: "corporate-failures-to-better-governance",
@@ -78,7 +79,7 @@ const articles: Record<string, Article[]> = {
       img: boardroom,
       alt: "Boardroom with empty chairs",
       description:
-        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
+        "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands.",
     },
     {
       id: "performance-hacks",
@@ -129,6 +130,17 @@ const articles: Record<string, Article[]> = {
         "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
     },
     {
+      id: "toughest-colleges-to-get-into",
+      category: "Human Currents",
+      title:
+        "The Hardest Colleges to Get Into Today — And What Makes Them So Selective",
+      date: "March 19, 2025",
+      author: "Marcus Ibekwe",
+      img: college,
+      alt: "College graduates holding caps in the air",
+      description: `Selectivity has become its own global sport. As applications surge and digital recruitment expands the applicant pool, a handful of institutions now admit only a tiny fraction of hopefuls. A low acceptance rate isn't a guarantee of "better education", but it does reflect capacity limits, intense demand, and decades of reputation-building.`,
+    },
+    {
       id: "digital-intimacy",
       category: "Human Currents",
       title: "How Digital Intimacy Is Changing the Way We Date and Relate",
@@ -137,69 +149,10 @@ const articles: Record<string, Article[]> = {
       img: intimacy,
       alt: "Two phones with chat bubbles overlapping",
       description:
-        "Dating apps, video calls, and social feeds have remapped the geography of intimacy, creating novel opportunities and novel anxieties. Drawing on studies and first-person accounts, this article tracks the rituals, etiquette and psychological consequences of love mediated by screens.",
+        "Digital intimacy used to mean sending a late-night text. Now it's a whole emotional ecosystem built from notifications, swipes, voice notes, and tiny glowing screens that follow us everywhere. Romance hasn't disappeared; it's simply migrated into a new environment—one where desire, anxiety, connection, and misunderstanding all play by updated rules.",
     },
     {
-      id: "human-001",
-      category: "Human Currents",
-      title: "Five Subcultures That Redefined Fashion in the 21st Century",
-      date: "February 3, 2025",
-      author: "Lena Duarte",
-      img: "",
-      alt: "Street fashion crowd in Tokyo",
-      description:
-        "Exploring how underground movements—from Harajuku street style to Afrofuturism—converged with mainstream fashion, changing runways, retail and identity in subtle and seismic ways. This piece traces designers, communities, and moments that turned fringe looks into global statements, and shows how cultural exchange reshaped aesthetics across continents...",
-    },
-    {
-      id: "human-002",
-      category: "Human Currents",
-      title:
-        "The Quiet Rise of Micro-Communities: How Local Networks Are Replacing Mass Media",
-      date: "March 19, 2025",
-      author: "Marcus Ibekwe",
-      img: "",
-      alt: "Community members sharing around a table",
-      description:
-        "From neighborhood newsletters to niche online forums, small, tightly knit groups are regaining cultural influence once held by mass outlets. This deep dive looks at case studies where micro-communities shaped policy, launched creators, and rebuilt trust in information flows...",
-    },
-    {
-      id: "human-005",
-      category: "Human Currents",
-      title:
-        "Seven Rituals of Connection From Across the Globe That Survive Modernity",
-      date: "June 25, 2025",
-      author: "Nadia Fernández",
-      img: "",
-      alt: "People participating in a traditional ritual",
-      description:
-        "Rituals anchor communities with rhythms, shared language and symbolic acts — and many ancient practices still thrive in contemporary contexts. This piece visits seven living traditions to reveal how rituals adapt and why they remain essential to human belonging...",
-    },
-    {
-      id: "human-007",
-      category: "Human Currents",
-      title:
-        "Five Times the 'Self-Help' Movement Tangibly Shifted Society’s Mindset",
-      date: "August 29, 2025",
-      author: "Elise Moretti",
-      img: "",
-      alt: "Books and journals on a table",
-      description:
-        "From productivity mantras to therapeutic trends, the self-help industry has periodically reshaped values, labor practices, and public health approaches. This history tracks five moments where self-improvement narratives migrated into policy, workplace design, and cultural norms...",
-    },
-    {
-      id: "human-008",
-      category: "Human Currents",
-      title:
-        "Cultural Appropriation vs. Cultural Exchange: A Deep Dive Through Case Studies",
-      date: "September 12, 2025",
-      author: "Sanjay Rao",
-      img: "",
-      alt: "Collage of cultural artifacts",
-      description:
-        "The line between homage and harm often depends on context, power, and intent. Through concrete case studies in music, fashion, and cuisine, this article clarifies the ethical questions and offers frameworks for creators and consumers navigating cultural borrowing...",
-    },
-    {
-      id: "human-009",
+      id: "hidden-lives-of-gig-workers",
       category: "Human Currents",
       title: "The Hidden Lives of Gig Workers: Stories from the New Economy",
       date: "October 17, 2025",
@@ -207,20 +160,67 @@ const articles: Record<string, Article[]> = {
       img: "",
       alt: "Delivery rider taking a break",
       description:
-        "Gig work reshaped incomes, schedules, and expectations about stability — but behind the statistics are human stories of resilience, risk and reinvention. This longform narrative follows five workers across regions to reveal the real tradeoffs and survival strategies of platform labor...",
+        "Gig work reshaped incomes, schedules, and expectations about stability — but behind the statistics are human stories of resilience, risk and reinvention. This longform narrative follows five workers across regions to reveal the real tradeoffs and survival strategies of platform labor.",
     },
-    {
-      id: "human-010",
-      category: "Human Currents",
-      title:
-        "How Loneliness Became a Global Epidemic — And What Communities Are Doing About It",
-      date: "November 23, 2025",
-      author: "Theo Ramsey",
-      img: "",
-      alt: "People in a supportive circle",
-      description:
-        "Loneliness has medical, social and economic consequences, but solutions are emerging from unlikely places—libraries, co-housing and peer networks. This investigation surveys interventions that actually reduce isolation and how local design can rebuild meaningful connection.",
-    },
+    // {
+    //   id: "human-001",
+    //   category: "Human Currents",
+    //   title: "Five Subcultures That Redefined Fashion in the 21st Century",
+    //   date: "February 3, 2025",
+    //   author: "Lena Duarte",
+    //   img: "",
+    //   alt: "Street fashion crowd in Tokyo",
+    //   description:
+    //     "Exploring how underground movements—from Harajuku street style to Afrofuturism—converged with mainstream fashion, changing runways, retail and identity in subtle and seismic ways. This piece traces designers, communities, and moments that turned fringe looks into global statements, and shows how cultural exchange reshaped aesthetics across continents.",
+    // },
+    // {
+    //   id: "human-005",
+    //   category: "Human Currents",
+    //   title:
+    //     "Seven Rituals of Connection From Across the Globe That Survive Modernity",
+    //   date: "June 25, 2025",
+    //   author: "Nadia Fernández",
+    //   img: "",
+    //   alt: "People participating in a traditional ritual",
+    //   description:
+    //     "Rituals anchor communities with rhythms, shared language and symbolic acts — and many ancient practices still thrive in contemporary contexts. This piece visits seven living traditions to reveal how rituals adapt and why they remain essential to human belonging...",
+    // },
+    // {
+    //   id: "human-007",
+    //   category: "Human Currents",
+    //   title:
+    //     "Five Times the 'Self-Help' Movement Tangibly Shifted Society’s Mindset",
+    //   date: "August 29, 2025",
+    //   author: "Elise Moretti",
+    //   img: "",
+    //   alt: "Books and journals on a table",
+    //   description:
+    //     "From productivity mantras to therapeutic trends, the self-help industry has periodically reshaped values, labor practices, and public health approaches. This history tracks five moments where self-improvement narratives migrated into policy, workplace design, and cultural norms...",
+    // },
+    // {
+    //   id: "human-008",
+    //   category: "Human Currents",
+    //   title:
+    //     "Cultural Appropriation vs. Cultural Exchange: A Deep Dive Through Case Studies",
+    //   date: "September 12, 2025",
+    //   author: "Sanjay Rao",
+    //   img: "",
+    //   alt: "Collage of cultural artifacts",
+    //   description:
+    //     "The line between homage and harm often depends on context, power, and intent. Through concrete case studies in music, fashion, and cuisine, this article clarifies the ethical questions and offers frameworks for creators and consumers navigating cultural borrowing...",
+    // },
+    // {
+    //   id: "human-010",
+    //   category: "Human Currents",
+    //   title:
+    //     "How Loneliness Became a Global Epidemic — And What Communities Are Doing About It",
+    //   date: "November 23, 2025",
+    //   author: "Theo Ramsey",
+    //   img: "",
+    //   alt: "People in a supportive circle",
+    //   description:
+    //     "Loneliness has medical, social and economic consequences, but solutions are emerging from unlikely places—libraries, co-housing and peer networks. This investigation surveys interventions that actually reduce isolation and how local design can rebuild meaningful connection.",
+    // },
   ],
   "The Living Planet": [
     {

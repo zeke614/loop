@@ -11,6 +11,7 @@ import Biomimicry from "../pages/science/biomimicry";
 import SpaceMining from "../pages/science/space";
 import Worklife from "../pages/life/worklife";
 import Intimacy from "../pages/life/intimacy";
+import Colleges from "../pages/life/colleges";
 
 type ArticleComponent = React.ComponentType;
 
@@ -32,6 +33,7 @@ export const articleRoutes: ArticleRoutes = {
   "space-junk-to-mining": SpaceMining,
   "work-life-balance": Worklife,
   "digital-intimacy": Intimacy,
+  "toughest-colleges-to-get-into": Colleges,
 };
 
 export const getArticleComponent = (

@@ -9,7 +9,7 @@ export default function Newsletter() {
       />
 
       <div className="relative max-w-xl mx-auto text-center space-y-6">
-        <h2 className="text-3xl font-semibold">Stay in the 'loop'</h2>
+        <h2 className="text-2xl font-semibold">Stay in the 'loop'</h2>
         <p className="text-gray-800">
           A periodic dose of insight, curiosity, and updates—minus the spammy
           nonsense.
@@ -23,7 +23,7 @@ export default function Newsletter() {
           />
           <button
             type="submit"
-            className="px-6 py-3 rounded-full bg-black text-white font-medium hover:opacity-80 transition"
+            className="px-8 py-3.5 rounded-full bg-black text-white font-medium hover:opacity-80 transition"
           >
             Subscribe
           </button>

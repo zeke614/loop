@@ -70,16 +70,16 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
-      <div className="w-full max-w-md py-15 px-7">
+      <div className="w-full max-w-md py-10 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
 
         <Link to="/">
-          <HomeModernIcon className="size-5 mb-8" />
+          <HomeModernIcon className="size-5 mb-7" />
         </Link>
 
-        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
+        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-2">
           Sign in
         </h1>
         <p className="text-center text-[#6e7780] mb-8">
@@ -130,7 +130,7 @@ export default function Login() {
             )}
           </div>
 
-          <div className="flex items-center justify-between mt-3 text-[0.938rem] px-1">
+          <div className="flex items-center justify-between -mt-2 text-[0.938rem] px-1">
             <label className="flex items-center space-x-1.5 cursor-pointer">
               <input
                 type="checkbox"
@@ -200,7 +200,14 @@ export default function Login() {
           </button>
         </div>
 
-        <p className="text-center text-[#6e7780] mt-10">
+        {/* <p className="pt-2 text-center text-[#6e7780]">
+          By continuing, you're agreeing to our{" "}
+          <Link to="/privacy" className="underline">
+            Privacy Policy
+          </Link>
+        </p> */}
+
+        <p className="text-center text-[#6e7780] mt-8">
           New here?
           <Link to="/register" className="text-[#0ab39c] ml-1 font-medium">
             Sign Up

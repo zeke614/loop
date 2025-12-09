@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function ForgotPasswordPage() {
@@ -24,12 +23,12 @@ export default function ForgotPasswordPage() {
   return (
     <div className="min-h-[100dvh] bg-white w-full max-w-md mx-auto px-4 pt-10 flex flex-col">
       <div>
-        <Link
-          to="/settings/details"
+        <button
+          onClick={() => window.history.back()}
           className="inline-flex items-center font-medium transition-colors mb-7"
         >
           <ChevronLeftIcon className="size-5.5 -ml-1" />
-        </Link>
+        </button>
 
         <h3 className="text-2xl font-bold mb-3.5">Forgot Password</h3>
 

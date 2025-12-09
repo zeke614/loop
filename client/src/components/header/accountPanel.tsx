@@ -36,7 +36,7 @@ export default function AccountPanel({
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
             className="
-              fixed top-17.5 right-4 md:top-19 md:right-12 z-50
+              fixed top-16.5 right-4 md:top-19 md:right-12 z-50
               flex flex-col items-end gap-2.5
             "
           >

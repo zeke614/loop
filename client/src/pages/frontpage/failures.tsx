@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { ChevronUpIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
+import { BackToTopButton } from "../../components/scrollToTop";
 
 import enron from "../../assets/imgs/enron.jpg";
 import worldcom from "../../assets/imgs/worldCom.png";
@@ -173,33 +174,6 @@ function AnimatedSection({
   );
 }
 
-function BackToTopButton({ showBackToTop }: { showBackToTop: boolean }) {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  return (
-    <AnimatePresence>
-      {showBackToTop && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 md:bottom-12 md:right-42 z-50 p-2.5 bg-[#0ab39c] text-white rounded-full shadow-lg hover:bg-[#089c8a] transition-all duration-200 hover:shadow-xl"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <ChevronUpIcon className="size-4.5" />
-        </motion.button>
-      )}
-    </AnimatePresence>
-  );
-}
-
 function FailureItem({
   failure,
 }: {
@@ -253,12 +227,18 @@ export default function CorporateFailures() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className="text-start pb-24 px-4 mx-auto max-w-4xl relative"
+        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
       >
         <BackToTopButton showBackToTop={showBackToTop} />
 
         <AnimatedSection>
-          <div className="overflow-hidden mb-4 -mx-4">
+          <div className="relative overflow-hidden mb-4 -mx-4">
+            <div
+              onClick={() => window.history.back()}
+              className="absolute left-2 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
+            >
+              <ChevronLeftIcon className="size-4.5" />
+            </div>
             <motion.img
               src={articleData.img}
               alt={articleData.alt}
