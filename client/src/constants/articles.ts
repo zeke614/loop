@@ -12,6 +12,7 @@ import typewriter from "../assets/imgs/typewriter.jpg";
 import aiEthics from "../assets/imgs/aiEthics.png";
 import intimacy from "../assets/imgs/intimacy.jpg";
 import college from "../assets/imgs/college.jpg";
+import timeWeird from "../assets/imgs/time-weird.jpg";
 
 interface Article {
   id: string;
@@ -141,6 +142,17 @@ const articles: Record<string, Article[]> = {
       description: `Selectivity has become its own global sport. As applications surge and digital recruitment expands the applicant pool, a handful of institutions now admit only a tiny fraction of hopefuls. A low acceptance rate isn't a guarantee of "better education", but it does reflect capacity limits, intense demand, and decades of reputation-building.`,
     },
     {
+      id: "how-time-got-weird",
+      category: "Human Currents",
+      title: "How Time Got Weird: Why Everyone Feels Like Life Is Speeding Up",
+      date: "June 25, 2025",
+      author: "Mira Solanke",
+      img: timeWeird,
+      alt: "People participating in a traditional ritual",
+      description:
+        "Across conversations, journals, therapy rooms, and social feeds, one idea keeps surfacing: the sense that time has slipped into fast-forward. Weeks blur, years feel compressed, and even memories from 2019 feel strangely distant.",
+    },
+    {
       id: "digital-intimacy",
       category: "Human Currents",
       title: "How Digital Intimacy Is Changing the Way We Date and Relate",
@@ -151,17 +163,17 @@ const articles: Record<string, Article[]> = {
       description:
         "Digital intimacy used to mean sending a late-night text. Now it's a whole emotional ecosystem built from notifications, swipes, voice notes, and tiny glowing screens that follow us everywhere. Romance hasn't disappeared; it's simply migrated into a new environment—one where desire, anxiety, connection, and misunderstanding all play by updated rules.",
     },
-    {
-      id: "hidden-lives-of-gig-workers",
-      category: "Human Currents",
-      title: "The Hidden Lives of Gig Workers: Stories from the New Economy",
-      date: "October 17, 2025",
-      author: "Mariela Santos",
-      img: "",
-      alt: "Delivery rider taking a break",
-      description:
-        "Gig work reshaped incomes, schedules, and expectations about stability — but behind the statistics are human stories of resilience, risk and reinvention. This longform narrative follows five workers across regions to reveal the real tradeoffs and survival strategies of platform labor.",
-    },
+    // {
+    //   id: "hidden-lives-of-gig-workers",
+    //   category: "Human Currents",
+    //   title: "The Hidden Lives of Gig Workers: Stories from the New Economy",
+    //   date: "October 17, 2025",
+    //   author: "Mariela Santos",
+    //   img: "",
+    //   alt: "Delivery rider taking a break",
+    //   description:
+    //     "Gig work reshaped incomes, schedules, and expectations about stability — but behind the statistics are human stories of resilience, risk and reinvention. This longform narrative follows five workers across regions to reveal the real tradeoffs and survival strategies of platform labor.",
+    // },
     // {
     //   id: "human-001",
     //   category: "Human Currents",
@@ -173,17 +185,6 @@ const articles: Record<string, Article[]> = {
     //   description:
     //     "Exploring how underground movements—from Harajuku street style to Afrofuturism—converged with mainstream fashion, changing runways, retail and identity in subtle and seismic ways. This piece traces designers, communities, and moments that turned fringe looks into global statements, and shows how cultural exchange reshaped aesthetics across continents.",
     // },
-    // {
-    //   id: "human-005",
-    //   category: "Human Currents",
-    //   title:
-    //     "Seven Rituals of Connection From Across the Globe That Survive Modernity",
-    //   date: "June 25, 2025",
-    //   author: "Nadia Fernández",
-    //   img: "",
-    //   alt: "People participating in a traditional ritual",
-    //   description:
-    //     "Rituals anchor communities with rhythms, shared language and symbolic acts — and many ancient practices still thrive in contemporary contexts. This piece visits seven living traditions to reveal how rituals adapt and why they remain essential to human belonging...",
     // },
     // {
     //   id: "human-007",

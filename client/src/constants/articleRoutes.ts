@@ -12,6 +12,7 @@ import SpaceMining from "../pages/science/space";
 import Worklife from "../pages/life/worklife";
 import Intimacy from "../pages/life/intimacy";
 import Colleges from "../pages/life/colleges";
+import Weird from "../pages/life/weird";
 
 type ArticleComponent = React.ComponentType;
 
@@ -34,6 +35,7 @@ export const articleRoutes: ArticleRoutes = {
   "work-life-balance": Worklife,
   "digital-intimacy": Intimacy,
   "toughest-colleges-to-get-into": Colleges,
+  "how-time-got-weird": Weird,
 };
 
 export const getArticleComponent = (

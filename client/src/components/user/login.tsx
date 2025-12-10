@@ -19,7 +19,7 @@ export default function Login() {
   const { login } = useAuth();
   // const [forgotOpen, setForgotOpen] = useState(false);
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });

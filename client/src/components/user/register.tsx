@@ -17,7 +17,7 @@ export default function Register() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
