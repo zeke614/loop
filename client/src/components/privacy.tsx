@@ -1,17 +1,11 @@
-import { Link } from "react-router-dom";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-white py-25 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen bg-white py-23 sm:py-25 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-7">
-          <Link
-            to="/"
-            className="inline-flex items-center font-medium transition-colors"
-          >
-            <ChevronLeftIcon className="size-5.5 -ml-1" />
-          </Link>
+        <div onClick={() => window.history.back()} className="mb-7">
+          <ChevronLeftIcon className="size-5.5 -ml-1" />
         </div>
 
         <div className="border-b border-gray-200 pb-8 mb-10">

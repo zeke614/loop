@@ -36,8 +36,8 @@ export default function AccountPanel({
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
             className="
-              fixed top-16.5 right-4 md:top-19 md:right-12 z-50
-              flex flex-col items-end gap-2.5
+              fixed top-16.5 right-4 md:top-19 md:right-28 z-50
+              flex flex-col items-end gap-2.5 text-[0.9375rem]
             "
           >
             <Link
@@ -50,7 +50,7 @@ export default function AccountPanel({
                 flex items-center gap-2
               "
             >
-              <BookmarkIcon className="size-5" /> Saved
+              <BookmarkIcon className="size-4.5" /> Saved
             </Link>
 
             <Link
@@ -63,7 +63,7 @@ export default function AccountPanel({
                 flex items-center gap-2
               "
             >
-              <Cog6ToothIcon className="size-5" /> Settings
+              <Cog6ToothIcon className="size-4.5" /> Settings
             </Link>
 
             <button
@@ -75,7 +75,7 @@ export default function AccountPanel({
                 flex items-center gap-2 cursor-pointer
               "
             >
-              <ArrowRightStartOnRectangleIcon className="size-5" />
+              <ArrowRightStartOnRectangleIcon className="size-4.5" />
               Sign Out
             </button>
 

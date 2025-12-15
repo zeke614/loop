@@ -1,8 +1,14 @@
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+
 export default function Info() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center pt-27 pb-12 px-7 md:px-8">
+    <div className="min-h-screen bg-white flex flex-col items-center pt-23 sm:pt-25 pb-12 px-7 md:px-8">
       <div className="max-w-2xl w-full space-y-16">
         <section className="space-y-6 text-left">
+          <div onClick={() => window.history.back()} className="mb-7">
+            <ChevronLeftIcon className="size-5.5 -ml-1" />
+          </div>
+
           <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
             About Loop
           </h1>

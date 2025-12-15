@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import articles from "../../constants/articles";
 import BookmarkPopup from "../../components/bookmark";
 import AnimatedArticleCard from "../../components/articleCard";
+import Newsletter from "../../components/newsletter";
 
 interface Article {
   id: string;
@@ -15,9 +16,9 @@ interface Article {
   description: string;
 }
 
-export default function Science() {
-  const geniusAndFollyArticles: Article[] =
-    (articles as any)["Genius & Folly"] || [];
+export default function Legacy() {
+  const timeCapsuleArticles: Article[] =
+    (articles as any)["Time Capsule"] || [];
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
@@ -43,8 +44,8 @@ export default function Science() {
       setPopUpType("removed");
     } else {
       newSaved = [...saved, article];
-      setPopUpType("added");
       setPopUp(true);
+      setPopUpType("added");
     }
 
     localStorage.setItem("savedLoopArticles", JSON.stringify(newSaved));
@@ -63,11 +64,11 @@ export default function Science() {
   return (
     <div className="py-10">
       <h1 className="text-center text-[1.375rem] mt-9 font-medium">
-        Genius and Folly
+        Time Capsule
       </h1>
 
       <p className="text-center text-[#767676]  text-lg">
-        Where brilliance meets beautiful mistakes.{" "}
+        Echoes from the past, still making noise.{" "}
       </p>
 
       <motion.div
@@ -76,7 +77,7 @@ export default function Science() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative"
       >
-        {geniusAndFollyArticles.map((article) => {
+        {timeCapsuleArticles.map((article) => {
           const isSaved = savedIds.includes(article.id);
 
           return (
@@ -100,6 +101,8 @@ export default function Science() {
           )}
         </AnimatePresence>
       </motion.div>
+
+      <Newsletter />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {
   IdentificationIcon,
   AtSymbolIcon,
-  LockClosedIcon,
+  ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 
 export default function Settings() {
@@ -45,7 +45,7 @@ export default function Settings() {
         <Link to="/settings/security" className="group">
           <div className="h-full p-6 bg-white rounded-2xl border border-gray-200 hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
             <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
-              <LockClosedIcon className="size-6 text-gray-600 group-hover:text-[#0ab39c]" />
+              <ShieldCheckIcon className="size-6 text-gray-600 group-hover:text-[#0ab39c]" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Security

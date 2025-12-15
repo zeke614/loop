@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import articles from "../../constants/articles";
 import BookmarkPopup from "../../components/bookmark";
 import AnimatedArticleCard from "../../components/articleCard";
+import Newsletter from "../../components/newsletter";
 
 interface Article {
   id: string;
@@ -100,6 +101,8 @@ export default function Life() {
           )}
         </AnimatePresence>
       </motion.div>
+
+      <Newsletter />
     </div>
   );
 }

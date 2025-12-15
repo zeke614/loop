@@ -13,6 +13,10 @@ import aiEthics from "../assets/imgs/aiEthics.png";
 import intimacy from "../assets/imgs/intimacy.jpg";
 import college from "../assets/imgs/college.jpg";
 import timeWeird from "../assets/imgs/time-weird.jpg";
+import fpioneer from "../assets/imgs/fpioneer.jpg";
+import foodMedicine from "../assets/imgs/foodMedicine.jpg";
+import newspaper from "../assets/imgs/newspaper.jpg";
+import collapse from "../assets/imgs/collapse.webp";
 
 interface Article {
   id: string;
@@ -480,76 +484,6 @@ const articles: Record<string, Article[]> = {
         "Some films fail commercially but thrive culturally, building passionate followings and affecting art for decades. This article traces six such journeys from initial flop to cult status and asks what this reveals about taste, distribution and fandom...",
     },
     {
-      id: "arena-003",
-      category: "Arena of Fame",
-      title:
-        "The Rise of Esports: How Virtual Arenas Are Challenging Traditional Stadiums",
-      date: "July 9, 2025",
-      author: "Zoe Park",
-      img: "/images/stage-003.jpg",
-      alt: "Esports arena with LED screens",
-      description:
-        "Esports transformed niche gaming communities into professional leagues, global audiences and massive sponsorships. This exploration charts the business models, fan practices, and infrastructural demands that make virtual competition a stadium-scale spectacle...",
-    },
-    {
-      id: "arena-004",
-      category: "Arena of Fame",
-      title: "Seven Artists Who Reinvented Themselves — And Their Industries",
-      date: "November 2, 2025",
-      author: "Rashid Alawi",
-      img: "/images/stage-004.jpg",
-      alt: "Artist mid-performance",
-      description:
-        "Creative reinvention can reshape careers and entire mediums. Through profiles of seven artists who radically changed direction, this feature uncovers the risks, strategies and cultural conditions that enable successful transformation in the public eye...",
-    },
-    {
-      id: "arena-005",
-      category: "Arena of Fame",
-      title:
-        "The Economics of Mega-Events: Olympics, World Cups & Legacy Questions",
-      date: "January 7, 2025",
-      author: "Beatrice Cole",
-      img: "/images/stage-005.jpg",
-      alt: "Stadium lit up at night",
-      description:
-        "Hosting mega-events promises jobs and prestige but often leaves mixed legacies and large debts. This analysis weighs costs, urban planning outcomes, and the lived experiences of residents in cities that hosted global spectacles...",
-    },
-    {
-      id: "arena-006",
-      category: "Arena of Fame",
-      title:
-        "When Sports and Politics Collide: Landmark Moments in Arena History",
-      date: "June 15, 2025",
-      author: "Soren Lind",
-      img: "/images/stage-006.jpg",
-      alt: "Athlete protest during an event",
-      description:
-        "From boycotts to symbolic gestures, arenas have long been stages for political expression. This historical overview examines pivotal moments when sport intersected with politics and the lasting cultural repercussions of those clashes...",
-    },
-    {
-      id: "arena-007",
-      category: "Arena of Fame",
-      title: "Behind the Curtain: How Stage Design Shapes Audience Emotion",
-      date: "August 11, 2025",
-      author: "Ivy Nakamura",
-      img: "/images/stage-007.jpg",
-      alt: "Intricate stage set design",
-      description:
-        "Set, light and sound design choreograph audience feeling as much as script or score. This piece interviews designers and directors about the craft of spatial storytelling and how physical environments guide collective experience during live shows...",
-    },
-    {
-      id: "arena-008",
-      category: "Arena of Fame",
-      title:
-        "From Stadium to Screen: The Evolution of Live Performance Broadcasts",
-      date: "April 1, 2025",
-      author: "Diego Santos",
-      img: "/images/stage-008.jpg",
-      alt: "Cameras broadcasting a live event",
-      description:
-        "Broadcasting technologies transformed how audiences consume live performance, expanding reach but changing intimacy. This article traces radio, television and streaming innovations and how the mediation of presence affects artistic choices and fan rituals...",
-    },
-    {
       id: "arena-009",
       category: "Arena of Fame",
       title: "Six Underdog Athletes Who Became Global Icons",
@@ -571,6 +505,76 @@ const articles: Record<string, Article[]> = {
       description:
         "Fan cultures do more than consume; they create communities, rituals and identity markers. This sociological account explores how fans organize, build subcultures, and influence creative industries through participation, curation and activism...",
     },
+    {
+      id: "arena-007",
+      category: "Arena of Fame",
+      title: "Behind the Curtain: How Stage Design Shapes Audience Emotion",
+      date: "August 11, 2025",
+      author: "Ivy Nakamura",
+      img: "/images/stage-007.jpg",
+      alt: "Intricate stage set design",
+      description:
+        "Set, light and sound design choreograph audience feeling as much as script or score. This piece interviews designers and directors about the craft of spatial storytelling and how physical environments guide collective experience during live shows...",
+    },
+    // {
+    //   id: "arena-003",
+    //   category: "Arena of Fame",
+    //   title:
+    //     "The Rise of Esports: How Virtual Arenas Are Challenging Traditional Stadiums",
+    //   date: "July 9, 2025",
+    //   author: "Zoe Park",
+    //   img: "/images/stage-003.jpg",
+    //   alt: "Esports arena with LED screens",
+    //   description:
+    //     "Esports transformed niche gaming communities into professional leagues, global audiences and massive sponsorships. This exploration charts the business models, fan practices, and infrastructural demands that make virtual competition a stadium-scale spectacle...",
+    // },
+    // {
+    //   id: "arena-004",
+    //   category: "Arena of Fame",
+    //   title: "Seven Artists Who Reinvented Themselves — And Their Industries",
+    //   date: "November 2, 2025",
+    //   author: "Rashid Alawi",
+    //   img: "/images/stage-004.jpg",
+    //   alt: "Artist mid-performance",
+    //   description:
+    //     "Creative reinvention can reshape careers and entire mediums. Through profiles of seven artists who radically changed direction, this feature uncovers the risks, strategies and cultural conditions that enable successful transformation in the public eye...",
+    // },
+    // {
+    //   id: "arena-005",
+    //   category: "Arena of Fame",
+    //   title:
+    //     "The Economics of Mega-Events: Olympics, World Cups & Legacy Questions",
+    //   date: "January 7, 2025",
+    //   author: "Beatrice Cole",
+    //   img: "/images/stage-005.jpg",
+    //   alt: "Stadium lit up at night",
+    //   description:
+    //     "Hosting mega-events promises jobs and prestige but often leaves mixed legacies and large debts. This analysis weighs costs, urban planning outcomes, and the lived experiences of residents in cities that hosted global spectacles...",
+    // },
+    // {
+    //   id: "arena-006",
+    //   category: "Arena of Fame",
+    //   title:
+    //     "When Sports and Politics Collide: Landmark Moments in Arena History",
+    //   date: "June 15, 2025",
+    //   author: "Soren Lind",
+    //   img: "/images/stage-006.jpg",
+    //   alt: "Athlete protest during an event",
+    //   description:
+    //     "From boycotts to symbolic gestures, arenas have long been stages for political expression. This historical overview examines pivotal moments when sport intersected with politics and the lasting cultural repercussions of those clashes...",
+    // },
+    // {
+    //   id: "arena-008",
+    //   category: "Arena of Fame",
+    //   title:
+    //     "From Stadium to Screen: The Evolution of Live Performance Broadcasts",
+    //   date: "April 1, 2025",
+    //   author: "Diego Santos",
+    //   img: "/images/stage-008.jpg",
+    //   alt: "Cameras broadcasting a live event",
+    //   description:
+    //     "Broadcasting technologies transformed how audiences consume live performance, expanding reach but changing intimacy. This article traces radio, television and streaming innovations and how the mediation of presence affects artistic choices and fan rituals...",
+    // },
   ],
 
   "Genius & Folly": [
@@ -691,6 +695,28 @@ const articles: Record<string, Article[]> = {
 
   "Time Capsule": [
     {
+      id: "overlooked-pioneers",
+      category: "Time Capsule",
+      title: "The Forgotten Scientists: Pioneers Who Didn’t Get the Credit",
+      date: "April 10, 2025",
+      author: "Laila Hassan",
+      img: fpioneer,
+      alt: "Portraits of historical scientists",
+      description:
+        "Scientific breakthroughs are rarely solo achievements, yet history books often spotlight only a handful of names. Behind every celebrated discovery are researchers whose contributions went unrecognized—sometimes for decades.",
+    },
+    {
+      id: "collapsed-empires",
+      category: "Time Capsule",
+      title: "When Empires Collapsed: Lessons From History’s Great Falls",
+      date: "February 18, 2025",
+      author: "Ibrahim Koroma",
+      img: collapse,
+      alt: "Ancient ruins and fallen columns",
+      description:
+        "Empires never imagine themselves as temporary. From Rome to the Aztecs to the Soviet Union, each believed its political machinery, cultural identity, and military strength would outlast the generations running it.",
+    },
+    {
       id: "forgotten-inventions",
       category: "Time Capsule",
       title: "Inventions Forgotten by Time That Were Ahead of Their Era",
@@ -699,7 +725,30 @@ const articles: Record<string, Article[]> = {
       img: typewriter,
       alt: "Vintage mechanical invention",
       description:
-        "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms. These are the prototypes of the future that the world wasn’t ready to adopt. This article dusts off five such inventions. They weren’t failures of imagination; they were failures of timing, infrastructure, market readiness, or sheer luck. Their stories show how an idea can be brilliant and still fall flat, and how innovation is often less about genius and more about catching the wave exactly when it rises.",
+        "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms.",
+    },
+    {
+      id: "when-food-was-medicine",
+      category: "Time Capsule",
+      title:
+        "When Food Was Medicine: Historic Diets That Influenced Civilization",
+      date: "July 30, 2025",
+      author: "Owen Gallagher",
+      img: foodMedicine,
+      alt: "Medicinal foods",
+      description:
+        "Long before pharmacies, people turned to kitchens, farms, temples, and marketplaces for healing. Ancient medical systems didn't separate diet from treatment; they treated food as chemistry, cosmology, and cultural identity.",
+    },
+    {
+      id: "newspapers-shaped-20th-century",
+      category: "Time Capsule",
+      title: "Old Media, New Lessons: How Newspapers Shaped the 20th Century",
+      date: "November 29, 2025",
+      author: "Peter Novak",
+      img: newspaper,
+      alt: "Archive of newspapers",
+      description:
+        "Newspapers were the algorithm before the algorithm — the daily engine that sorted chaos into a shared story. Across the 20th century, they didn't just report events; they organized civic life, popularized new norms, and set political agendas.",
     },
     {
       id: "architectural-ruins",
@@ -712,97 +761,52 @@ const articles: Record<string, Article[]> = {
       description:
         "Ruins invite the imagination in ways polished monuments never can. They are the bones of past civilizations, exposed to wind, rain, and time, yet still powerful enough to shift how we think about beauty, ambition, and impermanence.",
     },
-    {
-      id: "time-002",
-      category: "Time Capsule",
-      title:
-        "The Lost Cities Rediscovered: How Archaeology Is Rewriting the Past",
-      date: "January 14, 2025",
-      author: "Pablo Mendes",
-      img: "/images/time-002.jpg",
-      alt: "Ruins in a desert landscape",
-      description:
-        "New digs and remote sensing are rewriting timelines and trade networks once considered settled. This report profiles recent discoveries that changed historical narratives and the methods archaeologists used to unearth hidden chapters of human history...",
-    },
-    {
-      id: "time-003",
-      category: "Time Capsule",
-      title: "Six Cultural Movements That Vanished But Left a Mark",
-      date: "September 29, 2025",
-      author: "Rashmi Kapoor",
-      img: "/images/time-003.jpg",
-      alt: "Vintage poster collage",
-      description:
-        "Some cultural movements flame out quickly yet seed ideas that reappear later in altered forms. This piece charts six fleeting movements and traces their afterlives in music, design, politics and street practice, uncovering hidden continuities across time...",
-    },
-    {
-      id: "time-004",
-      category: "Time Capsule",
-      title: "When Empires Collapsed: Lessons From History’s Great Falls",
-      date: "February 18, 2025",
-      author: "Ibrahim Koroma",
-      img: "/images/time-004.jpg",
-      alt: "Ancient ruins and fallen columns",
-      description:
-        "Imperial collapse follows varied patterns, but common dynamics—ecology, economy, leadership—recur. This comparative essay draws lessons from multiple collapses to consider resilience, adaptation and the warning signs that institutions might be reaching breaking points...",
-    },
-    {
-      id: "time-005",
-      category: "Time Capsule",
-      title: "The Forgotten Scientists: Pioneers Who Didn’t Get the Credit",
-      date: "April 10, 2025",
-      author: "Laila Hassan",
-      img: "/images/time-005.jpg",
-      alt: "Portraits of historical scientists",
-      description:
-        "Scientific acclaim often concentrates on visible figures while others remain in the margins. This feature recovers forgotten contributors — women, collaborators and non-Western pioneers — whose work shaped discoveries but was obscured by social dynamics...",
-    },
-    {
-      id: "time-006",
-      category: "Time Capsule",
-      title: "Old Media, New Lessons: How Newspapers Shaped the 20th Century",
-      date: "November 29, 2025",
-      author: "Peter Novak",
-      img: "/images/time-006.jpg",
-      alt: "Archive of newspapers",
-      description:
-        "Newspapers built narratives, norms and civic rituals central to modern life. This historical analysis shows how reporting styles, business models and editorial choices influenced politics, public health and culture, and what contemporary media can learn from that history...",
-    },
-    {
-      id: "time-008",
-      category: "Time Capsule",
-      title: "What 19th Century Technology Can Teach Us About Sustainability",
-      date: "October 6, 2025",
-      author: "Gustav Holm",
-      img: "/images/time-008.jpg",
-      alt: "19th century industrial machinery",
-      description:
-        "Victorian innovations mixed durability and material intensity in ways that both inspired and warned future generations. This investigatory piece extracts lessons from historic engineering and manufacturing about longevity, repairability and resource use for modern design...",
-    },
-    {
-      id: "time-009",
-      category: "Time Capsule",
-      title:
-        "The Artifacts of Everyday Life From a Century Ago — And What They Tell Us",
-      date: "August 7, 2025",
-      author: "Naomi Adler",
-      img: "/images/time-009.jpg",
-      alt: "Vintage household objects",
-      description:
-        "Household objects reveal daily priorities, gender roles and economic conditions that larger histories can miss. This curated collection examines everyday artifacts—tools, toys, cookware—and reads them as windows into changing social routines and values...",
-    },
-    {
-      id: "time-010",
-      category: "Time Capsule",
-      title:
-        "When Food Was Medicine: Historic Diets That Influenced Civilization",
-      date: "July 30, 2025",
-      author: "Owen Gallagher",
-      img: "/images/time-010.jpg",
-      alt: "Historical food market scene",
-      description:
-        "Across civilizations, food served ritual, medical and political roles. This cross-cultural exploration traces diets and food practices used to treat ailments, sustain armies and express identity, revealing how culinary choices shaped historical outcomes...",
-    },
+    // {
+    //   id: "time-002",
+    //   category: "Time Capsule",
+    //   title:
+    //     "The Lost Cities Rediscovered: How Archaeology Is Rewriting the Past",
+    //   date: "January 14, 2025",
+    //   author: "Pablo Mendes",
+    //   img: "/images/time-002.jpg",
+    //   alt: "Ruins in a desert landscape",
+    //   description:
+    //     "New digs and remote sensing are rewriting timelines and trade networks once considered settled. This report profiles recent discoveries that changed historical narratives and the methods archaeologists used to unearth hidden chapters of human history...",
+    // },
+    // {
+    //   id: "time-003",
+    //   category: "Time Capsule",
+    //   title: "Six Cultural Movements That Vanished But Left a Mark",
+    //   date: "September 29, 2025",
+    //   author: "Rashmi Kapoor",
+    //   img: "/images/time-003.jpg",
+    //   alt: "Vintage poster collage",
+    //   description:
+    //     "Some cultural movements flame out quickly yet seed ideas that reappear later in altered forms. This piece charts six fleeting movements and traces their afterlives in music, design, politics and street practice, uncovering hidden continuities across time...",
+    // },
+    // {
+    //   id: "time-008",
+    //   category: "Time Capsule",
+    //   title: "What 19th Century Technology Can Teach Us About Sustainability",
+    //   date: "October 6, 2025",
+    //   author: "Gustav Holm",
+    //   img: "/images/time-008.jpg",
+    //   alt: "19th century industrial machinery",
+    //   description:
+    //     "Victorian innovations mixed durability and material intensity in ways that both inspired and warned future generations. This investigatory piece extracts lessons from historic engineering and manufacturing about longevity, repairability and resource use for modern design...",
+    // },
+    // {
+    //   id: "time-009",
+    //   category: "Time Capsule",
+    //   title:
+    //     "The Artifacts of Everyday Life From a Century Ago — And What They Tell Us",
+    //   date: "August 7, 2025",
+    //   author: "Naomi Adler",
+    //   img: "/images/time-009.jpg",
+    //   alt: "Vintage household objects",
+    //   description:
+    //     "Household objects reveal daily priorities, gender roles and economic conditions that larger histories can miss. This curated collection examines everyday artifacts—tools, toys, cookware—and reads them as windows into changing social routines and values...",
+    // },
   ],
 };
 

@@ -5,14 +5,18 @@ import Grit from "../pages/frontpage/grit";
 import CorporateFailures from "../pages/frontpage/failures";
 import Forgotten from "../pages/frontpage/forgotten";
 import Hacks from "../pages/frontpage/hacks";
-import Ethics from "../pages/science/ethics";
-import Amateurs from "../pages/science/amateurs";
-import Biomimicry from "../pages/science/biomimicry";
-import SpaceMining from "../pages/science/space";
+import Ethics from "../pages/genius&folly/ethics";
+import Amateurs from "../pages/genius&folly/amateurs";
+import Biomimicry from "../pages/genius&folly/biomimicry";
+import SpaceMining from "../pages/genius&folly/space";
 import Worklife from "../pages/life/worklife";
 import Intimacy from "../pages/life/intimacy";
 import Colleges from "../pages/life/colleges";
 import Weird from "../pages/life/weird";
+import Pioneers from "../pages/timeCapsule/pioneers";
+import Medicine from "../pages/timeCapsule/medicine";
+import Newspapers from "../pages/timeCapsule/newspapers";
+import Collapses from "../pages/timeCapsule/collapse";
 
 type ArticleComponent = React.ComponentType;
 
@@ -36,6 +40,10 @@ export const articleRoutes: ArticleRoutes = {
   "digital-intimacy": Intimacy,
   "toughest-colleges-to-get-into": Colleges,
   "how-time-got-weird": Weird,
+  "overlooked-pioneers": Pioneers,
+  "when-food-was-medicine": Medicine,
+  "newspapers-shaped-20th-century": Newspapers,
+  "collapsed-empires": Collapses,
 };
 
 export const getArticleComponent = (
