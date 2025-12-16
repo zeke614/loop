@@ -78,7 +78,7 @@ export default function FrontPageArticlesCard() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 md:gap-13 sm:grid-cols-2 xl:grid-cols-3 px-5 sm:px-5 relative"
+      className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 md:gap-13 sm:grid-cols-2 xl:grid-cols-3 px-5 relative"
     >
       {frontPageArticles.map((article) => {
         const isSaved = savedIds.includes(article.id);

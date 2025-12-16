@@ -17,6 +17,7 @@ import Pioneers from "../pages/timeCapsule/pioneers";
 import Medicine from "../pages/timeCapsule/medicine";
 import Newspapers from "../pages/timeCapsule/newspapers";
 import Collapses from "../pages/timeCapsule/collapse";
+import SecondAct from "../pages/entertainment/secondact";
 
 type ArticleComponent = React.ComponentType;
 
@@ -44,6 +45,7 @@ export const articleRoutes: ArticleRoutes = {
   "when-food-was-medicine": Medicine,
   "newspapers-shaped-20th-century": Newspapers,
   "collapsed-empires": Collapses,
+  "second-act-icons-who-reinvented-themselves": SecondAct,
 };
 
 export const getArticleComponent = (

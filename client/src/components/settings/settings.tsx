@@ -7,7 +7,7 @@ import {
 
 export default function Settings() {
   return (
-    <div className="max-w-4xl min-h-screen mx-auto py-25 md:pt-40 px-6">
+    <div className="max-w-4xl min-h-screen mx-auto py-25 md:pt-40 px-5">
       <h1 className="text-2xl font-bold text-gray-900 mb-2">Settings</h1>
       <p className="text-gray-500 mb-10">
         Manage your account and preferences.

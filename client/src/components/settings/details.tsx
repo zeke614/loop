@@ -7,6 +7,7 @@ import axios from "axios";
 import DeleteAccountPopup from "../user/delete";
 import DeleteSuccessPopup from "../user/deleteSuccess";
 import { getCountryName } from "../../constants/data";
+import { countryData } from "../../constants/data";
 import {
   ChevronLeftIcon,
   PencilSquareIcon,
@@ -124,6 +125,10 @@ export default function PersonalDetails() {
 
   if (!user) return null;
 
+  const selectedCountry = user?.country
+    ? countryData.find((c) => c.name === user.country)
+    : undefined;
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -155,7 +160,7 @@ export default function PersonalDetails() {
               <p className="font-medium text-gray-900 mb-1">Email Address</p>
               <p className="font-semibold text-gray-500">{user.email || "—"}</p>
             </div>
-            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100 cursor-pointer">
               <Link to="/settings/emailReset">
                 <PencilSquareIcon className="size-5" />
               </Link>
@@ -169,7 +174,7 @@ export default function PersonalDetails() {
                 ●●●●●●●●
               </p>
             </div>
-            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100 cursor-pointer">
               <Link to="/settings/passwordReset">
                 <PencilSquareIcon className="size-5" />
               </Link>{" "}
@@ -183,7 +188,7 @@ export default function PersonalDetails() {
                 {user.username || "None added"}
               </p>
             </div>
-            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100">
+            <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100 cursor-pointer">
               <Link to="/settings/displayNameReset">
                 <PencilSquareIcon className="size-5" />
               </Link>{" "}
@@ -202,7 +207,7 @@ export default function PersonalDetails() {
 
             <button
               onClick={() => setCurrencyModalOpen(true)}
-              className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100"
+              className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100 cursor-pointer"
               aria-label="Edit country"
             >
               <PencilSquareIcon className="size-5" />
@@ -221,7 +226,7 @@ export default function PersonalDetails() {
             </div>
             <button
               onClick={togglePopUp}
-              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap"
+              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
             >
               <span>
                 <TrashIcon className="size-5" />
@@ -247,8 +252,8 @@ export default function PersonalDetails() {
         <CurrencyModal
           open={currencyModalOpen}
           setOpen={setCurrencyModalOpen}
+          selected={selectedCountry}
           setSelected={(c) => {
-            // update local user state and localStorage when a new country selected
             const updated = { ...user, country: c.name };
             setUser(updated);
             localStorage.setItem("user", JSON.stringify(updated));

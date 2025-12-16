@@ -13,7 +13,7 @@ import Security from "./components/settings/security.tsx";
 import Countries from "./components/settings/countries.tsx";
 import Saved from "./pages/saved.tsx";
 import Home from "./pages/frontpage/home.tsx";
-import Entertainment from "./pages/entertainment.tsx";
+import Entertainment from "./pages/entertainment/entertainment.tsx";
 import Life from "./pages/life/life.tsx";
 import Science from "./pages/genius&folly/science.tsx";
 import Earth from "./pages/earth/earth.tsx";

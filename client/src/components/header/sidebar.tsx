@@ -70,7 +70,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             exit={{ y: -50, opacity: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 22 }}
             className="
-              fixed left-3.5 top-16.5 w-[50vw]
+              fixed left-5 top-16.5 w-[50vw]
                max-w-sm max-h-[60vh]
               z-50 md:hidden 
               rounded-xl shadow-xl overflow-y-auto

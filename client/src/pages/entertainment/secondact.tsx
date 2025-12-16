@@ -6,6 +6,12 @@ import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import articles from "../../constants/articles";
 import { BackToTopButton } from "../../components/scrollToTop";
 
+import jordan from "../../assets/imgs/jordan.jpg";
+import federer from "../../assets/imgs/federer.avif";
+import pirlo from "../../assets/imgs/pirlo.webp";
+import ironman from "../../assets/imgs/ironman.webp";
+import madonna from "../../assets/imgs/madonna.webp";
+
 type Article = {
   id: string;
   title: string;
@@ -17,38 +23,54 @@ type Article = {
   [key: string]: any;
 };
 
-const articleData = (articles["Time Capsule"] as Article[]).find(
-  (article) => article.id === "how-newspapers-shaped-20th-century"
+const articleData = (articles["Arena of Fame"] as Article[]).find(
+  (article) => article.id === "second-act-icons-who-reinvented-themselves"
 )!;
 
-const sections = [
+const icons = [
   {
-    title: "1. The Rise of Mass Circulation",
+    title: "1. Michael Jordan: Building Greatness From Rejection",
+    img: jordan,
+    alt: "Michael Jordan during his comeback with the Chicago Bulls",
     content:
-      "By the early 1900s, newspapers had become industrial powerhouses. Advances such as the rotary press, cheaper newsprint, and railway distribution networks allowed publishers like Joseph Pulitzer and William Randolph Hearst to reach millions. These massive audiences meant that a front-page headline could sway markets, shift political opinion, or spark national debates. The era also birthed 'yellow journalism'—sensationalist reporting that exaggerated or slanted facts to boost sales. Historians still debate how much this style contributed to the U.S. entry into the Spanish–American War in 1898, but there's no doubt newspapers were powerful enough that government officials paid close attention.",
+      "Before global dominance, Michael Jordan was cut from his high school varsity team. The story matters not because it's dramatic, but because of what followed. Jordan rebuilt his game through relentless skill development, defensive intensity, and competitive discipline. The second act came early, but it shaped everything after: failure didn't break him—it trained him. That early rejection hardened his relationship with preparation and self-belief. It also seeded the obsessive competitiveness that would later define his professional career.",
   },
   {
-    title: "2. Shaping Public Health and Everyday Life",
+    title: "2. Roger Federer: Aging Into a New Game",
+    img: federer,
+    alt: "Roger Federer during his later career resurgence",
     content:
-      "Throughout the 20th century, newspapers acted as public-health megaphones. During the 1918 influenza pandemic, local papers printed infection counts, prevention tips, and closure orders. Although scientific understanding was limited, newspapers were often the only source of timely information most households had. Later in the century, newspapers standardized modern consumer culture. Food sections popularized refrigeration habits and new cooking trends. Classified ads shaped job markets. Sunday editions became family rituals — complete with comics, puzzles, and serialized fiction that built shared cultural references.",
+      "By his early thirties, Roger Federer faced physical decline, younger rivals, and repeated losses to Rafael Nadal and Novak Djokovic. Instead of chasing his old style, Federer retooled it—shorter points, a more aggressive backhand, and a lighter tournament schedule. His later Grand Slam wins weren't nostalgic victories; they were proof that adaptation can outlast raw dominance. Federer's second act demonstrated that elegance in sport isn't static. It evolves, trims excess, and learns when to let go.",
   },
   {
-    title: "3. The Watchdog Era and Investigative Power",
+    title: "3. Andrea Pirlo: When a Role Change Becomes a Renaissance",
+    img: pirlo,
+    alt: "Andrea Pirlo in his deeper playmaker role for Juventus",
     content:
-      "From the 1950s onward, investigative reporting hit its stride. Papers like The New York Times, The Washington Post, The Guardian, and The Times of India dug into government corruption, corporate abuses, and civil-rights violations. The Watergate investigation (1972–74) remains the most iconic example. Reporting by Bob Woodward and Carl Bernstein — backed by editors with the courage to publish — contributed to the resignation of U.S. President Richard Nixon. This moment cemented the idea of newspapers as democratic watchdogs. Beyond politics, investigative desks broke stories on environmental contamination, unsafe consumer products, and labor exploitation.",
+      "Andrea Pirlo's early career stalled when he was deployed as an attacking midfielder. His second act arrived when coaches moved him deeper, allowing him to dictate tempo rather than chase goals. The shift transformed him into one of football's most influential playmakers and reshaped how the position itself is understood. Sometimes reinvention is simply standing in the right place. Pirlo's success showed that intelligence and vision can peak later than speed or stamina, redefining what aging in sport can look like.",
   },
   {
-    title: "4. The Business Model That Built (and Broke) an Empire",
+    title: "4. Robert Downey Jr.: From Career Collapse to Cultural Icon",
+    img: ironman,
+    alt: "Robert Downey Jr. as Iron Man after his career comeback",
     content:
-      "For most of the century, newspapers followed a simple formula: low cover price, huge circulation, and advertising revenue as the financial backbone. That model funded foreign bureaus, fact-checking departments, copy desks, and specialized beats. By the 1990s, cracks were forming. The internet began siphoning classified ads (Craigslist's launch in 1995 was a turning point), and search engines redirected attention. Print circulation declined sharply, leading to newsroom layoffs and reduced local coverage. Ironically, the things newspapers pioneered — concise headlines, quick updates, serialized stories — became the DNA of digital media, while the business structures that funded them struggled to adapt.",
+      "Downey's early career was nearly erased by addiction, arrests, and industry distrust. By the early 2000s, he was considered uninsurable in Hollywood. His second act came through sustained recovery, smaller roles, and eventually his casting as Iron Man—an unlikely choice that redefined both his career and modern blockbuster cinema. Reinvention here wasn't flashy. It was earned slowly, under skepticism. His resurgence also changed how the industry talks about risk, redemption, and long-term investment in people, not just projects.",
+  },
+  {
+    title: "5. Madonna: Outgrowing Each Era She Creates",
+    img: madonna,
+    alt: "Madonna during one of her many career reinventions",
+    content:
+      "Few entertainers have reinvented themselves as systematically as Madonna. Each phase of her career involved shedding a previous identity—musically, visually, culturally—often provoking backlash before acceptance. Her second acts weren't reactions to failure, but defenses against stagnation. Longevity, in her case, came from refusing nostalgia. By treating reinvention as a constant rather than a correction, she normalized evolution as a creative strategy.",
   },
 ];
 
-const lessons = [
-  "Shared information builds social cohesion. Newspapers helped entire cities operate from a single set of facts and schedules. Today's fragmented media environment struggles to replicate that common ground.",
-  "Investigative journalism requires long-term financial support. Many landmark investigations took months or years — something only sustainable with robust backing.",
-  "Credibility is fragile. Sensationalism boosted readership in the early 1900s but also damaged trust. The same tension echoes across today's click-driven media.",
-  "Local journalism is civic infrastructure. Studies by political scientists show that towns losing newspapers often see drops in voter turnout, reduced government oversight, and increased political polarization.",
+const requirements = [
+  "Humility — accepting that what worked before may no longer work",
+  "Patience — trusting that competence will eventually catch up with courage",
+  "Willingness to be bad at something new — embracing the learning curve publicly",
+  "Shedding applause along with ego — letting go of past success to create new success",
+  "Working away from spotlights — reinvention often happens privately before returning publicly",
 ];
 
 const sectionVariants: Variants = {
@@ -143,7 +165,7 @@ function AnimatedSection({
   );
 }
 
-export default function Newspapers() {
+export default function SecondAct() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
@@ -175,7 +197,7 @@ export default function Newspapers() {
             </div>
             <motion.img
               src={articleData.img}
-              alt="Historical newspapers and printing presses from the 20th century"
+              alt="Michael Jordan representing the spirit of reinvention"
               className="w-full h-60 sm:h-[24rem] object-cover"
               variants={imageVariants}
               initial="hidden"
@@ -193,7 +215,8 @@ export default function Newspapers() {
             initial="hidden"
             animate="visible"
           >
-            Old Media, New Lessons: How Newspapers Shaped the 20th Century
+            The Second Act: Athletes and Icons Who Reinvented Themselves After
+            Failure
           </motion.h1>
 
           <motion.div
@@ -217,10 +240,10 @@ export default function Newspapers() {
               initial="hidden"
               animate="visible"
             >
-              Newspapers were the algorithm before the algorithm — the daily
-              engine that sorted chaos into a shared story. Across the 20th
-              century, they didn't just report events; they organized civic
-              life, popularized new norms, and set political agendas.
+              Public failure has a way of freezing people in time. An early
+              loss, a public stumble, a bad season or scandal can become the
+              headline that follows someone forever. In sports and entertainment
+              alike, the first narrative tends to stick.
             </motion.p>
             <motion.p
               className="leading-6.5"
@@ -228,33 +251,45 @@ export default function Newspapers() {
               initial="hidden"
               animate="visible"
             >
-              Their influence came from a combination of mass circulation,
-              relatively limited competition, and a deep public belief that the
-              printed word carried civic weight. Looking back at how they
-              operated reveals lessons that still matter in today's fractured
-              media landscape.
+              What's rarer—and more revealing—is the second act: the moment
+              someone refuses to be defined by the version of themselves that
+              didn't work. Reinvention is not a comeback tour. It's
+              reconstruction. The people who manage it don't just return—they
+              return different.
             </motion.p>
           </div>
         </AnimatedSection>
 
-        <div className="my-10 space-y-10">
-          {sections.map((section, index) => (
-            <AnimatedSection key={index} className="space-y-4">
+        <div className="my-10 space-y-14">
+          {icons.map((icon, index) => (
+            <AnimatedSection key={index} className="space-y-6">
               <motion.h2
                 className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
-                {section.title}
+                {icon.title}
               </motion.h2>
+
+              <motion.div
+                className="overflow-hidden mb-6"
+                variants={imageVariants}
+              >
+                <img
+                  src={icon.img}
+                  alt={icon.alt}
+                  className="w-full h-50 md:h-96 object-cover"
+                />
+              </motion.div>
+
               <motion.p
                 className="text-[#767676] leading-7"
                 variants={textVariants}
                 initial="hidden"
                 animate="visible"
               >
-                {section.content}
+                {icon.content}
               </motion.p>
             </AnimatedSection>
           ))}
@@ -268,27 +303,29 @@ export default function Newspapers() {
               initial="hidden"
               animate="visible"
             >
-              Lessons for the Digital Age
+              What Reinvention Actually Requires
             </motion.h2>
 
             <motion.div
-              className="bg-gray-50 rounded-xl p-5 space-y-4"
+              className="bg-gray-50 rounded-xl p-6 space-y-4"
               variants={textVariants}
               initial="hidden"
               animate="visible"
             >
               <p className="text-[#767676] mb-4">
-                Looking at the 20th century from today's vantage point, several
-                takeaways stand out:
+                Across fields, second acts share the same demands. Reinvention
+                is quieter than ascent and lonelier than success. It often
+                happens away from spotlights before returning to them. The
+                process involves:
               </p>
 
-              <div className="space-y-4">
-                {lessons.map((lesson, index) => (
+              <div className="space-y-3">
+                {requirements.map((requirement, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
                       {index + 1}
                     </span>
-                    <p className="text-[#767676] leading-7">{lesson}</p>
+                    <p className="text-[#767676] leading-7">{requirement}</p>
                   </div>
                 ))}
               </div>
@@ -304,11 +341,10 @@ export default function Newspapers() {
               initial="hidden"
               animate="visible"
             >
-              The 20th century belonged to newspapers not just because they were
-              fast or widespread, but because they stitched communities together
-              with shared narratives. Their triumphs and failures offer a
-              blueprint for modern media grappling with misinformation,
-              fragmented audiences, and economic uncertainty.
+              First acts reveal ability. Second acts reveal character. In a
+              culture obsessed with early success, reinvention reminds us that
+              identity is not fixed—and that mastery isn't about never failing,
+              but about learning how to evolve when old versions stop working.
             </motion.p>
             <motion.p
               className="leading-6.5 font-medium text-gray-700 italic"
@@ -316,9 +352,8 @@ export default function Newspapers() {
               initial="hidden"
               animate="visible"
             >
-              Newspapers may no longer dominate daily life, but the principles
-              they sharpened — accountability, depth, and communal storytelling
-              — remain vital for any society trying to make sense of itself.
+              Greatness, it turns out, is less about arrival and more about
+              revision.
             </motion.p>
           </div>
         </AnimatedSection>

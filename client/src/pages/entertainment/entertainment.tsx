@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import articles from "../constants/articles";
-import BookmarkPopup from "../components/bookmark";
-import AnimatedArticleCard from "../components/articleCard";
-import Newsletter from "../components/newsletter";
+import articles from "../../constants/articles";
+import BookmarkPopup from "../../components/bookmark";
+import AnimatedArticleCard from "../../components/articleCard";
+import Newsletter from "../../components/newsletter";
 
 interface Article {
   id: string;
@@ -62,7 +62,7 @@ export default function Entertainment() {
   }, [popUp]);
 
   return (
-    <div className="py-10">
+    <div className="pt-10">
       <h1 className="text-center text-[1.375rem] mt-9 font-medium">
         Arena of Fame
       </h1>
@@ -75,7 +75,7 @@ export default function Entertainment() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative"
+        className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5 lg:px-3 relative"
       >
         {ArenaOfFameArticles.map((article) => {
           const isSaved = savedIds.includes(article.id);

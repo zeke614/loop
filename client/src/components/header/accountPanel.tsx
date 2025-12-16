@@ -4,7 +4,6 @@ import {
   BookmarkIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
-// import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface AccountPanelProps {
@@ -21,65 +20,72 @@ export default function AccountPanel({
 }: AccountPanelProps) {
   return (
     <>
-      <div
-        onClick={() => setProfileOpen(false)}
-        className={`fixed inset-0 z-40 transition-all duration-300
-          //  ${profileOpen ? "" : "bg-transparent pointer-events-none"}
-        `}
-      />
+      <AnimatePresence>
+        {profileOpen && (
+          <motion.div
+            onClick={() => setProfileOpen(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-40 bg-transparent"
+          />
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {profileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3 }}
+            initial={{ y: -16, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -16, opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
             className="
-              fixed top-16.5 right-4 md:top-19 md:right-28 z-50
-              flex flex-col items-end gap-2.5 text-[0.9375rem]
+              fixed top-16.5 md:top-19 right-4 md:right-29 z-50
+              flex flex-col items-end gap-2
+              text-[0.9375rem]
             "
           >
             <Link
               to="/saved"
               onClick={() => setProfileOpen(false)}
               className="
-                px-4 py-2 rounded-full 
+                px-4 py-2 rounded-full
                 bg-black backdrop-blur-xl
                 shadow-lg text-white
                 flex items-center gap-2
               "
             >
-              <BookmarkIcon className="size-4.5" /> Saved
+              <BookmarkIcon className="size-4.5" />
+              Saved
             </Link>
 
             <Link
               to="/settings"
               onClick={() => setProfileOpen(false)}
               className="
-                px-4 py-2 rounded-full 
+                px-4 py-2 rounded-full
                 bg-black backdrop-blur-xl
                 shadow-lg text-white
                 flex items-center gap-2
               "
             >
-              <Cog6ToothIcon className="size-4.5" /> Settings
+              <Cog6ToothIcon className="size-4.5" />
+              Settings
             </Link>
 
             <button
               onClick={handleSignOut}
               className="
-                px-4 py-2 rounded-full 
+                px-4 py-2 rounded-full
                 bg-red-500 backdrop-blur-xl
-                shadow-lg text-white font-medium 
+                shadow-lg text-white font-medium
                 flex items-center gap-2 cursor-pointer
               "
             >
               <ArrowRightStartOnRectangleIcon className="size-4.5" />
               Sign Out
             </button>
-
-            {/* <p className="text-white/70 text-sm mt-1 px-1">{user?.email}</p> */}
           </motion.div>
         )}
       </AnimatePresence>

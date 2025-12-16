@@ -123,7 +123,7 @@ export default function AnimatedArticleCard({
         </motion.div>
       </div>
 
-      <div className="flex-1 py-4 px-4.5 flex flex-col">
+      <div className="flex-1 p-4 flex flex-col">
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 10 },

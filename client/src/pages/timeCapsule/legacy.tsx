@@ -62,7 +62,7 @@ export default function Legacy() {
   }, [popUp]);
 
   return (
-    <div className="py-10">
+    <div className="pt-10">
       <h1 className="text-center text-[1.375rem] mt-9 font-medium">
         Time Capsule
       </h1>
@@ -75,7 +75,7 @@ export default function Legacy() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-6 lg:px-3 relative"
+        className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5 lg:px-3 relative"
       >
         {timeCapsuleArticles.map((article) => {
           const isSaved = savedIds.includes(article.id);

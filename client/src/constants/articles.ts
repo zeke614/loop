@@ -17,6 +17,7 @@ import fpioneer from "../assets/imgs/fpioneer.jpg";
 import foodMedicine from "../assets/imgs/foodMedicine.jpg";
 import newspaper from "../assets/imgs/newspaper.jpg";
 import collapse from "../assets/imgs/collapse.webp";
+import secondAct from "../assets/imgs/2ndact.jpg";
 
 interface Article {
   id: string;
@@ -462,9 +463,20 @@ const articles: Record<string, Article[]> = {
 
   "Arena of Fame": [
     {
+      id: "second-act-icons-who-reinvented-themselves",
+      category: "Arena of Fame",
+      title: "The Second Act: Icons Who Reinvented Themselves After Failure",
+      date: "June 11, 2025",
+      author: "Daniel R. Okoye",
+      img: secondAct,
+      alt: "global icon athlete celebrating",
+      description:
+        "Public failure has a way of freezing people in time. An early loss, a public stumble, a bad season or scandal can become the headline that follows someone forever. In sports and entertainment alike, the first narrative tends to stick.",
+    },
+    {
       id: "the-will-to-win",
       category: "Arena of Fame",
-      title: "The Will to Win: Sports Comebacks That Redefined Grit",
+      title: "The Will to Win: Incredible Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
       author: "Hannah Clarke",
       img: sports,
@@ -740,7 +752,7 @@ const articles: Record<string, Article[]> = {
         "Long before pharmacies, people turned to kitchens, farms, temples, and marketplaces for healing. Ancient medical systems didn't separate diet from treatment; they treated food as chemistry, cosmology, and cultural identity.",
     },
     {
-      id: "newspapers-shaped-20th-century",
+      id: "how-newspapers-shaped-20th-century",
       category: "Time Capsule",
       title: "Old Media, New Lessons: How Newspapers Shaped the 20th Century",
       date: "November 29, 2025",
