@@ -169,7 +169,7 @@ export default function Newspapers() {
           <div className="relative overflow-hidden mb-4 -mx-4">
             <div
               onClick={() => window.history.back()}
-              className="absolute left-2 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
+              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
             >
               <ChevronLeftIcon className="size-4.5" />
             </div>

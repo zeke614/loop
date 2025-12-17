@@ -46,7 +46,7 @@ export default function Saved() {
   return (
     <div className="min-h-screen pt-20 pb-10 px-5 lg:px-3">
       <div className="max-w-[75rem] mx-auto">
-        <div className="mb-10 px-2">
+        <div className="mb-10">
           <h1 className="text-[1.375rem] pt-1.5 font-semibold text-gray-900">
             Your Saved Articles
           </h1>

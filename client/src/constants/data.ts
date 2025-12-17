@@ -263,8 +263,11 @@ export const countryData: Country[] = [
 ];
 
 export const getCountryName = (countryCode: string): string => {
-  const found = countryData.find(
-    (c) => c.flag.toUpperCase === countryCode.toUpperCase
-  );
+  // Convert countryCode to uppercase for comparison
+  const upperCode = countryCode.toUpperCase();
+
+  // Find the country by flag code
+  const found = countryData.find((c) => c.flag.toUpperCase() === upperCode);
+
   return found ? found.name : countryCode;
 };

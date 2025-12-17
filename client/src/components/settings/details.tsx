@@ -72,17 +72,41 @@ export default function PersonalDetails() {
       if (ipData.country) {
         const countryName = getCountryName(ipData.country);
 
+        try {
+          await axios.patch(
+            `${API_URL}/api/users/update`,
+            {
+              country: countryName,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+              },
+            }
+          );
+        } catch (error) {
+          console.warn(
+            "Couldn't update country on backend, but local update will proceed"
+          );
+        }
+
         const updatedUser = {
           ...userData,
           country: countryName,
         };
 
         setUser(updatedUser);
-
         localStorage.setItem("user", JSON.stringify(updatedUser));
       }
     } catch (error) {
       console.error("Failed to fetch country data:", error);
+      const updatedUser = {
+        ...userData,
+        country: "Ghana", // Default to Ghana on failure
+      };
+      setUser(updatedUser);
+      localStorage.setItem("user", JSON.stringify(updatedUser));
     } finally {
       setLoading(false);
     }

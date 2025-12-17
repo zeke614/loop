@@ -24,10 +24,9 @@ export default function CurrencyModal({
   const [openInternal, setOpenInternal] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [internalSelected, setInternalSelected] = useState<Country>({
-    name: "Ghana",
-    flag: "gh",
-  });
+  const [internalSelected, setInternalSelected] = useState<Country | undefined>(
+    selected
+  );
 
   const isControlled =
     typeof openProp !== "undefined" && typeof setOpenProp === "function";
@@ -42,17 +41,26 @@ export default function CurrencyModal({
     }
   };
 
-  const currentSelectedRef = useRef<Country>(internalSelected);
+  const currentSelectedRef = useRef<Country | undefined>(internalSelected);
 
-  // ✅ SYNC SELECTED COUNTRY FROM PARENT
+  // SYNC SELECTED COUNTRY FROM PARENT
   useEffect(() => {
     if (selected) {
       setInternalSelected(selected);
       currentSelectedRef.current = selected;
+    } else {
+      // Clear if no country is selected
+      setInternalSelected(undefined);
+      currentSelectedRef.current = undefined;
     }
   }, [selected]);
 
-  const handleSetSelected = setSelected || setInternalSelected;
+  const handleSetSelected =
+    setSelected ||
+    ((country) => {
+      setInternalSelected(country);
+      currentSelectedRef.current = country;
+    });
 
   const backdropRef = useRef<HTMLDivElement | null>(null);
 
@@ -143,7 +151,7 @@ export default function CurrencyModal({
                     <button
                       onClick={() => handleCountrySelect(country)}
                       className={`w-full flex items-center justify-between p-1.5 rounded-lg text-left transition-colors ${
-                        currentSelectedRef.current.name === country.name
+                        currentSelectedRef.current?.name === country.name
                           ? "bg-gray-100"
                           : "hover:bg-gray-50"
                       }`}
@@ -157,7 +165,7 @@ export default function CurrencyModal({
                         <span className="text-gray-600">{country.name}</span>
                       </div>
 
-                      {currentSelectedRef.current.name === country.name && (
+                      {currentSelectedRef.current?.name === country.name && (
                         <i className="bx bx-check text-[#0ab39c] text-xl" />
                       )}
                     </button>
