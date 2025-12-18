@@ -272,7 +272,7 @@ export default function Newspapers() {
             </motion.h2>
 
             <motion.div
-              className="bg-gray-50 rounded-xl p-5 space-y-4"
+              className="bg-gray-100 rounded-xl p-5 space-y-4"
               variants={textVariants}
               initial="hidden"
               animate="visible"

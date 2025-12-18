@@ -279,7 +279,7 @@ export default function Collapses() {
             </motion.h2>
 
             <motion.div
-              className="bg-gray-50 rounded-xl p-6 space-y-4"
+              className="bg-gray-100 rounded-xl p-6 space-y-4"
               variants={textVariants}
               initial="hidden"
               animate="visible"
@@ -292,8 +292,8 @@ export default function Collapses() {
               <div className="space-y-3">
                 {patterns.map((pattern, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 border-2 border-[#0ab39c] text-[#0ab39c] rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
-                      •
+                    <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
+                      {index + 1}
                     </span>
                     <p className="text-[#767676] leading-7">{pattern}</p>
                   </div>

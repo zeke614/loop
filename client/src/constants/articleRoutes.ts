@@ -43,7 +43,7 @@ export const articleRoutes: ArticleRoutes = {
   "how-time-got-weird": Weird,
   "overlooked-pioneers": Pioneers,
   "when-food-was-medicine": Medicine,
-  "newspapers-shaped-20th-century": Newspapers,
+  "how-newspapers-shaped-20th-century": Newspapers,
   "collapsed-empires": Collapses,
   "second-act-icons-who-reinvented-themselves": SecondAct,
 };
