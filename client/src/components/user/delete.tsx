@@ -28,7 +28,7 @@ export default function DeleteAccountPopup({
           }}
           animate={{
             opacity: 1,
-            y: -80,
+            y: 200,
             transition: { type: "spring", stiffness: 300, damping: 12 },
           }}
           exit={{

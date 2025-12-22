@@ -4,7 +4,7 @@ import { BellAlertIcon } from "@heroicons/react/24/outline";
 export default function Newsletter() {
   return (
     <div className="flex items-center justify-center">
-      <section className="relative w-full bg-white overflow-hidden rounded-2xl max-w-xl py-15 sm:py-30 mx-6">
+      <section className="relative w-full bg-white overflow-hidden rounded-2xl max-w-xl py-18 sm:py-30 mx-6">
         <img
           src={newsletter}
           className="absolute inset-0 w-full h-full object-cover opacity-[0.12] pointer-events-none"

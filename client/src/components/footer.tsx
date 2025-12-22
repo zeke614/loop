@@ -2,15 +2,17 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="mt-20">
-      <div className="bg-black text-white mx-auto rounded-t-2xl px-6 pt-12 pb-7 md:px-38">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+    <footer className="">
+      <div className="mx-auto rounded-t-2xl px-6 pt-14 pb-7 md:px-38">
+        <div className="border-t border-[#2827271f] pb-3"></div>
+
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 py-7">
           <div className="flex items-center gap-6">
             <a
               href="https://x.com/devzeke146"
               target="_blank"
               aria-label="Visit our X(formally twitter) page"
-              className="text-white transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
+              className="transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
             >
               <i className="bxl bx-twitter-x text-[1.375rem]"></i>{" "}
             </a>
@@ -20,23 +22,23 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-white transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
+              className="transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
             >
-              <i className="bxl bx-instagram text-[1.375rem]"></i>{" "}
+              <i className="bxl bx-instagram text-[1.375rem]"></i>
             </a>
             <a
               href="https://github.com/zeke614/loop.git"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-white transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
+              className="transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
             >
               <i className="bxl bx-github text-[1.375rem]"></i>{" "}
             </a>
             <a
               href="mailto:ezekielarkohamissah@gmail.com"
               aria-label="Email"
-              className="text-white transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
+              className="transition-transform duration-300 hover:scale-105 hover:-translate-y-0.5"
             >
               <i className="bxl bx-gmail text-[1.375rem]"></i>
             </a>
@@ -58,13 +60,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 my-8"></div>
-
         <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-2.5">
           <p className="flex items-center gap-2">
             <span className="text-lg -mx-1 mt-1">&copy;</span>
             <span> {new Date().getFullYear()}</span>
-            <span className="font-bold text-white tracking-wide">loop</span>
+            <span className="font-bold tracking-wide">loop</span>
             <span>All rights reserved.</span>
           </p>
           <p>
