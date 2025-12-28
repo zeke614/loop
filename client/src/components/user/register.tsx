@@ -190,10 +190,7 @@ export default function Register() {
               }`}
           >
             {loading ? (
-              <span className="flex items-center justify-center space-x-2">
-                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                <span>Signing up...</span>
-              </span>
+              <span className="w-4.5 h-4.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
             ) : (
               "Sign up"
             )}

@@ -16,17 +16,17 @@ export default function Footer() {
 
         <h2 className="text-center mt-8 mb-2.5 font-medium">Quick Links</h2>
         <div className="flex flex-wrap justify-center gap-8 text-[0.938rem] text-gray-600">
-          <Link to="/" className="hover:text-[#0ab39c] transition-colors">
-            Home
-          </Link>
           <Link to="/info" className="hover:text-[#0ab39c] transition-colors">
-            About Us
+            About
           </Link>
           <Link
             to="/privacy"
             className="hover:text-[#0ab39c] transition-colors"
           >
             Privacy Policy
+          </Link>
+          <Link to="/" className="hover:text-[#0ab39c] transition-colors">
+            Home
           </Link>
         </div>
 

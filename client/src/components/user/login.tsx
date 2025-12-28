@@ -156,10 +156,7 @@ export default function Login() {
               }`}
           >
             {loading ? (
-              <span className="flex items-center space-x-2">
-                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                <span>Signing in...</span>
-              </span>
+              <span className="w-4.5 h-4.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
             ) : (
               "Sign in"
             )}
