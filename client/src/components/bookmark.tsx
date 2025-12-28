@@ -45,7 +45,7 @@ export default function BookmarkPopup({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 100 }}
       transition={{ type: "spring", damping: 25, stiffness: 200 }}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[97.5%] max-w-md px-4"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-sm px-4"
     >
       <motion.div
         initial={{
@@ -59,7 +59,7 @@ export default function BookmarkPopup({
         transition={{ duration: 0.1 }}
         className="
           border border-white/20
-          rounded-2xl
+          rounded-full
           shadow-lg
           p-4
           flex items-center justify-between

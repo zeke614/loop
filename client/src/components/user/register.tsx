@@ -6,7 +6,7 @@ import { useAuth } from "../../contexts/authContext";
 import {
   EyeIcon,
   EyeSlashIcon,
-  HomeModernIcon,
+  // HomeModernIcon,
 } from "@heroicons/react/24/outline";
 
 export default function Register() {
@@ -69,27 +69,27 @@ export default function Register() {
 
   return (
     <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md py-10 px-7">
+      <div className="w-full max-w-md py-8 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
 
-        <Link to="/">
-          <HomeModernIcon className="size-5 mb-8" />
-        </Link>
+        {/* <Link to="/">
+          <HomeModernIcon className="size-5 mb-6" />
+        </Link> */}
 
-        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-3">
+        <h1 className="text-2xl md:text-3xl text-center font-semibold mt-1 mb-4">
           Create your account
         </h1>
-        <p className="text-center text-[#6e7780] mb-8 md:text-base">
+        <p className="text-center text-[#6e7780] mb-7 md:text-base">
           Join <strong>loop</strong> — dive into stories that spark curiosity
           and conversation.
         </p>
 
-        <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3.5 mb-6">
+        <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-5">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -102,7 +102,7 @@ export default function Register() {
 
           <button
             onClick={handleGitHubLogin}
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/512317/github-142.svg"
@@ -114,7 +114,7 @@ export default function Register() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center my-6">
+        <div className="flex items-center justify-center my-5">
           <div className="flex-grow border-t border-gray-300"></div>
           <span className="mx-3 text-gray-500">Or</span>
           <div className="flex-grow border-t border-gray-300"></div>
@@ -126,7 +126,7 @@ export default function Register() {
           </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             {/* <label className="font-medium text-gray-700">Username *</label> */}
             <input
@@ -136,7 +136,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Username"
               required
-              className="w-full px-4 py-3 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -209,7 +209,7 @@ export default function Register() {
 
         <p className="text-center text-[#6e7780] mt-8 md:text-base">
           Have an account?
-          <Link to="/login" className="text-[#0ab39c] ml-1 font-medium">
+          <Link to="/login" className="text-[#0ab39c] ml-1.5 font-semibold">
             Sign In
           </Link>
         </p>

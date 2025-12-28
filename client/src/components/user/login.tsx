@@ -69,14 +69,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="flex items-center justify-center bg-white">
       <div className="w-full max-w-md py-10 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
 
         <Link to="/">
-          <HomeModernIcon className="size-5 mb-7" />
+          <HomeModernIcon className="size-5 mb-7 mt-1" />
         </Link>
 
         <h1 className="text-2xl md:text-3xl text-center font-semibold mb-2">
@@ -134,12 +134,12 @@ export default function Login() {
             <label className="flex items-center space-x-1.5 cursor-pointer">
               <input
                 type="checkbox"
-                className="accent-[#0ab39c] size-[0.8rem]"
+                className="accent-[#0ab39c] size-[0.9rem]"
               />
               <span className="text-gray-600">Remember me</span>
             </label>
             <Link to="/forgotPassword">
-              <span className="text-[#0ab39c] font-medium cursor-pointer">
+              <span className="text-[#0ab39c] font-medium cursor-pointer underline">
                 Forgot Password?
               </span>
             </Link>
@@ -175,7 +175,7 @@ export default function Login() {
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3.5">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -188,7 +188,7 @@ export default function Login() {
 
           <button
             onClick={handleGitHubLogin}
-            className="flex items-center justify-center space-x-2 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/512317/github-142.svg"
@@ -209,7 +209,7 @@ export default function Login() {
 
         <p className="text-center text-[#6e7780] mt-8">
           New here?
-          <Link to="/register" className="text-[#0ab39c] ml-1 font-medium">
+          <Link to="/register" className="text-[#0ab39c] ml-1.5 font-semibold">
             Sign Up
           </Link>
         </p>

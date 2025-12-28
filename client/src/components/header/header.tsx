@@ -27,11 +27,11 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-none">
       <div
-        className="max-w-7xl md:mx-auto sm:mx-3 mx-5 mt-1.5 rounded-full
+        className="max-w-7xl md:mx-auto sm:mx-3 mx-[1.306rem] mt-1.5 rounded-full
                bg-white/20 backdrop-blur-xl
-               border border-white/30 shadow-lg
+               border border-black/5 shadow-md
                flex items-center justify-between
-               px-3.5 py-2 sm:px-6"
+               px-3.5 py-2.5 sm:px-6"
       >
         <button
           onClick={toggleMenu}
@@ -47,7 +47,7 @@ export default function Header() {
 
         <Link
           to="/"
-          className={`text-[1.375rem] font-bold flex items-center ${
+          className={`text-[1.438rem] font-semibold flex items-center ${
             user ? "pl-0" : "pl-6"
           } md:p-0`}
         >

@@ -4,9 +4,34 @@ export default function Footer() {
   return (
     <footer className="">
       <div className="mx-auto rounded-t-2xl px-6 pt-14 pb-7 md:px-38">
-        <div className="border-t border-[#2827271f] pb-3"></div>
+        <div className="border-t border-gray-100 pb-7"></div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 py-7">
+        <h1 className="text-center sm:text-start text-[1.375rem] font-semibold tracking-wide">
+          loop
+        </h1>
+
+        <p className="text-center text-gray-600 mt-2 mb-4">
+          Stories worth circling back to.
+        </p>
+
+        <h2 className="text-center mt-8 mb-2.5 font-medium">Quick Links</h2>
+        <div className="flex flex-wrap justify-center gap-8 text-[0.938rem] text-gray-600">
+          <Link to="/" className="hover:text-[#0ab39c] transition-colors">
+            Home
+          </Link>
+          <Link to="/info" className="hover:text-[#0ab39c] transition-colors">
+            About Us
+          </Link>
+          <Link
+            to="/privacy"
+            className="hover:text-[#0ab39c] transition-colors"
+          >
+            Privacy Policy
+          </Link>
+        </div>
+
+        <h2 className="text-center mt-8 mb-2.5 font-medium">Our Socials</h2>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pb-6">
           <div className="flex items-center gap-6">
             <a
               href="https://x.com/devzeke146"
@@ -43,28 +68,15 @@ export default function Footer() {
               <i className="bxl bx-gmail text-[1.375rem]"></i>
             </a>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-8 text-[0.938rem] font-medium">
-            <Link to="/" className="hover:text-[#0ab39c] transition-colors">
-              Home
-            </Link>
-            <Link to="/info" className="hover:text-[#0ab39c] transition-colors">
-              About Us
-            </Link>
-            <Link
-              to="/privacy"
-              className="hover:text-[#0ab39c] transition-colors"
-            >
-              Privacy Policy
-            </Link>
-          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-2.5">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-2.5 text-gray-600">
           <p className="flex items-center gap-2">
             <span className="text-lg -mx-1 mt-1">&copy;</span>
             <span> {new Date().getFullYear()}</span>
-            <span className="font-bold tracking-wide">loop</span>
+            <span className="font-bold tracking-wide text-[0.937rem]">
+              loop
+            </span>
             <span>All rights reserved.</span>
           </p>
           <p>
