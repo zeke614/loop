@@ -148,15 +148,14 @@ export default function Login() {
           <button
             type="submit"
             disabled={!form.email || !form.password || loading}
-            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition flex items-center justify-center
-              ${
-                !form.email || !form.password || loading
-                  ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
-                  : "bg-[#0ab39c] hover:bg-[#089c8a] text-white cursor-pointer"
-              }`}
+            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition flex items-center justify-center min-h-[3.125rem] ${
+              !form.email || !form.password || loading
+                ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
+                : "bg-[#0ab39c] hover:bg-[#089c8a] text-white cursor-pointer"
+            }`}
           >
             {loading ? (
-              <span className="w-4 h-4 border-2 border-white py-[0.813rem] rounded-full animate-spin"></span>
+              <span className="w-4.5 h-4.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
             ) : (
               "Sign in"
             )}

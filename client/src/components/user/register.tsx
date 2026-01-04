@@ -182,7 +182,7 @@ export default function Register() {
             disabled={
               !form.username || !form.email || !form.password || loading
             }
-            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition
+            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition min-h-[3.125rem]
               ${
                 !form.username || !form.email || !form.password || loading
                   ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
@@ -190,7 +190,7 @@ export default function Register() {
               }`}
           >
             {loading ? (
-              <span className="w-4.5 h-4.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <span className="w-4.5 h-4.5 py-1.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
             ) : (
               "Sign up"
             )}
