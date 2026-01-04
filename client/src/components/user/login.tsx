@@ -148,7 +148,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={!form.email || !form.password || loading}
-            className={`w-full rounded-full py-3 mt-6 font-medium transition flex items-center justify-center
+            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition flex items-center justify-center
               ${
                 !form.email || !form.password || loading
                   ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
@@ -156,7 +156,7 @@ export default function Login() {
               }`}
           >
             {loading ? (
-              <span className="w-4.5 h-4.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <span className="w-4 h-4 border-2 border-white py-[0.813rem] rounded-full animate-spin"></span>
             ) : (
               "Sign in"
             )}

@@ -61,7 +61,7 @@ export default function UsernameReset() {
         <button
           type="submit"
           disabled={newUsername === user?.username || loading}
-          className={`w-full rounded-full py-3 sm:mt-56 text-white 
+          className={`w-full rounded-full py-[0.844rem] sm:mt-56 text-white 
                   font-medium transition 
                   ${
                     newUsername === user?.username

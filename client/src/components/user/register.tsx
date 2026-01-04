@@ -182,7 +182,7 @@ export default function Register() {
             disabled={
               !form.username || !form.email || !form.password || loading
             }
-            className={`w-full rounded-full py-3 mt-6 font-medium transition
+            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition
               ${
                 !form.username || !form.email || !form.password || loading
                   ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"

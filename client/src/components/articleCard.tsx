@@ -101,7 +101,7 @@ export default function AnimatedArticleCard({
           ease: "easeOut",
         },
       }}
-      className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100"
+      className="flex flex-col bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100"
     >
       <div className="relative overflow-hidden">
         <img
