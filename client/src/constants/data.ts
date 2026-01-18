@@ -1,9 +1,9 @@
 const navLinks = [
   { path: "/", label: "Front Page" },
-  { path: "/science", label: "Genius & Folly" },
+  { path: "/science", label: "Genius and Folly" },
   { path: "/life", label: "Human Currents" },
   { path: "/earth", label: "The Living Planet" },
-  { path: "/finance", label: "Money & Madness" },
+  { path: "/finance", label: "Money and Madness" },
   { path: "/entertainment", label: "Arena of Fame" },
   { path: "/legacy", label: "Time Capsule" },
 ];

@@ -43,7 +43,7 @@ export default function AccountPanel({
             className="
               fixed top-16.5 md:top-19 right-6.5 md:right-29 z-50
               flex flex-col items-end gap-2
-              text-[0.9375rem]
+              text-[0.9375rem] font-frozen
             "
           >
             <Link

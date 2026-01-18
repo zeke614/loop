@@ -30,7 +30,7 @@ export default function ForgotPasswordPage() {
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </button>
 
-        <h3 className="text-2xl font-bold mb-3.5">Forgot Password</h3>
+        <h3 className="text-2xl font-frozen mb-3.5">Forgot Password</h3>
 
         <p className="text-gray-600 mb-5">
           Enter your email and we'll send you a link to reset your password.

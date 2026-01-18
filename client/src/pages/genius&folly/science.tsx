@@ -18,21 +18,21 @@ interface Article {
 
 export default function Science() {
   const geniusAndFollyArticles: Article[] =
-    (articles as any)["Genius & Folly"] || [];
+    (articles as any)["Genius and Folly"] || [];
   const [popUp, setPopUp] = useState<boolean>(false);
   const [popUpType, setPopUpType] = useState<"added" | "removed">("added");
   const [savedIds, setSavedIds] = useState<string[]>([]);
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
 
   const handleBookmarkClick = (article: Article) => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     const isAlreadySaved = saved.some((item) => item.id === article.id);
 

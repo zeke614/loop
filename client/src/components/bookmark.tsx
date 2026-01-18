@@ -75,13 +75,13 @@ export default function BookmarkPopup({
           ) : (
             <BookmarkSlashIcon className="size-5 text-white" />
           )}
-          <p className="font-medium text-white drop-shadow-sm">{message}</p>
+          <p className="font-frozen text-white drop-shadow-sm">{message}</p>
         </div>
 
         {type === "added" && (
           <Link
             to="/saved"
-            className="flex items-center gap-1 text-white font-medium hover:text-[#0ab39c] transition-colors relative z-10"
+            className="flex items-center gap-1 text-white font-frozen hover:text-[#0ab39c] transition-colors relative z-10"
           >
             <p className="drop-shadow-sm">View</p>
             <ChevronRightIcon className="w-5 h-5 drop-shadow-sm" />

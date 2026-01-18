@@ -68,12 +68,12 @@ export default function PasswordReset() {
         },
         {
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
 
       if (response.data.message) {
         setSuccessMessage(
-          "Password reset successfully! Redirecting to login..."
+          "Password reset successfully! Redirecting to login...",
         );
         setTimeout(() => {
           navigate("/login");
@@ -87,11 +87,11 @@ export default function PasswordReset() {
       } else if (error.response) {
         setErrorMessage(
           error.response?.data?.message ||
-            "Password reset failed. Please try again."
+            "Password reset failed. Please try again.",
         );
       } else if (error.request) {
         setErrorMessage(
-          "Cannot connect to server. Please check your connection."
+          "Cannot connect to server. Please check your connection.",
         );
       } else {
         setErrorMessage(error.message || "An unexpected error occurred.");
@@ -111,7 +111,7 @@ export default function PasswordReset() {
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </Link>
 
-        <h3 className="text-2xl font-bold mb-3.5">Password</h3>
+        <h3 className="text-2xl font-frozen mb-3.5">Password</h3>
 
         <p className="text-gray-600 mb-5">
           Enter your new password below. Make sure it's strong and memorable.

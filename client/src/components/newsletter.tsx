@@ -11,7 +11,7 @@ export default function Newsletter() {
         />
 
         <div className="relative max-w-lg mx-auto text-center space-y-6">
-          <h2 className="text-2xl font-semibold">Stay in the 'loop'</h2>
+          <h2 className="text-2xl font-frozen">Stay in the 'loop'</h2>
           <p className="text-gray-800 px-3">
             A periodic dose of insight, curiosity, and updates—minus the spammy
             nonsense.

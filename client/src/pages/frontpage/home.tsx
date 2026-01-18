@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
     <div className="pt-10">
-      <h1 className="text-center text-2xl mt-10 font-medium">
+      <h1 className="text-center text-2xl mt-10 font-frozen">
         {user ? (
           <>
             <span>Hello, </span>

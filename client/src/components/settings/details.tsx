@@ -65,7 +65,7 @@ export default function PersonalDetails() {
   const fetchUserCountry = async (userData: any) => {
     try {
       const response = await fetch(
-        `https://ipinfo.io/json?token=${ipInfoToken}`
+        `https://ipinfo.io/json?token=${ipInfoToken}`,
       );
       const ipData = await response.json();
 
@@ -83,11 +83,11 @@ export default function PersonalDetails() {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
               },
-            }
+            },
           );
         } catch (error) {
           console.warn(
-            "Couldn't update country on backend, but local update will proceed"
+            "Couldn't update country on backend, but local update will proceed",
           );
         }
 
@@ -135,7 +135,7 @@ export default function PersonalDetails() {
       console.error("Account deletion failed:", error);
       alert(
         error.response?.data?.message ||
-          "Failed to delete account. Please try again."
+          "Failed to delete account. Please try again.",
       );
       setIsDeleting(false);
     }
@@ -171,7 +171,7 @@ export default function PersonalDetails() {
             >
               <ChevronLeftIcon className="size-5.5 -ml-1" />
             </Link>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-frozen text-gray-900">
               Personal Details
             </h1>
             <p className="mt-2 text-gray-500">
@@ -240,7 +240,7 @@ export default function PersonalDetails() {
         </div>
 
         <div className="mt-10">
-          <h3 className="text-lg font-semibold text-gray-900">Danger Zone</h3>
+          <h3 className="text-lg font-frozen text-gray-900">Danger Zone</h3>
           <div className="py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
               <p className="font-medium text-gray-900">Delete Account</p>
@@ -250,7 +250,7 @@ export default function PersonalDetails() {
             </div>
             <button
               onClick={togglePopUp}
-              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-medium rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
+              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-frozen rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
             >
               <span>
                 <TrashIcon className="size-5" />

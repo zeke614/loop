@@ -20,7 +20,7 @@ export default function Saved() {
 
   useEffect(() => {
     const stored: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     setSavedArticles(stored);
   }, []);
@@ -34,7 +34,7 @@ export default function Saved() {
   if (savedArticles.length === 0) {
     return (
       <div className="px-4.5 max-w-lg mx-auto flex flex-col items-center justify-center h-[90vh] space-y-4">
-        <h1 className="text-[1.375rem] font-semibold">Your Saved Articles</h1>
+        <h1 className="text-[1.375rem] font-frozen">Your Saved Articles</h1>
         <p className="text-center mt-3 text-[#6e7780]">
           You haven't saved anything yet, but when you <br /> do, it will show
           up. Use the Save button <br /> on articles to save items for later.
@@ -47,7 +47,7 @@ export default function Saved() {
     <div className="min-h-screen pt-20 pb-10 px-5 lg:px-3">
       <div className="max-w-[75rem] mx-auto">
         <div className="mb-10">
-          <h1 className="text-[1.375rem] pt-1.5 font-semibold text-gray-900">
+          <h1 className="text-[1.375rem] pt-1.5 font-frozen text-gray-900">
             Your Saved Articles
           </h1>
           <p className="text-[#6e7780] mt-2">
@@ -67,7 +67,7 @@ export default function Saved() {
                   alt={article.alt}
                   className="w-full h-48 md:h-52 lg:h-48 object-cover transition-transform duration-500 hover:scale-105"
                 />
-                <div className="absolute animate-bounce [animation-duration:2s] top-3 left-2.5 bg-[#0ab39c] text-white text-sm px-2.5 py-1.5 rounded-full tracking-wider font-medium shadow-sm">
+                <div className="absolute animate-bounce [animation-duration:2s] top-3 left-2.5 bg-[#0ab39c] text-white text-sm px-2.5 py-1.5 rounded-full tracking-wider font-frozen shadow-sm">
                   {article.category}
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function Saved() {
                   <div>
                     <Link
                       to={`/articles/${article.id}`}
-                      className="inline-flex items-center text-[#0ab39c] font-semibold hover:text-[#0ab39c] transition-colors duration-200 group"
+                      className="inline-flex items-center text-[#0ab39c] font-frozen hover:text-[#0ab39c] transition-colors duration-200 group"
                     >
                       Continue
                       <ChevronDoubleRightIcon className="size-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-200" />{" "}

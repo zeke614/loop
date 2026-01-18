@@ -71,7 +71,7 @@ export default function AnimatedArticleCard({
       {
         threshold: 0.15, // Trigger when 15% visible
         rootMargin: "0px 0px -50px 0px", // Slight negative margin at bottom
-      }
+      },
     );
 
     const currentRef = cardRef.current;
@@ -117,7 +117,7 @@ export default function AnimatedArticleCard({
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="absolute top-3 left-2.5 animate-bounce [animation-duration:2s] bg-[#0ab39c] text-white text-sm px-2.5 py-1.5 rounded-full tracking-wider font-medium shadow-sm"
+          className="absolute top-3 left-2.5 animate-bounce [animation-duration:2s] bg-[#0ab39c] text-white text-sm px-2.5 py-1.5 rounded-full tracking-wider font-frozen shadow-sm"
         >
           {article.category}
         </motion.div>
@@ -181,7 +181,7 @@ export default function AnimatedArticleCard({
           <div>
             <Link
               to={`/articles/${article.id}`}
-              className="inline-flex items-center text-[#0ab39c] font-semibold hover:text-[#089c8a] transition-colors duration-200 group"
+              className="inline-flex items-center text-[#0ab39c] font-frozen hover:text-[#089c8a] transition-colors duration-200 group"
             >
               Read Me
               <motion.div whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>

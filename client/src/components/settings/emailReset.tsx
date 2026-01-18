@@ -23,7 +23,7 @@ export default function EmailReset() {
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </Link>
 
-        <h3 className="text-2xl font-bold mb-3.5">Email</h3>
+        <h3 className="text-2xl font-frozen mb-3.5">Email</h3>
 
         <p className="text-gray-600 mb-5 md:hidden">
           You'll use this email to receive messages, <br /> sign in and recover

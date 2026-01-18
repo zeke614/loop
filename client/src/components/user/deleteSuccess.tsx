@@ -59,7 +59,7 @@ export default function DeleteSuccessPopup({
             </motion.div>
 
             <motion.h3
-              className="text-[1.375rem] font-semibold text-gray-900 mb-2"
+              className="text-[1.375rem] font-frozen text-gray-900 mb-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{
                 opacity: 1,

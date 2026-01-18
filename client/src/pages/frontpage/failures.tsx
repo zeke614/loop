@@ -25,8 +25,8 @@ type Article = {
   [key: string]: any;
 };
 
-const articleData = (articles["Money & Madness"] as Article[]).find(
-  (article) => article.id === "corporate-failures-to-better-governance"
+const articleData = (articles["Money and Madness"] as Article[]).find(
+  (article) => article.id === "corporate-failures-to-better-governance",
 )!;
 
 const failures = [
@@ -146,7 +146,7 @@ function AnimatedSection({
       {
         threshold: 0.05,
         rootMargin: "0px 0px -10px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {

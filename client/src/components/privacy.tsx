@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
         </div>
 
         <div className="border-b border-gray-200 pb-8 mb-10">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-frozen text-gray-900 mb-2">
             Privacy Policy
           </h1>
           <p className="text-gray-500 text-[0.938rem] ">
@@ -19,22 +19,24 @@ export default function PrivacyPolicy() {
 
         <div className="prose prose-lg max-w-none text-gray-700 space-y-10">
           <p className="mb-10">
-            Welcome to <strong>loop</strong> ("we," "our," or "us"). We are
-            committed to protecting your personal information and your right to
-            privacy. If you have any questions or concerns about this privacy
-            notice or our practices with regards to your personal information,
-            contact us at{" "}
+            Welcome to <strong className="font-frozen">loop</strong> ("we,"
+            "our," or "us"). We are committed to protecting your personal
+            information and your right to privacy. If you have any questions or
+            concerns about this privacy notice or our practices with regards to
+            your personal information, contact us at{" "}
             <a
               href="mailto:ezekielarkohamissah@gmail.com"
               aria-label="Send an email"
             >
-              <strong>ezekielarkohamissah@gmail.com</strong>
+              <strong className="font-frozen">
+                ezekielarkohamissah@gmail.com
+              </strong>
             </a>
             .
           </p>
 
           <div>
-            <h3 className="font-bold mb-1.5 text-lg">
+            <h3 className="font-frozen mb-1.5 text-lg">
               1. Information We Collect
             </h3>
             <p>
@@ -71,7 +73,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5 text-lg">
+            <h3 className="font-frozen mb-1.5 text-lg">
               2. How We Handle Your Social Logins
             </h3>
             <p>
@@ -94,7 +96,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5 text-lg">
+            <h3 className="font-frozen mb-1.5 text-lg">
               3. How We Use Your Information
             </h3>
             <p>
@@ -128,7 +130,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5 text-lg">
+            <h3 className="font-frozen mb-1.5 text-lg">
               4. Will Your Information Be Shared With Anyone?
             </h3>
             <p>
@@ -149,7 +151,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5 text-lg">
+            <h3 className="font-frozen mb-1.5 text-lg">
               5. How Long Do We Keep Your Information?
             </h3>
             <p>
@@ -161,7 +163,9 @@ export default function PrivacyPolicy() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-1.5 text-lg">6. Your Privacy Rights</h3>
+            <h3 className="font-frozen mb-1.5 text-lg">
+              6. Your Privacy Rights
+            </h3>
             <p>
               You may review, change, or terminate your account at any time.
             </p>
@@ -176,7 +180,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div className="mb-10">
-            <h3 className="font-bold mb-1.5 text-lg">7. Contact Us</h3>
+            <h3 className="font-frozen mb-1.5 text-lg">7. Contact Us</h3>
             <p>
               If you have questions or comments about this policy, you may email
               us at{" "}
@@ -184,7 +188,9 @@ export default function PrivacyPolicy() {
                 href="mailto:ezekielarkohamissah@gmail.com"
                 aria-label="Send an email"
               >
-                <strong>ezekielarkohamissah@gmail.com</strong>
+                <strong className="font-frozen">
+                  ezekielarkohamissah@gmail.com
+                </strong>
               </a>
               .
             </p>

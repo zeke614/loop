@@ -47,7 +47,7 @@ export default function Header() {
 
         <Link
           to="/"
-          className={`text-[1.438rem] font-semibold flex items-center ${
+          className={`text-[1.438rem] font-frozen font-semibold flex items-center ${
             user ? "pl-0" : "pl-6"
           } md:p-0`}
         >

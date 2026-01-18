@@ -4,11 +4,19 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 
+@font-face {
+  font-family: "DK Frozen Memory";
+  src: url("/fonts/DKFrozenMemory.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @import "tailwindcss";
 
 @theme {
   --font-google-sans-flex: "Google Sans Flex", sans-serif; 
+  --font-frozen: "DK Frozen Memory";
 }
 
 body {

@@ -34,7 +34,7 @@ const articles: Record<string, Article[]> = {
   "Front Page": [
     {
       id: "failures-to-breakthroughs",
-      category: "Genius & Folly",
+      category: "Genius and Folly",
       title: "Scientific Failures That Sparked Big Discoveries",
       date: "October 27, 2025",
       author: "Olu Jacobs",
@@ -78,7 +78,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "corporate-failures-to-better-governance",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "July 26, 2025",
       author: "Yasmin Khalid",
@@ -344,10 +344,10 @@ const articles: Record<string, Article[]> = {
     },
   ],
 
-  "Money & Madness": [
+  "Money and Madness": [
     {
       id: "corporate-failures-to-better-governance",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "July 26, 2025",
       author: "Yasmin Khalid",
@@ -358,7 +358,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-001",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "Five Financial Crises That Were Avoided at the Last Minute",
       date: "January 21, 2025",
       author: "Claire Dubois",
@@ -369,7 +369,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-002",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title:
         "The Free Economy: How Open-Source Is Upending Traditional Business Models",
       date: "November 22, 2025",
@@ -381,7 +381,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-003",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title:
         "Six Cryptocurrencies You've Never Heard Of That Carved Their Own Niche",
       date: "March 1, 2025",
@@ -393,7 +393,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-004",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "The Bizarre World of Carbon Credits: Betting on Cleaner Air",
       date: "April 28, 2025",
       author: "Ibrahim Saleh",
@@ -404,7 +404,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-005",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title:
         "How Subsistence Economies Are Being Reinvented in the Digital Age",
       date: "September 5, 2025",
@@ -416,7 +416,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-007",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "Five Times Art Became Safer Than Stocks",
       date: "October 10, 2025",
       author: "Diego Morales",
@@ -427,7 +427,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-008",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title:
         "The Gig Economy’s Hidden Math: Why the Numbers Don’t Add Up for Many",
       date: "June 7, 2025",
@@ -439,7 +439,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-009",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "Emerging Markets That Are Defying Global Recession Trends",
       date: "August 21, 2025",
       author: "Kwame Boateng",
@@ -450,7 +450,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "finance-010",
-      category: "Money & Madness",
+      category: "Money and Madness",
       title: "The Rise of Social Impact Investing: Profit With Purpose?",
       date: "February 11, 2025",
       author: "Laura Chen",
@@ -589,10 +589,10 @@ const articles: Record<string, Article[]> = {
     // },
   ],
 
-  "Genius & Folly": [
+  "Genius and Folly": [
     {
       id: "ai-ethics-dilemmas",
-      category: "Genius & Folly",
+      category: "Genius and Folly",
       title: "The Ethics of AI: Dilemmas We Still Can’t Solve",
       date: "May 3, 2025",
       author: "Ethan Liu",
@@ -603,7 +603,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "amateur-inventors",
-      category: "Genius & Folly",
+      category: "Genius and Folly",
       title: "How Amateur Inventors Are Disrupting Big Tech",
       date: "April 19, 2025",
       author: "Marta Kovács",
@@ -614,7 +614,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "failures-to-breakthroughs",
-      category: "Genius & Folly",
+      category: "Genius and Folly",
       title: "Scientific Failures That Sparked Big Discoveries",
       date: "October 27, 2025",
       author: "Olu Jacobs",
@@ -625,7 +625,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "tech-in-nature",
-      category: "Genius & Folly",
+      category: "Genius and Folly",
       title:
         "The Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
       date: "February 27, 2025",
@@ -637,7 +637,7 @@ const articles: Record<string, Article[]> = {
     },
     {
       id: "space-junk-to-mining",
-      category: "Genius & Folly",
+      category: "Genius and Folly",
       title: "Space Junk to Space Mining: The Next Frontier of Tech",
       date: "July 14, 2025",
       author: "Greta Sørensen",

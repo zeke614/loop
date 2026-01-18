@@ -9,7 +9,7 @@ export default function Info() {
             <ChevronLeftIcon className="size-5.5 -ml-1" />
           </div>
 
-          <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
+          <h1 className="text-xl font-frozen text-gray-900 tracking-tight">
             About Loop
           </h1>
           <div className="prose-base md:prose-lg text-gray-600 leading-relaxed">
@@ -23,7 +23,7 @@ export default function Info() {
               loop gathers thoughtful write-ups about the extraordinary sides of
               ordinary things.
             </p>
-            <p className="mt-4 font-semibold text-gray-900">
+            <p className="mt-4 font-frozen text-gray-900">
               Our goal is simple: to make curiosity a habit, one story at a
               time.
             </p>
@@ -33,10 +33,12 @@ export default function Info() {
         <div className="border-t border-gray-100 w-full"></div>
 
         <section className="space-y-6 text-left">
-          <h2 className="text-xl font-semibold text-gray-900">Contact Us</h2>
+          <h2 className="text-xl font-semibold font-frozen text-gray-900">
+            Contact Us
+          </h2>
           <p className="text-gray-600 leading-relaxed">
             Reach out to the developer,{" "}
-            <span className="text-black font-semibold mr-1">Zeke</span>
+            <span className="text-black font-frozen mr-1">Zeke</span>
             via the socials below. You can also check out the project on GitHub
             or send feedback by email.
           </p>

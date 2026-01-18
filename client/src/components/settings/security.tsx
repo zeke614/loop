@@ -42,7 +42,7 @@ const pageVariants: Variants = {
 
 export default function Security() {
   const [settings, setSettings] = useState<SecuritySettings>(
-    defaultSecuritySettings
+    defaultSecuritySettings,
   );
 
   useEffect(() => {
@@ -84,8 +84,8 @@ export default function Security() {
           >
             <ChevronLeftIcon className="size-5.5 -ml-1" />
           </Link>
-          <h1 className="text-2xl font-bold text-gray-900">
-            Security & Privacy
+          <h1 className="text-2xl font-frozen text-gray-900">
+            Security and Privacy
           </h1>
           <p className="mt-2 text-gray-500 md:hidden">
             Manage your account privacy, <br /> login alerts and authenticattion

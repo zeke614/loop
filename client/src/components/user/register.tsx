@@ -45,11 +45,11 @@ export default function Register() {
       } else if (error.response) {
         setErrorMessage(
           error.response?.data?.message ||
-            "Registration failed. Please try again."
+            "Registration failed. Please try again.",
         );
       } else if (error.request) {
         setErrorMessage(
-          "Cannot connect to server. Please check if the backend is running."
+          "Cannot connect to server. Please check if the backend is running.",
         );
       } else {
         setErrorMessage("An unexpected error occurred. Please try again.");
@@ -78,12 +78,12 @@ export default function Register() {
           <HomeModernIcon className="size-5 mb-6" />
         </Link> */}
 
-        <h1 className="text-2xl md:text-3xl text-center font-semibold mt-1 mb-4">
+        <h1 className="text-2xl md:text-3xl text-center font-frozen mt-1 mb-4">
           Create your account
         </h1>
         <p className="text-center text-[#6e7780] mb-7 md:text-base">
-          Join <strong>loop</strong> — dive into stories that spark curiosity
-          and conversation.
+          Join <strong className="font-frozen">loop</strong> — dive into stories
+          that spark curiosity and conversation.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-5">

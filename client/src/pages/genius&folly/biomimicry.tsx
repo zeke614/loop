@@ -24,8 +24,8 @@ type Article = {
   [key: string]: any;
 };
 
-const articleData = (articles["Genius & Folly"] as Article[]).find(
-  (article) => article.id === "tech-in-nature"
+const articleData = (articles["Genius and Folly"] as Article[]).find(
+  (article) => article.id === "tech-in-nature",
 )!;
 
 const biomimicryExamples = [
@@ -137,7 +137,7 @@ function AnimatedSection({
       {
         threshold: 0.05,
         rootMargin: "0px 0px -10px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {

@@ -40,10 +40,10 @@ const HourglassIcon = ({ className }: { className?: string }) => (
 
 const iconMap: { [key: string]: React.ElementType } = {
   "Front Page": HomeModernIcon,
-  "Genius & Folly": LightBulbIcon,
+  "Genius and Folly": LightBulbIcon,
   "Human Currents": UserGroupIcon,
   "The Living Planet": GlobeEuropeAfricaIcon,
-  "Money & Madness": BanknotesIcon,
+  "Money and Madness": BanknotesIcon,
   "Arena of Fame": TrophyIcon,
   "Time Capsule": HourglassIcon,
 };
@@ -90,8 +90,8 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                       onClick={closeMenu}
                       className={`flex items-center gap-3 py-2.5 text-[1.063rem] transition-colors ${
                         isActive
-                          ? "border-l-4 border-black px-2.5 font-semibold text-black"
-                          : "px-3.5 font-medium text-gray-700"
+                          ? "border-l-4 border-black px-2.5 font-semibold font-frozen text-black"
+                          : "px-3.5 font-medium font-frozen text-gray-700"
                       }`}
                     >
                       {IconComponent && (
@@ -113,7 +113,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                   onClick={closeMenu}
                   className="flex items-center justify-between py-3 pl-4 text-gray-700 transition-colors"
                 >
-                  <div className="flex items-center gap-3 text-[1.063rem] font-medium">
+                  <div className="flex items-center gap-3 text-[1.063rem] font-medium font-frozen">
                     <InformationCircleIcon className="size-5" />
                     <span>More</span>
                   </div>

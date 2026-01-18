@@ -25,7 +25,7 @@ export default function CurrencyModal({
   const [searchTerm, setSearchTerm] = useState("");
 
   const [internalSelected, setInternalSelected] = useState<Country | undefined>(
-    selected
+    selected,
   );
 
   const isControlled =
@@ -88,7 +88,7 @@ export default function CurrencyModal({
   }, [open]);
 
   const filteredCountries = countryData.filter((country) =>
-    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    country.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const getFlagUrl = (flagCode: string) =>
@@ -106,7 +106,7 @@ export default function CurrencyModal({
       {open && (
         <motion.div
           ref={backdropRef}
-          className="fixed inset-0 z-50 flex justify-center items-end sm:items-center"
+          className="fixed inset-0 z-50 backdrop-blur-xs flex justify-center items-end sm:items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

@@ -46,11 +46,11 @@ export default function Login() {
         setErrorMessage("Request timeout - server is not responding");
       } else if (error.response) {
         setErrorMessage(
-          error.response?.data?.message || "Sign-in failed. Please try again."
+          error.response?.data?.message || "Sign-in failed. Please try again.",
         );
       } else if (error.request) {
         setErrorMessage(
-          "Cannot connect to server. Please check your connection."
+          "Cannot connect to server. Please check your connection.",
         );
       } else {
         setErrorMessage("An unexpected error occurred.");
@@ -79,11 +79,12 @@ export default function Login() {
           <HomeModernIcon className="size-5 mb-7 mt-1" />
         </Link>
 
-        <h1 className="text-2xl md:text-3xl text-center font-semibold mb-2">
+        <h1 className="text-2xl md:text-3xl text-center font-frozen mb-2">
           Sign in
         </h1>
         <p className="text-center text-[#6e7780] mb-8">
-          Stay informed. Stay in the <strong>'loop'</strong>.
+          Stay informed. Stay in the{" "}
+          <strong className="font-frozen">'loop'</strong>.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
