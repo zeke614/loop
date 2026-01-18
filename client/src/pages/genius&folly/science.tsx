@@ -63,7 +63,7 @@ export default function Science() {
 
   return (
     <div className="pt-10">
-      <h1 className="text-center text-[1.375rem] mt-9 font-medium">
+      <h1 className="text-center text-[1.375rem] mt-9 font-frozen">
         Genius and Folly
       </h1>
 

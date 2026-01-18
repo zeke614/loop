@@ -25,14 +25,14 @@ export default function Life() {
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
 
   const handleBookmarkClick = (article: Article) => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     const isAlreadySaved = saved.some((item) => item.id === article.id);
 
@@ -63,7 +63,7 @@ export default function Life() {
 
   return (
     <div className="pt-10">
-      <h1 className="text-center text-[1.375rem] mt-10 font-medium">
+      <h1 className="text-center text-[1.375rem] mt-10 font-frozen">
         Human Currents
       </h1>
 

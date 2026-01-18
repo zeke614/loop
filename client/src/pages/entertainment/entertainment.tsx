@@ -25,14 +25,14 @@ export default function Entertainment() {
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
 
   const handleBookmarkClick = (article: Article) => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     const isAlreadySaved = saved.some((item) => item.id === article.id);
 
@@ -63,7 +63,7 @@ export default function Entertainment() {
 
   return (
     <div className="pt-10">
-      <h1 className="text-center text-[1.375rem] mt-9 font-medium">
+      <h1 className="text-center text-[1.375rem] mt-9 font-frozen">
         Arena of Fame
       </h1>
 
