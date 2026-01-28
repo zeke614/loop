@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import articles from "../../constants/articles";
 import BookmarkPopup from "../../components/bookmark";
 import AnimatedArticleCard from "../../components/articleCard";
@@ -71,12 +70,7 @@ export default function Science() {
         Where brilliance meets beautiful mistakes.{" "}
       </p>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5 lg:px-3 relative"
-      >
+      <div className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5 lg:px-3 relative">
         {geniusAndFollyArticles.map((article) => {
           const isSaved = savedIds.includes(article.id);
 
@@ -90,17 +84,15 @@ export default function Science() {
           );
         })}
 
-        <AnimatePresence>
-          {popUp && (
-            <BookmarkPopup
-              key="bookmark-popup"
-              type={popUpType}
-              popUpShows={popUp}
-              closeMenu={() => setPopUp(false)}
-            />
-          )}
-        </AnimatePresence>
-      </motion.div>
+        {popUp && (
+          <BookmarkPopup
+            key="bookmark-popup"
+            type={popUpType}
+            popUpShows={popUp}
+            closeMenu={() => setPopUp(false)}
+          />
+        )}
+      </div>
 
       <Newsletter />
     </div>

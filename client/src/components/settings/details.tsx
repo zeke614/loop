@@ -241,10 +241,9 @@ export default function PersonalDetails() {
 
         <div className="mt-10">
           <h3 className="text-lg font-frozen text-gray-900">Danger Zone</h3>
-          <div className="py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
             <div>
-              <p className="font-medium text-gray-900">Delete Account</p>
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500">
                 Permanently remove your profile and all data.
               </p>
             </div>

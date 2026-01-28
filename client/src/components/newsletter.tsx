@@ -1,20 +1,20 @@
-import newsletter from "../assets/imgs/newsletter.png";
+// import newsletter from "../assets/imgs/newsletter.png";
 import { BellAlertIcon } from "@heroicons/react/24/outline";
 
 export default function Newsletter() {
   return (
     <div className="flex items-center justify-center">
       <section className="relative w-full bg-white overflow-hidden rounded-2xl max-w-xl py-16 sm:py-30 mx-6">
-        <img
+        {/* <img
           src={newsletter}
           className="absolute inset-0 w-full h-full object-cover opacity-[0.12] pointer-events-none"
-        />
+        /> */}
 
         <div className="relative max-w-lg mx-auto text-center space-y-6">
           <h2 className="text-2xl font-frozen">Stay in the 'loop'</h2>
           <p className="text-gray-800 px-3">
-            A periodic dose of insight, curiosity, and updates—minus the spammy
-            nonsense.
+            A periodic dose of insight, curiosity and updates. Minus the spammy
+            troubles.
           </p>
 
           <form className="flex gap-5 justify-center mx-4">

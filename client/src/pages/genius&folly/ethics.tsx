@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -73,98 +71,6 @@ const dilemmas = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      },
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function DilemmaItem({
   dilemma,
 }: {
@@ -172,31 +78,19 @@ function DilemmaItem({
   index: number;
 }) {
   return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {dilemma.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+      </h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={dilemma.img}
           alt={dilemma.alt}
           className="w-full h-48 md:h-105 object-contain"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {dilemma.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{dilemma.content}</p>
+    </div>
   );
 }
 
@@ -214,87 +108,50 @@ export default function Ethics() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt={articleData.alt}
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            Six Unsolved AI Ethics Dilemmas That Keep Philosophers Awake
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Artificial intelligence promises dazzling leaps in medicine,
-              climate modeling, education, and creativity. Yet every
-              breakthrough seems to drag behind it a small parade of ethical
-              thorns. The core problem isn't evil robots or runaway
-              superintelligence—it's that our systems are becoming powerful in
-              ways that challenge long-standing norms about fairness, duty,
-              autonomy, and responsibility.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 mt-4"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              For all our AI ethics committees, regulatory frameworks, and
-              principle documents, six dilemmas remain stubbornly unsolved. Not
-              because no one is working on them, but because each one touches
-              something messy at the heart of being human.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt={articleData.alt}
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          Six Unsolved AI Ethics Dilemmas That Keep Philosophers Awake
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start">
+          <p className="leading-6.5">
+            Artificial intelligence promises dazzling leaps in medicine, climate
+            modeling, education, and creativity. Yet every breakthrough seems to
+            drag behind it a small parade of ethical thorns. The core problem
+            isn't evil robots or runaway superintelligence—it's that our systems
+            are becoming powerful in ways that challenge long-standing norms
+            about fairness, duty, autonomy, and responsibility.
+          </p>
+          <p className="leading-6.5 mt-4">
+            For all our AI ethics committees, regulatory frameworks, and
+            principle documents, six dilemmas remain stubbornly unsolved. Not
+            because no one is working on them, but because each one touches
+            something messy at the heart of being human.
+          </p>
+        </div>
 
         <div className="my-14 space-y-14">
           {dilemmas.map((dilemma, index) => (
@@ -302,33 +159,26 @@ export default function Ethics() {
           ))}
         </div>
 
-        <AnimatedSection>
-          <motion.div
-            className="text-[#767676] pt-3 space-y-4"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <p>
-              These six dilemmas share a quiet, universal truth: AI magnifies
-              tensions we never resolved in human society. Fairness,
-              transparency, agency, autonomy, and shared prosperity were already
-              complicated. AI simply makes the contradictions louder.
-            </p>
-            <p>
-              Instead of tidy solutions, what we have is an evolving negotiation
-              between technology, law, culture, and human psychology. Ethical AI
-              might be less about achieving perfection and more about building
-              systems that stay accountable, corrigible, and compatible with
-              pluralistic societies.
-            </p>
-            <p className="font-medium text-gray-700 italic mt-6">
-              AI isn't a mirror of our intelligence—it's a mirror of our
-              unresolved debates.
-            </p>
-          </motion.div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] pt-3 space-y-4">
+          <p>
+            These six dilemmas share a quiet, universal truth: AI magnifies
+            tensions we never resolved in human society. Fairness, transparency,
+            agency, autonomy, and shared prosperity were already complicated. AI
+            simply makes the contradictions louder.
+          </p>
+          <p>
+            Instead of tidy solutions, what we have is an evolving negotiation
+            between technology, law, culture, and human psychology. Ethical AI
+            might be less about achieving perfection and more about building
+            systems that stay accountable, corrigible, and compatible with
+            pluralistic societies.
+          </p>
+          <p className="font-medium text-gray-700 italic mt-6">
+            AI isn't a mirror of our intelligence—it's a mirror of our
+            unresolved debates.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

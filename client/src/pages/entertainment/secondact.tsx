@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -24,7 +22,7 @@ type Article = {
 };
 
 const articleData = (articles["Arena of Fame"] as Article[]).find(
-  (article) => article.id === "second-act-icons-who-reinvented-themselves"
+  (article) => article.id === "second-act-icons-who-reinvented-themselves",
 )!;
 
 const icons = [
@@ -73,98 +71,6 @@ const requirements = [
   "Working away from spotlights — reinvention often happens privately before returning publicly",
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function SecondAct() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -179,185 +85,110 @@ export default function SecondAct() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt="Michael Jordan representing the spirit of reinvention"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            The Second Act: Athletes and Icons Who Reinvented Themselves After
-            Failure
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Public failure has a way of freezing people in time. An early
-              loss, a public stumble, a bad season or scandal can become the
-              headline that follows someone forever. In sports and entertainment
-              alike, the first narrative tends to stick.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              What's rarer—and more revealing—is the second act: the moment
-              someone refuses to be defined by the version of themselves that
-              didn't work. Reinvention is not a comeback tour. It's
-              reconstruction. The people who manage it don't just return—they
-              return different.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt="Michael Jordan representing the spirit of reinvention"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          The Second Act: Athletes and Icons Who Reinvented Themselves After
+          Failure
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Public failure has a way of freezing people in time. An early loss,
+            a public stumble, a bad season or scandal can become the headline
+            that follows someone forever. In sports and entertainment alike, the
+            first narrative tends to stick.
+          </p>
+          <p className="leading-6.5">
+            What's rarer—and more revealing—is the second act: the moment
+            someone refuses to be defined by the version of themselves that
+            didn't work. Reinvention is not a comeback tour. It's
+            reconstruction. The people who manage it don't just return—they
+            return different.
+          </p>
+        </div>
 
         <div className="my-10 space-y-14">
           {icons.map((icon, index) => (
-            <AnimatedSection key={index} className="space-y-6">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-6">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {icon.title}
-              </motion.h2>
+              </h2>
 
-              <motion.div
-                className="overflow-hidden mb-6"
-                variants={imageVariants}
-              >
+              <div className="overflow-hidden mb-6">
                 <img
                   src={icon.img}
                   alt={icon.alt}
                   className="w-full h-50 md:h-96 object-cover"
                 />
-              </motion.div>
+              </div>
 
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {icon.content}
-              </motion.p>
-            </AnimatedSection>
+              <p className="text-[#767676] leading-7">{icon.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="space-y-6">
-            <motion.h2
-              className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              What Reinvention Actually Requires
-            </motion.h2>
+        <div className="space-y-6">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+            What Reinvention Actually Requires
+          </h2>
 
-            <motion.div
-              className="bg-gray-50 rounded-xl p-6 space-y-4"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <p className="text-[#767676] mb-4">
-                Across fields, second acts share the same demands. Reinvention
-                is quieter than ascent and lonelier than success. It often
-                happens away from spotlights before returning to them. The
-                process involves:
-              </p>
+          <div className="bg-gray-50 rounded-xl p-6 space-y-4">
+            <p className="text-[#767676] mb-4">
+              Across fields, second acts share the same demands. Reinvention is
+              quieter than ascent and lonelier than success. It often happens
+              away from spotlights before returning to them. The process
+              involves:
+            </p>
 
-              <div className="space-y-3">
-                {requirements.map((requirement, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
-                      {index + 1}
-                    </span>
-                    <p className="text-[#767676] leading-7">{requirement}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            <div className="space-y-3">
+              {requirements.map((requirement, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
+                    {index + 1}
+                  </span>
+                  <p className="text-[#767676] leading-7">{requirement}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4 mt-10">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              First acts reveal ability. Second acts reveal character. In a
-              culture obsessed with early success, reinvention reminds us that
-              identity is not fixed—and that mastery isn't about never failing,
-              but about learning how to evolve when old versions stop working.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Greatness, it turns out, is less about arrival and more about
-              revision.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-4 mt-10">
+          <p className="leading-6.5">
+            First acts reveal ability. Second acts reveal character. In a
+            culture obsessed with early success, reinvention reminds us that
+            identity is not fixed—and that mastery isn't about never failing,
+            but about learning how to evolve when old versions stop working.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            Greatness, it turns out, is less about arrival and more about
+            revision.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

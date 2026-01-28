@@ -70,7 +70,7 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md py-10 px-7">
+      <div className="w-full max-w-md py-10 sm:mt-7 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}

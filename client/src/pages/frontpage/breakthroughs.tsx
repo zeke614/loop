@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -74,130 +72,25 @@ const breakthroughs = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.2,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      },
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function BreakthroughItem({
   breakthrough,
 }: {
   breakthrough: (typeof breakthroughs)[0];
-  index: number;
 }) {
   return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {breakthrough.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+      </h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={breakthrough.img}
           alt={breakthrough.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {breakthrough.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{breakthrough.content}</p>
+    </div>
   );
 }
 
@@ -214,105 +107,63 @@ export default function Breakthroughs() {
   }, []);
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
-        <BackToTopButton showBackToTop={showBackToTop} />
+    <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
+      <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt={articleData.alt}
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Six Scientific Failures, Now Major Breakthroughs
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Science is often portrayed as a straight staircase to truth, but
-              many of its greatest leaps started with a misstep. Failed
-              experiments, stray bacteria, overheated equipment—these tiny
-              disasters reshaped medicine, physics, technology and even daily
-              life. This feature explores six moments where mistakes didn't just
-              guide innovation; they became the spark that rewrote what humanity
-              thought possible.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-
-        <div className="my-10 space-y-14">
-          {breakthroughs.map((breakthrough, index) => (
-            <BreakthroughItem
-              key={index}
-              breakthrough={breakthrough}
-              index={index}
-            />
-          ))}
+      <div className="relative overflow-hidden mb-4 -mx-4">
+        <div
+          onClick={() => window.history.back()}
+          className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
+        >
+          <ChevronLeftIcon className="size-4.5" />
         </div>
+        <img
+          src={articleData.img}
+          alt={articleData.alt}
+          className="w-full h-60 sm:h-[24rem] object-cover"
+        />
+      </div>
 
-        <AnimatedSection>
-          <motion.p
-            className="text-[#767676] pt-3"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            These six stories share a quiet, universal truth: discovery is
-            rarely a straight path. The human instinct to pause, notice, and
-            question the unexpected has given us antibiotics, modern medicine,
-            global communication, faster cooking, sticky miracles, and the key
-            to the atom. Science advances not only from brilliance but from
-            curiosity in the face of failure. Every misstep holds the potential
-            for transformation when examined with patient, stubborn wonder.
-          </motion.p>
-        </AnimatedSection>
-      </motion.div>
-    </>
+      <div>
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          Six Scientific Failures, Now Major Breakthroughs
+        </h1>
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+      </div>
+
+      <div className="text-[#767676] text-start">
+        <p className="leading-6.5">
+          Science is often portrayed as a straight staircase to truth, but many
+          of its greatest leaps started with a misstep. Failed experiments,
+          stray bacteria, overheated equipment—these tiny disasters reshaped
+          medicine, physics, technology and even daily life. This feature
+          explores six moments where mistakes didn't just guide innovation; they
+          became the spark that rewrote what humanity thought possible.
+        </p>
+      </div>
+
+      <div className="my-10 space-y-14">
+        {breakthroughs.map((breakthrough, index) => (
+          <BreakthroughItem key={index} breakthrough={breakthrough} />
+        ))}
+      </div>
+
+      <div className="text-[#767676] pt-3">
+        <p>
+          These six stories share a quiet, universal truth: discovery is rarely
+          a straight path. The human instinct to pause, notice, and question the
+          unexpected has given us antibiotics, modern medicine, global
+          communication, faster cooking, sticky miracles, and the key to the
+          atom. Science advances not only from brilliance but from curiosity in
+          the face of failure. Every misstep holds the potential for
+          transformation when examined with patient, stubborn wonder.
+        </p>
+      </div>
+    </div>
   );
 }

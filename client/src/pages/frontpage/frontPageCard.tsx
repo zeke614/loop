@@ -37,14 +37,14 @@ export default function FrontPageArticlesCard() {
 
   useEffect(() => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     setSavedIds(saved.map((item) => item.id));
   }, []);
 
   const handleBookmarkClick = (article: Article) => {
     const saved: Article[] = JSON.parse(
-      localStorage.getItem("savedLoopArticles") || "[]"
+      localStorage.getItem("savedLoopArticles") || "[]",
     );
     const isAlreadySaved = saved.some((item) => item.id === article.id);
 

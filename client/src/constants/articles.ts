@@ -118,7 +118,7 @@ const articles: Record<string, Article[]> = {
       title:
         "The Evolution of Work-Life Balance: From 1950s Office to Remote Nomad",
       date: "May 2, 2025",
-      author: "Omar K. Benson",
+      author: "Loop Editorial",
       img: worklife,
       alt: "Vintage office and modern remote workspace split image",
       description: `Work hasn't just changed — the very idea of what a "workday" is has mutated across decades of policy, technology, and culture. The journey from the postwar cubicle age to the era of remote nomads is less a straight line and more a renegotiation of what humans owe their jobs and what they owe their lives.`,
@@ -240,109 +240,110 @@ const articles: Record<string, Article[]> = {
       description:
         "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
     },
-    {
-      id: "planet-001",
-      category: "The Living Planet",
-      title: "Seven Ecosystems That Should Have Collapsed — But Didn’t",
-      date: "September 12, 2025",
-      author: "Amara N'diaye",
-      img: "/images/planet-001.jpg",
-      alt: "Lush resilient ecosystem landscape",
-      description:
-        "Despite extreme pressures, some ecosystems show surprising resilience, from mangroves to alpine meadows. This piece examines seven such systems, the ecological mechanisms that stabilized them, and what resilience teaches us about conservation in a changing climate...",
-    },
-    {
-      id: "planet-002",
-      category: "The Living Planet",
-      title:
-        "The Rise and Fall of Coral Reefs: What They Tell Us About Climate Resilience",
-      date: "February 3, 2025",
-      author: "Hiroko Tanaka",
-      img: "/images/planet-002.jpg",
-      alt: "Coral reef underwater",
-      description:
-        "Coral reefs are both fragile and adaptive, offering an early warning system for ocean health. This longform explores bleaching events, restoration experiments, and community efforts that aim to protect reefs and the coastal economies that depend on them...",
-    },
-    {
-      id: "planet-003",
-      category: "The Living Planet",
-      title: "Five Urban Wildlife Comebacks That Surprise Ecologists",
-      date: "June 25, 2025",
-      author: "Lucas Ferreira",
-      img: "/images/planet-003.jpg",
-      alt: "City skyline with wildlife",
-      description:
-        "From peregrine falcons nesting on skyscrapers to coyotes in metropolitan parks, wildlife has reasserted itself in cities worldwide. This report chronicles five surprising comebacks and the urban policies and habitat designs that enabled them...",
-    },
-    {
-      id: "planet-004",
-      category: "The Living Planet",
-      title:
-        "How Indigenous Land Management Practices Are Reshaping Conservation",
-      date: "August 29, 2025",
-      author: "Aroha Te Rangi",
-      img: "/images/planet-004.jpg",
-      alt: "Indigenous people tending land",
-      description:
-        "Indigenous stewardship often holds long-tested ecological knowledge that modern conservation is rediscovering and integrating. Through field studies and interviews, this article shows how traditional fire regimes, rotational harvesting, and sacred site protection deliver measurable biodiversity benefits...",
-    },
-    {
-      id: "planet-005",
-      category: "The Living Planet",
-      title: "The Underground Networks of Mycorrhizal Fungi: Nature’s Internet",
-      date: "October 17, 2025",
-      author: "Felix Nyarko",
-      img: "/images/planet-005.jpg",
-      alt: "Fungal networks in soil closeup",
-      description:
-        "Mycorrhizal fungi form vast subterranean networks that shuttle nutrients and signals between plants, reshaping our understanding of forest communities. This piece synthesizes ecology research and explores implications for reforestation and carbon sequestration strategies...",
-    },
-    {
-      id: "planet-006",
-      category: "The Living Planet",
-      title: "Six Invasive Species That Became Unexpected Benefactors",
-      date: "May 2, 2025",
-      author: "Maya Alvarez",
-      img: "/images/planet-006.jpg",
-      alt: "Invasive species in a landscape",
-      description:
-        "Not all introductions are purely destructive — in some contexts invasive species have altered ecosystems in surprising ways that benefited other species or human uses. This nuanced analysis traces six cases where management and adaptation reframed an invasive narrative...",
-    },
-    {
-      id: "planet-008",
-      category: "The Living Planet",
-      title:
-        "The Future of Water: Ancient Aqueducts, Modern Desalination, and Scarcity",
-      date: "November 24, 2025",
-      author: "Evelyn Park",
-      img: "/images/planet-008.jpg",
-      alt: "A modern desalination plant",
-      description:
-        "Water scarcity is a technical problem wrapped in social and political complexity. By tracing infrastructure from Roman aqueducts to present desalination and watershed management, this piece highlights solutions that are technically possible and socially equitable...",
-    },
-    {
-      id: "planet-009",
-      category: "The Living Planet",
-      title: "What Antarctica’s Melting Ice Really Means for Coastal Cities",
-      date: "April 24, 2025",
-      author: "Thomas Berg",
-      img: "/images/planet-009.jpg",
-      alt: "Antarctic ice shelf calving",
-      description:
-        "Melting Antarctic ice is a global issue with site-specific consequences for coastal planning, insurance markets and migration. This analytical article explains the science of ice loss, models of sea-level rise, and practical adaptation measures for risk-exposed communities...",
-    },
-    {
-      id: "planet-010",
-      category: "The Living Planet",
-      title: "The Unexpected Role of Microplastics in Biological Systems",
-      date: "July 5, 2025",
-      author: "Zara Ivanov",
-      img: "/images/planet-010.jpg",
-      alt: "Microplastics on a beach",
-      description:
-        "Microplastics are pervasive, but their ecological and physiological impacts are complex and only partially understood. This investigation compiles recent research on how tiny particles move through food webs, alter microbial communities, and affect human health risks...",
-    },
   ],
+  //   {
+  //     id: "planet-001",
+  //     category: "The Living Planet",
+  //     title: "Seven Ecosystems That Should Have Collapsed — But Didn’t",
+  //     date: "September 12, 2025",
+  //     author: "Amara N'diaye",
+  //     img: "/images/planet-001.jpg",
+  //     alt: "Lush resilient ecosystem landscape",
+  //     description:
+  //       "Despite extreme pressures, some ecosystems show surprising resilience, from mangroves to alpine meadows. This piece examines seven such systems, the ecological mechanisms that stabilized them, and what resilience teaches us about conservation in a changing climate...",
+  //   },
+  //   {
+  //     id: "planet-002",
+  //     category: "The Living Planet",
+  //     title:
+  //       "The Rise and Fall of Coral Reefs: What They Tell Us About Climate Resilience",
+  //     date: "February 3, 2025",
+  //     author: "Hiroko Tanaka",
+  //     img: "/images/planet-002.jpg",
+  //     alt: "Coral reef underwater",
+  //     description:
+  //       "Coral reefs are both fragile and adaptive, offering an early warning system for ocean health. This longform explores bleaching events, restoration experiments, and community efforts that aim to protect reefs and the coastal economies that depend on them...",
+  //   },
+  //   {
+  //     id: "planet-003",
+  //     category: "The Living Planet",
+  //     title: "Five Urban Wildlife Comebacks That Surprise Ecologists",
+  //     date: "June 25, 2025",
+  //     author: "Lucas Ferreira",
+  //     img: "/images/planet-003.jpg",
+  //     alt: "City skyline with wildlife",
+  //     description:
+  //       "From peregrine falcons nesting on skyscrapers to coyotes in metropolitan parks, wildlife has reasserted itself in cities worldwide. This report chronicles five surprising comebacks and the urban policies and habitat designs that enabled them...",
+  //   },
+  //   {
+  //     id: "planet-004",
+  //     category: "The Living Planet",
+  //     title:
+  //       "How Indigenous Land Management Practices Are Reshaping Conservation",
+  //     date: "August 29, 2025",
+  //     author: "Aroha Te Rangi",
+  //     img: "/images/planet-004.jpg",
+  //     alt: "Indigenous people tending land",
+  //     description:
+  //       "Indigenous stewardship often holds long-tested ecological knowledge that modern conservation is rediscovering and integrating. Through field studies and interviews, this article shows how traditional fire regimes, rotational harvesting, and sacred site protection deliver measurable biodiversity benefits...",
+  //   },
+  //   {
+  //     id: "planet-005",
+  //     category: "The Living Planet",
+  //     title: "The Underground Networks of Mycorrhizal Fungi: Nature’s Internet",
+  //     date: "October 17, 2025",
+  //     author: "Felix Nyarko",
+  //     img: "/images/planet-005.jpg",
+  //     alt: "Fungal networks in soil closeup",
+  //     description:
+  //       "Mycorrhizal fungi form vast subterranean networks that shuttle nutrients and signals between plants, reshaping our understanding of forest communities. This piece synthesizes ecology research and explores implications for reforestation and carbon sequestration strategies...",
+  //   },
+  //   {
+  //     id: "planet-006",
+  //     category: "The Living Planet",
+  //     title: "Six Invasive Species That Became Unexpected Benefactors",
+  //     date: "May 2, 2025",
+  //     author: "Maya Alvarez",
+  //     img: "/images/planet-006.jpg",
+  //     alt: "Invasive species in a landscape",
+  //     description:
+  //       "Not all introductions are purely destructive — in some contexts invasive species have altered ecosystems in surprising ways that benefited other species or human uses. This nuanced analysis traces six cases where management and adaptation reframed an invasive narrative...",
+  //   },
+  //   {
+  //     id: "planet-008",
+  //     category: "The Living Planet",
+  //     title:
+  //       "The Future of Water: Ancient Aqueducts, Modern Desalination, and Scarcity",
+  //     date: "November 24, 2025",
+  //     author: "Evelyn Park",
+  //     img: "/images/planet-008.jpg",
+  //     alt: "A modern desalination plant",
+  //     description:
+  //       "Water scarcity is a technical problem wrapped in social and political complexity. By tracing infrastructure from Roman aqueducts to present desalination and watershed management, this piece highlights solutions that are technically possible and socially equitable...",
+  //   },
+  //   {
+  //     id: "planet-009",
+  //     category: "The Living Planet",
+  //     title: "What Antarctica’s Melting Ice Really Means for Coastal Cities",
+  //     date: "April 24, 2025",
+  //     author: "Thomas Berg",
+  //     img: "/images/planet-009.jpg",
+  //     alt: "Antarctic ice shelf calving",
+  //     description:
+  //       "Melting Antarctic ice is a global issue with site-specific consequences for coastal planning, insurance markets and migration. This analytical article explains the science of ice loss, models of sea-level rise, and practical adaptation measures for risk-exposed communities...",
+  //   },
+  //   {
+  //     id: "planet-010",
+  //     category: "The Living Planet",
+  //     title: "The Unexpected Role of Microplastics in Biological Systems",
+  //     date: "July 5, 2025",
+  //     author: "Zara Ivanov",
+  //     img: "/images/planet-010.jpg",
+  //     alt: "Microplastics on a beach",
+  //     description:
+  //       "Microplastics are pervasive, but their ecological and physiological impacts are complex and only partially understood. This investigation compiles recent research on how tiny particles move through food webs, alter microbial communities, and affect human health risks...",
+  //   },
+  // ],
 
   "Money and Madness": [
     {

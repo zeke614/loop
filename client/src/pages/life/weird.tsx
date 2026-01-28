@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -20,7 +18,7 @@ type Article = {
 };
 
 const articleData = (articles["Human Currents"] as Article[]).find(
-  (article) => article.id === "how-time-got-weird"
+  (article) => article.id === "how-time-got-weird",
 )!;
 
 const sections = [
@@ -61,98 +59,6 @@ const sections = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Weird() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -167,138 +73,76 @@ export default function Weird() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={timeWeird}
-              alt="Visual representation of time perception and distortion"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            How Time Got Weird: Why Everyone Feels Like Life Is Speeding Up
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Across conversations, journals, therapy rooms, and social feeds,
-              one idea keeps surfacing: the sense that time has slipped into
-              fast-forward. Weeks blur, years feel compressed, and even memories
-              from 2019 feel strangely distant.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Psychologists call this a "temporal distortion," and the 2020s
-              have provided a perfect storm of conditions that bend our
-              perception of time. From disrupted routines to hyper-digital
-              living, the feeling isn't just poetic—it has scientific
-              fingerprints.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={timeWeird}
+            alt="Visual representation of time perception and distortion"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          How Time Got Weird: Why Everyone Feels Like Life Is Speeding Up
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Across conversations, journals, therapy rooms, and social feeds, one
+            idea keeps surfacing: the sense that time has slipped into
+            fast-forward. Weeks blur, years feel compressed, and even memories
+            from 2019 feel strangely distant.
+          </p>
+          <p className="leading-6.5">
+            Psychologists call this a "temporal distortion," and the 2020s have
+            provided a perfect storm of conditions that bend our perception of
+            time. From disrupted routines to hyper-digital living, the feeling
+            isn't just poetic—it has scientific fingerprints.
+          </p>
+        </div>
 
         <div className="my-10 space-y-10">
           {sections.map((section, index) => (
-            <AnimatedSection key={index} className="space-y-4">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-4">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {section.title}
-              </motion.h2>
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {section.content}
-              </motion.p>
-            </AnimatedSection>
+              </h2>
+              <p className="text-[#767676] leading-7">{section.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              The sense that time is speeding up isn't a personal failing; it's
-              a cultural, technological, and neurological reality. The 2020s
-              rewired how people move, work, remember, and connect, creating a
-              decade where the clock ticks normally but life moves unusually
-              fast.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              As psychologists often note, slowing time isn't about controlling
-              the seconds—it's about rebuilding meaningful markers, restoring
-              pauses, and living with enough texture that memories can breathe.
-              The next chapter of the decade may feel different if we learn to
-              widen it.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            The sense that time is speeding up isn't a personal failing; it's a
+            cultural, technological, and neurological reality. The 2020s rewired
+            how people move, work, remember, and connect, creating a decade
+            where the clock ticks normally but life moves unusually fast.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            As psychologists often note, slowing time isn't about controlling
+            the seconds—it's about rebuilding meaningful markers, restoring
+            pauses, and living with enough texture that memories can breathe.
+            The next chapter of the decade may feel different if we learn to
+            widen it.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

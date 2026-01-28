@@ -16,7 +16,7 @@
 
 @theme {
   --font-google-sans-flex: "Google Sans Flex", sans-serif; 
-  --font-frozen: "DK Frozen Memory";
+  --font-frozen: "DK Frozen Memory", "Google Sans Flex";
 }
 
 body {

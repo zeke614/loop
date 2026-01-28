@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -48,7 +46,7 @@ const biomimicryExamples = [
     img: lotusLeaf,
     alt: "lotus temple in india",
     content:
-      "The lotus plant thrives in murky water yet keeps its petals flawlessly clean thanks to a waxy, nano-textured surface that repels moisture and dirt. The Lotus Temple in India, for example, uses petal-like marble panels whose smooth, water-shedding geometry draws from the plant's natural cleanliness. Modern coatings based on the “lotus effect” now help buildings stay brighter for longer, reduce maintenance costs, and keep pollution from clinging to exteriors. Nature didn’t invent a cleaning system—it invented a surface that refuses to get dirty in the first place, and architecture is finally catching up.",
+      "The lotus plant thrives in murky water yet keeps its petals flawlessly clean thanks to a waxy, nano-textured surface that repels moisture and dirt. The Lotus Temple in India, for example, uses petal-like marble panels whose smooth, water-shedding geometry draws from the plant's natural cleanliness. Modern coatings based on the 'lotus effect' now help buildings stay brighter for longer, reduce maintenance costs, and keep pollution from clinging to exteriors. Nature didn't invent a cleaning system—it invented a surface that refuses to get dirty in the first place, and architecture is finally catching up.",
   },
   {
     title: "4. Termite Mounds and Passive Cooling Systems",
@@ -73,98 +71,6 @@ const biomimicryExamples = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      },
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function BiomimicryItem({
   example,
 }: {
@@ -172,31 +78,19 @@ function BiomimicryItem({
   index: number;
 }) {
   return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {example.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+      </h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={example.img}
           alt={example.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {example.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{example.content}</p>
+    </div>
   );
 }
 
@@ -214,77 +108,46 @@ export default function Biomimicry() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt={articleData.alt}
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            Biomimicry: When Nature Designs Better Than Engineers
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Engineers often pride themselves on cutting-edge tools, yet many
-              of the cleverest ideas arrive pre-installed in the living world.
-              Plants, insects, birds, and marine life have spent billions of
-              years refining designs humans are only beginning to notice.
-              Biomimicry takes these natural strategies and turns them into
-              practical technologies—sometimes simple, sometimes wildly
-              futuristic. The examples below illustrate how looking to nature
-              can reshape everything from architecture to robotics.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt={articleData.alt}
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          Biomimicry: When Nature Designs Better Than Engineers
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start">
+          <p className="leading-6.5">
+            Engineers often pride themselves on cutting-edge tools, yet many of
+            the cleverest ideas arrive pre-installed in the living world.
+            Plants, insects, birds, and marine life have spent billions of years
+            refining designs humans are only beginning to notice. Biomimicry
+            takes these natural strategies and turns them into practical
+            technologies—sometimes simple, sometimes wildly futuristic. The
+            examples below illustrate how looking to nature can reshape
+            everything from architecture to robotics.
+          </p>
+        </div>
 
         <div className="my-14 space-y-14">
           {biomimicryExamples.map((example, index) => (
@@ -292,28 +155,20 @@ export default function Biomimicry() {
           ))}
         </div>
 
-        <AnimatedSection>
-          <motion.div
-            className="text-[#767676] pt-3 space-y-4"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <p>
-              Biomimicry doesn't claim nature has all the answers, but it does
-              remind us that some of the best engineering ideas already exist
-              around us—in leaves, feathers, shells, and bone. Each natural
-              system carries lessons about efficiency, resilience, and
-              sustainability.
-            </p>
-            <p className="font-medium text-gray-700">
-              As technology pushes forward, the smartest tools may come from
-              paying closer attention to designs that have been quietly
-              succeeding for millennia.
-            </p>
-          </motion.div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] pt-3 space-y-4">
+          <p>
+            Biomimicry doesn't claim nature has all the answers, but it does
+            remind us that some of the best engineering ideas already exist
+            around us—in leaves, feathers, shells, and bone. Each natural system
+            carries lessons about efficiency, resilience, and sustainability.
+          </p>
+          <p className="font-medium text-gray-700">
+            As technology pushes forward, the smartest tools may come from
+            paying closer attention to designs that have been quietly succeeding
+            for millennia.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

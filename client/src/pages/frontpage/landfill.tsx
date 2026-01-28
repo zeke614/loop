@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -26,7 +24,7 @@ type Article = {
 };
 
 const articleData = (articles["The Living Planet"] as Article[]).find(
-  (article) => article.id === "landfill-to-loop"
+  (article) => article.id === "landfill-to-loop",
 )!;
 
 const cities = [
@@ -82,125 +80,19 @@ const cities = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function CityItem({ city }: { city: (typeof cities)[0]; index: number }) {
   return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {city.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">{city.title}</h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={city.img}
           alt={city.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {city.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{city.content}</p>
+    </div>
   );
 }
 
@@ -218,75 +110,44 @@ export default function Landfill() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt={articleData.alt}
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            Seven Cities Turning Trash into Power
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              The modern city faces two ancient problems: waste and want. What
-              to do with mountains of trash — and how to feed the endless
-              appetite for energy. Across the globe, some cities are discovering
-              that the answer to both problems can come from the same source.
-              Here are 7 cities that have turned waste into power, lighting
-              homes and warming streets from what once filled their landfills.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt={articleData.alt}
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          Seven Cities Turning Trash into Power
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start">
+          <p className="leading-6.5">
+            The modern city faces two ancient problems: waste and want. What to
+            do with mountains of trash — and how to feed the endless appetite
+            for energy. Across the globe, some cities are discovering that the
+            answer to both problems can come from the same source. Here are 7
+            cities that have turned waste into power, lighting homes and warming
+            streets from what once filled their landfills.
+          </p>
+        </div>
 
         <div className="my-14 space-y-14">
           {cities.map((city, index) => (
@@ -294,26 +155,18 @@ export default function Landfill() {
           ))}
         </div>
 
-        <AnimatedSection>
-          <motion.p
-            className="text-[#767676] pt-3"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            From these cities, a quiet revolution burns: garbage turned into
-            green gold. Their success shows that the future of energy might not
-            lie deep underground, but in what we throw away every day. These
-            cities span different geographies, income levels and waste-profiles
-            — yet they share a common pattern: waste is treated not as an
-            after-thought but as a feedstock. Energy systems that integrate
-            thermal recovery, recycling, and civic engagement are outperforming
-            traditional disposal models. As more urban centres grow, the
-            question shifts from "What do we do with trash?" to "What do we do
-            with the value embedded in it?"
-          </motion.p>
-        </AnimatedSection>
-      </motion.div>
+        <p className="text-[#767676] pt-3">
+          From these cities, a quiet revolution burns: garbage turned into green
+          gold. Their success shows that the future of energy might not lie deep
+          underground, but in what we throw away every day. These cities span
+          different geographies, income levels and waste-profiles — yet they
+          share a common pattern: waste is treated not as an after-thought but
+          as a feedstock. Energy systems that integrate thermal recovery,
+          recycling, and civic engagement are outperforming traditional disposal
+          models. As more urban centres grow, the question shifts from "What do
+          we do with trash?" to "What do we do with the value embedded in it?"
+        </p>
+      </div>
     </>
   );
 }

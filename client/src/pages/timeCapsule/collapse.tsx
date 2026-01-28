@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -18,7 +16,7 @@ type Article = {
 };
 
 const articleData = (articles["Time Capsule"] as Article[]).find(
-  (article) => article.id === "collapsed-empires"
+  (article) => article.id === "collapsed-empires",
 )!;
 
 const empires = [
@@ -57,98 +55,6 @@ const patterns = [
   "Failure to adapt — whether through technology, governance, or social reform, stagnation invites collapse.",
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Collapses() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -163,174 +69,102 @@ export default function Collapses() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt="Collapsing empires and historical ruins"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            When Empires Collapsed: Lessons From History's Great Falls
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Empires never imagine themselves as temporary. From Rome to the
-              Aztecs to the Soviet Union, each believed its political machinery,
-              cultural identity, and military strength would outlast the
-              generations running it.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              History paints a different picture. Empires fall for many reasons,
-              but patterns recur: ecological pressure, economic strain,
-              leadership failures, technological mismatches, and resistance from
-              those they once controlled. Looking across centuries reveals not
-              just how empires collapse, but how complex systems break when they
-              stop adapting.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt="Collapsing empires and historical ruins"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          When Empires Collapsed: Lessons From History's Great Falls
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Empires never imagine themselves as temporary. From Rome to the
+            Aztecs to the Soviet Union, each believed its political machinery,
+            cultural identity, and military strength would outlast the
+            generations running it.
+          </p>
+          <p className="leading-6.5">
+            History paints a different picture. Empires fall for many reasons,
+            but patterns recur: ecological pressure, economic strain, leadership
+            failures, technological mismatches, and resistance from those they
+            once controlled. Looking across centuries reveals not just how
+            empires collapse, but how complex systems break when they stop
+            adapting.
+          </p>
+        </div>
 
         <div className="my-10 space-y-10">
           {empires.map((empire, index) => (
-            <AnimatedSection key={index} className="space-y-4">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-4">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {empire.title}
-              </motion.h2>
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {empire.content}
-              </motion.p>
-            </AnimatedSection>
+              </h2>
+              <p className="text-[#767676] leading-7">{empire.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="space-y-6">
-            <motion.h2
-              className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Patterns Across Centuries
-            </motion.h2>
+        <div className="space-y-6">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+            Patterns Across Centuries
+          </h2>
 
-            <motion.div
-              className="bg-gray-100 rounded-xl p-6 space-y-4"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <p className="text-[#767676] mb-4">
-                Though separated by culture and technology, collapsing empires
-                share recognizable stresses:
-              </p>
+          <div className="bg-gray-100 rounded-xl p-6 space-y-4">
+            <p className="text-[#767676] mb-4">
+              Though separated by culture and technology, collapsing empires
+              share recognizable stresses:
+            </p>
 
-              <div className="space-y-3">
-                {patterns.map((pattern, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
-                      {index + 1}
-                    </span>
-                    <p className="text-[#767676] leading-7">{pattern}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            <div className="space-y-3">
+              {patterns.map((pattern, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
+                    {index + 1}
+                  </span>
+                  <p className="text-[#767676] leading-7">{pattern}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4 mt-10">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              The fall of an empire is rarely a single event; it is a long
-              negotiation between internal weakness and external pressure.
-              Studying these collapses is less about mourning past power than
-              recognizing how complex systems depend on flexibility, legitimacy,
-              and ecological balance.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              History's fallen empires remind modern institutions — from
-              governments to global companies — that resilience isn't about
-              scale or strength. It's about the ability to adapt before the
-              breaking point arrives.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-4 mt-10">
+          <p className="leading-6.5">
+            The fall of an empire is rarely a single event; it is a long
+            negotiation between internal weakness and external pressure.
+            Studying these collapses is less about mourning past power than
+            recognizing how complex systems depend on flexibility, legitimacy,
+            and ecological balance.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            History's fallen empires remind modern institutions — from
+            governments to global companies — that resilience isn't about scale
+            or strength. It's about the ability to adapt before the breaking
+            point arrives.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

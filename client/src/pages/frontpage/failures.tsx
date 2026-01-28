@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -82,130 +80,21 @@ const failures = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      },
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+function FailureItem({ failure }: { failure: (typeof failures)[0] }) {
   return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function FailureItem({
-  failure,
-}: {
-  failure: (typeof failures)[0];
-  index: number;
-}) {
-  return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {failure.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+      </h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={failure.img}
           alt={failure.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {failure.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{failure.content}</p>
+    </div>
   );
 }
 
@@ -223,15 +112,10 @@ export default function CorporateFailures() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
+        <div>
           <div className="relative overflow-hidden mb-4 -mx-4">
             <div
               onClick={() => window.history.back()}
@@ -239,50 +123,30 @@ export default function CorporateFailures() {
             >
               <ChevronLeftIcon className="size-4.5" />
             </div>
-            <motion.img
+            <img
               src={articleData.img}
               alt={articleData.alt}
               className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
             />
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
+        <div>
+          <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
             Seven Corporate Failures, Governments' Hard Lessons
-          </motion.h1>
+          </h1>
 
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
             <span className="font-medium text-gray-600">
               {articleData.author},
             </span>
             <span>{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
+          </div>
+        </div>
 
-        <AnimatedSection>
+        <div>
           <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            <p className="leading-6.5">
               Corporate collapse is rarely sudden—it's usually the slow
               unraveling of ambition, secrecy, and flawed incentives. This
               article revisits seven infamous failures whose shockwaves reshaped
@@ -291,23 +155,18 @@ export default function CorporateFailures() {
               governance lessons, it explores how disaster became the catalyst
               for stronger rules, sharper scrutiny, and a deeper understanding
               of what responsible leadership truly demands...
-            </motion.p>
+            </p>
           </div>
-        </AnimatedSection>
+        </div>
 
         <div className="my-14 space-y-14">
           {failures.map((failure, index) => (
-            <FailureItem key={index} failure={failure} index={index} />
+            <FailureItem key={index} failure={failure} />
           ))}
         </div>
 
-        <AnimatedSection>
-          <motion.p
-            className="text-[#767676] pt-3"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
+        <div>
+          <p className="text-[#767676] pt-3">
             Each scandal left wreckage: lost savings, broken trust, and
             industries forced to reckon with their blind spots. Yet every
             collapse also pushed global governance forward. Regulators tightened
@@ -318,9 +177,9 @@ export default function CorporateFailures() {
             things go right, but when things go wrong. The world learns more
             from shattered empires than from flawless ones, and those lessons
             continue to define how companies operate today.
-          </motion.p>
-        </AnimatedSection>
-      </motion.div>
+          </p>
+        </div>
+      </div>
     </>
   );
 }

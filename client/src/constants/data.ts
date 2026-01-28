@@ -1,11 +1,11 @@
 const navLinks = [
   { path: "/", label: "Front Page" },
+  { path: "/legacy", label: "Time Capsule" },
   { path: "/science", label: "Genius and Folly" },
   { path: "/life", label: "Human Currents" },
   { path: "/earth", label: "The Living Planet" },
-  { path: "/finance", label: "Money and Madness" },
   { path: "/entertainment", label: "Arena of Fame" },
-  { path: "/legacy", label: "Time Capsule" },
+  { path: "/finance", label: "Money and Madness" },
 ];
 
 export default navLinks;

@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -18,7 +16,7 @@ type Article = {
 };
 
 const articleData = (articles["Time Capsule"] as Article[]).find(
-  (article) => article.id === "overlooked-pioneers"
+  (article) => article.id === "overlooked-pioneers",
 )!;
 
 const pioneers = [
@@ -60,98 +58,6 @@ const pioneers = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Pioneers() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -166,150 +72,85 @@ export default function Pioneers() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt="Portraits of overlooked scientific pioneers"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            The Overlooked Pioneers: Scientists History Almost Forgot
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Scientific breakthroughs are rarely solo achievements, yet history
-              books often spotlight only a handful of names. Behind every
-              celebrated discovery are researchers whose contributions went
-              unrecognized—sometimes for decades.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              These five scientists transformed their fields but were sidelined
-              by circumstance, bias, or simple historical oversight. Their
-              stories reveal how scientific progress truly unfolds—and why
-              correcting the record matters.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt="Portraits of overlooked scientific pioneers"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          The Overlooked Pioneers: Scientists History Almost Forgot
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Scientific breakthroughs are rarely solo achievements, yet history
+            books often spotlight only a handful of names. Behind every
+            celebrated discovery are researchers whose contributions went
+            unrecognized—sometimes for decades.
+          </p>
+          <p className="leading-6.5">
+            These five scientists transformed their fields but were sidelined by
+            circumstance, bias, or simple historical oversight. Their stories
+            reveal how scientific progress truly unfolds—and why correcting the
+            record matters.
+          </p>
+        </div>
 
         <div className="my-10 space-y-10">
           {pioneers.map((pioneer, index) => (
-            <AnimatedSection key={index} className="space-y-4">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-4">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {pioneer.title}
-              </motion.h2>
+              </h2>
 
-              <motion.div
-                className="bg-gray-50 p-4 rounded-lg mb-3"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+              <div className="bg-gray-50 p-4 rounded-lg mb-3">
                 <p className="text-gray-700">
                   <span className="font-medium">Field:</span> {pioneer.field}
                 </p>
                 <p className="text-gray-700 mt-1">
                   <span className="font-medium">Era:</span> {pioneer.era}
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {pioneer.content}
-              </motion.p>
-            </AnimatedSection>
+              <p className="text-[#767676] leading-7">{pioneer.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Science is a collective enterprise, but the historical record
-              hasn't always reflected that truth. Recovering the stories of
-              overlooked pioneers isn't simply an act of moral correction — it
-              deepens our understanding of how discovery actually happens:
-              collaboratively, unevenly, and often under conditions shaped by
-              social context rather than pure merit.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              By remembering these scientists, we get a more honest picture of
-              scientific progress — and we widen the lens for future innovators.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Science is a collective enterprise, but the historical record hasn't
+            always reflected that truth. Recovering the stories of overlooked
+            pioneers isn't simply an act of moral correction — it deepens our
+            understanding of how discovery actually happens: collaboratively,
+            unevenly, and often under conditions shaped by social context rather
+            than pure merit.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            By remembering these scientists, we get a more honest picture of
+            scientific progress — and we widen the lens for future innovators.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -20,7 +18,7 @@ type Article = {
 };
 
 const articleData = (articles["Human Currents"] as Article[]).find(
-  (article) => article.id === "work-life-balance"
+  (article) => article.id === "work-life-balance",
 )!;
 
 const sections = [
@@ -66,98 +64,6 @@ const sections = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Worklife() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -172,141 +78,75 @@ export default function Worklife() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={worklife}
-              alt="Evolution of work from office to remote work"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            The Evolution of Work-Life Balance: From 1950s Office to Remote
-            Nomad
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Work hasn't just changed — the very idea of what a "workday" is
-              has mutated across decades of policy, technology, and culture. The
-              journey from the postwar cubicle age to the era of remote nomads
-              is less a straight line and more a renegotiation of what humans
-              owe their jobs and what they owe their lives.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Here's how we got from the 1950s to now.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={worklife}
+            alt="Evolution of work from office to remote work"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          The Evolution of Work-Life Balance: From 1950s Office to Remote Nomad
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Work hasn't just changed — the very idea of what a "workday" is has
+            mutated across decades of policy, technology, and culture. The
+            journey from the postwar cubicle age to the era of remote nomads is
+            less a straight line and more a renegotiation of what humans owe
+            their jobs and what they owe their lives.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700">
+            Here's how we got from the 1950s to now.
+          </p>
+        </div>
 
         <div className="my-10 space-y-10">
           {sections.map((section, index) => (
-            <AnimatedSection key={index} className="space-y-4">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-4">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {section.title}
-              </motion.h2>
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {section.content}
-              </motion.p>
-            </AnimatedSection>
+              </h2>
+              <p className="text-[#767676] leading-7">{section.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              From the rigid 1950s schedule to the fluid 2020s lifestyle,
-              work-life balance has never been a static ideal. It shifts with
-              technology, culture, and personal values.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Today's workers aren't looking for a perfect equilibrium. They're
-              crafting arrangements that let them thrive professionally without
-              sacrificing family, autonomy, or the texture of everyday life.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              The evolution isn't over — it's simply entered a phase where
-              individuals can shape the rhythm instead of inheriting it.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            From the rigid 1950s schedule to the fluid 2020s lifestyle,
+            work-life balance has never been a static ideal. It shifts with
+            technology, culture, and personal values.
+          </p>
+          <p className="leading-6.5">
+            Today's workers aren't looking for a perfect equilibrium. They're
+            crafting arrangements that let them thrive professionally without
+            sacrificing family, autonomy, or the texture of everyday life.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            The evolution isn't over — it's simply entered a phase where
+            individuals can shape the rhythm instead of inheriting it.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -18,7 +16,7 @@ type Article = {
 };
 
 const articleData = (articles["Time Capsule"] as Article[]).find(
-  (article) => article.id === "when-food-was-medicine"
+  (article) => article.id === "when-food-was-medicine",
 )!;
 
 const diets = [
@@ -59,98 +57,6 @@ const diets = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Medicine() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -165,146 +71,81 @@ export default function Medicine() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt="Historic foods used as medicine across civilizations"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            When Food Was Medicine: Historic Diets That Influenced Civilization
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Long before pharmacies, people turned to kitchens, farms, temples,
-              and marketplaces for healing. Ancient medical systems didn't
-              separate diet from treatment; they treated food as chemistry,
-              cosmology, and cultural identity.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              What people ate shaped armies, social hierarchies, religious
-              practice, and even political stability. These historic diets
-              weren't whimsical prescriptions — they were early experiments in
-              nutrition, tuned through observation, necessity, and belief. They
-              left fingerprints on civilizations that endure today.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt="Historic foods used as medicine across civilizations"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          When Food Was Medicine: Historic Diets That Influenced Civilization
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Long before pharmacies, people turned to kitchens, farms, temples,
+            and marketplaces for healing. Ancient medical systems didn't
+            separate diet from treatment; they treated food as chemistry,
+            cosmology, and cultural identity.
+          </p>
+          <p className="leading-6.5">
+            What people ate shaped armies, social hierarchies, religious
+            practice, and even political stability. These historic diets weren't
+            whimsical prescriptions — they were early experiments in nutrition,
+            tuned through observation, necessity, and belief. They left
+            fingerprints on civilizations that endure today.
+          </p>
+        </div>
 
         <div className="my-10 space-y-10">
           {diets.map((diet, index) => (
-            <AnimatedSection key={index} className="space-y-4">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-4">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {diet.title}
-              </motion.h2>
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {diet.content}
-              </motion.p>
-            </AnimatedSection>
+              </h2>
+              <p className="text-[#767676] leading-7">{diet.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Across cultures, food served as the earliest shared language of
-              medicine. These historic diets were not proto-science by accident
-              — they were responses to environmental pressures, careful
-              observation, and cultural philosophy.
-            </motion.p>
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              While modern medicine has moved far beyond ancient models, many of
-              the ingredients that once filled healing cupboards still occupy
-              our pantries. The past shows that eating has never been just
-              nourishment; it has been technology, identity, and a quiet form of
-              survival strategy.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              As nutrition science evolves, echoes of these older systems
-              continue shaping how people think about food and wellness today.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Across cultures, food served as the earliest shared language of
+            medicine. These historic diets were not proto-science by accident —
+            they were responses to environmental pressures, careful observation,
+            and cultural philosophy.
+          </p>
+          <p className="leading-6.5">
+            While modern medicine has moved far beyond ancient models, many of
+            the ingredients that once filled healing cupboards still occupy our
+            pantries. The past shows that eating has never been just
+            nourishment; it has been technology, identity, and a quiet form of
+            survival strategy.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            As nutrition science evolves, echoes of these older systems continue
+            shaping how people think about food and wellness today.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

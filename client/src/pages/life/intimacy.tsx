@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -20,7 +18,7 @@ type Article = {
 };
 
 const articleData = (articles["Human Currents"] as Article[]).find(
-  (article) => article.id === "digital-intimacy"
+  (article) => article.id === "digital-intimacy",
 )!;
 
 const sections = [
@@ -51,98 +49,6 @@ const sections = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export default function Intimacy() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -157,136 +63,76 @@ export default function Intimacy() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={intimacy}
-              alt="Digital intimacy and modern relationships"
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            How Digital Intimacy Is Changing the Way We Date and Relate
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-4">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Digital intimacy used to mean sending a late-night text. Now it's
-              a whole emotional ecosystem built from notifications, swipes,
-              voice notes, and tiny glowing screens that follow us everywhere.
-              Romance hasn't disappeared; it's simply migrated into a new
-              environment—one where desire, anxiety, connection, and
-              misunderstanding all play by updated rules.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 text-[#767676]"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              This is the landscape of modern affection: part convenience, part
-              chaos, and entirely irreversible.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={intimacy}
+            alt="Digital intimacy and modern relationships"
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          How Digital Intimacy Is Changing the Way We Date and Relate
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start space-y-4">
+          <p className="leading-6.5">
+            Digital intimacy used to mean sending a late-night text. Now it's a
+            whole emotional ecosystem built from notifications, swipes, voice
+            notes, and tiny glowing screens that follow us everywhere. Romance
+            hasn't disappeared; it's simply migrated into a new environment—one
+            where desire, anxiety, connection, and misunderstanding all play by
+            updated rules.
+          </p>
+          <p className="leading-6.5 text-[#767676]">
+            This is the landscape of modern affection: part convenience, part
+            chaos, and entirely irreversible.
+          </p>
+        </div>
 
         <div className="my-14 space-y-10">
           {sections.map((section, index) => (
-            <AnimatedSection key={index} className="space-y-4">
-              <motion.h2
-                className="text-[1.375rem] md:text-2xl font-medium text-gray-900"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
+            <div key={index} className="space-y-4">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
                 {section.title}
-              </motion.h2>
-              <motion.p
-                className="text-[#767676] leading-7"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {section.content}
-              </motion.p>
-            </AnimatedSection>
+              </h2>
+              <p className="text-[#767676] leading-7">{section.content}</p>
+            </div>
           ))}
         </div>
 
-        <AnimatedSection>
-          <div className="text-[#767676] text-start space-y-6">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Digital intimacy isn't ruining romance—it's remixing it. The tools
-              change, the rituals evolve, but the core need stays the same: to
-              feel known, chosen, and understood. As our devices keep weaving
-              themselves into daily life, the challenge is simple but
-              profound—using them to deepen connection rather than distract from
-              it.
-            </motion.p>
-            <motion.p
-              className="leading-6.5 font-medium text-gray-700 italic"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              The story continues wherever humans and technology keep bumping
-              into each other, trying to figure out what closeness means in a
-              world that never truly logs off.
-            </motion.p>
-          </div>
-        </AnimatedSection>
-      </motion.div>
+        <div className="text-[#767676] text-start space-y-6">
+          <p className="leading-6.5">
+            Digital intimacy isn't ruining romance—it's remixing it. The tools
+            change, the rituals evolve, but the core need stays the same: to
+            feel known, chosen, and understood. As our devices keep weaving
+            themselves into daily life, the challenge is simple but
+            profound—using them to deepen connection rather than distract from
+            it.
+          </p>
+          <p className="leading-6.5 font-medium text-gray-700 italic">
+            The story continues wherever humans and technology keep bumping into
+            each other, trying to figure out what closeness means in a world
+            that never truly logs off.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -25,7 +23,7 @@ type Article = {
 };
 
 const articleData = (articles["Time Capsule"] as Article[]).find(
-  (article) => article.id === "architectural-ruins"
+  (article) => article.id === "architectural-ruins",
 )!;
 
 const ruins = [
@@ -79,125 +77,19 @@ const ruins = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 function RuinItem({ ruin }: { ruin: (typeof ruins)[0]; index: number }) {
   return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {ruin.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">{ruin.title}</h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={ruin.img}
           alt={ruin.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {ruin.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{ruin.content}</p>
+    </div>
   );
 }
 
@@ -215,77 +107,45 @@ export default function Ruins() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
-          <div className="relative overflow-hidden mb-4 -mx-4">
-            <div
-              onClick={() => window.history.back()}
-              className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
-            >
-              <ChevronLeftIcon className="size-4.5" />
-            </div>
-            <motion.img
-              src={articleData.img}
-              alt={articleData.alt}
-              className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
-            />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
+        <div className="relative overflow-hidden mb-4 -mx-4">
+          <div
+            onClick={() => window.history.back()}
+            className="absolute left-3 top-2 cursor-pointer z-50 p-2 bg-black text-white rounded-full transition-colors"
           >
-            Six Architectural Marvels, Now Ruins — But Still Awe
-          </motion.h1>
-
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="font-medium text-gray-600">
-              {articleData.author},
-            </span>
-            <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              Ruins invite imagination in ways polished monuments never can.
-              They are the bones of past civilizations, exposed to wind, rain,
-              and time, yet still powerful enough to shift how we think about
-              beauty, ambition, and impermanence. This feature explores six
-              extraordinary structures that have partially crumbled into silence
-              but continue to inspire awe, scholarship, and cultural
-              fascination. Their stones may be fractured, but their stories
-              remain unbroken.
-            </motion.p>
+            <ChevronLeftIcon className="size-4.5" />
           </div>
-        </AnimatedSection>
+          <img
+            src={articleData.img}
+            alt={articleData.alt}
+            className="w-full h-60 sm:h-[24rem] object-cover"
+          />
+        </div>
+
+        <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
+          Six Architectural Marvels, Now Ruins — But Still Awe
+        </h1>
+
+        <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
+          <span className="font-medium text-gray-600">
+            {articleData.author},
+          </span>
+          <span className="mr-3">{articleData.date}</span>
+        </div>
+
+        <div className="text-[#767676] text-start">
+          <p className="leading-6.5">
+            Ruins invite imagination in ways polished monuments never can. They
+            are the bones of past civilizations, exposed to wind, rain, and
+            time, yet still powerful enough to shift how we think about beauty,
+            ambition, and impermanence. This feature explores six extraordinary
+            structures that have partially crumbled into silence but continue to
+            inspire awe, scholarship, and cultural fascination. Their stones may
+            be fractured, but their stories remain unbroken.
+          </p>
+        </div>
 
         <div className="my-14 space-y-14">
           {ruins.map((ruin, index) => (
@@ -293,24 +153,17 @@ export default function Ruins() {
           ))}
         </div>
 
-        <AnimatedSection>
-          <motion.p
-            className="text-[#767676] pt-3"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Ruins preserve what polished monuments can't: the reminders of
-            fragility, ambition, and the unpredictable forces that shape
-            civilizations. These six architectural marvels are incomplete, yet
-            they continue to inspire curiosity, scholarship, preservation
-            efforts, and storytelling. Their broken stones are not losses but
-            invitations—proof that beauty can endure long after purpose fades,
-            and that even shattered structures can cast long, astonishing
-            shadows across history.
-          </motion.p>
-        </AnimatedSection>
-      </motion.div>
+        <p className="text-[#767676] pt-3">
+          Ruins preserve what polished monuments can't: the reminders of
+          fragility, ambition, and the unpredictable forces that shape
+          civilizations. These six architectural marvels are incomplete, yet
+          they continue to inspire curiosity, scholarship, preservation efforts,
+          and storytelling. Their broken stones are not losses but
+          invitations—proof that beauty can endure long after purpose fades, and
+          that even shattered structures can cast long, astonishing shadows
+          across history.
+        </p>
+      </div>
     </>
   );
 }

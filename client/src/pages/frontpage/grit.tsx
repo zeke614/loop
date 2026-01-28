@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 import articles from "../../constants/articles";
@@ -24,7 +22,7 @@ type Article = {
 };
 
 const articleData = (articles["Arena of Fame"] as Article[]).find(
-  (article) => article.id === "the-will-to-win"
+  (article) => article.id === "the-will-to-win",
 )!;
 
 const comebacks = [
@@ -69,130 +67,21 @@ const comebacks = [
   },
 ];
 
-const sectionVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 1.02,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const textVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-      delay: 0.05,
-    },
-  },
-};
-
-function AnimatedSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+function ComebackItem({ comeback }: { comeback: (typeof comebacks)[0] }) {
   return (
-    <motion.div
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
-      transition={{ type: "tween", ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function ComebackItem({
-  comeback,
-}: {
-  comeback: (typeof comebacks)[0];
-  index: number;
-}) {
-  return (
-    <AnimatedSection className="space-y-6">
-      <motion.h2
-        className="text-[1.375rem] md:text-2xl font-medium"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
+    <div className="space-y-6">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {comeback.title}
-      </motion.h2>
-      <motion.div className="overflow-hidden mb-6" variants={imageVariants}>
+      </h2>
+      <div className="overflow-hidden mb-6">
         <img
           src={comeback.img}
           alt={comeback.alt}
           className="w-full h-48 md:h-105 object-cover"
         />
-      </motion.div>
-      <motion.p
-        className="mb-6 text-[#767676] leading-7"
-        variants={textVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {comeback.content}
-      </motion.p>
-    </AnimatedSection>
+      </div>
+      <p className="mb-6 text-[#767676] leading-7">{comeback.content}</p>
+    </div>
   );
 }
 
@@ -210,15 +99,10 @@ export default function Grit() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-start pb-4 px-4 mx-auto max-w-4xl relative"
-      >
+      <div className="text-start pb-4 px-4 mx-auto max-w-4xl relative">
         <BackToTopButton showBackToTop={showBackToTop} />
 
-        <AnimatedSection>
+        <div>
           <div className="relative overflow-hidden mb-4 -mx-4">
             <div
               onClick={() => window.history.back()}
@@ -226,50 +110,30 @@ export default function Grit() {
             >
               <ChevronLeftIcon className="size-4.5" />
             </div>
-            <motion.img
+            <img
               src={articleData.img}
               alt={articleData.alt}
               className="w-full h-60 sm:h-[24rem] object-cover"
-              variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.15 }}
             />
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection>
-          <motion.h1
-            className="text-[1.438rem] md:text-[1.75rem] font-semibold"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
+        <div>
+          <h1 className="text-[1.438rem] md:text-[1.75rem] font-semibold">
             Five Sports Comebacks That Redefined Grit
-          </motion.h1>
+          </h1>
 
-          <motion.div
-            className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
             <span className="font-medium text-gray-600">
               {articleData.author},
             </span>
             <span className="mr-3">{articleData.date}</span>
-          </motion.div>
-        </AnimatedSection>
+          </div>
+        </div>
 
-        <AnimatedSection>
+        <div>
           <div className="text-[#767676] text-start">
-            <motion.p
-              className="leading-6.5"
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            <p className="leading-6.5">
               Resilience in sport rarely arrives neatly wrapped; it erupts in
               moments when defeat seems inevitable and adrenaline rewrites the
               script. This feature revisits five astonishing comebacks across
@@ -277,23 +141,18 @@ export default function Grit() {
               but the psychological swings, tactical recalibrations, and
               cultural ripples they left behind. These are the matches that
               turned despair into legend…
-            </motion.p>
+            </p>
           </div>
-        </AnimatedSection>
+        </div>
 
         <div className="my-14 space-y-14">
           {comebacks.map((comeback, index) => (
-            <ComebackItem key={index} comeback={comeback} index={index} />
+            <ComebackItem key={index} comeback={comeback} />
           ))}
         </div>
 
-        <AnimatedSection>
-          <motion.p
-            className="text-[#767676] pt-3"
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
+        <div>
+          <p className="text-[#767676] pt-3">
             Comebacks endure because they reveal something elemental about
             competition: talent matters, but resolve is its own kind of physics.
             These five stories have lived far beyond their scorelines because
@@ -301,9 +160,9 @@ export default function Grit() {
             predictable endings. Their victories remind us that sport is not
             only played on fields and courts but in the unresolved spaces of the
             human spirit.
-          </motion.p>
-        </AnimatedSection>
-      </motion.div>
+          </p>
+        </div>
+      </div>
     </>
   );
 }
