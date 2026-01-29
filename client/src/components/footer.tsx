@@ -19,7 +19,7 @@ export default function Footer() {
             Quick Links
           </h2>
 
-          <div className="flex flex-col gap-3 items-center text-gray-600 font-frozen">
+          <div className="flex flex-col gap-3 items-center text-gray-60">
             <Link to="/info" className="hover:text-[#0ab39c] transition-colors">
               About
             </Link>
@@ -84,17 +84,17 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col justify-between items-center gap-2 text-gray-600">
           <p className="flex items-center gap-2">
-            <span className="text-lg -mx-1 mt-1">&copy;</span>
-            <span>{new Date().getFullYear()}</span>
+            <span className="-mx-1">&copy;</span>
+            <span className="text-[0.969rem]">{new Date().getFullYear()}</span>
             <span className="font-frozen tracking-wide text-gray-900">
               loop
             </span>
-            <span>All rights reserved.</span>
+            <span>All rights reserved</span>
           </p>
 
           <p>
-            Designed & Built by{" "}
-            <span className="font-frozen text-gray-900">
+            Built by{" "}
+            <span className="text-gray-900">
               <a
                 href="https://github.com/zeke614"
                 target="_blank"

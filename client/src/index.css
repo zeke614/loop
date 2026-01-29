@@ -2,7 +2,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Varela+Round:opsz,wght@6..144,1..1000&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 @font-face {
   font-family: "DK Frozen Memory";
@@ -15,12 +16,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-google-sans-flex: "Google Sans Flex", sans-serif; 
-  --font-frozen: "DK Frozen Memory", "Google Sans Flex";
+  --font-varela-round: "Varela Round", sans-serif;
+  --font-frozen: "DK Frozen Memory", "Varela Round";
 }
 
 body {
-  @apply font-google-sans-flex;
+  @apply font-varela-round;
   /* @apply bg-[#CFCFCF] text-white; */
 }
 
