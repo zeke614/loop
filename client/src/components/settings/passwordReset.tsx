@@ -156,7 +156,7 @@ export default function PasswordReset() {
             )}
           </div>
 
-          <div className="relative mb-1">
+          <div className="relative mb-2.5">
             <label className="font-medium text-gray-700 block mb-2">
               Confirm new password
             </label>

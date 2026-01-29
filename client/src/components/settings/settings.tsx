@@ -22,7 +22,7 @@ export default function Settings() {
             <h3 className="text-lg font-frozen text-gray-900 mb-2">
               Personal details
             </h3>
-            <p className="text-sm text-gray-500">
+            <p className="text-gray-500">
               Update your name and bio information.
             </p>
           </div>
@@ -36,7 +36,7 @@ export default function Settings() {
             <h3 className="text-lg font-frozen text-gray-900 mb-2">
               Email preferences
             </h3>
-            <p className="text-sm text-gray-500">
+            <p className="text-gray-500">
               Manage your newsletter and notification settings.
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Settings() {
               <ShieldCheckIcon className="size-6 text-gray-600 group-hover:text-[#0ab39c]" />
             </div>
             <h3 className="text-lg font-frozen text-gray-900 mb-2">Security</h3>
-            <p className="text-sm text-gray-500">
+            <p className="text-gray-500">
               Change your password and privacy settings.
             </p>
           </div>

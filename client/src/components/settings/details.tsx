@@ -243,7 +243,7 @@ export default function PersonalDetails() {
           <h3 className="text-lg font-frozen text-gray-900">Danger Zone</h3>
           <div className="py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
             <div>
-              <p className="text-sm text-gray-500">
+              <p className="text-gray-500">
                 Permanently remove your profile and all data.
               </p>
             </div>
