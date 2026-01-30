@@ -62,8 +62,8 @@ export default function Life() {
   }, [popUp]);
 
   return (
-    <div className="pt-10">
-      <h1 className="text-center text-[1.375rem] mt-10 font-frozen">
+    <div className="pt-12">
+      <h1 className="text-center text-[1.375rem] mt-10 font-semibold">
         Human Currents
       </h1>
 

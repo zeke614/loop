@@ -68,14 +68,14 @@ export default function Home() {
 
   return (
     <div className="pt-10">
-      <h1 className="text-center text-2xl mt-10 font-frozen">
+      <h1 className="text-center text-2xl mt-10 font-medium">
         {user ? (
           <>
             <span>Hello, </span>
             <span className="font-semibold">{displayName}</span>
           </>
         ) : (
-          "Welcome"
+          <span className="font-semibold">Welcome</span>
         )}
       </h1>
       <p className="text-center text-[#767676]  text-lg">

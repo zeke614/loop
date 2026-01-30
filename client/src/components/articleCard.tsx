@@ -79,7 +79,6 @@ export default function AnimatedArticleCard({
         </div>
 
         <div className="flex-1 p-4 flex flex-col">
-          {/* Title */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 10 }}
@@ -87,7 +86,7 @@ export default function AnimatedArticleCard({
           >
             <Link
               to={`/articles/${article.id}`}
-              className="text-[1.313rem] font-bold leading-6.5 text-gray-900 hover:text-[#0ab39c] transition-colors duration-200 mb-3 block"
+              className="text-[1.313rem] font-bold leading-6.5 hover:text-[#0ab39c] transition-colors duration-200 mb-3 block"
             >
               {article.title}
             </Link>
@@ -120,7 +119,7 @@ export default function AnimatedArticleCard({
           >
             <Link
               to={`/articles/${article.id}`}
-              className="inline-flex items-center text-[#0ab39c] font-frozen hover:text-[#089c8a] transition-colors duration-200"
+              className="inline-flex items-center text-[#0ab39c] font-medium hover:text-[#089c8a] transition-colors duration-200"
             >
               Read Me
               <motion.span

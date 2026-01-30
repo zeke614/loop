@@ -62,13 +62,13 @@ export default function Entertainment() {
   }, [popUp]);
 
   return (
-    <div className="pt-10">
-      <h1 className="text-center text-[1.375rem] mt-9 font-frozen">
+    <div className="pt-12">
+      <h1 className="text-center text-[1.375rem] mt-9 font-semibold">
         Arena of Fame
       </h1>
 
       <p className="text-center text-[#767676]  text-lg">
-        Spotlights, plot twists, and star-forged drama.{" "}
+        Spotlights, plot twists, and star drama.{" "}
       </p>
 
       <motion.div

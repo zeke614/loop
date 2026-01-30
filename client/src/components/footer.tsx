@@ -7,17 +7,15 @@ export default function Footer() {
         <div className="border-t border-gray-100 pb-10"></div>
 
         <div className="text-center mb-12">
-          <h1 className="text-[1.375rem] font-frozen font-semibold tracking-wide">
-            loop
-          </h1>
+          <h1 className="text-[1.438rem] font-frozen tracking-normal">loop</h1>
 
-          <p className="text-gray-600">Stories worth circling back to.</p>
+          <p className="text-gray-600 mt-0.5">
+            Stories worth circling back to.
+          </p>
         </div>
 
         <div className="mb-10 flex flex-col items-center">
-          <h2 className="text-center text-lg mb-3 text-gray-900 font-frozen">
-            Quick Links
-          </h2>
+          <h2 className="text-center text-lg mb-3 font-bold">Quick Links</h2>
 
           <div className="flex flex-col gap-3 items-center text-gray-60">
             <Link to="/info" className="hover:text-[#0ab39c] transition-colors">
@@ -38,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-center text-lg mb-3 font-frozen text-gray-900">
+          <h2 className="text-center text-lg mb-3 font-bold text-gray-900">
             Our Socials
           </h2>
           <div className="flex items-center gap-6">
@@ -86,9 +84,7 @@ export default function Footer() {
           <p className="flex items-center gap-2">
             <span className="-mx-1">&copy;</span>
             <span className="text-[0.969rem]">{new Date().getFullYear()}</span>
-            <span className="font-frozen tracking-wide text-gray-900">
-              loop
-            </span>
+            <span className="font-frozen tracking-normal text-black">loop</span>
             <span>All rights reserved</span>
           </p>
 
@@ -98,7 +94,7 @@ export default function Footer() {
               <a
                 href="https://github.com/zeke614"
                 target="_blank"
-                className="font-frozen ml-1 text-[#256F5C] underline underline-offset-2"
+                className="font-semibold ml-0.5 text-[#256F5C] underline underline-offset-2"
               >
                 Ezekiel
               </a>

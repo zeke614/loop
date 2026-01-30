@@ -62,8 +62,8 @@ export default function Finance() {
   }, [popUp]);
 
   return (
-    <div className="pt-10">
-      <h1 className="text-center text-[1.375rem] mt-9 font-frozen">
+    <div className="pt-12">
+      <h1 className="text-center text-[1.375rem] mt-9 font-semibold">
         Money and Madness
       </h1>
 
