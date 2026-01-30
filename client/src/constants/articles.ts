@@ -37,7 +37,7 @@ const articles: Record<string, Article[]> = {
       category: "Genius and Folly",
       title: "Scientific Failures That Sparked Big Discoveries",
       date: "October 27, 2025",
-      author: "Olu Jacobs",
+      author: "Loop Editorial",
       img: lab,
       alt: "Laboratory experiment scene",
       description:
@@ -48,7 +48,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "Architectural Marvels That Are Now Ruins — But Still Awe",
       date: "March 14, 2025",
-      author: "Elena Rodriguez",
+      author: "Loop Editorial",
       img: ruins,
       alt: "Ruined architectural marvel",
       description:
@@ -59,7 +59,7 @@ const articles: Record<string, Article[]> = {
       category: "The Living Planet",
       title: "From Landfill to Loop: Cities That Turned Waste into Power",
       date: "March 19, 2025",
-      author: "Daniel Opoku",
+      author: "Loop Editorial",
       img: recyclingPlant,
       alt: "Waste-to-energy facility",
       description:
@@ -70,7 +70,7 @@ const articles: Record<string, Article[]> = {
       category: "Arena of Fame",
       title: "The Will to Win: Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
-      author: "Hannah Clarke",
+      author: "Loop Editorial",
       img: sports,
       alt: "Athlete celebrating a comeback win",
       description:
@@ -81,7 +81,7 @@ const articles: Record<string, Article[]> = {
       category: "Money and Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "July 26, 2025",
-      author: "Yasmin Khalid",
+      author: "Loop Editorial",
       img: boardroom,
       alt: "Boardroom with empty chairs",
       description:
@@ -93,7 +93,7 @@ const articles: Record<string, Article[]> = {
       title:
         "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
       date: "April 5, 2025",
-      author: "Rina Patel",
+      author: "Loop Editorial",
       img: psyche,
       alt: "Athlete closing eyes before a race",
       description:
@@ -104,7 +104,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "May 14, 2025",
-      author: "Ada Mensah",
+      author: "Loop Editorial",
       img: typewriter,
       alt: "Vintage mechanical invention",
       description:
@@ -129,7 +129,7 @@ const articles: Record<string, Article[]> = {
       title:
         "Psychological Hacks Elite Performers Use to Stay Calm Under Pressure",
       date: "April 5, 2025",
-      author: "Rina Patel",
+      author: "Loop Editorial",
       img: psyche,
       alt: "Athlete closing eyes before a race",
       description:
@@ -141,7 +141,7 @@ const articles: Record<string, Article[]> = {
       title:
         "The Hardest Colleges to Get Into Today — And What Makes Them So Selective",
       date: "March 19, 2025",
-      author: "Marcus Ibekwe",
+      author: "Loop Editorial",
       img: college,
       alt: "College graduates holding caps in the air",
       description: `Selectivity has become its own global sport. As applications surge and digital recruitment expands the applicant pool, a handful of institutions now admit only a tiny fraction of hopefuls. A low acceptance rate isn't a guarantee of "better education", but it does reflect capacity limits, intense demand, and decades of reputation-building.`,
@@ -151,7 +151,7 @@ const articles: Record<string, Article[]> = {
       category: "Human Currents",
       title: "How Time Got Weird: Why Everyone Feels Like Life Is Speeding Up",
       date: "June 25, 2025",
-      author: "Mira Solanke",
+      author: "Loop Editorial",
       img: timeWeird,
       alt: "People participating in a traditional ritual",
       description:
@@ -162,7 +162,7 @@ const articles: Record<string, Article[]> = {
       category: "Human Currents",
       title: "How Digital Intimacy Is Changing the Way We Date and Relate",
       date: "July 5, 2025",
-      author: "Kai Mwangi",
+      author: "Loop Editorial",
       img: intimacy,
       alt: "Two phones with chat bubbles overlapping",
       description:
@@ -234,24 +234,69 @@ const articles: Record<string, Article[]> = {
       category: "The Living Planet",
       title: "From Landfill to Loop: Cities That Turned Waste into Power",
       date: "March 19, 2025",
-      author: "Daniel Opoku",
+      author: "Loop Editorial",
       img: recyclingPlant,
       alt: "Waste-to-energy facility",
       description:
         "The modern city faces two ancient problems: waste and want. What to do with mountains of trash — and how to feed the endless appetite for energy. Across the globe, some cities are discovering that the answer to both problems can come from the same source.",
     },
+    {
+      id: "resilient-ecosystems",
+      category: "The Living Planet",
+      title: "Seven Ecosystems That Should Have Collapsed — But Didn’t",
+      date: "September 12, 2025",
+      author: "Loop Editorial",
+      img: "/images/planet-001.jpg",
+      alt: "Lush resilient ecosystem landscape",
+      description:
+        "Despite extreme pressures, some ecosystems show surprising resilience, from mangroves to alpine meadows. This piece examines seven such systems, the ecological mechanisms that stabilized them, and what resilience teaches us about conservation in a changing climate...",
+    },
+    {
+      id: "fungal-networks",
+      category: "The Living Planet",
+      title: "The Underground Networks of Mycorrhizal Fungi: Nature’s Internet",
+      date: "October 17, 2025",
+      author: "Loop Editorial",
+      img: "/images/planet-005.jpg",
+      alt: "Fungal networks in soil closeup",
+      description:
+        "Mycorrhizal fungi form vast subterranean networks that shuttle nutrients and signals between plants, reshaping our understanding of forest communities. This piece synthesizes ecology research and explores implications for reforestation and carbon sequestration strategies...",
+    },
+    {
+      id: "water-scarcity-solutions",
+      category: "The Living Planet",
+      title:
+        "The Future of Water: Ancient Aqueducts, Modern Desalination, and Scarcity",
+      date: "November 24, 2025",
+      author: "Loop Editorial",
+      img: "/images/planet-008.jpg",
+      alt: "A modern desalination plant",
+      description:
+        "Water scarcity is a technical problem wrapped in social and political complexity. By tracing infrastructure from Roman aqueducts to present desalination and watershed management, this piece highlights solutions that are technically possible and socially equitable...",
+    },
+    {
+      id: "antarctica-ice-coastal-impact",
+      category: "The Living Planet",
+      title: "What Antarctica’s Melting Ice Really Means for Coastal Cities",
+      date: "April 24, 2025",
+      author: "Loop Editorial",
+      img: "/images/planet-009.jpg",
+      alt: "Antarctic ice shelf calving",
+      description:
+        "Melting Antarctic ice is a global issue with site-specific consequences for coastal planning, insurance markets and migration. This analytical article explains the science of ice loss, models of sea-level rise, and practical adaptation measures for risk-exposed communities...",
+    },
+    {
+      id: "microplastics-biological-systems",
+      category: "The Living Planet",
+      title: "The Unexpected Role of Microplastics in Biological Systems",
+      date: "July 5, 2025",
+      author: "Loop Editorial",
+      img: "/images/planet-010.jpg",
+      alt: "Microplastics on a beach",
+      description:
+        "Microplastics are pervasive, but their ecological and physiological impacts are complex and only partially understood. This investigation compiles recent research on how tiny particles move through food webs, alter microbial communities, and affect human health risks...",
+    },
   ],
-  //   {
-  //     id: "planet-001",
-  //     category: "The Living Planet",
-  //     title: "Seven Ecosystems That Should Have Collapsed — But Didn’t",
-  //     date: "September 12, 2025",
-  //     author: "Amara N'diaye",
-  //     img: "/images/planet-001.jpg",
-  //     alt: "Lush resilient ecosystem landscape",
-  //     description:
-  //       "Despite extreme pressures, some ecosystems show surprising resilience, from mangroves to alpine meadows. This piece examines seven such systems, the ecological mechanisms that stabilized them, and what resilience teaches us about conservation in a changing climate...",
-  //   },
   //   {
   //     id: "planet-002",
   //     category: "The Living Planet",
@@ -288,17 +333,6 @@ const articles: Record<string, Article[]> = {
   //       "Indigenous stewardship often holds long-tested ecological knowledge that modern conservation is rediscovering and integrating. Through field studies and interviews, this article shows how traditional fire regimes, rotational harvesting, and sacred site protection deliver measurable biodiversity benefits...",
   //   },
   //   {
-  //     id: "planet-005",
-  //     category: "The Living Planet",
-  //     title: "The Underground Networks of Mycorrhizal Fungi: Nature’s Internet",
-  //     date: "October 17, 2025",
-  //     author: "Felix Nyarko",
-  //     img: "/images/planet-005.jpg",
-  //     alt: "Fungal networks in soil closeup",
-  //     description:
-  //       "Mycorrhizal fungi form vast subterranean networks that shuttle nutrients and signals between plants, reshaping our understanding of forest communities. This piece synthesizes ecology research and explores implications for reforestation and carbon sequestration strategies...",
-  //   },
-  //   {
   //     id: "planet-006",
   //     category: "The Living Planet",
   //     title: "Six Invasive Species That Became Unexpected Benefactors",
@@ -309,40 +343,7 @@ const articles: Record<string, Article[]> = {
   //     description:
   //       "Not all introductions are purely destructive — in some contexts invasive species have altered ecosystems in surprising ways that benefited other species or human uses. This nuanced analysis traces six cases where management and adaptation reframed an invasive narrative...",
   //   },
-  //   {
-  //     id: "planet-008",
-  //     category: "The Living Planet",
-  //     title:
-  //       "The Future of Water: Ancient Aqueducts, Modern Desalination, and Scarcity",
-  //     date: "November 24, 2025",
-  //     author: "Evelyn Park",
-  //     img: "/images/planet-008.jpg",
-  //     alt: "A modern desalination plant",
-  //     description:
-  //       "Water scarcity is a technical problem wrapped in social and political complexity. By tracing infrastructure from Roman aqueducts to present desalination and watershed management, this piece highlights solutions that are technically possible and socially equitable...",
-  //   },
-  //   {
-  //     id: "planet-009",
-  //     category: "The Living Planet",
-  //     title: "What Antarctica’s Melting Ice Really Means for Coastal Cities",
-  //     date: "April 24, 2025",
-  //     author: "Thomas Berg",
-  //     img: "/images/planet-009.jpg",
-  //     alt: "Antarctic ice shelf calving",
-  //     description:
-  //       "Melting Antarctic ice is a global issue with site-specific consequences for coastal planning, insurance markets and migration. This analytical article explains the science of ice loss, models of sea-level rise, and practical adaptation measures for risk-exposed communities...",
-  //   },
-  //   {
-  //     id: "planet-010",
-  //     category: "The Living Planet",
-  //     title: "The Unexpected Role of Microplastics in Biological Systems",
-  //     date: "July 5, 2025",
-  //     author: "Zara Ivanov",
-  //     img: "/images/planet-010.jpg",
-  //     alt: "Microplastics on a beach",
-  //     description:
-  //       "Microplastics are pervasive, but their ecological and physiological impacts are complex and only partially understood. This investigation compiles recent research on how tiny particles move through food webs, alter microbial communities, and affect human health risks...",
-  //   },
+
   // ],
 
   "Money and Madness": [
@@ -351,115 +352,115 @@ const articles: Record<string, Article[]> = {
       category: "Money and Madness",
       title: "The Corporate Failures That Led to Better Governance Models",
       date: "July 26, 2025",
-      author: "Yasmin Khalid",
+      author: "Loop Editorial",
       img: boardroom,
       alt: "handcuff on a newspaper",
       description:
         "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
     },
     {
-      id: "finance-001",
-      category: "Money and Madness",
-      title: "Five Financial Crises That Were Avoided at the Last Minute",
-      date: "January 21, 2025",
-      author: "Claire Dubois",
-      img: "/images/finance-001.jpg",
-      alt: "Financial market closeup",
-      description:
-        "From central bank interventions to decisive regulatory acts, several near-disasters were defused before markets collapsed entirely. This piece reconstructs five tense moments, the actors who steered outcomes, and the structural lessons learned about fragility in finance...",
-    },
-    {
-      id: "finance-002",
-      category: "Money and Madness",
-      title:
-        "The Free Economy: How Open-Source Is Upending Traditional Business Models",
-      date: "November 22, 2025",
-      author: "Arjun Mehta",
-      img: "/images/finance-002.jpg",
-      alt: "Open source collaboration on screen",
-      description:
-        "Open-source software and hardware redefined how goods are created and shared, creating new pathways for revenue beyond license fees. This article examines companies and communities harnessing openness to scale, compete and reimagine intellectual property norms...",
-    },
-    {
-      id: "finance-003",
+      id: "niche-cryptocurrencies",
       category: "Money and Madness",
       title:
         "Six Cryptocurrencies You've Never Heard Of That Carved Their Own Niche",
       date: "March 1, 2025",
-      author: "Martha K. Onyango",
+      author: "Loop Editorial",
       img: "/images/finance-003.jpg",
       alt: "Crypto coins on a table",
       description:
         "Beyond Bitcoin and Ethereum, niche blockchains tackled supply chain provenance, microtransactions, and decentralized identity. This exploration profiles six lesser-known projects, what problems they pursued, and whether their approaches offer long-term value...",
     },
     {
-      id: "finance-004",
+      id: "carbon-credits",
       category: "Money and Madness",
       title: "The Bizarre World of Carbon Credits: Betting on Cleaner Air",
       date: "April 28, 2025",
-      author: "Ibrahim Saleh",
+      author: "Loop Editorial",
       img: "/images/finance-004.jpg",
       alt: "Industrial smokestacks and wind turbines",
       description:
         "Carbon markets promise cost-effective emissions reductions, but their design has produced paradoxes and controversies. This investigative piece explains how credits are created, traded, and sometimes gamed, and profiles reforms that could make the system more credible...",
     },
     {
-      id: "finance-005",
-      category: "Money and Madness",
-      title:
-        "How Subsistence Economies Are Being Reinvented in the Digital Age",
-      date: "September 5, 2025",
-      author: "Nikhil Rao",
-      img: "/images/finance-005.jpg",
-      alt: "Local market in rural area",
-      description:
-        "Digital tools are reshaping informal and subsistence economies—improving access to markets, credit and resilience while introducing new risks. This reporting looks at grassroots fintech, cooperatives, and local adaptation strategies that are closing information gaps...",
-    },
-    {
-      id: "finance-007",
+      id: "art-investment-safer-than-stocks",
       category: "Money and Madness",
       title: "Five Times Art Became Safer Than Stocks",
       date: "October 10, 2025",
-      author: "Diego Morales",
+      author: "Loop Editorial",
       img: "/images/finance-007.jpg",
       alt: "Art gallery interior",
       description:
         "When financial markets wobble, collectors sometimes turn to art for preservation and profit. This feature analyzes moments when art markets outperformed equities, why that happened, and what risks and myths surround art as an investment class...",
     },
     {
-      id: "finance-008",
+      id: "gig-economy-hidden-math",
       category: "Money and Madness",
       title:
         "The Gig Economy’s Hidden Math: Why the Numbers Don’t Add Up for Many",
       date: "June 7, 2025",
-      author: "Priya Nair",
+      author: "Loop Editorial",
       img: "/images/finance-008.jpg",
       alt: "Worker using a gig economy app",
       description:
         "Piece rates and algorithmic tasking obscure the real costs and earnings of platform work. Using data and interviews, this analysis exposes why headline earnings often mask precariousness and which policy fixes could rebalance power and pay...",
     },
-    {
-      id: "finance-009",
-      category: "Money and Madness",
-      title: "Emerging Markets That Are Defying Global Recession Trends",
-      date: "August 21, 2025",
-      author: "Kwame Boateng",
-      img: "/images/finance-009.jpg",
-      alt: "Bustling marketplace in emerging city",
-      description:
-        "While global growth slowed, a handful of countries sustained momentum through structural reforms, exports or unique demographic advantages. This survey identifies resilient markets, the policies that helped them, and risks that could change their trajectories...",
-    },
-    {
-      id: "finance-010",
-      category: "Money and Madness",
-      title: "The Rise of Social Impact Investing: Profit With Purpose?",
-      date: "February 11, 2025",
-      author: "Laura Chen",
-      img: "/images/finance-010.jpg",
-      alt: "People planting a tree with investors watching",
-      description:
-        "Impact investing blends financial returns with measurable social outcomes, but measuring impact is hard and contested. This piece examines frameworks, case studies, and the tensions between scale and accountability in investments that claim to do good...",
-    },
+    // {
+    //   id: "finance-009",
+    //   category: "Money and Madness",
+    //   title: "Emerging Markets That Are Defying Global Recession Trends",
+    //   date: "August 21, 2025",
+    //   author: "Loop Editorial",
+    //   img: "/images/finance-009.jpg",
+    //   alt: "Bustling marketplace in emerging city",
+    //   description:
+    //     "While global growth slowed, a handful of countries sustained momentum through structural reforms, exports or unique demographic advantages. This survey identifies resilient markets, the policies that helped them, and risks that could change their trajectories...",
+    // },
+    //    {
+    //   id: "finance-005",
+    //   category: "Money and Madness",
+    //   title:
+    //     "How Subsistence Economies Are Being Reinvented in the Digital Age",
+    //   date: "September 5, 2025",
+    //   author: "Loop Editorial",
+    //   img: "/images/finance-005.jpg",
+    //   alt: "Local market in rural area",
+    //   description:
+    //     "Digital tools are reshaping informal and subsistence economies—improving access to markets, credit and resilience while introducing new risks. This reporting looks at grassroots fintech, cooperatives, and local adaptation strategies that are closing information gaps...",
+    // },
+    // {
+    //   id: "finance-010",
+    //   category: "Money and Madness",
+    //   title: "The Rise of Social Impact Investing: Profit With Purpose?",
+    //   date: "February 11, 2025",
+    //   author: "Loop Editorial",
+    //   img: "/images/finance-010.jpg",
+    //   alt: "People planting a tree with investors watching",
+    //   description:
+    //     "Impact investing blends financial returns with measurable social outcomes, but measuring impact is hard and contested. This piece examines frameworks, case studies, and the tensions between scale and accountability in investments that claim to do good...",
+    // },
+    //   {
+    //   id: "finance-001",
+    //   category: "Money and Madness",
+    //   title: "Five Financial Crises That Were Avoided at the Last Minute",
+    //   date: "January 21, 2025",
+    //   author: "Loop Editorial",
+    //   img: "/images/finance-001.jpg",
+    //   alt: "Financial market closeup",
+    //   description:
+    //     "From central bank interventions to decisive regulatory acts, several near-disasters were defused before markets collapsed entirely. This piece reconstructs five tense moments, the actors who steered outcomes, and the structural lessons learned about fragility in finance...",
+    // },
+    // {
+    //   id: "finance-002",
+    //   category: "Money and Madness",
+    //   title:
+    //     "The Free Economy: How Open-Source Is Upending Traditional Business Models",
+    //   date: "November 22, 2025",
+    //   author: "Loop Editorial",
+    //   img: "/images/finance-002.jpg",
+    //   alt: "Open source collaboration on screen",
+    //   description:
+    //     "Open-source software and hardware redefined how goods are created and shared, creating new pathways for revenue beyond license fees. This article examines companies and communities harnessing openness to scale, compete and reimagine intellectual property norms...",
+    // },
   ],
 
   "Arena of Fame": [
@@ -468,7 +469,7 @@ const articles: Record<string, Article[]> = {
       category: "Arena of Fame",
       title: "The Second Act: Icons Who Reinvented Themselves After Failure",
       date: "June 11, 2025",
-      author: "Daniel R. Okoye",
+      author: "Loop Editorial",
       img: secondAct,
       alt: "global icon athlete celebrating",
       description:
@@ -479,56 +480,68 @@ const articles: Record<string, Article[]> = {
       category: "Arena of Fame",
       title: "The Will to Win: Incredible Sports Comebacks That Redefined Grit",
       date: "February 20, 2025",
-      author: "Hannah Clarke",
+      author: "Loop Editorial",
       img: sports,
       alt: "Athlete celebrating a comeback win",
       description:
         "Comebacks endure because they reveal something elemental about competition: talent matters, but resolve is its own kind of physics. These five stories capture the moment when athletes and teams refused to accept predictable endings.",
     },
     {
-      id: "arena-002",
+      id: "box-office-flops-cult-classics",
       category: "Arena of Fame",
       title: "Six Films That Were Box-Office Flops — Then Became Cult Classics",
       date: "May 18, 2025",
-      author: "Mateo Rossi",
+      author: "Loop Editorial",
       img: "/images/stage-002.jpg",
       alt: "Film poster collage",
       description:
         "Some films fail commercially but thrive culturally, building passionate followings and affecting art for decades. This article traces six such journeys from initial flop to cult status and asks what this reveals about taste, distribution and fandom...",
     },
     {
-      id: "arena-009",
-      category: "Arena of Fame",
-      title: "Six Underdog Athletes Who Became Global Icons",
-      date: "March 28, 2025",
-      author: "Fatima El-Amin",
-      img: "/images/stage-009.jpg",
-      alt: "Underdog athlete celebrating",
-      description:
-        "Stories of underdogs who rose to global acclaim illuminate sport’s narrative power and the social forces that elevate certain heroes. This feature profiles six athletes whose unlikely ascents reshaped their sports and inspired broader cultural conversations...",
-    },
-    {
-      id: "arena-010",
+      id: "fandom-identity-sociology",
       category: "Arena of Fame",
       title: "When Fandom Becomes Identity: The Sociology of Fan Cultures",
       date: "October 1, 2025",
-      author: "Noah Whitaker",
+      author: "Loop Editorial",
       img: "/images/stage-010.jpg",
       alt: "Crowd of fans at a concert",
       description:
         "Fan cultures do more than consume; they create communities, rituals and identity markers. This sociological account explores how fans organize, build subcultures, and influence creative industries through participation, curation and activism...",
     },
     {
-      id: "arena-007",
+      id: "mega-events-economics",
+      category: "Arena of Fame",
+      title:
+        "The Economics of Mega-Events: Olympics, World Cups & Legacy Questions",
+      date: "January 7, 2025",
+      author: "Loop Editorial",
+      img: "/images/stage-005.jpg",
+      alt: "Stadium lit up at night",
+      description:
+        "Hosting mega-events promises jobs and prestige but often leaves mixed legacies and large debts. This analysis weighs costs, urban planning outcomes, and the lived experiences of residents in cities that hosted global spectacles...",
+    },
+    {
+      id: "stage-design-audience-emotion",
       category: "Arena of Fame",
       title: "Behind the Curtain: How Stage Design Shapes Audience Emotion",
       date: "August 11, 2025",
-      author: "Ivy Nakamura",
+      author: "Loop Editorial",
       img: "/images/stage-007.jpg",
       alt: "Intricate stage set design",
       description:
         "Set, light and sound design choreograph audience feeling as much as script or score. This piece interviews designers and directors about the craft of spatial storytelling and how physical environments guide collective experience during live shows...",
     },
+    //   {
+    //   id: "arena-009",
+    //   category: "Arena of Fame",
+    //   title: "Six Underdog Athletes Who Became Global Icons",
+    //   date: "March 28, 2025",
+    //   author: "Loop Editorial",
+    //   img: "/images/stage-009.jpg",
+    //   alt: "Underdog athlete celebrating",
+    //   description:
+    //     "Stories of underdogs who rose to global acclaim illuminate sport’s narrative power and the social forces that elevate certain heroes. This feature profiles six athletes whose unlikely ascents reshaped their sports and inspired broader cultural conversations...",
+    // },
     // {
     //   id: "arena-003",
     //   category: "Arena of Fame",
@@ -551,18 +564,6 @@ const articles: Record<string, Article[]> = {
     //   alt: "Artist mid-performance",
     //   description:
     //     "Creative reinvention can reshape careers and entire mediums. Through profiles of seven artists who radically changed direction, this feature uncovers the risks, strategies and cultural conditions that enable successful transformation in the public eye...",
-    // },
-    // {
-    //   id: "arena-005",
-    //   category: "Arena of Fame",
-    //   title:
-    //     "The Economics of Mega-Events: Olympics, World Cups & Legacy Questions",
-    //   date: "January 7, 2025",
-    //   author: "Beatrice Cole",
-    //   img: "/images/stage-005.jpg",
-    //   alt: "Stadium lit up at night",
-    //   description:
-    //     "Hosting mega-events promises jobs and prestige but often leaves mixed legacies and large debts. This analysis weighs costs, urban planning outcomes, and the lived experiences of residents in cities that hosted global spectacles...",
     // },
     // {
     //   id: "arena-006",
@@ -592,11 +593,23 @@ const articles: Record<string, Article[]> = {
 
   "Genius and Folly": [
     {
+      id: "tech-in-nature",
+      category: "Genius and Folly",
+      title:
+        "The Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
+      date: "February 27, 2025",
+      author: "Loop Editorial",
+      img: biomimicry,
+      alt: "Gecko climbing glass closeup",
+      description:
+        "Engineers often pride themselves on cutting-edge tools, yet many of the cleverest ideas arrive pre-installed in the living world. Plants, insects, birds, and marine life have spent billions of years refining designs humans are only beginning to notice. Biomimicry takes these natural strategies and turns them into practical technologies—sometimes simple, sometimes wildly futuristic. The examples below illustrate how looking to nature can reshape everything from architecture to robotics.",
+    },
+    {
       id: "ai-ethics-dilemmas",
       category: "Genius and Folly",
       title: "The Ethics of AI: Dilemmas We Still Can’t Solve",
       date: "May 3, 2025",
-      author: "Ethan Liu",
+      author: "Loop Editorial",
       img: aiEthics,
       alt: "Abstract representation of AI ethics",
       description:
@@ -607,46 +620,34 @@ const articles: Record<string, Article[]> = {
       category: "Genius and Folly",
       title: "How Amateur Inventors Are Disrupting Big Tech",
       date: "April 19, 2025",
-      author: "Marta Kovács",
+      author: "Loop Editorial",
       img: amateur,
       alt: "kid building a robot",
       description:
         "There's a romantic myth that all groundbreaking inventions begin in gleaming labs guarded by PhD-level gatekeepers. In reality, many of the tools we now treat as inevitable were born in garages, sheds, cramped bedrooms, and badly lit basements that smelled faintly of solder and ambition. The amateur inventor has always been the sneaky wildcard in the world of innovation—untethered from bureaucracy, unburdened by product roadmaps, and propelled mostly by stubborn curiosity. What's surprising isn't that this tradition continues. It's that it is accelerating.",
     },
     {
-      id: "failures-to-breakthroughs",
-      category: "Genius and Folly",
-      title: "Scientific Failures That Sparked Big Discoveries",
-      date: "October 27, 2025",
-      author: "Olu Jacobs",
-      img: lab,
-      alt: "Laboratory experiment scene",
-      description:
-        "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible.",
-    },
-    {
-      id: "tech-in-nature",
-      category: "Genius and Folly",
-      title:
-        "The Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
-      date: "February 27, 2025",
-      author: "Lin Zhou",
-      img: biomimicry,
-      alt: "Gecko climbing glass closeup",
-      description:
-        "Engineers often pride themselves on cutting-edge tools, yet many of the cleverest ideas arrive pre-installed in the living world. Plants, insects, birds, and marine life have spent billions of years refining designs humans are only beginning to notice. Biomimicry takes these natural strategies and turns them into practical technologies—sometimes simple, sometimes wildly futuristic. The examples below illustrate how looking to nature can reshape everything from architecture to robotics.",
-    },
-    {
       id: "space-junk-to-mining",
       category: "Genius and Folly",
       title: "Space Junk to Space Mining: The Next Frontier of Tech",
       date: "July 14, 2025",
-      author: "Greta Sørensen",
+      author: "Loop Editorial",
       img: spaceJunk,
       alt: "Satellites and orbitals",
       description:
         // "As orbital congestion grows, entrepreneurs and governments are exploring cleanup tech and extraction from asteroids. This article surveys technological possibilities, legal questions, and the environmental calculus of bringing industry into near-Earth space...",
         " Earth's orbit is becoming a junkyard. Thousands of defunct satellites, spent rocket stages, and fragments of debris drift silently at tens of thousands of kilometers per hour. Meanwhile, on the horizon is a more ambitious dream: mining asteroids and other celestial bodies for metals, water, and resources that could fuel life and industry—beyond Earth.",
+    },
+    {
+      id: "failures-to-breakthroughs",
+      category: "Genius and Folly",
+      title: "Scientific Failures That Sparked Big Discoveries",
+      date: "October 27, 2025",
+      author: "Loop Editorial",
+      img: lab,
+      alt: "Laboratory experiment scene",
+      description:
+        "Science is often portrayed as a straight staircase to truth, but many of its greatest leaps started with a misstep. Failed experiments, stray bacteria, overheated equipment—these tiny disasters reshaped medicine, physics, technology and even daily life. This feature explores six moments where mistakes didn’t just guide innovation; they became the spark that rewrote what humanity thought possible.",
     },
     // {
     //   id: "science-001",
@@ -712,7 +713,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "The Forgotten Scientists: Pioneers Who Didn’t Get the Credit",
       date: "April 10, 2025",
-      author: "Laila Hassan",
+      author: "Loop Editorial",
       img: fpioneer,
       alt: "Portraits of historical scientists",
       description:
@@ -723,7 +724,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "When Empires Collapsed: Lessons From History’s Great Falls",
       date: "February 18, 2025",
-      author: "Ibrahim Koroma",
+      author: "Loop Editorial",
       img: collapse,
       alt: "Ancient ruins and fallen columns",
       description:
@@ -734,7 +735,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "Inventions Forgotten by Time That Were Ahead of Their Era",
       date: "May 14, 2025",
-      author: "Ada Mensah",
+      author: "Loop Editorial",
       img: typewriter,
       alt: "Vintage mechanical invention",
       description:
@@ -746,7 +747,7 @@ const articles: Record<string, Article[]> = {
       title:
         "When Food Was Medicine: Historic Diets That Influenced Civilization",
       date: "July 30, 2025",
-      author: "Owen Gallagher",
+      author: "Loop Editorial",
       img: foodMedicine,
       alt: "Medicinal foods",
       description:
@@ -757,7 +758,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "Old Media, New Lessons: How Newspapers Shaped the 20th Century",
       date: "November 29, 2025",
-      author: "Peter Novak",
+      author: "Loop Editorial",
       img: newspaper,
       alt: "Archive of newspapers",
       description:
@@ -768,7 +769,7 @@ const articles: Record<string, Article[]> = {
       category: "Time Capsule",
       title: "Architectural Marvels That Are Now Ruins — But Still Awe",
       date: "March 14, 2025",
-      author: "Elena Rodriguez",
+      author: "Loop Editorial",
       img: ruins,
       alt: "Ruined architectural marvel",
       description:

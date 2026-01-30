@@ -84,7 +84,7 @@ export default function Login() {
         </h1>
         <p className="text-center text-[#6e7780] mb-8">
           Stay informed. Stay in the{" "}
-          <strong className="font-frozen">'loop'</strong>.
+          <strong className="font-bold text-black">'loop'</strong>.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">

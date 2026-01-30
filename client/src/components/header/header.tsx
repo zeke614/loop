@@ -47,12 +47,12 @@ export default function Header() {
 
         <Link
           to="/"
-          className={`text-[1.438rem] font-frozen font-semibold flex items-center ${
+          className={`text-[1.438rem] flex items-center ${
             user ? "pl-0" : "pl-6"
           } md:p-0`}
         >
           {/* <img src={logo} alt="loop logo" className="h-10 w-auto" /> */}
-          loop
+          <h1 className="font-bold">loop</h1>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

@@ -157,7 +157,7 @@ export default function Collapses() {
             recognizing how complex systems depend on flexibility, legitimacy,
             and ecological balance.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             History's fallen empires remind modern institutions — from
             governments to global companies — that resilience isn't about scale
             or strength. It's about the ability to adapt before the breaking

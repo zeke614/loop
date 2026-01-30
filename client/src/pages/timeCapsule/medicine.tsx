@@ -140,7 +140,7 @@ export default function Medicine() {
             nourishment; it has been technology, identity, and a quiet form of
             survival strategy.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             As nutrition science evolves, echoes of these older systems continue
             shaping how people think about food and wellness today.
           </p>

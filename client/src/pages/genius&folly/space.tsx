@@ -199,7 +199,7 @@ export default function SpaceMining() {
             and active cleanup efforts, suggests this isn't just a dream
             anymore.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             Space's next frontier isn't just about going farther—it's about
             going cleaner and smarter. With luck, the history of the next
             century will show we didn't just reach for the stars—we learned to

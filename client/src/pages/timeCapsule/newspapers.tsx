@@ -150,7 +150,7 @@ export default function Newspapers() {
             blueprint for modern media grappling with misinformation, fragmented
             audiences, and economic uncertainty.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             Newspapers may no longer dominate daily life, but the principles
             they sharpened — accountability, depth, and communal storytelling —
             remain vital for any society trying to make sense of itself.

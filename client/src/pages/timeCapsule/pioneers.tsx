@@ -145,7 +145,7 @@ export default function Pioneers() {
             unevenly, and often under conditions shaped by social context rather
             than pure merit.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             By remembering these scientists, we get a more honest picture of
             scientific progress — and we widen the lens for future innovators.
           </p>

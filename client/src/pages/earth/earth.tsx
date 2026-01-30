@@ -68,7 +68,7 @@ export default function Earth() {
       </h1>
 
       <p className="text-center text-[#767676]  text-lg">
-        Nature doing what nature does — surprise us.{" "}
+        Nature doing what it does — surprise us.{" "}
       </p>
 
       <motion.div

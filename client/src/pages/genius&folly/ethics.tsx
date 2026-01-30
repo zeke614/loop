@@ -173,7 +173,7 @@ export default function Ethics() {
             systems that stay accountable, corrigible, and compatible with
             pluralistic societies.
           </p>
-          <p className="font-medium text-gray-700 italic mt-6">
+          <p className="font-medium text-gray-700 mt-6">
             AI isn't a mirror of our intelligence—it's a mirror of our
             unresolved debates.
           </p>

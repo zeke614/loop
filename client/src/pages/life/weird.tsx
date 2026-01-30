@@ -134,7 +134,7 @@ export default function Weird() {
             how people move, work, remember, and connect, creating a decade
             where the clock ticks normally but life moves unusually fast.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             As psychologists often note, slowing time isn't about controlling
             the seconds—it's about rebuilding meaningful markers, restoring
             pauses, and living with enough texture that memories can breathe.

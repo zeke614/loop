@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="border-t border-gray-100 pb-10"></div>
 
         <div className="text-center mb-12">
-          <h1 className="text-[1.438rem] font-frozen tracking-normal">loop</h1>
+          <h1 className="text-[1.438rem] font-bold tracking-normal">loop</h1>
 
           <p className="text-gray-600 mt-0.5">
             Stories worth circling back to.
@@ -84,7 +84,7 @@ export default function Footer() {
           <p className="flex items-center gap-2">
             <span className="-mx-1">&copy;</span>
             <span className="text-[0.969rem]">{new Date().getFullYear()}</span>
-            <span className="font-frozen tracking-normal text-black">loop</span>
+            <span className="font-boldtracking-normal text-black">loop</span>
             <span>All rights reserved</span>
           </p>
 

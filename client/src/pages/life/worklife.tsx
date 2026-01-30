@@ -141,7 +141,7 @@ export default function Worklife() {
             crafting arrangements that let them thrive professionally without
             sacrificing family, autonomy, or the texture of everyday life.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             The evolution isn't over — it's simply entered a phase where
             individuals can shape the rhythm instead of inheriting it.
           </p>

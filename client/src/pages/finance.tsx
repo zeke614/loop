@@ -68,7 +68,7 @@ export default function Finance() {
       </h1>
 
       <p className="text-center text-[#767676]  text-lg">
-        Markets moving like they’ve had three coffees.{" "}
+        Money, but make it unhinged.{" "}
       </p>
 
       <motion.div

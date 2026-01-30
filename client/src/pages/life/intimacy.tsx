@@ -126,7 +126,7 @@ export default function Intimacy() {
             profound—using them to deepen connection rather than distract from
             it.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             The story continues wherever humans and technology keep bumping into
             each other, trying to figure out what closeness means in a world
             that never truly logs off.

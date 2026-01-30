@@ -183,7 +183,7 @@ export default function SecondAct() {
             identity is not fixed—and that mastery isn't about never failing,
             but about learning how to evolve when old versions stop working.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700 italic">
+          <p className="leading-6.5 font-medium text-gray-700">
             Greatness, it turns out, is less about arrival and more about
             revision.
           </p>
