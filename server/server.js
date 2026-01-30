@@ -23,6 +23,14 @@ app.use(express.json());
 
 connectDB();
 
+app.get("/", (req, res) => {
+  res.status(200).json({ 
+    status: "OK", 
+    message: "Backend API is running",
+    timestamp: new Date().toISOString()
+  });
+})
+
 app.get("/api/test", (req, res) => {
   res.json({ message: "Backend is working!" });
 });
