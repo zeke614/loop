@@ -34,7 +34,7 @@ export default function Saved() {
   if (savedArticles.length === 0) {
     return (
       <div className="px-4.5 max-w-lg mx-auto flex flex-col items-center justify-center h-[90vh] space-y-4">
-        <h1 className="text-[1.375rem] font-frozen">Your Saved Articles</h1>
+        <h1 className="text-[1.375rem] font-semibold">Your Saved Articles</h1>
         <p className="text-center mt-3 text-[#6e7780]">
           You haven't saved anything yet, but when you <br /> do, it will show
           up. Use the Save button <br /> on articles to save items for later.
@@ -47,7 +47,7 @@ export default function Saved() {
     <div className="min-h-screen pt-20 pb-10 px-5 lg:px-3">
       <div className="max-w-[75rem] mx-auto">
         <div className="mb-10">
-          <h1 className="text-[1.375rem] pt-1.5 font-frozen text-gray-900">
+          <h1 className="text-[1.375rem] pt-1.5 font-semibold text-gray-900">
             Your Saved Articles
           </h1>
           <p className="text-[#6e7780] mt-2">

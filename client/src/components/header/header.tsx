@@ -62,8 +62,8 @@ export default function Header() {
               to={path}
               className={`${
                 location.pathname === path
-                  ? "font-frozen text-black"
-                  : "font-frozen text-[#444]"
+                  ? "font-bold text-black"
+                  : "font-medium text-[#444]"
               }`}
             >
               {label}
