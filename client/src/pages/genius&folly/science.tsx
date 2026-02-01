@@ -70,7 +70,7 @@ export default function Science() {
         Where brilliance meets beautiful mistakes.{" "}
       </p>
 
-      <div className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5 lg:px-3 relative">
+      <div className="grid grid-cols-1 max-w-[75rem] mx-auto py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5.5 lg:px-3 relative">
         {geniusAndFollyArticles.map((article) => {
           const isSaved = savedIds.includes(article.id);
 

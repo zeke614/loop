@@ -14,7 +14,7 @@ export default function UsernameReset() {
   };
 
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-4 mx-auto pt-10">
+    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-5 mx-auto pt-10">
       <div>
         <Link
           to="/settings/details"

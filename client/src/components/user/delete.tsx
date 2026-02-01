@@ -41,9 +41,8 @@ export default function DeleteAccountPopup({
           <h3 className="text-lg font-frozen text-gray-900 mb-7">
             Are you sure?
           </h3>
-          <p className="text-gray-600 mb-3">
-            This action cannot be undone! <br /> Your account and data will be
-            deleted.
+          <p className="text-gray-600 mb-4.5">
+            This action cannot be undone! <br /> Your account will be deleted.
           </p>
           <div className="flex justify-center gap-4">
             <button

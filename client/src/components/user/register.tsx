@@ -69,7 +69,7 @@ export default function Register() {
 
   return (
     <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md py-8 sm:mt-7 px-7">
+      <div className="w-full max-w-md mt-11 sm:mt-20 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
@@ -78,7 +78,7 @@ export default function Register() {
           <HomeModernIcon className="size-5 mb-6" />
         </Link> */}
 
-        <h1 className="text-2xl md:text-3xl text-center font-frozen mt-1 mb-4">
+        <h1 className="text-2xl md:text-3xl text-center font-frozen mt-1 mb-2">
           Create your account
         </h1>
         <p className="text-center text-[#6e7780] mb-7 md:text-base">
@@ -204,7 +204,7 @@ export default function Register() {
           </Link>
         </p> */}
 
-        <p className="text-center text-[#6e7780] mt-8 md:text-base">
+        <p className="text-center text-[#6e7780] mt-6 md:text-base">
           Have an account?
           <Link to="/login" className="text-[#0ab39c] ml-1.5 font-semibold">
             Sign In

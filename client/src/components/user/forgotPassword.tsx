@@ -21,7 +21,7 @@ export default function ForgotPasswordPage() {
   const isButtonDisabled = !isValidEmail || email.trim() === "";
 
   return (
-    <div className="min-h-[100dvh] bg-white w-full max-w-md mx-auto px-4 pt-10 flex flex-col">
+    <div className="min-h-[100dvh] bg-white w-full max-w-md mx-auto px-5 pt-10 flex flex-col">
       <div>
         <button
           onClick={() => window.history.back()}

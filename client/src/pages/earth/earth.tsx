@@ -75,7 +75,7 @@ export default function Earth() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="grid grid-cols-1 max-w-[75rem] py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5 lg:px-3 relative"
+        className="grid grid-cols-1 max-w-[75rem] py-14 gap-14 lg:grid-cols-2 xl:grid-cols-3 md:gap-x-10 md:gap-y-14 px-5.5 lg:px-3 relative"
       >
         {theLivingPlanetArticles.map((article) => {
           const isSaved = savedIds.includes(article.id);

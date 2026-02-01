@@ -74,7 +74,7 @@ export default function Security() {
       initial="initial"
       animate="in"
       exit="out"
-      className="py-24 md:pt-27 px-5 sm:px-6 lg:px-8"
+      className="py-24 md:pt-27 px-5.5 sm:px-6 lg:px-8"
     >
       <div className="max-w-3xl mx-auto">
         <div className="mb-7">

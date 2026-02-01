@@ -6,7 +6,7 @@ import { useAuth } from "../../contexts/authContext";
 import {
   EyeIcon,
   EyeSlashIcon,
-  HomeModernIcon,
+  // HomeModernIcon,
 } from "@heroicons/react/24/outline";
 // import ForgotPasswordModal from "./forgotPassword";
 
@@ -70,14 +70,14 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md py-10 sm:mt-7 px-7">
+      <div className="w-full max-w-md mt-19 sm:mt-25 px-7">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
 
-        <Link to="/">
+        {/* <Link to="/">
           <HomeModernIcon className="size-5 mb-7 mt-1" />
-        </Link>
+        </Link> */}
 
         <h1 className="text-2xl md:text-3xl text-center font-frozen mb-2">
           Sign in
@@ -204,7 +204,7 @@ export default function Login() {
           </Link>
         </p> */}
 
-        <p className="text-center text-[#6e7780] mt-8">
+        <p className="text-center text-[#6e7780] mt-6">
           New here?
           <Link to="/register" className="text-[#0ab39c] ml-1.5 font-semibold">
             Sign Up

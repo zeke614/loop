@@ -15,9 +15,9 @@ export default function Footer() {
         </div>
 
         <div className="mb-10 flex flex-col items-center">
-          <h2 className="text-center text-lg mb-3 font-bold">Quick Links</h2>
+          <h2 className="text-center text-lg mb-2.5 font-bold">Quick Links</h2>
 
-          <div className="flex flex-col gap-3 items-center text-gray-60">
+          <div className="flex flex-col gap-2.5 items-center text-gray-60">
             <Link to="/info" className="hover:text-[#0ab39c] transition-colors">
               About
             </Link>
@@ -36,10 +36,10 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-center text-lg mb-3 font-bold text-gray-900">
+          <h2 className="text-center text-lg mb-2.5 font-bold text-gray-900">
             Our Socials
           </h2>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <a
               href="https://x.com/devzeke146"
               target="_blank"
@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col justify-between items-center gap-2 text-gray-600">
+        <div className="mt-9 flex flex-col justify-between items-center gap-1.5 text-gray-600">
           <p className="flex items-center gap-2">
             <span className="-mx-1">&copy;</span>
             <span className="text-[0.969rem]">{new Date().getFullYear()}</span>
