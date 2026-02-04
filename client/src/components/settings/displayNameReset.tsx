@@ -4,13 +4,20 @@ import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { useAuth } from "../../contexts/authContext";
 
 export default function UsernameReset() {
-  const { user } = useAuth();
+  const { user, updateUsername } = useAuth();
   const [newUsername, setNewUsername] = useState(user?.username || "");
-  const [loading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Updating username to:", newUsername);
+    setLoading(true);
+
+    try {
+      await updateUsername(newUsername);
+      console.log("Updating username to:", newUsername);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,14 +42,14 @@ export default function UsernameReset() {
           make.
         </p>
 
-        <form onSubmit={handleSubmit}>
+        <form id="username-form" onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="font-medium block mb-2 text-gray-700">
               Display Name
             </label>
             <input
-              type="email"
-              name="email"
+              type="text"
+              name="displayName"
               value={newUsername}
               onChange={(e) => setNewUsername(e.target.value)}
               required
@@ -60,6 +67,7 @@ export default function UsernameReset() {
       <div className="mt-auto safe-bottom pb-6">
         <button
           type="submit"
+          form="username-form"
           disabled={newUsername === user?.username || loading}
           className={`w-full rounded-full py-[0.844rem] sm:mt-56 text-white 
                   font-medium transition 

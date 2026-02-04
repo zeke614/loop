@@ -4,26 +4,45 @@ import { useAuth } from "../../contexts/authContext";
 import FrontPageArticleCard from "../frontpage/frontPageCard";
 import Newsletter from "../../components/newsletter";
 
-const getFirstName = (user: any) => {
+// const getFirstName = (user: any) => {
+//   if (!user) return "";
+
+//   if (user.firstName) {
+//     return user.firstName;
+//   }
+
+//   if (user.username) {
+//     return user.username;
+//   }
+
+//   if (user.email) {
+//     const emailPrefix = user.email.split("@")[0];
+
+//     const firstName = emailPrefix
+//       .replace(/[0-9._-]/g, " ")
+//       .split(" ")[0]
+//       .replace(/\b\w/g, (char: string) => char.toUpperCase());
+
+//     return firstName || user.email.split("@")[0];
+//   }
+
+//   return "";
+// };
+
+const getDisplayName = (user: any) => {
   if (!user) return "";
+
+  if (user.username) {
+    return user.username; // 👈 user choice wins
+  }
 
   if (user.firstName) {
     return user.firstName;
   }
 
-  if (user.username) {
-    return user.username;
-  }
-
   if (user.email) {
     const emailPrefix = user.email.split("@")[0];
-
-    const firstName = emailPrefix
-      .replace(/[0-9._-]/g, " ")
-      .split(" ")[0]
-      .replace(/\b\w/g, (char: string) => char.toUpperCase());
-
-    return firstName || user.email.split("@")[0];
+    return emailPrefix.charAt(0).toUpperCase() + emailPrefix.slice(1);
   }
 
   return "";
@@ -64,7 +83,8 @@ export default function Home() {
     }
   }, [searchParams, setSearchParams, login]);
 
-  const displayName = getFirstName(user);
+  // const displayName = getFirstName(user);
+  const displayName = getDisplayName(user);
 
   return (
     <div className="pt-10">

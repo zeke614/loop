@@ -12,6 +12,7 @@ interface AuthContextType {
   token: string | null;
   login: (userData: User, token: string) => void;
   logout: () => void;
+  updateUsername: (username: string) => Promise<void>;
   loading: boolean;
 }
 
@@ -78,7 +79,29 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setToken(null);
   };
 
-  const value: AuthContextType = { user, token, login, logout, loading };
+  const updateUsername = async (username: string) => {
+    if (!user) return;
+
+    // Optional: API call goes here later
+    // await api.updateUsername({ username, token });
+
+    const updatedUser = {
+      ...user,
+      username,
+    };
+
+    setUser(updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  };
+
+  const value: AuthContextType = {
+    user,
+    token,
+    login,
+    logout,
+    updateUsername,
+    loading,
+  };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
