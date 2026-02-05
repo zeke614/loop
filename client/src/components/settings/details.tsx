@@ -171,18 +171,22 @@ export default function PersonalDetails() {
             >
               <ChevronLeftIcon className="size-5.5 -ml-1" />
             </Link>
-            <h1 className="text-2xl font-frozen text-gray-900">
+            <h1 className="text-2xl font-frozen text-gray-900 dark:text-white">
               Personal Details
             </h1>
-            <p className="mt-2 text-gray-500">
+            <p className="mt-2 text-gray-500 dark:text-[#d4d4d8]">
               Manage your profile information <br /> and account preferences.
             </p>
           </div>
 
-          <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-900 mb-1">Email Address</p>
-              <p className="font-semibold text-gray-500">{user.email || "—"}</p>
+              <p className="font-medium text-gray-900 dark:text-white mb-1">
+                Email Address
+              </p>
+              <p className="font-semibold text-gray-500 dark:text-[#d4d4d8]">
+                {user.email || "—"}
+              </p>
             </div>
             <button className="p-2 hover:text-[#0ab39c] rounded-full transition-all opacity-100  md:group-hover:opacity-100 focus:opacity-100 cursor-pointer">
               <Link to="/settings/emailReset">
@@ -191,10 +195,12 @@ export default function PersonalDetails() {
             </button>
           </div>
 
-          <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-900 mb-1">Password</p>
-              <p className="font-semibold text-gray-500 tracking-widest">
+              <p className="font-medium text-gray-900 dark:text-white mb-1">
+                Password
+              </p>
+              <p className="font-semibold text-gray-500 tracking-widest dark:text-[#d4d4d8]">
                 ●●●●●●●●
               </p>
             </div>
@@ -205,10 +211,12 @@ export default function PersonalDetails() {
             </button>
           </div>
 
-          <div className="group flex items-center justify-between py-5 border-b border-gray-100 transition-colors">
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-900 mb-1">Display Name</p>
-              <p className="font-semibold text-gray-500">
+              <p className="font-medium text-gray-900 dark:text-white mb-1">
+                Display Name
+              </p>
+              <p className="font-semibold text-gray-500 dark:text-[#d4d4d8]">
                 {user.username || "None added"}
               </p>
             </div>
@@ -221,10 +229,10 @@ export default function PersonalDetails() {
 
           <div className="group flex items-center justify-between py-5 transition-colors">
             <div className="flex-1">
-              <p className="font-medium text-gray-900 mb-1">
+              <p className="font-medium text-gray-900 dark:text-white mb-1">
                 Country of Residence
               </p>
-              <p className="font-semibold text-gray-500">
+              <p className="font-semibold text-gray-500 dark:text-[#d4d4d8]">
                 {user.country || "Fetching..."}
               </p>
             </div>
@@ -240,16 +248,18 @@ export default function PersonalDetails() {
         </div>
 
         <div className="mt-10">
-          <h3 className="text-lg font-frozen text-gray-900">Danger Zone</h3>
+          <h3 className="text-lg font-frozen text-gray-900 dark:text-white">
+            Danger Zone
+          </h3>
           <div className="py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
             <div>
-              <p className="text-gray-500">
+              <p className="text-gray-500 dark:text-[#d4d4d8]">
                 Permanently remove your profile and all data.
               </p>
             </div>
             <button
               onClick={togglePopUp}
-              className="flex items-center justify-center gap-2.5 px-4 py-2.5 bg-white border border-red-200 text-red-600 font-frozen rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
+              className="flex items-center justify-center gap-2.5 px-4 py-2.5 border border-red-200 dark:border-red-800 text-red-600 font-frozen rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
             >
               <span>
                 <TrashIcon className="size-5" />

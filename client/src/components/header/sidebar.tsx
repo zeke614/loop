@@ -70,14 +70,14 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
             exit={{ y: -50, opacity: 0 }}
             transition={{ type: "spring", stiffness: 200, damping: 22 }}
             className="
-              fixed left-5 top-16.5 w-fit
+              fixed left-5.5 top-16.5 w-fit
                max-w-sm max-h-[60vh]
               z-50 md:hidden 
               rounded-xl shadow-xl overflow-y-auto
-              backdrop-blur-xl bg-white
+              backdrop-blur-xl
             "
           >
-            <div className="flex flex-col justify-between h-full py-2">
+            <div className="flex flex-col justify-between h-full py-2 bg-white dark:bg-transparent">
               <div className="flex flex-col">
                 {navLinks.map(({ path, label }: any) => {
                   const isActive = location.pathname === path;
@@ -90,14 +90,14 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                       onClick={closeMenu}
                       className={`flex items-center gap-3 py-2.5 text-[1.063rem] transition-colors ${
                         isActive
-                          ? "border-l-4 border-black px-2.5 font-bold text-black"
-                          : "px-3.5 font-medium text-gray-700"
+                          ? "border-l-4 px-2.5 font-bold"
+                          : "px-3.5 font-medium text-gray-700 dark:text-gray-300"
                       }`}
                     >
                       {IconComponent && (
                         <IconComponent
                           className={`size-5 ${
-                            isActive ? "text-black" : "text-gray-700"
+                            isActive ? "" : "text-gray-700 dark:text-gray-300"
                           }`}
                         />
                       )}
@@ -111,7 +111,7 @@ export default function Sidebar({ menuOpen, closeMenu }: SidebarProps) {
                 <Link
                   to="/info"
                   onClick={closeMenu}
-                  className="flex items-center justify-between py-3 pl-4 text-gray-700 transition-colors"
+                  className="flex items-center justify-between py-3 pl-4 dark:text-gray-300 text-gray-700 transition-colors"
                 >
                   <div className="flex items-center gap-3 text-[1.063rem] font-medium">
                     <InformationCircleIcon className="size-5" />

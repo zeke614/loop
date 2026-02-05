@@ -66,7 +66,7 @@ export default function Science() {
         Genius and Folly
       </h1>
 
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         Where brilliance meets beautiful mistakes.{" "}
       </p>
 

@@ -14,7 +14,7 @@ export default function EmailReset() {
   };
 
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-5 mx-auto pt-10">
+    <div className="min-h-[100dvh] flex flex-col w-full max-w-md px-5 mx-auto pt-10">
       <div>
         <Link
           to="/settings/details"
@@ -25,19 +25,19 @@ export default function EmailReset() {
 
         <h3 className="text-2xl font-frozen mb-3.5">Email</h3>
 
-        <p className="text-gray-600 mb-5 md:hidden">
+        <p className="text-gray-600 dark:text-[#d4d4d8] mb-5 md:hidden">
           You'll use this email to receive messages, <br /> sign in and recover
           your account.
         </p>
 
-        <p className="text-gray-600 mb-5 hidden md:block">
+        <p className="text-gray-600 dark:text-[#d4d4d8] mb-5 hidden md:block">
           You'll use this email to receive messages, sign in and recover your
           account.
         </p>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="font-medium block mb-2 text-gray-700">
+            <label className="font-medium block mb-2 text-gray-700 dark:text-[#d4d4d8]">
               Email
             </label>
             <input
@@ -46,14 +46,14 @@ export default function EmailReset() {
               value={newEmail}
               onChange={(e) => setNewEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
+              className="w-full px-4 py-3 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] transition
                   "
             />
           </div>
         </form>
       </div>
 
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 dark:text-[#d4d4d8]">
         A verification code will be sent to this email.
       </p>
 

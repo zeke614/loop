@@ -67,7 +67,7 @@ export default function Entertainment() {
         Arena of Fame
       </h1>
 
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         Spotlights, plot twists, and star drama.{" "}
       </p>
 

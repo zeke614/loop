@@ -12,7 +12,6 @@
   font-style: normal;
 }
 
-
 @import "tailwindcss";
 
 @theme {
@@ -20,19 +19,48 @@
   --font-frozen: "DK Frozen Memory", "Varela Round";
 }
 
+
 body {
   @apply font-varela-round;
-  /* @apply bg-[#CFCFCF] text-white; */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
-  @apply sm:max-w-[78rem] sm:mx-auto
+  @apply sm:max-w-[78rem] sm:mx-auto;
 }
 
 .safe-bottom {
   padding-bottom: calc(env(safe-area-inset-bottom) + 1.5rem);
 }
 
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #000000;
+  --text-light: #111827;
+  --text-dark: #f9fafb;
+}
+
+/* Default light mode */
+html, body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+html.dark, html.dark body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Use CSS media query for system preference as fallback */
+@media (prefers-color-scheme: dark) {
+  /* Only apply if user hasn't manually set light mode */
+  html:not(.light) {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+}
 
 
 /* html {

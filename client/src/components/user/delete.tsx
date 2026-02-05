@@ -21,7 +21,7 @@ export default function DeleteAccountPopup({
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-white p-5 rounded-2xl shadow-lg max-w-sm w-[80%] text-center"
+          className="p-5 rounded-2xl shadow-lg max-w-sm w-[80%] text-center border border-zinc-950/10 dark:border-white/15"
           initial={{
             opacity: 0,
             y: -100,
@@ -38,10 +38,10 @@ export default function DeleteAccountPopup({
           }}
         >
           <ExclamationTriangleIcon className="size-8 text-red-500 mb-3.5 mx-auto" />
-          <h3 className="text-lg font-frozen text-gray-900 mb-7">
+          <h3 className="text-lg font-frozen text-gray-900 dark:text-white mb-7">
             Are you sure?
           </h3>
-          <p className="text-gray-600 mb-4.5">
+          <p className="text-gray-600 dark:text-[#d4d4d8] mb-4.5">
             This action cannot be undone! <br /> Your account will be deleted.
           </p>
           <div className="flex justify-center gap-4">
@@ -62,7 +62,7 @@ export default function DeleteAccountPopup({
             <button
               onClick={togglePopUp}
               disabled={isDeleting}
-              className="bg-gray-200 text-gray-800 px-4 py-1.5 rounded-lg font-medium hover:bg-gray-300 transition cursor-pointer disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="bg-gray-200 dark:bg-[#d1d1d1] text-gray-800 dark:text-black px-4 py-1.5 rounded-lg font-medium hover:bg-gray-300 transition cursor-pointer disabled:bg-gray-100 disabled:cursor-not-allowed"
             >
               Cancel
             </button>

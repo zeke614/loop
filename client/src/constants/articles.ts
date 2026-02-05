@@ -88,6 +88,17 @@ const articles: Record<string, Article[]> = {
         "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands.",
     },
     {
+      id: "forgotten-inventions",
+      category: "Time Capsule",
+      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
+      date: "May 14, 2025",
+      author: "Loop Editorial",
+      img: typewriter,
+      alt: "Vintage mechanical invention",
+      description:
+        "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms. These are the prototypes of the future that the world wasn’t ready to adopt. This article dusts off five such inventions. They weren’t failures of imagination; they were failures of timing, infrastructure, market readiness, or sheer luck. Their stories show how an idea can be brilliant and still fall flat, and how innovation is often less about genius and more about catching the wave exactly when it rises.",
+    },
+    {
       id: "performance-hacks",
       category: "Human Currents",
       title:
@@ -98,17 +109,6 @@ const articles: Record<string, Article[]> = {
       alt: "Athlete closing eyes before a race",
       description:
         "Elite performers live in environments where heart rates spike, crowds roar, expectations tighten the chest, and errors carry consequences. Yet their defining skill isn’t a genetic gift—it’s the ability to regulate stress so effectively that pressure becomes a tailwind rather than an anchor. Across sports psychology, performing arts research, and high-stakes science, several mental techniques show up again and again. What follows is a breakdown of six evidence-backed tools and real people who use them.",
-    },
-    {
-      id: "forgotten-inventions",
-      category: "Time Capsule",
-      title: "Inventions Forgotten by Time That Were Ahead of Their Era",
-      date: "May 14, 2025",
-      author: "Loop Editorial",
-      img: typewriter,
-      alt: "Vintage mechanical invention",
-      description:
-        "History treats innovation like a spotlight: a few names glow bright, while the rest dissolve into the dim backstage. Yet scattered across that backstage are inventions so forward-thinking they feel like they slipped through a crack in time — ideas born decades too early, misunderstood by their century, only to reappear later in more successful forms. These are the prototypes of the future that the world wasn’t ready to adopt. This article dusts off five such inventions. They weren’t failures of imagination; they were failures of timing, infrastructure, market readiness, or sheer luck. Their stories show how an idea can be brilliant and still fall flat, and how innovation is often less about genius and more about catching the wave exactly when it rises.",
     },
   ],
   "Human Currents": [
@@ -160,7 +160,8 @@ const articles: Record<string, Article[]> = {
     {
       id: "digital-intimacy",
       category: "Human Currents",
-      title: "How Digital Intimacy Is Changing the Way We Date and Relate",
+      title:
+        "How Digital Intimacy Is Reshaping the Way We Date, Relate and Connect",
       date: "July 5, 2025",
       author: "Loop Editorial",
       img: intimacy,
@@ -252,6 +253,17 @@ const articles: Record<string, Article[]> = {
         "Despite extreme pressures, some ecosystems show surprising resilience, from mangroves to alpine meadows. This piece examines seven such systems, the ecological mechanisms that stabilized them, and what resilience teaches us about conservation in a changing climate...",
     },
     {
+      id: "antarctica-ice-coastal-impact",
+      category: "The Living Planet",
+      title: "What Antarctica’s Melting Ice Really Means for Coastal Cities",
+      date: "April 24, 2025",
+      author: "Loop Editorial",
+      img: "/images/planet-009.jpg",
+      alt: "Antarctic ice shelf calving",
+      description:
+        "Melting Antarctic ice is a global issue with site-specific consequences for coastal planning, insurance markets and migration. This analytical article explains the science of ice loss, models of sea-level rise, and practical adaptation measures for risk-exposed communities...",
+    },
+    {
       id: "fungal-networks",
       category: "The Living Planet",
       title: "The Underground Networks of Mycorrhizal Fungi: Nature’s Internet",
@@ -273,17 +285,6 @@ const articles: Record<string, Article[]> = {
       alt: "A modern desalination plant",
       description:
         "Water scarcity is a technical problem wrapped in social and political complexity. By tracing infrastructure from Roman aqueducts to present desalination and watershed management, this piece highlights solutions that are technically possible and socially equitable...",
-    },
-    {
-      id: "antarctica-ice-coastal-impact",
-      category: "The Living Planet",
-      title: "What Antarctica’s Melting Ice Really Means for Coastal Cities",
-      date: "April 24, 2025",
-      author: "Loop Editorial",
-      img: "/images/planet-009.jpg",
-      alt: "Antarctic ice shelf calving",
-      description:
-        "Melting Antarctic ice is a global issue with site-specific consequences for coastal planning, insurance markets and migration. This analytical article explains the science of ice loss, models of sea-level rise, and practical adaptation measures for risk-exposed communities...",
     },
     {
       id: "microplastics-biological-systems",
@@ -359,16 +360,15 @@ const articles: Record<string, Article[]> = {
         "Corporate collapse is rarely sudden—it's usually the slow unraveling of ambition, secrecy, and flawed incentives. This article revisits seven infamous failures whose shockwaves reshaped modern oversight, from manipulated accounts to reckless cultures that prized growth over truth. Through financial autopsies and governance lessons, it explores how disaster became the catalyst for stronger rules, sharper scrutiny, and a deeper understanding of what responsible leadership truly demands...",
     },
     {
-      id: "niche-cryptocurrencies",
+      id: "art-investment-safer-than-stocks",
       category: "Money and Madness",
-      title:
-        "Six Cryptocurrencies You've Never Heard Of That Carved Their Own Niche",
-      date: "March 1, 2025",
+      title: "Five Times Art Became Safer Than Stocks",
+      date: "October 10, 2025",
       author: "Loop Editorial",
-      img: "/images/finance-003.jpg",
-      alt: "Crypto coins on a table",
+      img: "/images/finance-007.jpg",
+      alt: "Art gallery interior",
       description:
-        "Beyond Bitcoin and Ethereum, niche blockchains tackled supply chain provenance, microtransactions, and decentralized identity. This exploration profiles six lesser-known projects, what problems they pursued, and whether their approaches offer long-term value...",
+        "When financial markets wobble, collectors sometimes turn to art for preservation and profit. This feature analyzes moments when art markets outperformed equities, why that happened, and what risks and myths surround art as an investment class...",
     },
     {
       id: "carbon-credits",
@@ -382,15 +382,16 @@ const articles: Record<string, Article[]> = {
         "Carbon markets promise cost-effective emissions reductions, but their design has produced paradoxes and controversies. This investigative piece explains how credits are created, traded, and sometimes gamed, and profiles reforms that could make the system more credible...",
     },
     {
-      id: "art-investment-safer-than-stocks",
+      id: "niche-cryptocurrencies",
       category: "Money and Madness",
-      title: "Five Times Art Became Safer Than Stocks",
-      date: "October 10, 2025",
+      title:
+        "Six Cryptocurrencies You've Never Heard Of That Carved Their Own Niche",
+      date: "March 1, 2025",
       author: "Loop Editorial",
-      img: "/images/finance-007.jpg",
-      alt: "Art gallery interior",
+      img: "/images/finance-003.jpg",
+      alt: "Crypto coins on a table",
       description:
-        "When financial markets wobble, collectors sometimes turn to art for preservation and profit. This feature analyzes moments when art markets outperformed equities, why that happened, and what risks and myths surround art as an investment class...",
+        "Beyond Bitcoin and Ethereum, niche blockchains tackled supply chain provenance, microtransactions, and decentralized identity. This exploration profiles six lesser-known projects, what problems they pursued, and whether their approaches offer long-term value...",
     },
     {
       id: "gig-economy-hidden-math",
@@ -476,15 +477,16 @@ const articles: Record<string, Article[]> = {
         "Public failure has a way of freezing people in time. An early loss, a public stumble, a bad season or scandal can become the headline that follows someone forever. In sports and entertainment alike, the first narrative tends to stick.",
     },
     {
-      id: "the-will-to-win",
+      id: "mega-events-economics",
       category: "Arena of Fame",
-      title: "The Will to Win: Incredible Sports Comebacks That Redefined Grit",
-      date: "February 20, 2025",
+      title:
+        "The Economics of Mega-Events: Olympics, World Cups & Legacy Questions",
+      date: "January 7, 2025",
       author: "Loop Editorial",
-      img: sports,
-      alt: "Athlete celebrating a comeback win",
+      img: "/images/stage-005.jpg",
+      alt: "Stadium lit up at night",
       description:
-        "Comebacks endure because they reveal something elemental about competition: talent matters, but resolve is its own kind of physics. These five stories capture the moment when athletes and teams refused to accept predictable endings.",
+        "Hosting mega-events promises jobs and prestige but often leaves mixed legacies and large debts. This analysis weighs costs, urban planning outcomes, and the lived experiences of residents in cities that hosted global spectacles...",
     },
     {
       id: "box-office-flops-cult-classics",
@@ -509,18 +511,6 @@ const articles: Record<string, Article[]> = {
         "Fan cultures do more than consume; they create communities, rituals and identity markers. This sociological account explores how fans organize, build subcultures, and influence creative industries through participation, curation and activism...",
     },
     {
-      id: "mega-events-economics",
-      category: "Arena of Fame",
-      title:
-        "The Economics of Mega-Events: Olympics, World Cups & Legacy Questions",
-      date: "January 7, 2025",
-      author: "Loop Editorial",
-      img: "/images/stage-005.jpg",
-      alt: "Stadium lit up at night",
-      description:
-        "Hosting mega-events promises jobs and prestige but often leaves mixed legacies and large debts. This analysis weighs costs, urban planning outcomes, and the lived experiences of residents in cities that hosted global spectacles...",
-    },
-    {
       id: "stage-design-audience-emotion",
       category: "Arena of Fame",
       title: "Behind the Curtain: How Stage Design Shapes Audience Emotion",
@@ -530,6 +520,17 @@ const articles: Record<string, Article[]> = {
       alt: "Intricate stage set design",
       description:
         "Set, light and sound design choreograph audience feeling as much as script or score. This piece interviews designers and directors about the craft of spatial storytelling and how physical environments guide collective experience during live shows...",
+    },
+    {
+      id: "the-will-to-win",
+      category: "Arena of Fame",
+      title: "The Will to Win: Incredible Sports Comebacks That Redefined Grit",
+      date: "February 20, 2025",
+      author: "Loop Editorial",
+      img: sports,
+      alt: "Athlete celebrating a comeback win",
+      description:
+        "Comebacks endure because they reveal something elemental about competition: talent matters, but resolve is its own kind of physics. These five stories capture the moment when athletes and teams refused to accept predictable endings.",
     },
     //   {
     //   id: "arena-009",
@@ -595,8 +596,7 @@ const articles: Record<string, Article[]> = {
     {
       id: "tech-in-nature",
       category: "Genius and Folly",
-      title:
-        "The Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
+      title: "Hidden Tech in Nature: Biomimicry From Shark Skin to Gecko Feet",
       date: "February 27, 2025",
       author: "Loop Editorial",
       img: biomimicry,
@@ -756,7 +756,7 @@ const articles: Record<string, Article[]> = {
     {
       id: "how-newspapers-shaped-20th-century",
       category: "Time Capsule",
-      title: "Old Media, New Lessons: How Newspapers Shaped the 20th Century",
+      title: "Old Media, New Lessons: How Newspapers Shaped the 1900s",
       date: "November 29, 2025",
       author: "Loop Editorial",
       img: newspaper,

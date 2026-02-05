@@ -21,7 +21,7 @@ export default function UsernameReset() {
   };
 
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-5 mx-auto pt-10">
+    <div className="min-h-[100dvh] flex flex-col w-full max-w-md px-5 mx-auto pt-10">
       <div>
         <Link
           to="/settings/details"
@@ -32,19 +32,19 @@ export default function UsernameReset() {
 
         <h3 className="text-2xl font-frozen mb-3.5">Display Name</h3>
 
-        <p className="text-gray-600 mb-5 md:hidden">
+        <p className="text-gray-600 dark:text-[#d4d4d8] mb-5 md:hidden">
           This name will appear on your profile <br /> and any comments or posts
           you make.
         </p>
 
-        <p className="text-gray-600 mb-5 hidden md:block">
+        <p className="text-gray-600 dark:text-[#d4d4d8] mb-5 hidden md:block">
           This name will appear on your profile and any comments or posts you
           make.
         </p>
 
         <form id="username-form" onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="font-medium block mb-2 text-gray-700">
+            <label className="font-medium block mb-2 text-gray-700 dark:text-[#d4d4d8]">
               Display Name
             </label>
             <input
@@ -53,14 +53,14 @@ export default function UsernameReset() {
               value={newUsername}
               onChange={(e) => setNewUsername(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-30 focus:outline-none focus:border-[#6e7780] transition
+              className="w-full px-4 py-3 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] transition
                 "
             />
           </div>
         </form>
       </div>
 
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 dark:text-[#d4d4d8] mb-6">
         Nice name, eh? 😉 You can change it anytime.
       </p>
 

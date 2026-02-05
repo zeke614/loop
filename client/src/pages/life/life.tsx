@@ -67,7 +67,7 @@ export default function Life() {
         Human Currents
       </h1>
 
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         The pulse of people, in all their messy glory.{" "}
       </p>
 

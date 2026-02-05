@@ -84,25 +84,25 @@ export default function Security() {
           >
             <ChevronLeftIcon className="size-5.5 -ml-1" />
           </Link>
-          <h1 className="text-2xl font-frozen text-gray-900">
+          <h1 className="text-2xl font-frozen text-gray-900 dark:text-white">
             Security and Privacy
           </h1>
-          <p className="mt-2 text-gray-500 md:hidden">
+          <p className="mt-2 text-gray-500 dark:text-[#d4d4d8] md:hidden">
             Manage your account privacy, <br /> login alerts and authenticattion
             settings.
           </p>
-          <p className="mt-2 text-gray-500 hidden md:block">
+          <p className="mt-2 text-gray-500 dark:text-[#d4d4d8] hidden md:block">
             Manage your account privacy, login alerts and authenticattion
             settings.
           </p>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               Login Alerts
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               Get notified when your account <br /> is accessed from a new
               device.
             </p>
@@ -122,12 +122,12 @@ export default function Security() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               Authenticator app
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               Set up an authenticator app <br /> to add an extra layer of
               security.
             </p>
@@ -147,12 +147,12 @@ export default function Security() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-lg text-gray-900">
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Public Profile
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               Allow others to find your profile <br /> and view your reading
               lists.
             </p>
@@ -174,10 +174,10 @@ export default function Security() {
 
         <div className="flex items-center justify-between py-5">
           <div className="flex-1 pr-4">
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               Search Engine Indexing
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               Allow search engines like Google <br /> to index your public
               profile page.
             </p>

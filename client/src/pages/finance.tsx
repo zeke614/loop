@@ -67,7 +67,7 @@ export default function Finance() {
         Money and Madness
       </h1>
 
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         Money, but make it unhinged.{" "}
       </p>
 

@@ -53,7 +53,7 @@ export default function AnimatedArticleCard({
   return (
     <div
       ref={cardRef}
-      className="flex flex-col bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-black/5"
+      className="flex flex-col rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-black/5 dark:border-white/15"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ export default function AnimatedArticleCard({
           >
             <Link
               to={`/articles/${article.id}`}
-              className="text-[1.313rem] font-bold leading-6.5 hover:text-[#0ab39c] transition-colors duration-200 mb-3 block"
+              className="text-xl font-bold leading-6.5 hover:text-[#0ab39c] transition-colors duration-200 mb-3 block"
             >
               {article.title}
             </Link>
@@ -98,7 +98,9 @@ export default function AnimatedArticleCard({
             transition={{ delay: 0.35, duration: 0.35 }}
             className="flex items-center text-sm text-[#989797] mb-3 flex-wrap gap-2"
           >
-            <span className="font-medium text-gray-600">{article.author},</span>
+            <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
+              {article.author},
+            </span>
             <span>{article.date}</span>
           </motion.div>
 
@@ -106,7 +108,7 @@ export default function AnimatedArticleCard({
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 8 }}
             transition={{ delay: 0.45, duration: 0.35 }}
-            className="text-[#767676] leading-5.5 mb-5 flex-1 line-clamp-5"
+            className="text-[#767676] dark:text-[#d4d4d8] leading-5.5 mb-5 flex-1 line-clamp-5"
           >
             {article.description}
           </motion.p>
@@ -115,7 +117,7 @@ export default function AnimatedArticleCard({
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 8 }}
             transition={{ delay: 0.55, duration: 0.35 }}
-            className="flex justify-between pt-3.5 border-t border-gray-200"
+            className="flex justify-between pt-3.5 border-t border-gray-200 dark:border-white/20"
           >
             <Link
               to={`/articles/${article.id}`}
@@ -142,7 +144,7 @@ export default function AnimatedArticleCard({
                 {isSaved ? (
                   <BookmarkIconSolid className="size-4.5 text-[#0ab39c]" />
                 ) : (
-                  <BookmarkIcon className="size-4.5 text-gray-800 hover:text-[#0ab39c]" />
+                  <BookmarkIcon className="size-4.5 text-gray-800 dark:text-[#d4d4d8] hover:text-[#0ab39c]" />
                 )}
               </motion.div>
 

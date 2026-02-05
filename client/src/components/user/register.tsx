@@ -68,8 +68,8 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md mt-11 sm:mt-20 px-7">
+    <div className="flex items-center justify-center">
+      <div className="w-full max-w-md mt-11 sm:mt-20 px-12">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
@@ -81,15 +81,15 @@ export default function Register() {
         <h1 className="text-2xl md:text-3xl text-center font-frozen mt-1 mb-2">
           Create your account
         </h1>
-        <p className="text-center text-[#6e7780] mb-7 md:text-base">
-          Join <strong className="font-bold text-black">loop</strong> — dive
-          into stories that spark curiosity and conversation.
+        <p className="text-center text-[#6e7780] dark:text-[#d4d4d8] mb-7 md:text-base">
+          Join <strong className="font-bold">loop</strong> — dive into stories
+          that spark curiosity and conversation.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-5">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-white/15 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -102,12 +102,12 @@ export default function Register() {
 
           <button
             onClick={handleGitHubLogin}
-            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-white/15 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/512317/github-142.svg"
               alt="GitHub"
-              className="w-5 h-5"
+              className="w-5 h-5 dark:invert"
             />
             <span className="md:hidden">Sign up with Github</span>
             <span className="hidden md:block">Github</span>{" "}
@@ -115,9 +115,9 @@ export default function Register() {
         </div>
 
         <div className="flex items-center justify-center my-5">
-          <div className="flex-grow border-t border-gray-300"></div>
-          <span className="mx-3 text-gray-500">Or</span>
-          <div className="flex-grow border-t border-gray-300"></div>
+          <div className="flex-grow border-t border-zinc-950/10 dark:border-white/15"></div>
+          <span className="mx-3 text-gray-500 dark:text-gray-400">Or</span>
+          <div className="flex-grow border-t border-zinc-950/10 dark:border-white/15"></div>
         </div>
 
         {errorMessage && (
@@ -136,7 +136,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Username"
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -149,7 +149,7 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Email"
               required
-              className="w-full px-4 py-3 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 mt-2 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -162,16 +162,16 @@ export default function Register() {
               onChange={handleChange}
               placeholder="Password"
               required
-              className="w-full px-4 py-3 mt-2 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+              className="w-full px-4 py-3 mt-2 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 dark:text-gray-400 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
               <EyeIcon
-                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 dark:text-gray-400 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             )}
@@ -182,15 +182,15 @@ export default function Register() {
             disabled={
               !form.username || !form.email || !form.password || loading
             }
-            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition min-h-[3.125rem]
+            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition min-h-[3rem]
               ${
                 !form.username || !form.email || !form.password || loading
-                  ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
+                  ? "bg-[#babcc0] dark:bg-[#d1d1d1] text-gray-500 dark:text-black cursor-not-allowed"
                   : "bg-[#0ab39c] hover:bg-[#089c8a] text-white cursor-pointer"
               }`}
           >
             {loading ? (
-              <span className="w-4.5 h-4.5 py-1.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <span className="w-4.5 h-4.5 py-1 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
             ) : (
               "Sign up"
             )}
@@ -204,7 +204,7 @@ export default function Register() {
           </Link>
         </p> */}
 
-        <p className="text-center text-[#6e7780] mt-6 md:text-base">
+        <p className="text-center text-[#6e7780] dark:text-[#d4d4d8] mt-6 md:text-base">
           Have an account?
           <Link to="/login" className="text-[#0ab39c] ml-1.5 font-semibold">
             Sign In

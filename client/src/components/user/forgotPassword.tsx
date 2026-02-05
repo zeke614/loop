@@ -21,7 +21,7 @@ export default function ForgotPasswordPage() {
   const isButtonDisabled = !isValidEmail || email.trim() === "";
 
   return (
-    <div className="min-h-[100dvh] bg-white w-full max-w-md mx-auto px-5 pt-10 flex flex-col">
+    <div className="min-h-[100dvh] w-full max-w-md mx-auto px-6 pt-10 flex flex-col">
       <div>
         <button
           onClick={() => window.history.back()}
@@ -32,7 +32,7 @@ export default function ForgotPasswordPage() {
 
         <h3 className="text-2xl font-frozen mb-3.5">Forgot Password</h3>
 
-        <p className="text-gray-600 mb-5">
+        <p className="text-gray-600 dark:text-[#d4d4d8] mb-5">
           Enter your email and we'll send you a link to reset your password.
         </p>
 
@@ -45,11 +45,11 @@ export default function ForgotPasswordPage() {
               onChange={handleEmailChange}
               placeholder="Enter your email"
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] transition"
+              className="w-full px-4 py-3 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] transition"
             />
           </div>
 
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-[#d4d4d8] mb-6">
             Try not to forget your password again, buddy.
           </p>
         </form>
@@ -59,9 +59,9 @@ export default function ForgotPasswordPage() {
         <button
           type="submit"
           disabled={isButtonDisabled}
-          className={`w-full rounded-full py-[0.844rem] text-white font-medium transition ${
+          className={`w-full rounded-full py-[0.844rem] text-white dark:text-black font-medium transition ${
             isButtonDisabled
-              ? "bg-[#babcc0] cursor-not-allowed"
+              ? "bg-[#babcc0] dark:bg-[#d1d1d1] cursor-not-allowed"
               : "bg-[#0ab39c] hover:bg-[#089c8a] cursor-pointer"
           }`}
         >

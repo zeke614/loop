@@ -69,8 +69,8 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-white">
-      <div className="w-full max-w-md mt-19 sm:mt-25 px-7">
+    <div className="flex items-center justify-center">
+      <div className="w-full max-w-md mt-21 sm:mt-25 px-12">
         {/* <Link to="/" className="text-center block mb-6">
           <img src={logo} alt="loop logo" className="h-20 w-auto mx-auto" />
         </Link> */}
@@ -82,9 +82,9 @@ export default function Login() {
         <h1 className="text-2xl md:text-3xl text-center font-frozen mb-2">
           Sign in
         </h1>
-        <p className="text-center text-[#6e7780] mb-8">
-          Stay informed. Stay in the{" "}
-          <strong className="font-bold text-black">'loop'</strong>.
+        <p className="text-center text-[#6e7780] dark:text-[#d4d4d8] mb-8">
+          Stay informed. Stay in the <strong className="font-bold">loop</strong>
+          .
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -103,7 +103,7 @@ export default function Login() {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -116,42 +116,44 @@ export default function Login() {
               onChange={handleChange}
               required
               placeholder="Password"
-              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 dark:text-gray-400 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
               <EyeIcon
-                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 cursor-pointer"
+                className="size-5 absolute right-4 top-[59%] -translate-y-1/2 text-gray-500 dark:text-gray-400 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             )}
           </div>
 
-          <div className="flex items-center justify-between -mt-2 text-[0.938rem] px-1">
+          {/* <div className="flex items-center justify-between -mt-2 text-[0.938rem] px-1">
             <label className="flex items-center space-x-1.5 cursor-pointer">
               <input
                 type="checkbox"
-                className="accent-[#0ab39c] size-[0.9rem]"
+                className="accent-[#0ab39c] dark:bg-gray-700 size-[0.9rem]"
               />
-              <span className="text-gray-600">Remember me</span>
+              <span className="text-gray-600 dark:text-[#d4d4d8]">
+                Remember me
+              </span>
             </label>
             <Link to="/forgotPassword">
               <span className="text-[#0ab39c] font-medium cursor-pointer underline">
                 Forgot Password?
               </span>
             </Link>
-          </div>
+          </div> */}
 
           <button
             type="submit"
             disabled={!form.email || !form.password || loading}
-            className={`w-full rounded-full py-[0.813rem] mt-6 font-medium transition flex items-center justify-center min-h-[3.125rem] ${
+            className={`w-full rounded-full py-3 mt-8 font-medium transition flex items-center justify-center min-h-[3rem] ${
               !form.email || !form.password || loading
-                ? "bg-[#babcc0] text-gray-500 cursor-not-allowed"
+                ? "bg-[#babcc0] dark:bg-[#d1d1d1] text-gray-500 dark:text-black cursor-not-allowed"
                 : "bg-[#0ab39c] hover:bg-[#089c8a] text-white cursor-pointer"
             }`}
           >
@@ -164,15 +166,15 @@ export default function Login() {
         </form>
 
         <div className="flex items-center justify-center my-6">
-          <div className="flex-grow border-t border-gray-300"></div>
-          <span className="mx-3 text-gray-500">Or</span>
-          <div className="flex-grow border-t border-gray-300"></div>
+          <div className="flex-grow border-t border-zinc-950/10 dark:border-white/15"></div>
+          <span className="mx-3 text-gray-500 dark:text-gray-400">Or</span>
+          <div className="flex-grow border-t border-zinc-950/10 dark:border-white/15"></div>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3.5">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-white/15 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -185,15 +187,15 @@ export default function Login() {
 
           <button
             onClick={handleGitHubLogin}
-            className="flex items-center justify-center space-x-3 border border-gray-300 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-white/15 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/512317/github-142.svg"
               alt="GitHub"
-              className="w-5 h-5"
+              className="w-5 h-5 dark:invert"
             />
             <span className="md:hidden">Continue with GitHub</span>
-            <span className="hidden md:block">Google</span>
+            <span className="hidden md:block">GitHub</span>
           </button>
         </div>
 
@@ -204,7 +206,7 @@ export default function Login() {
           </Link>
         </p> */}
 
-        <p className="text-center text-[#6e7780] mt-6">
+        <p className="text-center text-[#6e7780] dark:text-[#d4d4d8] mt-6">
           New here?
           <Link to="/register" className="text-[#0ab39c] ml-1.5 font-semibold">
             Sign Up

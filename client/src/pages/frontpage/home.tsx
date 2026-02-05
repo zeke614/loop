@@ -98,7 +98,7 @@ export default function Home() {
           <span className="font-semibold">Welcome</span>
         )}
       </h1>
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         Your next great discovery starts below.
       </p>
       <FrontPageArticleCard />

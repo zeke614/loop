@@ -29,7 +29,7 @@ export function BackToTopButton({ showBackToTop }: { showBackToTop: boolean }) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 md:bottom-12 z-50 p-2.5 bg-transparent backdrop-blur-xs text-black rounded-full shadow-lg transition-all duration-200 hover:shadow-xl cursor-pointer"
+          className="fixed bottom-4 right-4 md:bottom-12 z-50 p-2.5 bg-transparent dark:border dark:border-white/20 backdrop-blur-xs rounded-full shadow-lg transition-all duration-200 hover:shadow-xl cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

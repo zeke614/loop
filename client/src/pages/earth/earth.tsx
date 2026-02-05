@@ -67,7 +67,7 @@ export default function Earth() {
         The Living Planet
       </h1>
 
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         Nature doing what it does — surprise us.{" "}
       </p>
 

@@ -108,13 +108,13 @@ export default function SecondAct() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Public failure has a way of freezing people in time. An early loss,
             a public stumble, a bad season or scandal can become the headline
@@ -133,7 +133,7 @@ export default function SecondAct() {
         <div className="my-10 space-y-14">
           {icons.map((icon, index) => (
             <div key={index} className="space-y-6">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium">
                 {icon.title}
               </h2>
 
@@ -145,18 +145,20 @@ export default function SecondAct() {
                 />
               </div>
 
-              <p className="text-[#767676] leading-7">{icon.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {icon.content}
+              </p>
             </div>
           ))}
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900 dark:text-[#d4d4d8]">
             What Reinvention Actually Requires
           </h2>
 
-          <div className="bg-gray-50 rounded-xl p-6 space-y-4">
-            <p className="text-[#767676] mb-4">
+          <div className="bg-gray-50 dark:bg-black rounded-xl p-6 space-y-4">
+            <p className="text-[#767676] dark:text-[#d4d4d8] mb-4">
               Across fields, second acts share the same demands. Reinvention is
               quieter than ascent and lonelier than success. It often happens
               away from spotlights before returning to them. The process
@@ -169,21 +171,23 @@ export default function SecondAct() {
                   <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
                     {index + 1}
                   </span>
-                  <p className="text-[#767676] leading-7">{requirement}</p>
+                  <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                    {requirement}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4 mt-10">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4 mt-10">
           <p className="leading-6.5">
             First acts reveal ability. Second acts reveal character. In a
             culture obsessed with early success, reinvention reminds us that
             identity is not fixed—and that mastery isn't about never failing,
             but about learning how to evolve when old versions stop working.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             Greatness, it turns out, is less about arrival and more about
             revision.
           </p>

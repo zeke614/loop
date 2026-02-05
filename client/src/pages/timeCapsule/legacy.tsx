@@ -67,7 +67,7 @@ export default function Legacy() {
         Time Capsule
       </h1>
 
-      <p className="text-center text-[#767676]  text-lg">
+      <p className="text-center text-[#767676] dark:text-[#d4d4d8] text-lg">
         Echoes from the past, still making noise.{" "}
       </p>
 

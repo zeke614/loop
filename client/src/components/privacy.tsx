@@ -2,22 +2,22 @@ import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-white pt-23 pb-12 sm:py-25 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen pt-23 pb-12 sm:py-25 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         <div onClick={() => window.history.back()} className="mb-7">
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </div>
 
         <div className="border-b border-gray-200 pb-8 mb-10">
-          <h1 className="text-2xl font-semibold text-gray-900 mb-2">
+          <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
             Privacy Policy
           </h1>
-          <p className="text-gray-500 text-[0.938rem] ">
+          <p className="text-gray-500 text-[0.938rem] dark:text-[#d4d4d8]">
             Last Updated: November 7, 2025
           </p>
         </div>
 
-        <div className="prose prose-lg max-w-none text-gray-700 space-y-10">
+        <div className="prose prose-lg max-w-none text-gray-700 dark:text-[#d4d4d8] space-y-10">
           <p className="mb-10">
             Welcome to <strong className="font-semibold">loop</strong> ("we,"
             "our," or "us"). We are committed to protecting your personal

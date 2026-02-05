@@ -126,7 +126,7 @@ export default function CurrencyModal({
                 : { opacity: 0, scale: 0.95 }
             }
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="bg-white w-full rounded-t-2xl px-3 pt-3 pb-6 max-h-[35%] overflow-hidden shadow-2xl border-t border-gray-200
+            className="w-full rounded-t-2xl px-3 pt-3 pb-6 max-h-[35%] overflow-hidden shadow-2xl border-t border-gray-200 dark:border-white/15
               sm:rounded-xl sm:max-w-md sm:border sm:px-3 sm:pt-4 sm:pb-4 sm:max-h-[85vh]"
             role="dialog"
             aria-modal="true"
@@ -140,7 +140,7 @@ export default function CurrencyModal({
                 placeholder="Search country..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 py-2.5 border border-gray-300 rounded-xl outline-none focus:border-gray-500"
+                className="w-full pl-9 py-2.5 border border-zinc-950/10 dark:border-white/15 rounded-xl outline-none focus:border-gray-500"
               />
             </div>
 
@@ -152,8 +152,8 @@ export default function CurrencyModal({
                       onClick={() => handleCountrySelect(country)}
                       className={`w-full flex items-center justify-between p-1.5 rounded-lg text-left transition-colors ${
                         currentSelectedRef.current?.name === country.name
-                          ? "bg-gray-100"
-                          : "hover:bg-gray-50"
+                          ? "bg-gray-100 dark:bg-[#2d2d2d]"
+                          : "hover:bg-gray-50 dark:hover:bg-[#2d2d2d]"
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -162,7 +162,9 @@ export default function CurrencyModal({
                           alt={`${country.name} flag`}
                           className="w-5 h-4 rounded object-cover"
                         />
-                        <span className="text-gray-600">{country.name}</span>
+                        <span className="text-gray-600 dark:text-[#d4d4d8]">
+                          {country.name}
+                        </span>
                       </div>
 
                       {currentSelectedRef.current?.name === country.name && (

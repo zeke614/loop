@@ -11,6 +11,28 @@
 
     gtag('config', 'G-0XPWPE9HFJ');
   </script>
+  <script>
+    (function () {
+      // Function to apply theme
+      function applyTheme(isDark) {
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+
+      // Check system preference initially
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      applyTheme(prefersDark.matches);
+
+      // Listen for system preference changes
+      prefersDark.addEventListener('change', (e) => {
+        // Always follow system preference
+        applyTheme(e.matches);
+      });
+    })();
+  </script>
 
   <meta charset="UTF-8" />
   <link rel="icon" type="image/avif" href="/loopLogo.avif" />

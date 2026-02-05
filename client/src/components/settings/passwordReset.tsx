@@ -102,7 +102,7 @@ export default function PasswordReset() {
   };
 
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-white w-full max-w-md px-5 mx-auto pt-10">
+    <div className="min-h-[100dvh] flex flex-col w-full max-w-md px-5 mx-auto pt-10">
       <div>
         <Link
           to="/settings/details"
@@ -113,7 +113,7 @@ export default function PasswordReset() {
 
         <h3 className="text-2xl font-frozen mb-3.5">Password</h3>
 
-        <p className="text-gray-600 mb-5">
+        <p className="text-gray-600 dark:text-[#d4d4d8] mb-5">
           Enter your new password below. Make sure it's strong and memorable.
         </p>
 
@@ -131,7 +131,7 @@ export default function PasswordReset() {
           )}
 
           <div className="relative pb-1">
-            <label className="font-medium text-gray-700 block mb-2">
+            <label className="font-medium text-gray-700 dark:text-[#d4d4d8] block mb-2">
               New password
             </label>
             <input
@@ -141,23 +141,23 @@ export default function PasswordReset() {
               onChange={handleChange}
               required
               placeholder="Enter your new password"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+              className="w-full px-4 py-3 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
-                className="size-4.5 absolute right-4 top-[56%] text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[56%] text-gray-500 dark:text-[#d4d4d8] cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             ) : (
               <EyeIcon
-                className="size-4.5 absolute right-4 top-[56%] text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[56%] text-gray-500 dark:text-[#d4d4d8] cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               />
             )}
           </div>
 
           <div className="relative mb-2.5">
-            <label className="font-medium text-gray-700 block mb-2">
+            <label className="font-medium text-gray-700 dark:text-[#d4d4d8] block mb-2">
               Confirm new password
             </label>
             <input
@@ -167,16 +167,16 @@ export default function PasswordReset() {
               onChange={handleChange}
               required
               placeholder="Confirm your new password"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+              className="w-full px-4 py-3 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showConfirmPassword ? (
               <EyeSlashIcon
-                className="size-4.5 absolute right-4 top-[60%] text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[60%] text-gray-500 dark:text-[#d4d4d8] cursor-pointer"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               />
             ) : (
               <EyeIcon
-                className="size-4.5 absolute right-4 top-[60%] text-gray-500 cursor-pointer"
+                className="size-4.5 absolute right-4 top-[60%] text-gray-500 dark:text-[#d4d4d8] cursor-pointer"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               />
             )}
@@ -184,15 +184,15 @@ export default function PasswordReset() {
         </form>
       </div>
 
-      <p className="text-sm text-gray-500 mb-0.5">
+      <p className="text-sm text-gray-500 dark:text-[#d4d4d8] mb-0.5">
         Password must be at least 8 characters long.
       </p>
 
-      <p className="text-sm text-gray-500 mb-0.5">
+      <p className="text-sm text-gray-500 dark:text-[#d4d4d8] mb-0.5">
         Password must include at least 1 digit.
       </p>
 
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 dark:text-[#d4d4d8]">
         Password must include at least 1 non-digit character.
       </p>
 

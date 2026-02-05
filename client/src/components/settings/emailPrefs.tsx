@@ -85,21 +85,21 @@ export default function EmailPrefs() {
           >
             <ChevronLeftIcon className="size-5.5 -ml-1" />
           </Link>
-          <h1 className="text-2xl font-frozen text-gray-900">
+          <h1 className="text-2xl font-frozen text-gray-900 dark:text-white">
             Email Preferences
           </h1>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-gray-500 dark:text-[#d4d4d8]">
             Choose which emails and notifications you receive, from digests to
             alerts.
           </p>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-lg text-gray-900">
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Weekly Digest
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               A curated summary of the week's <br /> top stories and editor's
               picks.{" "}
             </p>
@@ -119,12 +119,12 @@ export default function EmailPrefs() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-lg text-gray-900">
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               New Article Alerts
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               Get notified when new articles are published.
             </p>
           </div>
@@ -143,12 +143,12 @@ export default function EmailPrefs() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-lg text-gray-900">
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Product Updates
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               News about new features on <strong>loop</strong>.
             </p>
           </div>
@@ -167,12 +167,12 @@ export default function EmailPrefs() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 ">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
           <div className="flex-1 pr-4">
-            <h3 className="font-semibold text-lg text-gray-900">
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Security Alerts
             </h3>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray-500 dark:text-[#d4d4d8] mt-1">
               Notifications about security and <br /> attempts.
             </p>
           </div>
