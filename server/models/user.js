@@ -4,11 +4,19 @@ const userSchema = new mongoose.Schema(
   {
     firstName: {
     type: String,
+    set: function(v) {
+      if (!v) return v;
+      return v.charAt(0).toUpperCase() + v.slice(1).toLowerCase();
+    }
   },
     username: { 
       type: String, 
       required: true, 
-      trim: true 
+      trim: true,
+      set: function(v) {
+      if (!v) return v;
+      return v.charAt(0).toUpperCase() + v.slice(1).toLowerCase();
+    }
     },
     email: { 
       type: String, 

@@ -94,7 +94,7 @@ export default function EmailPrefs() {
           </p>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Weekly Digest
@@ -119,7 +119,7 @@ export default function EmailPrefs() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               New Article Alerts
@@ -143,7 +143,7 @@ export default function EmailPrefs() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Product Updates
@@ -167,7 +167,7 @@ export default function EmailPrefs() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Security Alerts

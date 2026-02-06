@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </div>
 
-        <div className="border-b border-gray-200 pb-8 mb-10">
+        <div className="border-b border-gray-200 dark:border-[#333333] pb-8 mb-10">
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
             Privacy Policy
           </h1>

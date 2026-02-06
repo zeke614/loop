@@ -85,13 +85,13 @@ export default function Newspapers() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Newspapers were the algorithm before the algorithm — the daily
             engine that sorted chaos into a shared story. Across the 20th
@@ -110,21 +110,23 @@ export default function Newspapers() {
         <div className="my-10 space-y-10">
           {sections.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
                 {section.title}
               </h2>
-              <p className="text-[#767676] leading-7">{section.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {section.content}
+              </p>
             </div>
           ))}
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             Lessons for the Digital Age
           </h2>
 
-          <div className="bg-gray-100 rounded-xl p-5 space-y-4">
-            <p className="text-[#767676] mb-4">
+          <div className="bg-gray-100 dark:bg-[#1e1e1e] rounded-xl p-5 space-y-4">
+            <p className="text-[#767676] dark:text-[#d4d4d8] mb-4">
               Looking at the 20th century from today's vantage point, several
               takeaways stand out:
             </p>
@@ -135,14 +137,16 @@ export default function Newspapers() {
                   <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
                     {index + 1}
                   </span>
-                  <p className="text-[#767676] leading-7">{lesson}</p>
+                  <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                    {lesson}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4 mt-10">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4 mt-10">
           <p className="leading-6.5">
             The 20th century belonged to newspapers not just because they were
             fast or widespread, but because they stitched communities together
@@ -150,7 +154,7 @@ export default function Newspapers() {
             blueprint for modern media grappling with misinformation, fragmented
             audiences, and economic uncertainty.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             Newspapers may no longer dominate daily life, but the principles
             they sharpened — accountability, depth, and communal storytelling —
             remain vital for any society trying to make sense of itself.

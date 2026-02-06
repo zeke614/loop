@@ -25,11 +25,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent mt-0.5">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent mt-1">
       <div
         className="max-w-7xl md:mx-auto sm:mx-3 mx-[1.428rem] rounded-full
-               bg-white/15 backdrop-filter backdrop-blur-sm
-               border border-black/5 shadow-md
+               bg-white/15 dark:bg-transparent backdrop-filter backdrop-blur-sm
+               border border-black/5 dark:border-white/10 shadow-md
                flex items-center justify-between
                px-3.5 py-2.5 sm:px-6"
       >

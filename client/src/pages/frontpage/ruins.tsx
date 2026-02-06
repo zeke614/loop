@@ -80,7 +80,9 @@ const ruins = [
 function RuinItem({ ruin }: { ruin: (typeof ruins)[0]; index: number }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium">{ruin.title}</h2>
+      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
+        {ruin.title}
+      </h2>
       <div className="overflow-hidden mb-6">
         <img
           src={ruin.img}
@@ -88,7 +90,9 @@ function RuinItem({ ruin }: { ruin: (typeof ruins)[0]; index: number }) {
           className="w-full h-48 md:h-105 object-cover"
         />
       </div>
-      <p className="mb-6 text-[#767676] leading-7">{ruin.content}</p>
+      <p className="mb-6 text-[#767676] dark:text-[#d4d4d8] leading-7">
+        {ruin.content}
+      </p>
     </div>
   );
 }
@@ -129,13 +133,13 @@ export default function Ruins() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start">
           <p className="leading-6.5">
             Ruins invite imagination in ways polished monuments never can. They
             are the bones of past civilizations, exposed to wind, rain, and
@@ -153,7 +157,7 @@ export default function Ruins() {
           ))}
         </div>
 
-        <p className="text-[#767676] pt-3">
+        <p className="text-[#767676] dark:text-[#d4d4d8] pt-3">
           Ruins preserve what polished monuments can't: the reminders of
           fragility, ambition, and the unpredictable forces that shape
           civilizations. These six architectural marvels are incomplete, yet

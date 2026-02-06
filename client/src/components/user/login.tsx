@@ -103,7 +103,7 @@ export default function Login() {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
+              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-zinc-950/10 dark:border-[#333333] focus:outline-none focus:border-[#6e7780] placeholder-gray-400 transition"
             />
           </div>
 
@@ -116,7 +116,7 @@ export default function Login() {
               onChange={handleChange}
               required
               placeholder="Password"
-              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-zinc-950/10 dark:border-white/15 focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
+              className="w-full px-4 py-3 mt-1.5 rounded-xl border border-zinc-950/10 dark:border-[#333333] focus:outline-none focus:border-[#6e7780] placeholder-gray-400 pr-10 transition"
             />
             {showPassword ? (
               <EyeSlashIcon
@@ -166,15 +166,15 @@ export default function Login() {
         </form>
 
         <div className="flex items-center justify-center my-6">
-          <div className="flex-grow border-t border-zinc-950/10 dark:border-white/15"></div>
+          <div className="flex-grow border-t border-zinc-950/10 dark:border-[#333333]"></div>
           <span className="mx-3 text-gray-500 dark:text-gray-400">Or</span>
-          <div className="flex-grow border-t border-zinc-950/10 dark:border-white/15"></div>
+          <div className="flex-grow border-t border-zinc-950/10 dark:border-[#333333]"></div>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3.5">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-white/15 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-[#333333] rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -187,7 +187,7 @@ export default function Login() {
 
           <button
             onClick={handleGitHubLogin}
-            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-white/15 rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-[#333333] rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/512317/github-142.svg"

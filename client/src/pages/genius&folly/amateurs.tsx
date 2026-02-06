@@ -57,13 +57,13 @@ export default function Amateurs() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6">
           <p className="leading-6.5">
             There's a romantic myth that all groundbreaking inventions begin in
             gleaming labs guarded by PhD-level gatekeepers. In reality, many of
@@ -86,7 +86,7 @@ export default function Amateurs() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
           <p className="leading-6.5">
             The past decade has seen a strange reversal: while Big Tech's R&D
             machine grows larger and more risk-averse, scrappy individuals and
@@ -119,7 +119,7 @@ export default function Amateurs() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
           <p className="leading-6.5">
             Software tinkerers haven't been idle either. While giants wrestle
             with monolithic AI stacks, hobbyists are building clever
@@ -143,7 +143,7 @@ export default function Amateurs() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
           <p className="leading-6.5">
             The deeper lesson here is both humbling and exciting. Innovation
             doesn't obey hierarchy. It obeys curiosity. The next breakthrough in

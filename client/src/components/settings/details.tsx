@@ -179,7 +179,7 @@ export default function PersonalDetails() {
             </p>
           </div>
 
-          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20 transition-colors">
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333] transition-colors">
             <div className="flex-1">
               <p className="font-medium text-gray-900 dark:text-white mb-1">
                 Email Address
@@ -195,7 +195,7 @@ export default function PersonalDetails() {
             </button>
           </div>
 
-          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20 transition-colors">
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333] transition-colors">
             <div className="flex-1">
               <p className="font-medium text-gray-900 dark:text-white mb-1">
                 Password
@@ -211,7 +211,7 @@ export default function PersonalDetails() {
             </button>
           </div>
 
-          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20 transition-colors">
+          <div className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333] transition-colors">
             <div className="flex-1">
               <p className="font-medium text-gray-900 dark:text-white mb-1">
                 Display Name

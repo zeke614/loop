@@ -59,7 +59,7 @@ export default function Saved() {
           {savedArticles.map((article) => (
             <div
               key={article.id}
-              className="flex flex-col rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-black/5 dark:border-white/20"
+              className="flex flex-col rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-black/5 dark:border-[#333333] dark:bg-[#1e1e1e]"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -91,7 +91,7 @@ export default function Saved() {
                   {article.description}
                 </p>
 
-                <div className="flex justify-between pt-3.5 border-t border-gray-200 dark:border-white/20">
+                <div className="flex justify-between pt-3.5 border-t border-gray-200 dark:border-[#333333]">
                   <div>
                     <Link
                       to={`/articles/${article.id}`}

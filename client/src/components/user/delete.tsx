@@ -21,7 +21,7 @@ export default function DeleteAccountPopup({
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="p-5 rounded-2xl shadow-lg max-w-sm w-[80%] text-center border border-zinc-950/10 dark:border-white/15"
+          className="p-5 rounded-2xl shadow-lg max-w-sm w-[80%] text-center border border-zinc-950/10 dark:border-white/15 bg-white dark:bg-[#1f1f1f]"
           initial={{
             opacity: 0,
             y: -100,

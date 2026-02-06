@@ -95,13 +95,13 @@ export default function Weird() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Across conversations, journals, therapy rooms, and social feeds, one
             idea keeps surfacing: the sense that time has slipped into
@@ -119,22 +119,24 @@ export default function Weird() {
         <div className="my-10 space-y-10">
           {sections.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
                 {section.title}
               </h2>
-              <p className="text-[#767676] leading-7">{section.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {section.content}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             The sense that time is speeding up isn't a personal failing; it's a
             cultural, technological, and neurological reality. The 2020s rewired
             how people move, work, remember, and connect, creating a decade
             where the clock ticks normally but life moves unusually fast.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             As psychologists often note, slowing time isn't about controlling
             the seconds—it's about rebuilding meaningful markers, restoring
             pauses, and living with enough texture that memories can breathe.

@@ -100,13 +100,13 @@ export default function Worklife() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Work hasn't just changed — the very idea of what a "workday" is has
             mutated across decades of policy, technology, and culture. The
@@ -114,7 +114,7 @@ export default function Worklife() {
             less a straight line and more a renegotiation of what humans owe
             their jobs and what they owe their lives.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             Here's how we got from the 1950s to now.
           </p>
         </div>
@@ -122,15 +122,17 @@ export default function Worklife() {
         <div className="my-10 space-y-10">
           {sections.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
                 {section.title}
               </h2>
-              <p className="text-[#767676] leading-7">{section.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {section.content}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             From the rigid 1950s schedule to the fluid 2020s lifestyle,
             work-life balance has never been a static ideal. It shifts with
@@ -141,7 +143,7 @@ export default function Worklife() {
             crafting arrangements that let them thrive professionally without
             sacrificing family, autonomy, or the texture of everyday life.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             The evolution isn't over — it's simply entered a phase where
             individuals can shape the rhythm instead of inheriting it.
           </p>

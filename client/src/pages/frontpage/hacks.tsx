@@ -61,8 +61,12 @@ const hacks = [
 function HackItem({ hack }: { hack: (typeof hacks)[0] }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium">{hack.title}</h2>
-      <p className="mb-6 text-[#767676] leading-7">{hack.content}</p>
+      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
+        {hack.title}
+      </h2>
+      <p className="mb-6 text-[#767676] dark:text-[#d4d4d8] leading-7">
+        {hack.content}
+      </p>
     </div>
   );
 }
@@ -106,7 +110,7 @@ export default function Hacks() {
           </h1>
 
           <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-            <span className="font-medium text-gray-600">
+            <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
               {articleData.author},
             </span>
             <span className="mr-3">{articleData.date}</span>
@@ -114,7 +118,7 @@ export default function Hacks() {
         </div>
 
         <div>
-          <div className="text-[#767676] text-start">
+          <div className="text-[#767676] dark:text-[#d4d4d8] text-start">
             <p className="leading-6.5">
               Elite performers live in environments where heart rates spike,
               crowds roar, expectations tighten the chest, and errors carry
@@ -138,7 +142,7 @@ export default function Hacks() {
         </div>
 
         <div>
-          <p className="text-[#767676] pt-3">
+          <p className="text-[#767676] dark:text-[#d4d4d8] pt-3">
             All six strategies share a theme: they regulate uncertainty.
             Pressure becomes overwhelming only when the brain feels out of
             control. These tools restore predictability, control, and agency.

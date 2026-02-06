@@ -85,13 +85,13 @@ export default function Intimacy() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Digital intimacy used to mean sending a late-night text. Now it's a
             whole emotional ecosystem built from notifications, swipes, voice
@@ -100,7 +100,7 @@ export default function Intimacy() {
             where desire, anxiety, connection, and misunderstanding all play by
             updated rules.
           </p>
-          <p className="leading-6.5 text-[#767676]">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             This is the landscape of modern affection: part convenience, part
             chaos, and entirely irreversible.
           </p>
@@ -109,15 +109,17 @@ export default function Intimacy() {
         <div className="my-14 space-y-10">
           {sections.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
                 {section.title}
               </h2>
-              <p className="text-[#767676] leading-7">{section.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {section.content}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="text-[#767676] text-start space-y-6">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6">
           <p className="leading-6.5">
             Digital intimacy isn't ruining romance—it's remixing it. The tools
             change, the rituals evolve, but the core need stays the same: to
@@ -126,7 +128,7 @@ export default function Intimacy() {
             profound—using them to deepen connection rather than distract from
             it.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             The story continues wherever humans and technology keep bumping into
             each other, trying to figure out what closeness means in a world
             that never truly logs off.

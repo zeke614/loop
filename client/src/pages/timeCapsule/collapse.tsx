@@ -91,13 +91,13 @@ export default function Collapses() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Empires never imagine themselves as temporary. From Rome to the
             Aztecs to the Soviet Union, each believed its political machinery,
@@ -117,21 +117,23 @@ export default function Collapses() {
         <div className="my-10 space-y-10">
           {empires.map((empire, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
                 {empire.title}
               </h2>
-              <p className="text-[#767676] leading-7">{empire.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {empire.content}
+              </p>
             </div>
           ))}
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             Patterns Across Centuries
           </h2>
 
-          <div className="bg-gray-100 rounded-xl p-6 space-y-4">
-            <p className="text-[#767676] mb-4">
+          <div className="bg-gray-100 dark:bg-[#1e1e1e] rounded-xl p-6 space-y-4">
+            <p className="text-[#767676] dark:text-[#d4d4d8] mb-4">
               Though separated by culture and technology, collapsing empires
               share recognizable stresses:
             </p>
@@ -142,14 +144,16 @@ export default function Collapses() {
                   <span className="flex-shrink-0 w-6 h-6 bg-[#0ab39c] text-white rounded-full flex items-center justify-center text-sm font-medium mt-0.5">
                     {index + 1}
                   </span>
-                  <p className="text-[#767676] leading-7">{pattern}</p>
+                  <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                    {pattern}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4 mt-10">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4 mt-10">
           <p className="leading-6.5">
             The fall of an empire is rarely a single event; it is a long
             negotiation between internal weakness and external pressure.
@@ -157,7 +161,7 @@ export default function Collapses() {
             recognizing how complex systems depend on flexibility, legitimacy,
             and ecological balance.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             History's fallen empires remind modern institutions — from
             governments to global companies — that resilience isn't about scale
             or strength. It's about the ability to adapt before the breaking

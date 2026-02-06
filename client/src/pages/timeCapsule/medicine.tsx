@@ -93,13 +93,13 @@ export default function Medicine() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Long before pharmacies, people turned to kitchens, farms, temples,
             and marketplaces for healing. Ancient medical systems didn't
@@ -118,15 +118,17 @@ export default function Medicine() {
         <div className="my-10 space-y-10">
           {diets.map((diet, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
                 {diet.title}
               </h2>
-              <p className="text-[#767676] leading-7">{diet.content}</p>
+              <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
+                {diet.content}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="text-[#767676] text-start space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-4">
           <p className="leading-6.5">
             Across cultures, food served as the earliest shared language of
             medicine. These historic diets were not proto-science by accident —
@@ -140,7 +142,7 @@ export default function Medicine() {
             nourishment; it has been technology, identity, and a quiet form of
             survival strategy.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             As nutrition science evolves, echoes of these older systems continue
             shaping how people think about food and wellness today.
           </p>

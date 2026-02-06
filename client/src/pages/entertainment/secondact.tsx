@@ -157,7 +157,7 @@ export default function SecondAct() {
             What Reinvention Actually Requires
           </h2>
 
-          <div className="bg-gray-50 dark:bg-black rounded-xl p-6 space-y-4">
+          <div className="bg-gray-50 dark:bg-[#1e1e1e] rounded-xl p-6 space-y-4">
             <p className="text-[#767676] dark:text-[#d4d4d8] mb-4">
               Across fields, second acts share the same demands. Reinvention is
               quieter than ascent and lonelier than success. It often happens

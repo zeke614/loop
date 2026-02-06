@@ -57,13 +57,13 @@ export default function SpaceMining() {
         </h1>
 
         <div className="flex items-center gap-1.5 text-sm pt-3 text-[#989797] mb-6">
-          <span className="font-medium text-gray-600">
+          <span className="font-medium text-gray-600 dark:text-[#d4d4d8]">
             {articleData.author},
           </span>
           <span className="mr-3">{articleData.date}</span>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6">
           <p className="leading-6.5">
             Earth's orbit is becoming a junkyard. Thousands of defunct
             satellites, spent rocket stages, and fragments of debris drift
@@ -82,8 +82,8 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             1. The Growing Hazard of Space Junk
           </h2>
           <p className="leading-6.5">
@@ -104,8 +104,8 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             2. The Rise of Orbital Cleanup — "Space Janitors" Take Off
           </h2>
           <p className="leading-6.5">
@@ -125,8 +125,8 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             3. Asteroid Mining Is No Longer Sci-Fi — Companies Are Taking the
             Lead
           </h2>
@@ -147,8 +147,8 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             4. The Regulatory and Ethical Void
           </h2>
           <p className="leading-6.5">
@@ -168,8 +168,8 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium text-gray-900">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
             5. Why Space Junk Cleanup and Space Mining Must Be Part of a Single
             Vision
           </h2>
@@ -190,7 +190,7 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] text-start space-y-6 mt-12">
+        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-12">
           <p className="leading-6.5">
             Humanity stands at a crossroads: continue piling junk into orbit
             until the highway becomes impassable—or build a new paradigm where
@@ -199,7 +199,7 @@ export default function SpaceMining() {
             and active cleanup efforts, suggests this isn't just a dream
             anymore.
           </p>
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             Space's next frontier isn't just about going farther—it's about
             going cleaner and smarter. With luck, the history of the next
             century will show we didn't just reach for the stars—we learned to

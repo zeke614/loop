@@ -20,7 +20,7 @@ export default function DeleteSuccessPopup({
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="bg-white py-6 px-8 rounded-2xl shadow-lg max-w-sm w-[80%] text-center"
+            className="py-6 px-8 rounded-2xl shadow-lg max-w-sm w-[80%] text-center"
             initial={{
               opacity: 0,
               scale: 0.8,
@@ -59,7 +59,7 @@ export default function DeleteSuccessPopup({
             </motion.div>
 
             <motion.h3
-              className="text-[1.375rem] font-frozen text-gray-900 mb-2"
+              className="text-[1.375rem] font-frozen text-gray-900 dark:text-white mb-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{
                 opacity: 1,
@@ -71,7 +71,7 @@ export default function DeleteSuccessPopup({
             </motion.h3>
 
             <motion.p
-              className="text-gray-600 mb-6"
+              className="text-gray-600 dark:text-[#d4d4d8] mb-6"
               initial={{ opacity: 0, y: 10 }}
               animate={{
                 opacity: 1,

@@ -28,7 +28,7 @@ export default function Info() {
           </div>
         </section>
 
-        <div className="border-t border-gray-100 w-full"></div>
+        <div className="border-t border-gray-100 dark:border-white/10 w-full"></div>
 
         <section className="space-y-6 text-left">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">

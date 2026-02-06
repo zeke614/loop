@@ -97,7 +97,7 @@ export default function Security() {
           </p>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               Login Alerts
@@ -122,7 +122,7 @@ export default function Security() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               Authenticator app
@@ -147,7 +147,7 @@ export default function Security() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-white/20">
+        <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-[#333333]">
           <div className="flex-1 pr-4">
             <h3 className="font-semibold text-lg text-gray-900 dark:text-white">
               Public Profile

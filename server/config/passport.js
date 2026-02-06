@@ -29,21 +29,65 @@ async function generateUniqueUsername(baseUsername) {
   return uniqueUsername;
 }
 
+// function extractFirstName(profile) {
+//   if (profile.provider === 'google' && profile.displayName) {
+//     const firstName = profile.displayName.split(' ')[0];
+//     return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+//   }
+  
+//   if (profile.provider === 'github') {
+//     if (profile.displayName) {
+//       const firstName = profile.displayName.split(' ')[0];
+//       return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+//     }
+//     return profile.username.charAt(0).toUpperCase() + profile.username.slice(1).toLowerCase();
+//   }
+  
+//   return profile.displayName || profile.username;
+// }
+
 function extractFirstName(profile) {
-  if (profile.provider === 'google' && profile.displayName) {
-    const firstName = profile.displayName.split(' ')[0];
-    return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+  console.log('=== EXTRACTING FIRST NAME ===');
+  console.log('Provider:', profile.provider);
+  console.log('Display Name:', profile.displayName);
+  console.log('Name object:', profile.name);
+  console.log('Username:', profile.username);
+  
+  // For Google - check profile.name.givenName first
+  if (profile.provider === 'google') {
+    // Google provides structured name
+    if (profile.name?.givenName) {
+      const firstName = profile.name.givenName;
+      console.log('Using givenName:', firstName);
+      return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+    }
+    // Fallback to displayName
+    if (profile.displayName) {
+      const firstName = profile.displayName.split(' ')[0];
+      console.log('Using displayName first word:', firstName);
+      return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+    }
   }
   
+  // For GitHub
   if (profile.provider === 'github') {
     if (profile.displayName) {
       const firstName = profile.displayName.split(' ')[0];
+      console.log('GitHub using displayName:', firstName);
       return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
     }
-    return profile.username.charAt(0).toUpperCase() + profile.username.slice(1).toLowerCase();
+    // Fallback to username
+    if (profile.username) {
+      const firstName = profile.username;
+      console.log('GitHub using username:', firstName);
+      return firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase();
+    }
   }
   
-  return profile.displayName || profile.username;
+  // Final fallback
+  const fallback = profile.displayName || profile.username || 'User';
+  console.log('Using fallback:', fallback);
+  return fallback.charAt(0).toUpperCase() + fallback.slice(1).toLowerCase();
 }
 
 passport.use(new GoogleStrategy({

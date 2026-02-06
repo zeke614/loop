@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="">
       <div className="mx-auto max-w-7xl px-6 pt-8 pb-7 md:px-12 lg:px-20">
-        <div className="border-t border-gray-100 dark:border-white/20 pb-10"></div>
+        <div className="border-t border-gray-100 dark:border-[#333333] pb-10"></div>
 
         <div className="text-center mb-12">
           <h1 className="text-[1.438rem] font-bold tracking-normal">loop</h1>
@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
 
         <div className="mb-10 flex flex-col items-center">
-          <h2 className="text-center text-lg mb-2.5 font-semibold">
+          <h2 className="text-center text-[1.063rem] mb-2.5 font-semibold">
             Quick Links
           </h2>
 
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-center text-lg mb-2.5 font-semibold">
+          <h2 className="text-center text-[1.063rem] mb-2.5 font-semibold">
             Our Socials
           </h2>
           <div className="flex items-center gap-5 dark:text-[#d4d4d8]">
