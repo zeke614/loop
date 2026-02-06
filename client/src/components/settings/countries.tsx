@@ -106,7 +106,7 @@ export default function CurrencyModal({
       {open && (
         <motion.div
           ref={backdropRef}
-          className="fixed inset-0 z-50 backdrop-blur-xs flex justify-center items-end sm:items-center"
+          className="fixed inset-0 z-50 backdrop-blur-md flex justify-center items-end sm:items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

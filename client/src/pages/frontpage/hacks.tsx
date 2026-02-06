@@ -61,9 +61,7 @@ const hacks = [
 function HackItem({ hack }: { hack: (typeof hacks)[0] }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
-        {hack.title}
-      </h2>
+      <h2 className="text-[1.375rem] md:text-2xl font-medium ">{hack.title}</h2>
       <p className="mb-6 text-[#767676] dark:text-[#d4d4d8] leading-7">
         {hack.content}
       </p>

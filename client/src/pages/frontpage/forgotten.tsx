@@ -66,7 +66,7 @@ const inventions = [
 function InventionItem({ invention }: { invention: (typeof inventions)[0] }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium ">
         {invention.title}
       </h2>
       <div className="overflow-hidden mb-6">

@@ -82,18 +82,18 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+        <div className=" text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium ">
             1. The Growing Hazard of Space Junk
           </h2>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             Researchers estimate that there are more than 40,000 tracked objects
             larger than 10 cm in Earth orbit, and likely millions of smaller
             items. Each collision—or even near miss—with active satellites or
             manned spacecraft adds fragment clouds that multiply collision risk
             exponentially, a cascade sometimes called the "Kessler Syndrome."
           </p>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             The orbiting junk isn't just theoretical risk: falling debris has
             begun re-entering Earth's atmosphere unpredictably. As
             constellations of thousands of satellites launch for broadband,
@@ -104,11 +104,11 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+        <div className=" text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium ">
             2. The Rise of Orbital Cleanup — "Space Janitors" Take Off
           </h2>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             Companies are pioneering active debris-removal technologies: robotic
             arms, rendezvous capture, deorbiting defunct objects, and satellite
             servicing. The concept is shifting from idealistic cleanup to viable
@@ -116,7 +116,7 @@ export default function SpaceMining() {
             to tag and retrieve their hardware, reducing long-term debris
             accumulation.
           </p>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             Some proposals even envision a "circular space economy": recycling
             materials in orbit or repurposing components—turning trash into
             resources, rather than leaving it to decay or burn unpredictably
@@ -125,12 +125,12 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+        <div className=" text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium ">
             3. Asteroid Mining Is No Longer Sci-Fi — Companies Are Taking the
             Lead
           </h2>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             The idea of harvesting resources from asteroids—metals, water, rare
             elements—has moved from theoretical to actionable. Private firms are
             already working on asteroid-mining technologies—refining metal
@@ -138,7 +138,7 @@ export default function SpaceMining() {
             raising capital to launch the first commercial deep-space mineral
             missions.
           </p>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             Advances that lower launch costs, combined with growing demand for
             rare metals and space-derived resources, are turning what once
             looked like fantasy into a plausible mid-to-long-term strategy. What
@@ -147,18 +147,18 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+        <div className=" text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium ">
             4. The Regulatory and Ethical Void
           </h2>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             International frameworks govern peaceful use of space—but they don't
             clearly define rights to extract or own resources from asteroids or
             celestial bodies, leaving serious legal ambiguity around space
             mining. The possibility of "claim jumping"—one entity racing to mine
             or process a resource another identified—looms large.
           </p>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             Some nations have begun national legislation to regulate resource
             extraction in space, but there is still no comprehensive
             international agreement. Fragmented laws create a risky environment
@@ -168,18 +168,18 @@ export default function SpaceMining() {
           </p>
         </div>
 
-        <div className="text-[#767676] dark:text-[#d4d4d8] text-start space-y-6 mt-8">
-          <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+        <div className=" text-start space-y-6 mt-8">
+          <h2 className="text-[1.375rem] md:text-2xl font-medium ">
             5. Why Space Junk Cleanup and Space Mining Must Be Part of a Single
             Vision
           </h2>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             Mining asteroids without cleaning up orbit would be short-sighted:
             more launches, more missions, more debris. If debris accumulates
             unchecked, low Earth orbit and other strategic orbital zones could
             become unusable.
           </p>
-          <p className="leading-6.5">
+          <p className="leading-6.5 text-[#767676] dark:text-[#d4d4d8]">
             A sustainable "circular space economy" should combine tight debris
             management, recycling of materials, mission-end cleanup, and
             resource extraction—creating a closed-loop model rather than

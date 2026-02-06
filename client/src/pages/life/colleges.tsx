@@ -111,7 +111,7 @@ function CollegeItem({
 }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium ">
         {college.title}
       </h2>
       <div className="overflow-hidden mb-6">
@@ -194,7 +194,7 @@ export default function Colleges() {
           ))}
         </div>
 
-        <p className="text-[#767676] pt-3">
+        <p className="text-[#767676] dark:text-[#d4d4d8] pt-3">
           This list shifts slightly year to year, but the trend is clear: the
           most competitive universities aren't becoming easier to enter. Massive
           applicant pools, global visibility, and limited class sizes keep

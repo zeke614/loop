@@ -83,9 +83,7 @@ const cities = [
 function CityItem({ city }: { city: (typeof cities)[0]; index: number }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
-        {city.title}
-      </h2>
+      <h2 className="text-[1.375rem] md:text-2xl font-medium ">{city.title}</h2>
       <div className="overflow-hidden mb-6">
         <img
           src={city.img}

@@ -80,9 +80,7 @@ const ruins = [
 function RuinItem({ ruin }: { ruin: (typeof ruins)[0]; index: number }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
-        {ruin.title}
-      </h2>
+      <h2 className="text-[1.375rem] md:text-2xl font-medium ">{ruin.title}</h2>
       <div className="overflow-hidden mb-6">
         <img
           src={ruin.img}

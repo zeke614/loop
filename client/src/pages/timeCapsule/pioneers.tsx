@@ -118,7 +118,7 @@ export default function Pioneers() {
         <div className="my-10 space-y-10">
           {pioneers.map((pioneer, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium ">
                 {pioneer.title}
               </h2>
 

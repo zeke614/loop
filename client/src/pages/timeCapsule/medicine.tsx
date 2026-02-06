@@ -118,7 +118,7 @@ export default function Medicine() {
         <div className="my-10 space-y-10">
           {diets.map((diet, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium ">
                 {diet.title}
               </h2>
               <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">

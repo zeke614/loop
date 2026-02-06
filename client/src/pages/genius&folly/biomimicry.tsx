@@ -79,7 +79,7 @@ function BiomimicryItem({
 }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {example.title}
       </h2>
       <div className="overflow-hidden mb-6">
@@ -157,14 +157,14 @@ export default function Biomimicry() {
           ))}
         </div>
 
-        <div className="text-[#767676] pt-3 space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] pt-3 space-y-4">
           <p>
             Biomimicry doesn't claim nature has all the answers, but it does
             remind us that some of the best engineering ideas already exist
             around us—in leaves, feathers, shells, and bone. Each natural system
             carries lessons about efficiency, resilience, and sustainability.
           </p>
-          <p className="font-medium text-gray-700">
+          <p className="font-medium text-gray-700 dark:text-white dark:font-semibold">
             As technology pushes forward, the smartest tools may come from
             paying closer attention to designs that have been quietly succeeding
             for millennia.

@@ -79,7 +79,7 @@ function DilemmaItem({
 }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8]">
+      <h2 className="text-[1.375rem] md:text-2xl font-medium">
         {dilemma.title}
       </h2>
       <div className="overflow-hidden mb-6">
@@ -161,7 +161,7 @@ export default function Ethics() {
           ))}
         </div>
 
-        <div className="text-[#767676] pt-3 space-y-4">
+        <div className="text-[#767676] dark:text-[#d4d4d8] pt-3 space-y-4">
           <p>
             These six dilemmas share a quiet, universal truth: AI magnifies
             tensions we never resolved in human society. Fairness, transparency,
@@ -175,7 +175,7 @@ export default function Ethics() {
             systems that stay accountable, corrigible, and compatible with
             pluralistic societies.
           </p>
-          <p className="font-medium text-gray-700 mt-6">
+          <p className="font-medium text-gray-700 dark:text-white dark:font-semibold mt-6">
             AI isn't a mirror of our intelligence—it's a mirror of our
             unresolved debates.
           </p>

@@ -155,7 +155,7 @@ export default function Amateurs() {
             couldn't.
           </p>
 
-          <p className="leading-6.5 font-medium text-gray-700">
+          <p className="leading-6.5 font-medium text-gray-700 dark:text-white dark:font-semibold">
             The future of invention looks less like a campus and more like a
             constellation—thousands of small lights flickering in garages, dorm
             rooms, workshops, and makeshift studios around the world. Big Tech

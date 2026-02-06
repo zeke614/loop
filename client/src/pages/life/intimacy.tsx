@@ -109,7 +109,7 @@ export default function Intimacy() {
         <div className="my-14 space-y-10">
           {sections.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-[1.375rem] md:text-2xl font-medium dark:text-[#d4d4d8] text-gray-900">
+              <h2 className="text-[1.375rem] md:text-2xl font-medium ">
                 {section.title}
               </h2>
               <p className="text-[#767676] dark:text-[#d4d4d8] leading-7">
