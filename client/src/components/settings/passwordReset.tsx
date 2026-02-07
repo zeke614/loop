@@ -111,7 +111,7 @@ export default function PasswordReset() {
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </Link>
 
-        <h3 className="text-2xl font-frozen mb-3.5">Password</h3>
+        <h3 className="text-2xl font-semibold mb-3.5">Password</h3>
 
         <p className="text-gray-600 dark:text-[#d4d4d8] mb-5">
           Enter your new password below. Make sure it's strong and memorable.

@@ -8,7 +8,7 @@ import {
 export default function Settings() {
   return (
     <div className="max-w-4xl min-h-screen mx-auto py-25 md:pt-40 px-5.5">
-      <h1 className="text-2xl font-frozen text-gray-900 mb-2 dark:text-white">
+      <h1 className="text-2xl font-semibold text-gray-900 mb-2 dark:text-white">
         Settings
       </h1>
       <p className="text-gray-500 mb-10 dark:text-[#d4d4d8]">
@@ -21,7 +21,7 @@ export default function Settings() {
             <div className="w-12 h-12 bg-gray-50 dark:bg-[#49494a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
               <IdentificationIcon className="size-6 text-gray-600 dark:text-[#bdbdcd] group-hover:text-[#0ab39c]" />
             </div>
-            <h3 className="text-lg font-frozen text-gray-900 mb-2 dark:text-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">
               Personal details
             </h3>
             <p className="text-gray-500 dark:text-[#d4d4d8]">
@@ -35,7 +35,7 @@ export default function Settings() {
             <div className="w-12 h-12 bg-gray-50 dark:bg-[#49494a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
               <AtSymbolIcon className="size-6 text-gray-600 dark:text-[#bdbdcd] group-hover:text-[#0ab39c]" />
             </div>
-            <h3 className="text-lg font-frozen text-gray-900 mb-2 dark:text-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">
               Email preferences
             </h3>
             <p className="text-gray-500 dark:text-[#d4d4d8]">
@@ -49,7 +49,7 @@ export default function Settings() {
             <div className="w-12 h-12 bg-gray-50 dark:bg-[#49494a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
               <ShieldCheckIcon className="size-6 text-gray-600 dark:text-[#bdbdcd] group-hover:text-[#0ab39c]" />
             </div>
-            <h3 className="text-lg font-frozen text-gray-900 mb-2 dark:text-white">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">
               Security
             </h3>
             <p className="text-gray-500 dark:text-[#d4d4d8]">

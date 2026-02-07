@@ -37,8 +37,8 @@ export default function DeleteAccountPopup({
             transition: { duration: 0.2 },
           }}
         >
-          <ExclamationTriangleIcon className="size-8 text-red-500 mb-3.5 mx-auto" />
-          <h3 className="text-lg font-frozen text-gray-900 dark:text-white mb-7">
+          <ExclamationTriangleIcon className="size-8 text-red-400 mb-3.5 mx-auto" />
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-7">
             Are you sure?
           </h3>
           <p className="text-gray-600 dark:text-[#d4d4d8] mb-4.5">

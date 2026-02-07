@@ -171,7 +171,7 @@ export default function PersonalDetails() {
             >
               <ChevronLeftIcon className="size-5.5 -ml-1" />
             </Link>
-            <h1 className="text-2xl font-frozen text-gray-900 dark:text-white">
+            <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
               Personal Details
             </h1>
             <p className="mt-2 text-gray-500 dark:text-[#d4d4d8]">
@@ -248,7 +248,7 @@ export default function PersonalDetails() {
         </div>
 
         <div className="mt-10">
-          <h3 className="text-lg font-frozen text-gray-900 dark:text-white">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             Danger Zone
           </h3>
           <div className="py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
@@ -259,7 +259,7 @@ export default function PersonalDetails() {
             </div>
             <button
               onClick={togglePopUp}
-              className="flex items-center justify-center gap-2.5 px-4 py-2.5 border border-red-200 dark:border-red-300 text-red-600 dark:text-[#ef6464] font-frozen rounded-3xl hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
+              className="flex items-center font-semibold justify-center gap-2.5 px-4 py-2.5 border border-red-200 dark:border-red-300 text-red-600 dark:text-[#ef6464] rounded-3xl hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
             >
               <span>
                 <TrashIcon className="size-5" />

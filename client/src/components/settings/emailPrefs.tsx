@@ -85,7 +85,7 @@ export default function EmailPrefs() {
           >
             <ChevronLeftIcon className="size-5.5 -ml-1" />
           </Link>
-          <h1 className="text-2xl font-frozen text-gray-900 dark:text-white">
+          <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
             Email Preferences
           </h1>
           <p className="mt-2 text-gray-500 dark:text-[#d4d4d8]">

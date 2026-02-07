@@ -30,7 +30,7 @@ export default function UsernameReset() {
           <ChevronLeftIcon className="size-5.5 -ml-1" />
         </Link>
 
-        <h3 className="text-2xl font-frozen mb-3.5">Display Name</h3>
+        <h3 className="text-2xl font-semibold mb-3.5">Display Name</h3>
 
         <p className="text-gray-600 dark:text-[#d4d4d8] mb-5 md:hidden">
           This name will appear on your profile <br /> and any comments or posts
