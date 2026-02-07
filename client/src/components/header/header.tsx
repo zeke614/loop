@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import navLinks from "../../constants/data";
+import navLinks from "../../data/data";
 import Sidebar from "../header/sidebar";
 import AccountPanel from "../header/accountPanel";
 import { useAuth } from "../../contexts/authContext";

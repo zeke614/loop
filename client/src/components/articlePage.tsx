@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getArticleComponent } from "../constants/articleRoutes";
+import { getArticleComponent } from "../data/articleRoutes";
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 function ComingSoon({ label }: { label?: string }) {

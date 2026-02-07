@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { countryData } from "../../constants/data";
+import { countryData } from "../../data/data";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface Country {
@@ -106,7 +106,7 @@ export default function CurrencyModal({
       {open && (
         <motion.div
           ref={backdropRef}
-          className="fixed inset-0 z-50 backdrop-blur-md flex justify-center items-end sm:items-center"
+          className="fixed inset-0 z-50 backdrop-blur-sm flex justify-center items-end sm:items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

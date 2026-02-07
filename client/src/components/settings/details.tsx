@@ -6,8 +6,8 @@ import { useAuth } from "../../contexts/authContext";
 import axios from "axios";
 import DeleteAccountPopup from "../user/delete";
 import DeleteSuccessPopup from "../user/deleteSuccess";
-import { getCountryName } from "../../constants/data";
-import { countryData } from "../../constants/data";
+import { getCountryName } from "../../data/data";
+import { countryData } from "../../data/data";
 import {
   ChevronLeftIcon,
   PencilSquareIcon,
@@ -259,7 +259,7 @@ export default function PersonalDetails() {
             </div>
             <button
               onClick={togglePopUp}
-              className="flex items-center justify-center gap-2.5 px-4 py-2.5 border border-red-200 dark:border-red-800 text-red-600 font-frozen rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
+              className="flex items-center justify-center gap-2.5 px-4 py-2.5 border border-red-200 dark:border-red-300 text-red-600 dark:text-[#ef6464] font-frozen rounded-lg hover:bg-red-50 transition-colors text-sm whitespace-nowrap cursor-pointer"
             >
               <span>
                 <TrashIcon className="size-5" />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import articles from "../constants/articles";
+import articles from "../data/articles";
 import BookmarkPopup from "../components/bookmark";
 import AnimatedArticleCard from "../components/articleCard";
 import Newsletter from "../components/newsletter";

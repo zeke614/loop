@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
-import articles from "../../constants/articles";
+import articles from "../../data/articles";
 import { BackToTopButton } from "../../components/scrollToTop";
 
 import greatZimbabwe from "../../assets/imgs/great-zimbabwe.jpg";

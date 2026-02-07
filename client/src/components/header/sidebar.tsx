@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 // import { useEffect } from "react";
-import navLinks from "../../constants/data";
+import navLinks from "../../data/data";
 import {
   // XMarkIcon,
   // ChevronRightIcon,
