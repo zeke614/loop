@@ -59,7 +59,7 @@ export default function Saved() {
           {savedArticles.map((article) => (
             <div
               key={article.id}
-              className="flex flex-col rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-black/5 dark:border-[#333333] dark:bg-[#1e1e1e]"
+              className="flex flex-col rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-black/5 dark:border-[#333333] dark:bg-[#2c2c2e]"
             >
               <div className="relative overflow-hidden">
                 <img

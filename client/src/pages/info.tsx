@@ -2,7 +2,7 @@ import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function Info() {
   return (
-    <div className="min-h-screen flex flex-col items-center pt-23 sm:pt-25 pb-12 px-6 md:px-8">
+    <div className="min-h-screen flex flex-col items-center pt-23 sm:pt-25 pb-12 px-6.5 md:px-8">
       <div className="max-w-2xl w-full space-y-16">
         <section className="space-y-6 text-left">
           <div onClick={() => window.history.back()} className="mb-7">

@@ -17,9 +17,9 @@ export default function Settings() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Link to="/settings/details" className="group">
-          <div className="h-full p-6 rounded-2xl border border-gray-200 dark:border-[#333333] hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-50 dark:bg-[#3a3a3b] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
-              <IdentificationIcon className="size-6 text-gray-600 dark:text-[#787882] group-hover:text-[#0ab39c]" />
+          <div className="h-full p-6 rounded-2xl border border-gray-200 dark:border-[#333333] dark:bg-[#2c2c2e] hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-50 dark:bg-[#49494a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
+              <IdentificationIcon className="size-6 text-gray-600 dark:text-[#bdbdcd] group-hover:text-[#0ab39c]" />
             </div>
             <h3 className="text-lg font-frozen text-gray-900 mb-2 dark:text-white">
               Personal details
@@ -31,9 +31,9 @@ export default function Settings() {
         </Link>
 
         <Link to="/settings/emailPrefs" className="group">
-          <div className="h-full p-6 rounded-2xl border border-gray-200 dark:border-[#333333] hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-50 dark:bg-[#3a3a3b] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
-              <AtSymbolIcon className="size-6 text-gray-600 dark:text-[#787882] group-hover:text-[#0ab39c]" />
+          <div className="h-full p-6 rounded-2xl border border-gray-200 dark:border-[#333333] dark:bg-[#2c2c2e] hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-50 dark:bg-[#49494a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
+              <AtSymbolIcon className="size-6 text-gray-600 dark:text-[#bdbdcd] group-hover:text-[#0ab39c]" />
             </div>
             <h3 className="text-lg font-frozen text-gray-900 mb-2 dark:text-white">
               Email preferences
@@ -45,9 +45,9 @@ export default function Settings() {
         </Link>
 
         <Link to="/settings/security" className="group">
-          <div className="h-full p-6 rounded-2xl border border-gray-200 dark:border-[#333333] hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
-            <div className="w-12 h-12 bg-gray-50 dark:bg-[#3a3a3b] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
-              <ShieldCheckIcon className="size-6 text-gray-600 dark:text-[#787882] group-hover:text-[#0ab39c]" />
+          <div className="h-full p-6 rounded-2xl border border-gray-200 dark:border-[#333333] dark:bg-[#2c2c2e] hover:border-[#0ab39c] hover:shadow-md transition-all duration-300">
+            <div className="w-12 h-12 bg-gray-50 dark:bg-[#49494a] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#04aa6d]/10 transition-colors">
+              <ShieldCheckIcon className="size-6 text-gray-600 dark:text-[#bdbdcd] group-hover:text-[#0ab39c]" />
             </div>
             <h3 className="text-lg font-frozen text-gray-900 mb-2 dark:text-white">
               Security

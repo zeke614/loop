@@ -51,7 +51,7 @@ export default function AccountPanel({
               onClick={() => setProfileOpen(false)}
               className="
                 px-4 py-2 rounded-full
-                bg-black backdrop-blur-xl
+                bg-black dark:bg-[#2c2c2e] backdrop-blur-xl
                 shadow-lg text-white
                 flex items-center gap-2
               "
@@ -65,7 +65,7 @@ export default function AccountPanel({
               onClick={() => setProfileOpen(false)}
               className="
                 px-4 py-2 rounded-full
-                bg-black backdrop-blur-xl
+                bg-black dark:bg-[#2c2c2e] backdrop-blur-xl
                 shadow-lg text-white
                 flex items-center gap-2
               "

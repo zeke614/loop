@@ -53,7 +53,7 @@ export default function AnimatedArticleCard({
   return (
     <div
       ref={cardRef}
-      className="flex flex-col rounded-3xl shadow-sm hover:shadow-xl dark:bg-[#1e1e1e] transition-shadow duration-300 overflow-hidden border border-black/5 dark:border-[#333333]"
+      className="flex flex-col rounded-3xl shadow-sm hover:shadow-xl dark:bg-[#2c2c2e] transition-shadow duration-300 overflow-hidden border border-black/5 dark:border-[#333333]"
     >
       <motion.div
         initial={{ opacity: 0 }}

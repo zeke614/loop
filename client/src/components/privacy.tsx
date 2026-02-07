@@ -2,7 +2,7 @@ import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen pt-23 pb-12 sm:py-25 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen pt-23 pb-12 sm:py-25 px-7 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         <div onClick={() => window.history.back()} className="mb-7">
           <ChevronLeftIcon className="size-5.5 -ml-1" />
