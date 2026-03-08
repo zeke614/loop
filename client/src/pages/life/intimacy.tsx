@@ -25,7 +25,7 @@ const sections = [
   {
     title: "1. Attraction in the Age of Swipes",
     content:
-      "Dating apps flattened the world. Your romantic universe is no longer the neighborhood café or a friend's birthday; it's a shuffle of faces and bios shaped by filters, distance, and algorithms. Swiping is fun until it becomes work. People talk about 'choice fatigue'—too many options, too little depth. But they also credit apps for making it easier to meet people they'd never cross paths with otherwise. Introverts, queer folks in conservative areas, and anyone outside traditional social circles often find their first real shot at connection here. The irony is simple: limitless possibility makes commitment both easier and harder. Love is a field with more doors than ever, and every door whispers 'maybe.'",
+      "Dating apps flattened the world. Your romantic universe is no longer the neighborhood café or a friend's birthday; it's a shuffle of faces and bios shaped by filters, distance, and algorithms. Swiping is fun until it becomes work. People talk about 'choice fatigue'—too many options, too little depth. But they also credit apps for making it easier to meet people they'd never cross paths with otherwise. Introverts and anyone outside traditional social circles often find their first real shot at connection here. The irony is simple: limitless possibility makes commitment both easier and harder. Love is a field with more doors than ever, and every door whispers 'maybe'.",
   },
   {
     title: "2. Texting: Mini-Connections, Max Feelings",
