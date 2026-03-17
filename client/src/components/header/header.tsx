@@ -31,7 +31,7 @@ export default function Header() {
                bg-white/15 dark:bg-transparent backdrop- backdrop-blur-sm
                border border-black/5 dark:border-white/10 shadow-md
                flex items-center justify-between
-               px-3.5 py-2.5 sm:px-6"
+               px-3.5 py-2.5 sm:py-3.5 sm:px-6"
       >
         <button
           onClick={toggleMenu}
@@ -60,9 +60,9 @@ export default function Header() {
             <Link
               key={path}
               to={path}
-              className={`${
+              className={`relative pb-1 ${
                 location.pathname === path
-                  ? "font-bold"
+                  ? "font-bold after:absolute after:left-0 after:-bottom-[5px] after:w-full after:h-[12px] after:border-t-[3px] after:border-black dark:after:border-white after:rounded-[50%] after:transition-all after:duration-300"
                   : "font-medium text-[#444] dark:text-white"
               }`}
             >

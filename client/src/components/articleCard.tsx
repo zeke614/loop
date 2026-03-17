@@ -133,7 +133,7 @@ export default function AnimatedArticleCard({
               </motion.span>
             </Link>
 
-            <div className="flex gap-3">
+            <div className="flex items-center justify-center gap-3">
               <motion.div
                 onClick={() => handleBookmarkClick(article)}
                 whileTap={{ scale: 0.92 }}
@@ -142,9 +142,9 @@ export default function AnimatedArticleCard({
                 className="cursor-pointer"
               >
                 {isSaved ? (
-                  <BookmarkIconSolid className="size-4.5 text-[#0ab39c]" />
+                  <BookmarkIconSolid className="size-[1.188rem] text-[#0ab39c]" />
                 ) : (
-                  <BookmarkIcon className="size-4.5 text-gray-800 dark:text-[#d4d4d8] hover:text-[#0ab39c]" />
+                  <BookmarkIcon className="size-[1.188rem] text-gray-800 dark:text-[#d4d4d8] hover:text-[#0ab39c]" />
                 )}
               </motion.div>
 

@@ -89,7 +89,7 @@ export default function Register() {
         <div className="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0 space-y-3 mb-5">
           <button
             onClick={handleGoogleLogin}
-            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-[#333333] rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-[#333333] rounded-full py-3 w-full transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/355037/google.svg"
@@ -102,7 +102,7 @@ export default function Register() {
 
           <button
             onClick={handleGitHubLogin}
-            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-[#333333] rounded-full py-3 w-full hover:bg-gray-50 transition cursor-pointer"
+            className="flex items-center justify-center space-x-3 border border-zinc-950/10 dark:border-[#333333] rounded-full py-3 w-full transition cursor-pointer"
           >
             <img
               src="https://www.svgrepo.com/show/512317/github-142.svg"
@@ -190,7 +190,10 @@ export default function Register() {
               }`}
           >
             {loading ? (
-              <span className="w-4.5 h-4.5 py-1 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              <div className="w-full flex items-center justify-between px-4">
+                <span>Sign up</span>
+                <span className="w-4.5 h-4.5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              </div>
             ) : (
               "Sign up"
             )}

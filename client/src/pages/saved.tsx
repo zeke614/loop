@@ -101,13 +101,13 @@ export default function Saved() {
                       <ChevronDoubleRightIcon className="size-3.5 ml-1 group-hover:translate-x-1 transition-transform duration-200" />{" "}
                     </Link>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <button
                       onClick={() => removeArticle(article.id)}
                       className="hover:bg-gray-50 p-1 rounded-full transition-colors group/icon"
                       title="Unsave"
                     >
-                      <BookmarkIconSolid className="size-4.5 cursor-pointer active:scale-90 transition-transform text-[#0ab39c]" />
+                      <BookmarkIconSolid className="size-[1.188rem] cursor-pointer active:scale-90 transition-transform text-[#0ab39c]" />
                     </button>
                     <ShareButton
                       article={{
